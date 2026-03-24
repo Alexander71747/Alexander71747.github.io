@@ -1,0 +1,44 @@
+---
+title: "Survival Analysis of AML Patients Using Cox Proportional Hazards Model"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Overview
+
+This project evaluates the effect of maintenance chemotherapy on remission duration in patients with Acute Myelogenous Leukemia (AML) using survival analysis techniques in R.
+
+The analysis uses a randomized study of 23 patients comparing those who received maintenance chemotherapy with those who did not.
+
+## Data
+
+The dataset includes:
+
+-   `time`: duration of remission in weeks
+-   `cens`: indicator of relapse (1 = relapse observed, 0 = censored)
+-   `treatment`: maintenance chemotherapy (`maint`) or no treatment (`none`)
+
+Censored observations represent patients for whom relapse was not observed during the study period, meaning their remission time is at least as long as recorded.
+
+## Methods
+
+-   Constructed a survival object using `Surv(time, cens == 1)`
+-   Fitted a Cox proportional hazards model to estimate treatment effects
+-   Interpreted hazard ratios to compare relapse risk between groups
+-   Generated predicted survival curves for each treatment group
+
+## Results
+
+The Cox proportional hazards model produced a hazard ratio of approximately **2.50** for the no-treatment group relative to the maintenance chemotherapy group, indicating a substantially higher risk of relapse when no maintenance therapy is provided.
+
+The corresponding two-sided p-value was approximately **0.0737**. Because the research question was directional, a one-sided interpretation gives a p-value of approximately **0.037**, which supports the conclusion that maintenance chemotherapy significantly prolongs remission time.
+
+The survival curves support this conclusion by showing consistently higher probabilities of remaining in remission for the maintenance chemotherapy group across time.
+
+## Visualization
+
+The survival curves showed that patients receiving maintenance chemotherapy had a higher probability of remaining in remission over time.
+
+[View full analysis and code (PDF)](aml-survival-analysis.pdf)

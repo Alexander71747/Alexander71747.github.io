@@ -1,0 +1,52 @@
+---
+title: "Ordinal Logistic Regression on Legislative Support for SOPA"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Overview
+
+This project uses ordinal logistic regression in R to analyze how legislators’ political party and campaign donations relate to their stance on the Stop Online Piracy Act (SOPA).
+
+The response variable is ordinal, ranging from more negative positions on the bill to more positive ones, which makes ordinal logistic regression an appropriate modeling framework.
+
+## Data
+
+The dataset includes U.S. legislators and their recorded stance on SOPA, along with:
+
+-   `party`: Democrat or Republican
+-   `money_pro`: campaign contributions from groups supporting the bill
+-   `money_con`: campaign contributions from groups opposing the bill
+-   `years`: years of legislative service
+
+Because the original stance variable included categories such as `no`, `leaning no`, `undecided`, `yes`, and `unknown`, the first step was to reorder the meaningful stance categories into a logical ordinal scale and remove observations with missing values.
+
+## Methods
+
+-   Reordered the response variable into a sensible ordinal factor
+-   Removed observations with missing values
+-   Fit an ordinal logistic regression model using `polr()`
+-   Used model comparison to assess whether all explanatory variables should remain in the model
+-   Generated predicted probabilities for combinations of party and donation levels
+
+## Results
+
+The initial model included party, pro-bill donations, anti-bill donations, and years of service. Model comparison showed that `years` could be removed without worsening fit, so the final model retained **party**, **money_pro**, and **money_con**.
+
+The predicted probabilities showed a clear political pattern: holding donation levels constant, **Democrats were more likely to be at the “yes” end of the scale**, while **Republicans were more likely to be at the “no” end**.
+
+The two donation variables also behaved as expected. Higher **pro-bill donations** increased the probability of a more supportive stance, while higher **anti-bill donations** shifted predicted probabilities toward opposition. In other words, legislators tended to move in the direction of the side contributing more money.
+
+## Visualization
+
+The original assignment included predicted probability tables and a multi-panel prediction plot showing how stance probabilities changed across values of `money_pro`, party, and `money_con`.
+
+[View full analysis and code (PDF)](ordinal-logistic-piracy.pdf)
+
+## Key Takeaways
+
+-   Ordinal logistic regression is appropriate when the response has more than two ordered categories
+-   Model comparison helps identify variables that do not contribute meaningful explanatory power
+-   Predicted probabilities are especially useful for interpreting ordinal models in substantive terms

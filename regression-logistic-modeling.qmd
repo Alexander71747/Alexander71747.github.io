@@ -1,0 +1,55 @@
+---
+title: "Regression and Logistic Modeling in R"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Overview
+
+This project combines two statistical modeling exercises completed in R. The first examines the relationship between roller weight and lawn depression using simple linear regression. The second uses logistic regression to evaluate how different dilution levels affect seed germination probabilities.
+
+## Part 1: Linear Regression on Lawn Rolling
+
+This analysis models the relationship between roller weight and the amount of lawn depression caused under dry conditions.
+
+### Methods
+
+-   Created a scatterplot to assess the form of the relationship
+-   Fit a linear regression model with `depression` as the response and `weight` as the predictor
+-   Generated predicted values and confidence intervals for selected roller weights
+-   Interpreted the fitted line and prediction plot
+
+### Results
+
+The scatterplot suggested a roughly linear positive relationship between roller weight and lawn depression. The fitted regression model estimated a positive slope of about **2.67**, indicating that heavier rollers tend to produce greater depression. The model had an **R² of about 0.64**, suggesting a moderate relationship between weight and depression.
+
+## Part 2: Logistic Regression on Seed Germination
+
+This analysis investigates whether dilution level has a significant effect on the probability of seed germination.
+
+### Methods
+
+-   Fit a grouped binomial logistic regression using `cbind(y, n - y)`
+-   Tested whether dilution had a significant overall effect
+-   Computed predicted probabilities and confidence intervals for each dilution level
+-   Compared predicted germination probabilities across dilution groups
+
+### Results
+
+The logistic regression results showed a highly significant overall effect of dilution on germination probability. Predicted probabilities suggested that the **1/1 dilution had much lower germination**, while **1/25 and 1/625 had substantially higher and fairly similar germination probabilities**. This indicates that dilution level strongly influences germination outcomes.
+
+## Visualization
+
+The original assignment included scatterplots, fitted regression lines, prediction plots, and modeled probability curves supporting these conclusions.
+
+[View full analysis and code (PDF)](regression-logistic-modeling.pdf)
+
+## Key Takeaways
+
+-   Linear regression can be used to model continuous outcomes and estimate fitted trends
+
+-   Logistic regression is appropriate for grouped binomial outcomes such as germination success
+
+-   Predicted values and confidence intervals help move from model output to practical interpretation

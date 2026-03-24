@@ -1,0 +1,11 @@
+---
+title: "Statistical_Reports_Portfolio"
+---
+
+# Alexandros Karagiannis
+
+### \[Applied Statistics\] • \[Data Analysis\]
+
+I apply statistical modelling and data analysis to understand real-world patterns, evaluate relationships in data, and produce reliable inferences.
+
+👉 [View My Projects](projects.qmd)
