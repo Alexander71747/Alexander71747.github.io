@@ -1,0 +1,212 @@
+[
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.\n\nTools: R, survival analysis, Cox model\n\nView Project\n\n\n\n\n\n\n\n\nApplied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.\n\nTools: R, linear regression, logistic regression, prediction intervals, data visualization\n\nView Project\n\n\n\n\n\n\n\n\n\n\nUsed ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.\n\nR • Ordinal Logistic Regression • Predicted Probabilities • Political Data\n\nView Project\n\n\n\n\n\n\n\n\nUsed multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax using date-based summaries.\n\nR • Multinomial Logistic Regression • Predicted Probabilities • Election Data • Time and Date Analysis\n\nView Project"
+  },
+  {
+    "objectID": "projects.html#selected-projects",
+    "href": "projects.html#selected-projects",
+    "title": "Projects",
+    "section": "",
+    "text": "Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.\n\nTools: R, survival analysis, Cox model\n\nView Project\n\n\n\n\n\n\n\n\nApplied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.\n\nTools: R, linear regression, logistic regression, prediction intervals, data visualization\n\nView Project\n\n\n\n\n\n\n\n\n\n\nUsed ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.\n\nR • Ordinal Logistic Regression • Predicted Probabilities • Political Data\n\nView Project\n\n\n\n\n\n\n\n\nUsed multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax using date-based summaries.\n\nR • Multinomial Logistic Regression • Predicted Probabilities • Election Data • Time and Date Analysis\n\nView Project"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "multinomial-election-analysis.html",
+    "href": "multinomial-election-analysis.html",
+    "title": "Multinomial Election and Snowfall Timing Analysis",
+    "section": "",
+    "text": "This project combines two statistical analyses completed in R. The first uses multinomial logistic regression to examine how the proportion of Latin-American voters in a precinct relates to support for three candidates in a Chicago city election. The second analyzes snowfall timing in Halifax by identifying the most common and least common dates and months for snowfall events. :contentReferenceoaicite:0"
+  },
+  {
+    "objectID": "multinomial-election-analysis.html#overview",
+    "href": "multinomial-election-analysis.html#overview",
+    "title": "Multinomial Election and Snowfall Timing Analysis",
+    "section": "",
+    "text": "This project combines two statistical analyses completed in R. The first uses multinomial logistic regression to examine how the proportion of Latin-American voters in a precinct relates to support for three candidates in a Chicago city election. The second analyzes snowfall timing in Halifax by identifying the most common and least common dates and months for snowfall events. :contentReferenceoaicite:0"
+  },
+  {
+    "objectID": "multinomial-election-analysis.html#part-1-multinomial-election-analysis-in-chicago",
+    "href": "multinomial-election-analysis.html#part-1-multinomial-election-analysis-in-chicago",
+    "title": "Multinomial Election and Snowfall Timing Analysis",
+    "section": "Part 1: Multinomial Election Analysis in Chicago",
+    "text": "Part 1: Multinomial Election Analysis in Chicago\nBecause the response variable consists of three unordered candidate categories, multinomial logistic regression provides an appropriate way to model how vote probabilities change across precincts.\n\nData\nThe election dataset contains 27 precincts in Chicago’s 22nd Ward and includes:\n\nlatv: number of Latin-American voters in the precinct\nnonlv: number of non-Latin-American voters\nturnout: total number of voters\nGarcia, Martinez, Yanez: votes cast for each candidate\n\nA new variable, pct_latin, was created to represent the proportion of Latin-American voters in each precinct.\n\n\nMethods\n\nCalculated pct_latin as the proportion of Latin-American voters in each precinct\nReshaped candidate vote counts into long format\nFit a multinomial logistic regression model predicting candidate choice from pct_latin\nUsed vote totals as weights so the model reflected actual precinct-level vote counts\nCompared the full model against an intercept-only model\nComputed predicted probabilities for each candidate at selected values of pct_latin\n\n\n\nResults\nModel comparison showed that pct_latin had a highly significant effect on candidate choice. As the proportion of Latin-American voters increased, the predicted probability of voting for Garcia decreased, the probability of voting for Martinez increased, and the probability of voting for Yanez remained low and changed only slightly. These results suggest that precinct demographic composition was strongly associated with the distribution of votes across candidates. :contentReferenceoaicite:1"
+  },
+  {
+    "objectID": "multinomial-election-analysis.html#part-2-halifax-snowfall-timing-analysis",
+    "href": "multinomial-election-analysis.html#part-2-halifax-snowfall-timing-analysis",
+    "title": "Multinomial Election and Snowfall Timing Analysis",
+    "section": "Part 2: Halifax Snowfall Timing Analysis",
+    "text": "Part 2: Halifax Snowfall Timing Analysis\nThis section examines the timing of snowfall in Halifax by identifying which months and dates most often receive measurable snowfall and which are least likely to do so.\n\nMethods\n\nExtracted month and day from each snowfall date\nFiltered observations to days with snowfall greater than zero\nCounted snowfall occurrences by month and by calendar date\nIdentified the most frequent and least frequent snowfall timings\n\n\n\nResults\nThe analysis showed that snowfall in Halifax is concentrated in winter months, with some dates and months appearing much more frequently than others. This provides a simple but effective example of how date-based data can be transformed and summarized to identify seasonal timing patterns."
+  },
+  {
+    "objectID": "multinomial-election-analysis.html#visualization",
+    "href": "multinomial-election-analysis.html#visualization",
+    "title": "Multinomial Election and Snowfall Timing Analysis",
+    "section": "Visualization",
+    "text": "Visualization\nThe original assignment included predicted probability outputs for the Chicago election model and summarized timing patterns for Halifax snowfall.\nView full analysis and code (PDF)"
+  },
+  {
+    "objectID": "multinomial-election-analysis.html#key-takeaways",
+    "href": "multinomial-election-analysis.html#key-takeaways",
+    "title": "Multinomial Election and Snowfall Timing Analysis",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nMultinomial logistic regression is useful when the response has more than two unordered categories\nWeighting matters when each row represents many observations rather than a single case\nDate variables can be transformed into interpretable components such as month and day to study seasonal patterns\nPredicted probabilities and grouped summaries make statistical results easier to interpret substantively"
+  },
+  {
+    "objectID": "regression-logistic-modeling.html",
+    "href": "regression-logistic-modeling.html",
+    "title": "Regression and Logistic Modeling in R",
+    "section": "",
+    "text": "This project combines two statistical modeling exercises completed in R. The first examines the relationship between roller weight and lawn depression using simple linear regression. The second uses logistic regression to evaluate how different dilution levels affect seed germination probabilities."
+  },
+  {
+    "objectID": "regression-logistic-modeling.html#overview",
+    "href": "regression-logistic-modeling.html#overview",
+    "title": "Regression and Logistic Modeling in R",
+    "section": "",
+    "text": "This project combines two statistical modeling exercises completed in R. The first examines the relationship between roller weight and lawn depression using simple linear regression. The second uses logistic regression to evaluate how different dilution levels affect seed germination probabilities."
+  },
+  {
+    "objectID": "regression-logistic-modeling.html#part-1-linear-regression-on-lawn-rolling",
+    "href": "regression-logistic-modeling.html#part-1-linear-regression-on-lawn-rolling",
+    "title": "Regression and Logistic Modeling in R",
+    "section": "Part 1: Linear Regression on Lawn Rolling",
+    "text": "Part 1: Linear Regression on Lawn Rolling\nThis analysis models the relationship between roller weight and the amount of lawn depression caused under dry conditions.\n\nMethods\n\nCreated a scatterplot to assess the form of the relationship\nFit a linear regression model with depression as the response and weight as the predictor\nGenerated predicted values and confidence intervals for selected roller weights\nInterpreted the fitted line and prediction plot\n\n\n\nResults\nThe scatterplot suggested a roughly linear positive relationship between roller weight and lawn depression. The fitted regression model estimated a positive slope of about 2.67, indicating that heavier rollers tend to produce greater depression. The model had an R² of about 0.64, suggesting a moderate relationship between weight and depression."
+  },
+  {
+    "objectID": "regression-logistic-modeling.html#part-2-logistic-regression-on-seed-germination",
+    "href": "regression-logistic-modeling.html#part-2-logistic-regression-on-seed-germination",
+    "title": "Regression and Logistic Modeling in R",
+    "section": "Part 2: Logistic Regression on Seed Germination",
+    "text": "Part 2: Logistic Regression on Seed Germination\nThis analysis investigates whether dilution level has a significant effect on the probability of seed germination.\n\nMethods\n\nFit a grouped binomial logistic regression using cbind(y, n - y)\nTested whether dilution had a significant overall effect\nComputed predicted probabilities and confidence intervals for each dilution level\nCompared predicted germination probabilities across dilution groups\n\n\n\nResults\nThe logistic regression results showed a highly significant overall effect of dilution on germination probability. Predicted probabilities suggested that the 1/1 dilution had much lower germination, while 1/25 and 1/625 had substantially higher and fairly similar germination probabilities. This indicates that dilution level strongly influences germination outcomes."
+  },
+  {
+    "objectID": "regression-logistic-modeling.html#visualization",
+    "href": "regression-logistic-modeling.html#visualization",
+    "title": "Regression and Logistic Modeling in R",
+    "section": "Visualization",
+    "text": "Visualization\nThe original assignment included scatterplots, fitted regression lines, prediction plots, and modeled probability curves supporting these conclusions.\nView full analysis and code (PDF)"
+  },
+  {
+    "objectID": "regression-logistic-modeling.html#key-takeaways",
+    "href": "regression-logistic-modeling.html#key-takeaways",
+    "title": "Regression and Logistic Modeling in R",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nLinear regression can be used to model continuous outcomes and estimate fitted trends\nLogistic regression is appropriate for grouped binomial outcomes such as germination success\nPredicted values and confidence intervals help move from model output to practical interpretation"
+  },
+  {
+    "objectID": "survival_analysis.html",
+    "href": "survival_analysis.html",
+    "title": "Survival Analysis of AML Patients Using Cox Proportional Hazards Model",
+    "section": "",
+    "text": "This project evaluates the effect of maintenance chemotherapy on remission duration in patients with Acute Myelogenous Leukemia (AML) using survival analysis techniques in R.\nThe analysis uses a randomized study of 23 patients comparing those who received maintenance chemotherapy with those who did not."
+  },
+  {
+    "objectID": "survival_analysis.html#overview",
+    "href": "survival_analysis.html#overview",
+    "title": "Survival Analysis of AML Patients Using Cox Proportional Hazards Model",
+    "section": "",
+    "text": "This project evaluates the effect of maintenance chemotherapy on remission duration in patients with Acute Myelogenous Leukemia (AML) using survival analysis techniques in R.\nThe analysis uses a randomized study of 23 patients comparing those who received maintenance chemotherapy with those who did not."
+  },
+  {
+    "objectID": "survival_analysis.html#data",
+    "href": "survival_analysis.html#data",
+    "title": "Survival Analysis of AML Patients Using Cox Proportional Hazards Model",
+    "section": "Data",
+    "text": "Data\nThe dataset includes:\n\ntime: duration of remission in weeks\ncens: indicator of relapse (1 = relapse observed, 0 = censored)\ntreatment: maintenance chemotherapy (maint) or no treatment (none)\n\nCensored observations represent patients for whom relapse was not observed during the study period, meaning their remission time is at least as long as recorded."
+  },
+  {
+    "objectID": "survival_analysis.html#methods",
+    "href": "survival_analysis.html#methods",
+    "title": "Survival Analysis of AML Patients Using Cox Proportional Hazards Model",
+    "section": "Methods",
+    "text": "Methods\n\nConstructed a survival object using Surv(time, cens == 1)\nFitted a Cox proportional hazards model to estimate treatment effects\nInterpreted hazard ratios to compare relapse risk between groups\nGenerated predicted survival curves for each treatment group"
+  },
+  {
+    "objectID": "survival_analysis.html#results",
+    "href": "survival_analysis.html#results",
+    "title": "Survival Analysis of AML Patients Using Cox Proportional Hazards Model",
+    "section": "Results",
+    "text": "Results\nThe Cox proportional hazards model produced a hazard ratio of approximately 2.50 for the no-treatment group relative to the maintenance chemotherapy group, indicating a substantially higher risk of relapse when no maintenance therapy is provided.\nThe corresponding two-sided p-value was approximately 0.0737. Because the research question was directional, a one-sided interpretation gives a p-value of approximately 0.037, which supports the conclusion that maintenance chemotherapy significantly prolongs remission time.\nThe survival curves support this conclusion by showing consistently higher probabilities of remaining in remission for the maintenance chemotherapy group across time."
+  },
+  {
+    "objectID": "survival_analysis.html#visualization",
+    "href": "survival_analysis.html#visualization",
+    "title": "Survival Analysis of AML Patients Using Cox Proportional Hazards Model",
+    "section": "Visualization",
+    "text": "Visualization\nThe survival curves showed that patients receiving maintenance chemotherapy had a higher probability of remaining in remission over time.\nView full analysis and code (PDF)"
+  },
+  {
+    "objectID": "ordinal-logistic-piracy.html",
+    "href": "ordinal-logistic-piracy.html",
+    "title": "Ordinal Logistic Regression on Legislative Support for SOPA",
+    "section": "",
+    "text": "This project uses ordinal logistic regression in R to analyze how legislators’ political party and campaign donations relate to their stance on the Stop Online Piracy Act (SOPA).\nThe response variable is ordinal, ranging from more negative positions on the bill to more positive ones, which makes ordinal logistic regression an appropriate modeling framework."
+  },
+  {
+    "objectID": "ordinal-logistic-piracy.html#overview",
+    "href": "ordinal-logistic-piracy.html#overview",
+    "title": "Ordinal Logistic Regression on Legislative Support for SOPA",
+    "section": "",
+    "text": "This project uses ordinal logistic regression in R to analyze how legislators’ political party and campaign donations relate to their stance on the Stop Online Piracy Act (SOPA).\nThe response variable is ordinal, ranging from more negative positions on the bill to more positive ones, which makes ordinal logistic regression an appropriate modeling framework."
+  },
+  {
+    "objectID": "ordinal-logistic-piracy.html#data",
+    "href": "ordinal-logistic-piracy.html#data",
+    "title": "Ordinal Logistic Regression on Legislative Support for SOPA",
+    "section": "Data",
+    "text": "Data\nThe dataset includes U.S. legislators and their recorded stance on SOPA, along with:\n\nparty: Democrat or Republican\nmoney_pro: campaign contributions from groups supporting the bill\nmoney_con: campaign contributions from groups opposing the bill\nyears: years of legislative service\n\nBecause the original stance variable included categories such as no, leaning no, undecided, yes, and unknown, the first step was to reorder the meaningful stance categories into a logical ordinal scale and remove observations with missing values."
+  },
+  {
+    "objectID": "ordinal-logistic-piracy.html#methods",
+    "href": "ordinal-logistic-piracy.html#methods",
+    "title": "Ordinal Logistic Regression on Legislative Support for SOPA",
+    "section": "Methods",
+    "text": "Methods\n\nReordered the response variable into a sensible ordinal factor\nRemoved observations with missing values\nFit an ordinal logistic regression model using polr()\nUsed model comparison to assess whether all explanatory variables should remain in the model\nGenerated predicted probabilities for combinations of party and donation levels"
+  },
+  {
+    "objectID": "ordinal-logistic-piracy.html#results",
+    "href": "ordinal-logistic-piracy.html#results",
+    "title": "Ordinal Logistic Regression on Legislative Support for SOPA",
+    "section": "Results",
+    "text": "Results\nThe initial model included party, pro-bill donations, anti-bill donations, and years of service. Model comparison showed that years could be removed without worsening fit, so the final model retained party, money_pro, and money_con.\nThe predicted probabilities showed a clear political pattern: holding donation levels constant, Democrats were more likely to be at the “yes” end of the scale, while Republicans were more likely to be at the “no” end.\nThe two donation variables also behaved as expected. Higher pro-bill donations increased the probability of a more supportive stance, while higher anti-bill donations shifted predicted probabilities toward opposition. In other words, legislators tended to move in the direction of the side contributing more money."
+  },
+  {
+    "objectID": "ordinal-logistic-piracy.html#visualization",
+    "href": "ordinal-logistic-piracy.html#visualization",
+    "title": "Ordinal Logistic Regression on Legislative Support for SOPA",
+    "section": "Visualization",
+    "text": "Visualization\nThe original assignment included predicted probability tables and a multi-panel prediction plot showing how stance probabilities changed across values of money_pro, party, and money_con.\nView full analysis and code (PDF)"
+  },
+  {
+    "objectID": "ordinal-logistic-piracy.html#key-takeaways",
+    "href": "ordinal-logistic-piracy.html#key-takeaways",
+    "title": "Ordinal Logistic Regression on Legislative Support for SOPA",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nOrdinal logistic regression is appropriate when the response has more than two ordered categories\nModel comparison helps identify variables that do not contribute meaningful explanatory power\nPredicted probabilities are especially useful for interpreting ordinal models in substantive terms"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact Information",
+    "section": "",
+    "text": "📧 Email: aktheexplorer@gmail.com\n📞 Phone: +1 647-625-0780\n🔗 LinkedIn: View Profile\n\n👉 Download CV\nFeel free to reach out for collaboration, research opportunities, or any questions regarding my work."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Statistical_Reports_Portfolio",
+    "section": "",
+    "text": "Alexandros Karagiannis\n\n[Applied Statistics] • [Data Analysis]\nI apply statistical modelling and data analysis to understand real-world patterns, evaluate relationships in data, and produce reliable inferences.\n👉 View My Projects"
+  }
+]
