@@ -207,3 +207,32 @@ html[data-bs-theme="dark"] a {
 html[data-bs-theme="dark"] a:hover {
   color: #bfdbfe;
 }
+
+img.rounded {
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+img.rounded:hover {
+  transform: scale(1.03);
+}
+
+img.rounded {
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+img.rounded:hover {
+  transform: scale(1.03);
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+h3 {
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+}
