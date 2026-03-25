@@ -18,7 +18,7 @@ Cox proportional hazards modeling of remission duration in AML patients, with in
 
 **Tools:** R, survival analysis, Cox model
 
-[View Project](aml-survival-analysis.pdf)
+[View Project](survival_analysis.html)
 :::
 :::
 
@@ -32,7 +32,7 @@ Applied linear regression to model the relationship between roller weight and la
 
 **Tools:** R, linear regression, logistic regression, prediction intervals, data visualization
 
-[View Project](regression-logistic-modeling.pdf)
+[View Project](regression-logistic-modeling.html)
 :::
 :::
 
@@ -46,7 +46,7 @@ Used ordinal logistic regression to model legislators’ stance on the Stop Onli
 
 **Tools:** R, ordinal logistic regression, predicted probabilities, political data
 
-[View Project](ordinal-logistic-piracy.pdf)
+[View Project](ordinal-logistic-piracy.html)
 :::
 :::
 
@@ -60,7 +60,7 @@ Used multinomial logistic regression to model candidate vote probabilities in Ch
 
 **Tools:** R, multinomial logistic regression, predicted probabilities, election data, time and date analysis
 
-[View Project](multinomial-election-analysis.pdf)
+[View Project](multinomial-election-analysis.html)
 :::
 :::
 :::
