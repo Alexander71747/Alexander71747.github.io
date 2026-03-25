@@ -64,3 +64,17 @@ Used multinomial logistic regression to model candidate vote probabilities in Ch
 :::
 :::
 :::
+
+::: {.g-col-12 .g-col-md-6}
+::: project-card
+![](teak-rhizobium-project.png)
+
+### Two-Way ANOVA in R: Teak Growth and Rhizobium Nitrogen Fixation
+
+Two R-based ANOVA studies examining teak tree growth under different planting methods and root lengths, and nitrogen fixation in clover under varying rhizobium strain and culture combinations.
+
+**Tools:** R, two-way ANOVA, interaction plots, simple effects, Tukey HSD
+
+[View Project](Two%20Way%20ANOVA.html)
+:::
+:::

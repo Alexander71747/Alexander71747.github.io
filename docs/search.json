@@ -4,14 +4,14 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.\nTools: R, survival analysis, Cox model\nView Project\n\n\n\n\n\n\n\n\nApplied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.\nTools: R, linear regression, logistic regression, prediction intervals, data visualization\nView Project\n\n\n\n\n\n\n\n\nUsed ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.\nTools: R, ordinal logistic regression, predicted probabilities, political data\nView Project\n\n\n\n\n\n\n\n\nUsed multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax using date-based summaries.\nTools: R, multinomial logistic regression, predicted probabilities, election data, time and date analysis\nView Project"
+    "text": "Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.\nTools: R, survival analysis, Cox model\nView Project\n\n\n\n\n\n\n\n\nApplied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.\nTools: R, linear regression, logistic regression, prediction intervals, data visualization\nView Project\n\n\n\n\n\n\n\n\nUsed ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.\nTools: R, ordinal logistic regression, predicted probabilities, political data\nView Project\n\n\n\n\n\n\n\n\nUsed multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax using date-based summaries.\nTools: R, multinomial logistic regression, predicted probabilities, election data, time and date analysis\nView Project\n\n\n\n\n\n\n\n\n\nTwo R-based ANOVA studies examining teak tree growth under different planting methods and root lengths, and nitrogen fixation in clover under varying rhizobium strain and culture combinations.\nTools: R, two-way ANOVA, interaction plots, simple effects, Tukey HSD\nView Project"
   },
   {
     "objectID": "projects.html#selected-projects",
     "href": "projects.html#selected-projects",
     "title": "Projects",
     "section": "",
-    "text": "Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.\nTools: R, survival analysis, Cox model\nView Project\n\n\n\n\n\n\n\n\nApplied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.\nTools: R, linear regression, logistic regression, prediction intervals, data visualization\nView Project\n\n\n\n\n\n\n\n\nUsed ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.\nTools: R, ordinal logistic regression, predicted probabilities, political data\nView Project\n\n\n\n\n\n\n\n\nUsed multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax using date-based summaries.\nTools: R, multinomial logistic regression, predicted probabilities, election data, time and date analysis\nView Project"
+    "text": "Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.\nTools: R, survival analysis, Cox model\nView Project\n\n\n\n\n\n\n\n\nApplied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.\nTools: R, linear regression, logistic regression, prediction intervals, data visualization\nView Project\n\n\n\n\n\n\n\n\nUsed ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.\nTools: R, ordinal logistic regression, predicted probabilities, political data\nView Project\n\n\n\n\n\n\n\n\nUsed multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax using date-based summaries.\nTools: R, multinomial logistic regression, predicted probabilities, election data, time and date analysis\nView Project\n\n\n\n\n\n\n\n\n\nTwo R-based ANOVA studies examining teak tree growth under different planting methods and root lengths, and nitrogen fixation in clover under varying rhizobium strain and culture combinations.\nTools: R, two-way ANOVA, interaction plots, simple effects, Tukey HSD\nView Project"
   },
   {
     "objectID": "about.html",
@@ -207,7 +207,7 @@
     "href": "index.html",
     "title": "Alexandros Karagiannis",
     "section": "",
-    "text": "I am a 4th year student at the University of Toronto Scarborough studying Applied Statistics, Economics, and Politics, with a strong interest in data science and the application of statistical thinking to real-world questions.\nThis portfolio brings together selected academic and analytical work in order to show both my technical skills and my broader interest in using quantitative methods to interpret data carefully, identify meaningful patterns, and draw well-grounded conclusions.\n\nΖητεῖν τὴν ἀλήθειαν\nTo seek the truth.\nThis idea reflects the motivation behind my work: to move beyond surface-level numbers, understand the deeper story data can tell, and apply statistical reasoning thoughtfully in order to reach meaningful judgments.\n\nView My Projects\n\n\n\n\n\n\n\n\n  \n\n\nHonours Bachelor’s student in Applied Statistics, Economics, and Politics\n(Sep 2022 - Jun 2026)\n\n\n\n  \n\n\nInternational Baccalaureate Department, Athens, Greece\n(Sep 2019 - Jun 2022)"
+    "text": "I am a 4th year student at the University of Toronto Scarborough studying Applied Statistics, Economics, and Politics, with a strong interest in data science and the application of statistical thinking to real-world questions.\nThis portfolio brings together selected academic and analytical work in order to show both my technical skills and my broader interest in using quantitative methods to interpret data carefully, identify meaningful patterns, and draw well-grounded conclusions.\n\nΖητεῖν τὴν ἀλήθειαν\nTo seek the truth.\nThis idea reflects the motivation behind my work: to move beyond surface-level numbers, understand the deeper story data can tell, and apply statistical reasoning thoughtfully in order to reach meaningful judgments.\n\nView My Projects\n\n\n\n\n\n\n\n\n  \n\n\nHonours Bachelor’s student in Applied Statistics, Economics, and Politics\n\n\n\n  \n\n\nInternational Baccalaureate Department, Athens, Greece"
   },
   {
     "objectID": "index.html#alexandros-karagiannis",
@@ -228,6 +228,104 @@
     "href": "index.html#education",
     "title": "Alexandros Karagiannis",
     "section": "",
+    "text": "Honours Bachelor’s student in Applied Statistics, Economics, and Politics\n\n\n\n  \n\n\nInternational Baccalaureate Department, Athens, Greece"
+  },
+  {
+    "objectID": "index.html#education-1",
+    "href": "index.html#education-1",
+    "title": "Alexandros Karagiannis",
+    "section": "",
     "text": "Honours Bachelor’s student in Applied Statistics, Economics, and Politics\n(Sep 2022 - Jun 2026)\n\n\n\n  \n\n\nInternational Baccalaureate Department, Athens, Greece\n(Sep 2019 - Jun 2022)"
+  },
+  {
+    "objectID": "stad29-assignment5.html",
+    "href": "stad29-assignment5.html",
+    "title": "Assignment 5 Solution",
+    "section": "",
+    "text": "install.packages(\"marginaleffects\")\n\nInstalling package into '/usr/local/lib/R/site-library'\n(as 'lib' is unspecified)\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.0     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n\n\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nlibrary(marginaleffects)\n\n\nmy_url &lt;- \"http://datafiles.ritsokiguess.site/teak.csv\"\nteak &lt;- read_csv(my_url)\n\nRows: 24 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): Block, Plant, Root\ndbl (1): Height\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nteak\n\n# A tibble: 24 × 4\n   Block Plant   Root  Height\n   &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;\n 1 I     pit     R4      18.2\n 2 I     pit     R6      23.6\n 3 I     pit     R8      24.8\n 4 I     crowbar R4      12.7\n 5 I     crowbar R6      15.4\n 6 I     crowbar R8      16.8\n 7 II    pit     R4      16.2\n 8 II    pit     R6      22.7\n 9 II    pit     R8      23.4\n10 II    crowbar R4      11.9\n# ℹ 14 more rows\n\n\n\nggplot(teak, aes(x = Root, y = Height, fill = Plant)) + geom_boxplot()\n\n\n\n\nBoth categorical variables are explanatory, but there are three levels of Root and only two of Plant , so its better to put Root on the x-axis and have only two colours for Plant .\nBased on the boxplot when the planting method is Pit, the plant has a greater height on average than when the planting method is Crowbar, and the amount by which it is higher is about the same for each root length. Thus, it is expect to see a Plant effect that is the same for each root length: that is, no interaction between planting method and root length. To reaffirm our point we can draw an interaction plot and see whether it tells the same story as the boxplots. Note (it should, except for the fact that an interaction plot uses means and the boxplots use medians)\n\nteak %&gt;%\n  group_by(Root, Plant) %&gt;%\n  summarize(mean_height = mean(Height)) %&gt;%\n  ggplot(aes(x = Root, y = mean_height, colour = Plant, group = Plant)) +\ngeom_line()\n\n`summarise()` has grouped output by 'Root'. You can override using the\n`.groups` argument.\n\n\n\n\n\nIndeed those two traces do indeed look pretty close to parallel.\n\nteak.1 &lt;- aov(Height ~ Root * Plant, data = teak)\nsummary(teak.1)\n\n            Df Sum Sq Mean Sq F value   Pr(&gt;F)    \nRoot         2 203.15  101.57  32.131 1.15e-06 ***\nPlant        1 187.60  187.60  59.344 4.18e-07 ***\nRoot:Plant   2   3.78    1.89   0.598     0.56    \nResiduals   18  56.90    3.16                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nWith a P-value of 0.56, this is nowhere near significant.\n\nteak.2 &lt;- aov(Height ~ Root + Plant, data = teak)\nsummary(teak.2)\n\n            Df Sum Sq Mean Sq F value   Pr(&gt;F)    \nRoot         2 203.15  101.57   33.48 4.14e-07 ***\nPlant        1 187.60  187.60   61.83 1.52e-07 ***\nResiduals   20  60.68    3.03                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nWe can conclude that there are significant main effects, of root length (P-value 4.1 × 10−7) and of planting method (P-value 1.5 × 10−7). To find out what kind of effects they are, we run Tukey (which is necessary because there are three different root lengths):\n\nTukeyHSD(teak.2)\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = Height ~ Root + Plant, data = teak)\n\n$Root\n        diff      lwr     upr     p adj\nR6-R4 5.6875  3.48403 7.89097 0.0000067\nR8-R4 6.5625  4.35903 8.76597 0.0000008\nR8-R6 0.8750 -1.32847 3.07847 0.5825209\n\n$Plant\n                diff      lwr      upr p adj\npit-crowbar 5.591667 4.108292 7.075041 2e-07\n\n\nThe Plant analysis here doesn’t tell us anything we haven’t already seen: when the Pit planting method is used, the height is on average greater than for the Crowbar method. The Root analysis, however, does tell us something new: the height for plants that had root length 4 inches is significantly less than for plants with either of the other two root lengths (which are not significantly different). There is no value in doing simple effects here, because the interaction is not significant.\n\nmy_url &lt;- \"http://datafiles.ritsokiguess.site/rhiz-clover.csv\"\nclover &lt;- read_csv(my_url)\n\nRows: 60 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): comb, strain\ndbl (3): weight, nitro, Npg\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nclover\n\n# A tibble: 60 × 5\n   comb   strain weight nitro   Npg\n   &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n 1 clover 3DOk1    1.02  31.2  30.6\n 2 clover 3DOk1    0.65  23.6  36.3\n 3 clover 3DOk1    0.55  14    25.5\n 4 clover 3DOk1    0.86  23.1  26.9\n 5 clover 3DOk1    0.9   23.4  26  \n 6 clover 3DOk5    1.18  59    50  \n 7 clover 3DOk5    1.3   36.7  28.2\n 8 clover 3DOk5    0.86  38.7  45  \n 9 clover 3DOk5    1.62  47.3  29.2\n10 clover 3DOk5    0.9   26.1  29  \n# ℹ 50 more rows\n\n\nThere are correctly 12 × 5 = 60 observations, and the variables of interest are as described. (The value\nof Npg is weight divided by nitro , which is why it has a lot of decimals.)\n\nclover %&gt;%\n  group_by(comb, strain) %&gt;%\n  summarize(mean_npg = mean(Npg)) -&gt; clover_means\n\n`summarise()` has grouped output by 'comb'. You can override using the\n`.groups` argument.\n\nclover_means\n\n# A tibble: 12 × 3\n# Groups:   comb [2]\n   comb           strain mean_npg\n   &lt;chr&gt;          &lt;chr&gt;     &lt;dbl&gt;\n 1 clover         3DOk1      29.0\n 2 clover         3DOk13     22.5\n 3 clover         3DOk4      21.4\n 4 clover         3DOk5      36.3\n 5 clover         3DOk7      22.9\n 6 clover         k.comp     26.0\n 7 clover+alfalfa 3DOk1      28.4\n 8 clover+alfalfa 3DOk13     24.3\n 9 clover+alfalfa 3DOk4      24.0\n10 clover+alfalfa 3DOk5      27.4\n11 clover+alfalfa 3DOk7      25.0\n12 clover+alfalfa k.comp     24.9\n\n\n\nggplot(clover_means, aes(x = strain, y = mean_npg,\n                         colour = comb, group = comb)) + geom_line()\n\n\n\n\nThis is a plot of the mean value of Npg (y-axis) for each combination of comb and strain . One of the explanatory variables goes on the x-axis, and the other is colour.\nThe major reason for drawing an interaction plot is to see whether we have an interaction, and that’s assessed by making a call about whether the lines on your plot are parallel. Here, it seems clear that they are not: the strain 3DOk5 seems very different from the others. So we would expect to see an interaction.\n\nclover.1 &lt;- aov(Npg ~ comb * strain, data = clover)\nsummary(clover.1)\n\n            Df Sum Sq Mean Sq F value   Pr(&gt;F)    \ncomb         1    6.9    6.88   0.531  0.46955    \nstrain       5  642.3  128.45   9.916 1.47e-06 ***\ncomb:strain  5  228.2   45.65   3.524  0.00857 ** \nResiduals   48  621.8   12.95                     \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nThe interaction is significant (which is our finding from the ANOVA), so a suitable technique would be to use simple effects to understand what that significant interaction actually means.\n\nclover %&gt;%\n  filter(strain == \"3DOk7\") -&gt; d1\nd1.1 &lt;- aov(Npg ~ comb, data = d1)\nsummary(d1.1)\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)  \ncomb         1 10.322  10.322   10.51 0.0118 *\nResiduals    8  7.854   0.982                 \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\nThere is a significant difference in nitrogen content between the two cultures of 3DOk7. To see which way around they are, look back at the interaction plot to see that the nitrogen content of the pure clover culture is lower than for the clover plus alfalfa culture. Or, we can perform Tukey (which is otherwise pointless) to see the same thing:\n\nTukeyHSD(d1.1)\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = Npg ~ comb, data = d1)\n\n$comb\n                          diff      lwr      upr     p adj\nclover+alfalfa-clover 2.031939 0.586832 3.477045 0.0118345\n\n\nThe mean nitrogen content for clover plus alfalfa is higher than for just clover (by between 0.5 and 3.5 units). Tukey is otherwise pointless here because there are only two levels of comb (two cultures of this strain), and we know they are significantly different.\n\nclover %&gt;%\n  filter(strain == \"3DOk1\") -&gt; d2\nd2.1 &lt;- aov(Npg ~ comb, data = d2)\nsummary(d2.1)\n\n            Df Sum Sq Mean Sq F value Pr(&gt;F)\ncomb         1   1.01   1.013    0.09  0.772\nResiduals    8  90.12  11.265               \n\n\nThis is not significant\nThe ANOVA earlier found a significant interaction. This means that the effect of comb will be different for the different strains. In particular, we found from the simple effects analyses that there is no effect of comb for strain 3DOk1 , but there is an effect for strain 3DOk7 : that is, the effect of comb depends on which strain you are looking at."
+  },
+  {
+    "objectID": "Two Way ANOVA.html",
+    "href": "Two Way ANOVA.html",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "",
+    "text": "This project combines two statistical analyses completed in R. The first uses two-way analysis of variance to examine how planting method and root length affect teak tree height after one year of growth. The second analyzes nitrogen fixation in clover plants using a two-way ANOVA with interaction to evaluate whether rhizobium strain and mixed bacterial culture influence nitrogen content."
+  },
+  {
+    "objectID": "Two Way ANOVA.html#overview",
+    "href": "Two Way ANOVA.html#overview",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "",
+    "text": "This project combines two statistical analyses completed in R. The first uses two-way analysis of variance to examine how planting method and root length affect teak tree height after one year of growth. The second analyzes nitrogen fixation in clover plants using a two-way ANOVA with interaction to evaluate whether rhizobium strain and mixed bacterial culture influence nitrogen content."
+  },
+  {
+    "objectID": "Two Way ANOVA.html#part-1-teak-growth-analysis",
+    "href": "Two Way ANOVA.html#part-1-teak-growth-analysis",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "Part 1: Teak Growth Analysis",
+    "text": "Part 1: Teak Growth Analysis\nThis analysis investigates whether planting method, root length at planting, and their combination affect teak tree height after one year."
+  },
+  {
+    "objectID": "Two Way ANOVA.html#data",
+    "href": "Two Way ANOVA.html#data",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "Data",
+    "text": "Data\nThe teak dataset includes 24 observations and records:\n\nPlant: planting method, either crowbar or pit\nRoot: root length at planting, recorded as R4, R6, or R8\nHeight: plant height after one year in inches\n\nAn additional blocking variable, Block, was present in the dataset but was not required for the main analysis."
+  },
+  {
+    "objectID": "Two Way ANOVA.html#methods",
+    "href": "Two Way ANOVA.html#methods",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "Methods",
+    "text": "Methods\n\nRead in and displayed the teak dataset\nCreated grouped boxplots of Height by Root and Plant\nAssessed the possibility of interaction visually using grouped boxplots and an interaction plot\nFit a two-way ANOVA with interaction\nRemoved the non-significant interaction and refit the model\nUsed Tukey comparisons to determine which root-length groups differed"
+  },
+  {
+    "objectID": "Two Way ANOVA.html#results",
+    "href": "Two Way ANOVA.html#results",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "Results",
+    "text": "Results\nThe grouped boxplots suggested that pit planting produced taller plants on average than crowbar planting, and that this difference was fairly consistent across root lengths. This indicated little evidence of an interaction. The two-way ANOVA confirmed that the interaction between Root and Plant was not significant, while both main effects were strongly significant. Follow-up comparisons showed that plants with root length 4 inches were significantly shorter than those with root lengths 6 or 8 inches, while 6 and 8 inches did not differ significantly. The pit method also produced greater average height than the crowbar method."
+  },
+  {
+    "objectID": "Two Way ANOVA.html#part-2-rhizobium-nitrogen-fixation-analysis",
+    "href": "Two Way ANOVA.html#part-2-rhizobium-nitrogen-fixation-analysis",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "Part 2: Rhizobium Nitrogen Fixation Analysis",
+    "text": "Part 2: Rhizobium Nitrogen Fixation Analysis\nThis analysis studies whether nitrogen content in clover plants depends on rhizobium strain, bacterial culture combination, and the interaction between them."
+  },
+  {
+    "objectID": "Two Way ANOVA.html#data-1",
+    "href": "Two Way ANOVA.html#data-1",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "Data",
+    "text": "Data\nThe rhizobium dataset includes 60 observations and records:\n\nstrain: one of six clover rhizobium cultures\ncomb: whether the culture was pure clover or clover mixed with alfalfa rhizobium\nNpg: milligrams of nitrogen per gram of dry plant weight\n\nFive observations were collected for each strain and culture combination."
+  },
+  {
+    "objectID": "Two Way ANOVA.html#methods-1",
+    "href": "Two Way ANOVA.html#methods-1",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "Methods",
+    "text": "Methods\n\nRead in and displayed the rhizobium dataset\nCalculated treatment means and created an interaction plot\nInterpreted the interaction plot to assess whether the traces were parallel\nFit a two-way ANOVA with interaction\nUsed simple effects to examine the effect of comb for selected strains\nCompared results for strain 3DOk7 and strain 3DOk1"
+  },
+  {
+    "objectID": "Two Way ANOVA.html#results-1",
+    "href": "Two Way ANOVA.html#results-1",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "Results",
+    "text": "Results\nThe interaction plot suggested that the effect of comb differed across strains, especially for strain 3DOk5, so an interaction was expected. The two-way ANOVA confirmed a significant comb:strain interaction. Because of that interaction, simple effects were used to understand the pattern more clearly. For strain 3DOk7, the effect of comb was significant, with clover plus alfalfa producing higher nitrogen content than clover alone. For strain 3DOk1, there was no significant effect of comb. These results are consistent with the earlier ANOVA result, since a significant interaction implies that the effect of bacterial combination depends on the strain being considered."
+  },
+  {
+    "objectID": "Two Way ANOVA.html#visualization",
+    "href": "Two Way ANOVA.html#visualization",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "Visualization",
+    "text": "Visualization\nThe original assignment included grouped boxplots, an interaction plot for teak, an interaction plot for rhizobium, and simple-effects follow-up analyses supporting the conclusions.\nView full analysis and code (PDF)"
+  },
+  {
+    "objectID": "Two Way ANOVA.html#key-takeaways",
+    "href": "Two Way ANOVA.html#key-takeaways",
+    "title": "Two Way ANOVA on rhizobium nitrogen & on teak tree growth",
+    "section": "Key Takeaways",
+    "text": "Key Takeaways\n\nTwo-way ANOVA is useful for testing both main effects and interactions between explanatory variables\nWhen the interaction is not significant, the analysis can continue by interpreting the main effects\nWhen the interaction is significant, simple effects help explain how the relationship changes across groups\nVisual tools such as grouped boxplots and interaction plots are valuable for anticipating the structure of ANOVA results"
   }
 ]

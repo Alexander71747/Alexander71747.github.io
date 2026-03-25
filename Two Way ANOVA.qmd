@@ -1,0 +1,80 @@
+---
+title: "Two Way ANOVA on rhizobium nitrogen & on teak tree growth"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Overview
+
+This project combines two statistical analyses completed in R. The first uses two-way analysis of variance to examine how planting method and root length affect teak tree height after one year of growth. The second analyzes nitrogen fixation in clover plants using a two-way ANOVA with interaction to evaluate whether rhizobium strain and mixed bacterial culture influence nitrogen content.
+
+## Part 1: Teak Growth Analysis
+
+This analysis investigates whether planting method, root length at planting, and their combination affect teak tree height after one year.
+
+## Data
+
+The teak dataset includes 24 observations and records:
+
+-   `Plant`: planting method, either crowbar or pit
+-   `Root`: root length at planting, recorded as R4, R6, or R8
+-   `Height`: plant height after one year in inches
+
+An additional blocking variable, `Block`, was present in the dataset but was not required for the main analysis.
+
+## Methods
+
+-   Read in and displayed the teak dataset
+-   Created grouped boxplots of `Height` by `Root` and `Plant`
+-   Assessed the possibility of interaction visually using grouped boxplots and an interaction plot
+-   Fit a two-way ANOVA with interaction
+-   Removed the non-significant interaction and refit the model
+-   Used Tukey comparisons to determine which root-length groups differed
+
+## Results
+
+The grouped boxplots suggested that pit planting produced taller plants on average than crowbar planting, and that this difference was fairly consistent across root lengths. This indicated little evidence of an interaction. The two-way ANOVA confirmed that the interaction between `Root` and `Plant` was not significant, while both main effects were strongly significant. Follow-up comparisons showed that plants with root length 4 inches were significantly shorter than those with root lengths 6 or 8 inches, while 6 and 8 inches did not differ significantly. The pit method also produced greater average height than the crowbar method.
+
+## Part 2: Rhizobium Nitrogen Fixation Analysis
+
+This analysis studies whether nitrogen content in clover plants depends on rhizobium strain, bacterial culture combination, and the interaction between them.
+
+## Data
+
+The rhizobium dataset includes 60 observations and records:
+
+-   `strain`: one of six clover rhizobium cultures
+-   `comb`: whether the culture was pure clover or clover mixed with alfalfa rhizobium
+-   `Npg`: milligrams of nitrogen per gram of dry plant weight
+
+Five observations were collected for each strain and culture combination.
+
+## Methods
+
+-   Read in and displayed the rhizobium dataset
+-   Calculated treatment means and created an interaction plot
+-   Interpreted the interaction plot to assess whether the traces were parallel
+-   Fit a two-way ANOVA with interaction
+-   Used simple effects to examine the effect of `comb` for selected strains
+-   Compared results for strain `3DOk7` and strain `3DOk1`
+
+## Results
+
+The interaction plot suggested that the effect of `comb` differed across strains, especially for strain `3DOk5`, so an interaction was expected. The two-way ANOVA confirmed a significant `comb:strain` interaction. Because of that interaction, simple effects were used to understand the pattern more clearly. For strain `3DOk7`, the effect of `comb` was significant, with clover plus alfalfa producing higher nitrogen content than clover alone. For strain `3DOk1`, there was no significant effect of `comb`. These results are consistent with the earlier ANOVA result, since a significant interaction implies that the effect of bacterial combination depends on the strain being considered.
+
+## Visualization
+
+The original assignment included grouped boxplots, an interaction plot for teak, an interaction plot for rhizobium, and simple-effects follow-up analyses supporting the conclusions.
+
+[View full analysis and code (PDF)](stad29%20-%20assignment5.pdf){.btn .btn-primary target="_blank"}
+
+## Key Takeaways
+
+-   Two-way ANOVA is useful for testing both main effects and interactions between explanatory variables
+-   When the interaction is not significant, the analysis can continue by interpreting the main effects
+-   When the interaction is significant, simple effects help explain how the relationship changes across groups
+-   Visual tools such as grouped boxplots and interaction plots are valuable for anticipating the structure of ANOVA results
+
+## 

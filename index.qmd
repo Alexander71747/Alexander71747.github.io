@@ -5,11 +5,13 @@
 ### Applied Statistics • Data Analysis • Research
 
 ::: {.columns valign="middle"}
-::: {.column width="35%"}
-[![](profile.jpg){.rounded width="250px" fig-align="center"}](profile.jpg)
+::: {.column width="40%"}
+::: profile-frame
+[![](profile.jpg){.profile-pic}](profile.jpg)
+:::
 :::
 
-::: {.column width="65%"}
+::: {.column width="60%"}
 I am a 4th year student at the University of Toronto Scarborough studying Applied Statistics, Economics, and Politics, with a strong interest in data science and the application of statistical thinking to real-world questions.
 
 This portfolio brings together selected academic and analytical work in order to show both my technical skills and my broader interest in using quantitative methods to interpret data carefully, identify meaningful patterns, and draw well-grounded conclusions.
@@ -30,8 +32,7 @@ This portfolio brings together selected academic and analytical work in order to
 
 ### <a href="https://www.utoronto.ca/" target="_blank">University of Toronto</a>
 
-Honours Bachelor’s student in Applied Statistics, Economics, and Politics\
-(Sep 2022 - Jun 2026)
+Honours Bachelor’s student in Applied Statistics, Economics, and Politics
 :::
 
 ::: {style="flex: 1; min-width: 260px; text-align: center;"}
@@ -39,7 +40,8 @@ Honours Bachelor’s student in Applied Statistics, Economics, and Politics\
 
 ### <a href="https://www.doukas.edu.gr/diethni-programmata/ib-diploma-programme/" target="_blank">Doukas School</a>
 
-International Baccalaureate Department, Athens, Greece\
-(Sep 2019 - Jun 2022)
+International Baccalaureate Department, Athens, Greece
 :::
 :::
+
+## 

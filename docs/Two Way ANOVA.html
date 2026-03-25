@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Alexandros Karagiannis - Αλέξανδρος Καραγιάννης - Projects</title>
+<title>Alexandros Karagiannis - Αλέξανδρος Καραγιάννης - Two Way ANOVA on rhizobium nitrogen &amp; on teak tree growth</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -119,13 +119,32 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#part-1-teak-growth-analysis" id="toc-part-1-teak-growth-analysis" class="nav-link" data-scroll-target="#part-1-teak-growth-analysis">Part 1: Teak Growth Analysis</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#part-2-rhizobium-nitrogen-fixation-analysis" id="toc-part-2-rhizobium-nitrogen-fixation-analysis" class="nav-link" data-scroll-target="#part-2-rhizobium-nitrogen-fixation-analysis">Part 2: Rhizobium Nitrogen Fixation Analysis</a></li>
+  <li><a href="#data-1" id="toc-data-1" class="nav-link" data-scroll-target="#data-1">Data</a></li>
+  <li><a href="#methods-1" id="toc-methods-1" class="nav-link" data-scroll-target="#methods-1">Methods</a></li>
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
+<h1 class="title">Two Way ANOVA on rhizobium nitrogen &amp; on teak tree growth</h1>
 </div>
 
 
@@ -140,65 +159,84 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="selected-projects" class="level2">
-<h2 class="anchored" data-anchor-id="selected-projects">Selected Projects</h2>
-<div class="grid">
-<div class="g-col-md-6">
-<div class="project-card">
-<p><img src="aml-project.png"></p>
-<section id="survival-analysis-of-aml-patients" class="level3">
-<h3 class="anchored" data-anchor-id="survival-analysis-of-aml-patients">Survival Analysis of AML Patients</h3>
-<p>Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.</p>
-<p><strong>Tools:</strong> R, survival analysis, Cox model</p>
-<p><a href="survival_analysis.html">View Project</a></p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This project combines two statistical analyses completed in R. The first uses two-way analysis of variance to examine how planting method and root length affect teak tree height after one year of growth. The second analyzes nitrogen fixation in clover plants using a two-way ANOVA with interaction to evaluate whether rhizobium strain and mixed bacterial culture influence nitrogen content.</p>
 </section>
-</div>
-</div>
-<div class="g-col-md-6">
-<div class="project-card">
-<p><img src="regression-project.png"></p>
-<section id="regression-and-logistic-modeling-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="regression-and-logistic-modeling-in-r">Regression and Logistic Modeling in R</h3>
-<p>Applied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.</p>
-<p><strong>Tools:</strong> R, linear regression, logistic regression, prediction intervals, data visualization</p>
-<p><a href="regression-logistic-modeling.html">View Project</a></p>
+<section id="part-1-teak-growth-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-teak-growth-analysis">Part 1: Teak Growth Analysis</h2>
+<p>This analysis investigates whether planting method, root length at planting, and their combination affect teak tree height after one year.</p>
 </section>
-</div>
-</div>
-<div class="g-col-md-6">
-<div class="project-card">
-<p><img src="piracy-project.png"></p>
-<section id="ordinal-logistic-regression-on-sopa-support" class="level3">
-<h3 class="anchored" data-anchor-id="ordinal-logistic-regression-on-sopa-support">Ordinal Logistic Regression on SOPA Support</h3>
-<p>Used ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.</p>
-<p><strong>Tools:</strong> R, ordinal logistic regression, predicted probabilities, political data</p>
-<p><a href="ordinal-logistic-piracy.html">View Project</a></p>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The teak dataset includes 24 observations and records:</p>
+<ul>
+<li><code>Plant</code>: planting method, either crowbar or pit</li>
+<li><code>Root</code>: root length at planting, recorded as R4, R6, or R8</li>
+<li><code>Height</code>: plant height after one year in inches</li>
+</ul>
+<p>An additional blocking variable, <code>Block</code>, was present in the dataset but was not required for the main analysis.</p>
 </section>
-</div>
-</div>
-<div class="g-col-md-6">
-<div class="project-card">
-<p><img src="election-project.png"></p>
-<section id="multinomial-election-and-snowfall-timing-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="multinomial-election-and-snowfall-timing-analysis">Multinomial Election and Snowfall Timing Analysis</h3>
-<p>Used multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax using date-based summaries.</p>
-<p><strong>Tools:</strong> R, multinomial logistic regression, predicted probabilities, election data, time and date analysis</p>
-<p><a href="multinomial-election-analysis.html">View Project</a></p>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<ul>
+<li>Read in and displayed the teak dataset</li>
+<li>Created grouped boxplots of <code>Height</code> by <code>Root</code> and <code>Plant</code></li>
+<li>Assessed the possibility of interaction visually using grouped boxplots and an interaction plot</li>
+<li>Fit a two-way ANOVA with interaction</li>
+<li>Removed the non-significant interaction and refit the model</li>
+<li>Used Tukey comparisons to determine which root-length groups differed</li>
+</ul>
 </section>
-</div>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card">
-<p><img src="teak-rhizobium-project.png" class="img-fluid"></p>
-<section id="two-way-anova-in-r-teak-growth-and-rhizobium-nitrogen-fixation" class="level3">
-<h3 class="anchored" data-anchor-id="two-way-anova-in-r-teak-growth-and-rhizobium-nitrogen-fixation">Two-Way ANOVA in R: Teak Growth and Rhizobium Nitrogen Fixation</h3>
-<p>Two R-based ANOVA studies examining teak tree growth under different planting methods and root lengths, and nitrogen fixation in clover under varying rhizobium strain and culture combinations.</p>
-<p><strong>Tools:</strong> R, two-way ANOVA, interaction plots, simple effects, Tukey HSD</p>
-<p><a href="Two Way ANOVA.html">View Project</a></p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>The grouped boxplots suggested that pit planting produced taller plants on average than crowbar planting, and that this difference was fairly consistent across root lengths. This indicated little evidence of an interaction. The two-way ANOVA confirmed that the interaction between <code>Root</code> and <code>Plant</code> was not significant, while both main effects were strongly significant. Follow-up comparisons showed that plants with root length 4 inches were significantly shorter than those with root lengths 6 or 8 inches, while 6 and 8 inches did not differ significantly. The pit method also produced greater average height than the crowbar method.</p>
 </section>
-</div>
-</div>
+<section id="part-2-rhizobium-nitrogen-fixation-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-rhizobium-nitrogen-fixation-analysis">Part 2: Rhizobium Nitrogen Fixation Analysis</h2>
+<p>This analysis studies whether nitrogen content in clover plants depends on rhizobium strain, bacterial culture combination, and the interaction between them.</p>
+</section>
+<section id="data-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-1">Data</h2>
+<p>The rhizobium dataset includes 60 observations and records:</p>
+<ul>
+<li><code>strain</code>: one of six clover rhizobium cultures</li>
+<li><code>comb</code>: whether the culture was pure clover or clover mixed with alfalfa rhizobium</li>
+<li><code>Npg</code>: milligrams of nitrogen per gram of dry plant weight</li>
+</ul>
+<p>Five observations were collected for each strain and culture combination.</p>
+</section>
+<section id="methods-1" class="level2">
+<h2 class="anchored" data-anchor-id="methods-1">Methods</h2>
+<ul>
+<li>Read in and displayed the rhizobium dataset</li>
+<li>Calculated treatment means and created an interaction plot</li>
+<li>Interpreted the interaction plot to assess whether the traces were parallel</li>
+<li>Fit a two-way ANOVA with interaction</li>
+<li>Used simple effects to examine the effect of <code>comb</code> for selected strains</li>
+<li>Compared results for strain <code>3DOk7</code> and strain <code>3DOk1</code></li>
+</ul>
+</section>
+<section id="results-1" class="level2">
+<h2 class="anchored" data-anchor-id="results-1">Results</h2>
+<p>The interaction plot suggested that the effect of <code>comb</code> differed across strains, especially for strain <code>3DOk5</code>, so an interaction was expected. The two-way ANOVA confirmed a significant <code>comb:strain</code> interaction. Because of that interaction, simple effects were used to understand the pattern more clearly. For strain <code>3DOk7</code>, the effect of <code>comb</code> was significant, with clover plus alfalfa producing higher nitrogen content than clover alone. For strain <code>3DOk1</code>, there was no significant effect of <code>comb</code>. These results are consistent with the earlier ANOVA result, since a significant interaction implies that the effect of bacterial combination depends on the strain being considered.</p>
+</section>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<p>The original assignment included grouped boxplots, an interaction plot for teak, an interaction plot for rhizobium, and simple-effects follow-up analyses supporting the conclusions.</p>
+<p><a href="stad29 - assignment5.pdf" class="btn btn-primary" target="_blank">View full analysis and code (PDF)</a></p>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>Two-way ANOVA is useful for testing both main effects and interactions between explanatory variables</li>
+<li>When the interaction is not significant, the analysis can continue by interpreting the main effects</li>
+<li>When the interaction is significant, simple effects help explain how the relationship changes across groups</li>
+<li>Visual tools such as grouped boxplots and interaction plots are valuable for anticipating the structure of ANOVA results</li>
+</ul>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 
 
 </section>

@@ -22,6 +22,40 @@ body {
   color: white;
 }
 
+/* Home page profile image */
+.profile-frame {
+  width: 335px;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0 auto;
+  line-height: 0;
+}
+
+.profile-frame a {
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.profile-pic {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.02);
+}
+
+/* Legacy/general rounded images */
+img.rounded {
+  border-radius: 14px;
+}
+
+/* Optional if you still use this class elsewhere */
 .profile-photo {
   width: 100%;
   max-width: 320px;
@@ -206,26 +240,6 @@ html[data-bs-theme="dark"] a {
 
 html[data-bs-theme="dark"] a:hover {
   color: #bfdbfe;
-}
-
-img.rounded {
-  border-radius: 14px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-img.rounded:hover {
-  transform: scale(1.03);
-}
-
-img.rounded {
-  border-radius: 14px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-img.rounded:hover {
-  transform: scale(1.03);
 }
 
 h2 {
