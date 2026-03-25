@@ -8,7 +8,7 @@ execute:
 
 ## Overview
 
-This project combines two statistical analyses completed in R. The first uses multinomial logistic regression to examine how the proportion of Latin-American voters in a precinct relates to support for three candidates in a Chicago city election. The second analyzes snowfall timing in Halifax by identifying the most common and least common dates and months for snowfall events. :contentReference[oaicite:0]{index=0}
+This project combines two statistical analyses completed in R. The first uses multinomial logistic regression to examine how the proportion of Latin-American voters in a precinct relates to support for three candidates in a Chicago city election. The second analyzes snowfall timing in Halifax by identifying the most common and least common dates and months for snowfall events. :contentReference[oaicite:0]{index="0"}
 
 ## Part 1: Multinomial Election Analysis in Chicago
 
@@ -18,25 +18,25 @@ Because the response variable consists of three unordered candidate categories, 
 
 The election dataset contains 27 precincts in Chicago’s 22nd Ward and includes:
 
-- `latv`: number of Latin-American voters in the precinct
-- `nonlv`: number of non-Latin-American voters
-- `turnout`: total number of voters
-- `Garcia`, `Martinez`, `Yanez`: votes cast for each candidate
+-   `latv`: number of Latin-American voters in the precinct
+-   `nonlv`: number of non-Latin-American voters
+-   `turnout`: total number of voters
+-   `Garcia`, `Martinez`, `Yanez`: votes cast for each candidate
 
 A new variable, `pct_latin`, was created to represent the proportion of Latin-American voters in each precinct.
 
 ### Methods
 
-- Calculated `pct_latin` as the proportion of Latin-American voters in each precinct
-- Reshaped candidate vote counts into long format
-- Fit a multinomial logistic regression model predicting candidate choice from `pct_latin`
-- Used vote totals as weights so the model reflected actual precinct-level vote counts
-- Compared the full model against an intercept-only model
-- Computed predicted probabilities for each candidate at selected values of `pct_latin`
+-   Calculated `pct_latin` as the proportion of Latin-American voters in each precinct
+-   Reshaped candidate vote counts into long format
+-   Fit a multinomial logistic regression model predicting candidate choice from `pct_latin`
+-   Used vote totals as weights so the model reflected actual precinct-level vote counts
+-   Compared the full model against an intercept-only model
+-   Computed predicted probabilities for each candidate at selected values of `pct_latin`
 
 ### Results
 
-Model comparison showed that `pct_latin` had a highly significant effect on candidate choice. As the proportion of Latin-American voters increased, the predicted probability of voting for **Garcia** decreased, the probability of voting for **Martinez** increased, and the probability of voting for **Yanez** remained low and changed only slightly. These results suggest that precinct demographic composition was strongly associated with the distribution of votes across candidates. :contentReference[oaicite:1]{index=1}
+Model comparison showed that `pct_latin` had a highly significant effect on candidate choice. As the proportion of Latin-American voters increased, the predicted probability of voting for **Garcia** decreased, the probability of voting for **Martinez** increased, and the probability of voting for **Yanez** remained low and changed only slightly. These results suggest that precinct demographic composition was strongly associated with the distribution of votes across candidates. :contentReference[oaicite:1]{index="1"}
 
 ## Part 2: Halifax Snowfall Timing Analysis
 
@@ -44,14 +44,14 @@ This section examines the timing of snowfall in Halifax by identifying which mon
 
 ### Methods
 
-- Extracted month and day from each snowfall date
-- Filtered observations to days with snowfall greater than zero
-- Counted snowfall occurrences by month and by calendar date
-- Identified the most frequent and least frequent snowfall timings
+-   Extracted month and day from each snowfall date
+-   Filtered observations to days with snowfall greater than zero
+-   Counted snowfall occurrences by month and by calendar date
+-   Identified the most frequent and least frequent snowfall timings
 
 ### Results
 
-The analysis showed that snowfall in Halifax is concentrated in winter months, with some dates and months appearing much more frequently than others. This provides a simple but effective example of how date-based data can be transformed and summarized to identify seasonal timing patterns. 
+The analysis showed that snowfall in Halifax is concentrated in winter months, with some dates and months appearing much more frequently than others. This provides a simple but effective example of how date-based data can be transformed and summarized to identify seasonal timing patterns.
 
 ## Visualization
 
@@ -61,8 +61,12 @@ The original assignment included predicted probability outputs for the Chicago e
 
 ## Key Takeaways
 
-- Multinomial logistic regression is useful when the response has more than two unordered categories
-- Weighting matters when each row represents many observations rather than a single case
-- Date variables can be transformed into interpretable components such as month and day to study seasonal patterns
-- Predicted probabilities and grouped summaries make statistical results easier to interpret substantively
----
+-   Multinomial logistic regression is useful when the response has more than two unordered categories
+
+-   Weighting matters when each row represents many observations rather than a single case
+
+-   Date variables can be transformed into interpretable components such as month and day to study seasonal patterns
+
+-   
+
+    ## Predicted probabilities and grouped summaries make statistical results easier to interpret substantively

@@ -8,69 +8,59 @@ format:
 ## Selected Projects
 
 ::: grid
-::: {.g-col-12 .g-col-md-6}
+::: g-col-md-6
 ::: project-card
-![](aml-project.png)
+<img src="aml-project.png"/>
 
 ### Survival Analysis of AML Patients
 
 Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.
 
-::: project-tools
 **Tools:** R, survival analysis, Cox model
+
+[View Project](aml-survival-analysis.pdf)
+:::
 :::
 
-[View Project](survival_analysis.qmd)
-:::
-:::
-
-::: {.g-col-12 .g-col-md-6}
+::: g-col-md-6
 ::: project-card
-![](regression-project.png)
+<img src="regression-project.png"/>
 
 ### Regression and Logistic Modeling in R
 
 Applied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.
 
-::: project-tools
 **Tools:** R, linear regression, logistic regression, prediction intervals, data visualization
-:::
 
-[View Project](regression-logistic-modeling.qmd)
-:::
+[View Project](regression-logistic-modeling.pdf)
 :::
 :::
 
-------------------------------------------------------------------------
-
-::: {.g-col-12 .g-col-md-6}
+::: g-col-md-6
 ::: project-card
-![](piracy-project.png)
+<img src="piracy-project.png"/>
 
 ### Ordinal Logistic Regression on SOPA Support
 
 Used ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.
 
-::: project-tools
-R • Ordinal Logistic Regression • Predicted Probabilities • Political Data
-:::
+**Tools:** R, ordinal logistic regression, predicted probabilities, political data
 
-[View Project](ordinal-logistic-piracy.qmd)
+[View Project](ordinal-logistic-piracy.pdf)
 :::
 :::
 
-::: {.g-col-12 .g-col-md-6}
+::: g-col-md-6
 ::: project-card
-![](election-project.png)
+<img src="election-project.png"/>
 
 ### Multinomial Election and Snowfall Timing Analysis
 
 Used multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax using date-based summaries.
 
-::: project-tools
-R • Multinomial Logistic Regression • Predicted Probabilities • Election Data • Time and Date Analysis
-:::
+**Tools:** R, multinomial logistic regression, predicted probabilities, election data, time and date analysis
 
-[View Project](multinomial-election-analysis.qmd)
+[View Project](multinomial-election-analysis.pdf)
+:::
 :::
 :::

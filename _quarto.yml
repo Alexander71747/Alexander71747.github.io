@@ -10,13 +10,26 @@ website:
         text: Home
       - href: projects.qmd
         text: Projects
-      - href: about.qmd
-        text: About
       - href: contact.qmd
         text: Contact
+    right:
+      - icon: github
+        href: https://github.com/Alexander71747
+        target: _blank
+      - icon: linkedin
+        href: https://www.linkedin.com/in/alexandros-karagiannis-340739263/
+        target: _blank
+  search: true
 
 format:
   html:
-    theme: cosmo
+    theme:
+      light: cosmo
+      dark: darkly
     css: styles.css
     toc: true
+    page-layout: full
+
+editor: visual
+
+
