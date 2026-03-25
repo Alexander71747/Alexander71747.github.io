@@ -8,7 +8,7 @@ execute:
 
 ## Overview
 
-This project combines two statistical analyses completed in R. The first uses multinomial logistic regression to examine how the proportion of Latin-American voters in a precinct relates to support for three candidates in a Chicago city election. The second analyzes snowfall timing in Halifax by identifying the most common and least common dates and months for snowfall events. :contentReference[oaicite:0]{index="0"}
+This project combines two statistical analyses completed in R. The first uses multinomial logistic regression to examine how the proportion of Latin-American voters in a precinct relates to support for three candidates in a Chicago city election. The second analyzes snowfall timing in Halifax by identifying the most common and least common dates and months for snowfall events.
 
 ## Part 1: Multinomial Election Analysis in Chicago
 
@@ -67,6 +67,4 @@ The original assignment included predicted probability outputs for the Chicago e
 
 -   Date variables can be transformed into interpretable components such as month and day to study seasonal patterns
 
--   
-
-    ## Predicted probabilities and grouped summaries make statistical results easier to interpret substantively
+-   Predicted probabilities and grouped summaries make statistical results easier to interpret substantively

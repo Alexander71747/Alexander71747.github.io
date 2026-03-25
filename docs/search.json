@@ -25,14 +25,14 @@
     "href": "multinomial-election-analysis.html",
     "title": "Multinomial Election and Snowfall Timing Analysis",
     "section": "",
-    "text": "This project combines two statistical analyses completed in R. The first uses multinomial logistic regression to examine how the proportion of Latin-American voters in a precinct relates to support for three candidates in a Chicago city election. The second analyzes snowfall timing in Halifax by identifying the most common and least common dates and months for snowfall events. :contentReferenceoaicite:0"
+    "text": "This project combines two statistical analyses completed in R. The first uses multinomial logistic regression to examine how the proportion of Latin-American voters in a precinct relates to support for three candidates in a Chicago city election. The second analyzes snowfall timing in Halifax by identifying the most common and least common dates and months for snowfall events."
   },
   {
     "objectID": "multinomial-election-analysis.html#overview",
     "href": "multinomial-election-analysis.html#overview",
     "title": "Multinomial Election and Snowfall Timing Analysis",
     "section": "",
-    "text": "This project combines two statistical analyses completed in R. The first uses multinomial logistic regression to examine how the proportion of Latin-American voters in a precinct relates to support for three candidates in a Chicago city election. The second analyzes snowfall timing in Halifax by identifying the most common and least common dates and months for snowfall events. :contentReferenceoaicite:0"
+    "text": "This project combines two statistical analyses completed in R. The first uses multinomial logistic regression to examine how the proportion of Latin-American voters in a precinct relates to support for three candidates in a Chicago city election. The second analyzes snowfall timing in Halifax by identifying the most common and least common dates and months for snowfall events."
   },
   {
     "objectID": "multinomial-election-analysis.html#part-1-multinomial-election-analysis-in-chicago",
