@@ -1,0 +1,196 @@
+---
+title: "Assignment 6 Solution"
+format: html
+editor: visual
+execute:
+  echo: true
+---
+
+```{r}
+install.packages("car")
+library(tidyverse)
+library(car)
+```
+
+```{r}
+my_url <- "http://datafiles.ritsokiguess.site/fact-opinion.csv"
+survey <- read_csv(my_url)
+
+
+survey
+```
+
+```{r}
+survey %>% mutate(age = factor(age)) -> survey
+survey
+```
+
+```{r}
+youngest <- c(1, -1, 0, 0, 0)
+oldest <- c(0, 0, 0, 1, -1)
+young_vs_middle <- c(1/2, 1/2, -1, 0, 0)
+young_vs_old <- c(1/3, 1/3, 1/3, -1/2, -1/2)
+```
+
+First thing we make sure is that the five numbers within each contrast add up to zero (this is actually the definition of a contrast). The second thing to worry about is that the number on the bottom of a fraction (in the last two contrasts) represents the number of means in a group we are comparing. For example, for the last one, we are comparing the three youngest groups (so the weight for each of these should be 1/3) against the two oldest groups (so the weight for each of those should be 1/2 with the opposite sign).
+
+The order of the numbers in each contrast is the same as the order of the age groups that you found with count above: that is, the first number corresponds to the 18–27 age group, and so if it zero, it means that the 18–27 age group does not figure in that contrast.
+
+Alternatives: We can multiply a contrast through by any constant, which could be −1 (which will flip all the signs), or by something that will make the weights whole numbers (eg., 6 for the last one, so that the weights become 2 three times followed by −3 twice). Doing this won’t stop any contrast from being a contrast (the five weights will still add up to zero) and won’t change the orthogonal-ness of any contrasts.
+
+```{r}
+young_vs_middle * young_vs_old
+```
+
+```{r}
+sum(young_vs_middle * young_vs_old)
+
+```
+
+```{r}
+m <- cbind(youngest, oldest, young_vs_middle, young_vs_old)
+contrasts(survey$age) <- m
+survey.1 <- lm(correct ~ age, data = survey)
+
+m
+```
+
+Three steps:\
+glue the contrasts together into a matrix\
+set that as contrasts for your factor column\
+run the ANOVA as if it is a regression\
+\
+Each column has the name of its contrast, and the contrast weights can be read down the columns. The purpose of the contrasts line is to set lm up so that the “regression slopes” become the contrasts we want to test.
+
+A more mathematical way to check for orthogonality is to work out m -transpose matrix-multiplied by m:
+
+```{r}
+t(m) %*% m
+```
+
+This is a shorthand way of checking all the contrasts for orthogonality with each other. Ignore the numbers down the diagonal (top-left to bottom-right), since a contrast is not going to be orthogonal with itself; as long as all the off-diagonal numbers are zero, the contrasts are orthogonal.
+
+```{r}
+summary(survey.1)
+```
+
+the two youngest age groups do not differ significantly (in ability to detect fact from opinion in news statements)\
+the two oldest age groups do not differ significantly (ditto)\
+the two youngest age groups (taken together) do not differ significantly from the 39–49 age group the three youngest age groups do differ significantly (in detecting fact from opinion in news stories) from the two oldest age groups.
+
+```{r}
+ggplot(survey, aes(x = age, y = correct)) + geom_boxplot()
+```
+
+There seems to be a sharp dividing line at age 50, with respondents older than that doing a worse job on average at distinguishing fact from opinion than younger respondents. The boxplot, in fact, tells exactly the same story as the contrasts, but the contrasts come with P-values attached. The sample size is large (over 600 observations in each group), so that even though the above-50 vs. below-50 difference is small, it is very definitely significant.
+
+```{r}
+my_url <- "http://datafiles.ritsokiguess.site/onions.csv"
+onions <- read_csv(my_url)
+
+
+onions
+```
+
+```{r}
+ggplot(onions, aes(x = dens, y = yield,
+                   colour = location)) +
+  geom_point() + geom_smooth()
+```
+
+These are downward but non-linear trends: they descend quickly at first and then level off.
+
+```{r}
+library(MASS, exclude = "select")
+```
+
+```{r}
+boxcox(yield ~ dens * location, data = onions)
+```
+
+Inside the boxcox , we put the best model that we know of at the moment (including the interaction, because we don’t know yet whether it can be removed). (That said, the decision is the same if we leave it out on this occasion, but the right thing to do is to put the interaction in “just in case”.)
+
+The best transformation appears to be power −0.5, that is, one over square root, which is in the confidence interval, supporting what the experimenters said.
+
+The second-best way to do it is to re-draw the plot of the previous question, but with yield replaced with one over the square root of yield, and demonstrate that the trends are now straight, or close to it. Once again, use a default smooth rather than a regression line (because we want to see whether the trends are straight, not to assume that they are at this point).
+
+```{r}
+ggplot(onions, aes(x = dens, y = 1 / sqrt(yield),
+                   colour = location)) +
+  geom_point() + geom_smooth()
+```
+
+The trends are at least straighter than they were before, but this does not rule out the possibility that a better transformation could be found (whereas the Box-Cox narrows things down a lot, ruling out the log and reciprocal transformations).
+
+```{r}
+onions.1 <- lm(1 / sqrt(yield) ~ dens * location, data = onions)
+```
+
+or raise yield to a negative power using \^ , but then its important to remember that \^ has a special meaning in model formulas, so we need to wrap the power in I() to work around that.
+
+```{r}
+onions.1 <- lm(I(yield^(-0.5)) ~ dens * location, data = onions)
+```
+
+Then, to see whether we can get rid of the interaction, the best way is this (with an F -test, because it is an ordinary regression):
+
+```{r}
+drop1(onions.1, test = "F")
+```
+
+and we see that the interaction, with a P-value of 4.7 × 10−8, much less than 0.05, has to stay.
+
+```{r}
+summary(onions.1)
+```
+
+and it happens that the P-value for the interaction is the same. It worked in this case because there were only two locations, and so comparing the slope for Virginia with that of the baseline location Purnong Landing is actually doing the same test. (If there were three locations, it would be a different story.)
+
+```{r}
+ggplot(onions, aes(x = dens, y = 1/sqrt(yield), colour = factor(location))) +
+  geom_point() + geom_smooth(method = "lm")
+```
+
+```{r}
+ggplot(onions, aes(x = dens, y = yield^(-0.5), colour = factor(location))) +
+  geom_point() + geom_smooth(method = "lm")
+```
+
+The interaction was significant because those lines are not parallel.
+
+```{r}
+my_url <- "http://datafiles.ritsokiguess.site/mercer-wheat.csv"
+wheat <- read_csv(my_url)
+
+wheat
+```
+
+There are two (quantitative) response variables (the two variables that were measured), namely grain and straw.
+
+```{r}
+wheat.1  <-  manova(cbind(grain, straw) ~ row * col, data = wheat)
+summary(wheat.1)
+```
+
+```{r}
+wheat.2 <- lm(cbind(grain, straw) ~ row * col, data = wheat)
+Manova(wheat.2)
+```
+
+The strategy here is to fit a “multivariate regression” using lm with your two-column response variable, and then to display the Manova (uppercase M) of that.5 The result, including the test statistics and degrees of freedom, is the same, so either way is good.
+
+The interaction is significant, so one or both of the amount of grain or straw depends on the combination of row and col in some way.
+
+```{r}
+ggplot(wheat, aes(x = grain, y = straw, colour = row, shape = col)) + geom_point()
+```
+
+We are in the happy position of having two response variables rather than more, so we can make a non- three-dimensional graph. Let’s summarize our variables:
+
+grain : quantitative, response straw : quantitative, response row : categorical, explanatory col : categorical, explanatory.
+
+If we only had one categorical variable, we could draw a scatterplot with points identified by colour. The best way here is to find out how to distinguish the other categorical variable by something else other than colour, such as plotting symbol (that is, plot the points using different symbols rather than just circles).
+
+The points at the bottom right seem to be different from the others (off the trend of the others), and they are all light blue plus signs. Look at the legends to the right to see that they are all from row D (light blue) and column M (plus signs).
+
+Because it’s a combination of row and column, this shows up as a significant interaction in the analysis. It’s not true, for example, that row D is always different from the other rows (which would be a row D main effect); it’s only different when combined with column M.

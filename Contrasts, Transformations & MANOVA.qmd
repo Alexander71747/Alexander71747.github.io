@@ -1,0 +1,109 @@
+---
+title: "Contrasts, Transformations & MANOVA"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Overview
+
+This project combines three statistical analyses completed in R. The first uses custom contrasts to compare age groups in their ability to distinguish factual from opinion-based news statements. The second models onion yield as a function of planting density and location, using a response transformation and interaction term. The third uses multivariate analysis of variance to study wheat grain and straw production across rows and columns in a field trial.
+
+## Part 1: Fact vs Opinion Classification by Age Group
+
+This analysis investigates whether different age groups vary in the number of news statements they correctly classify as fact or opinion.
+
+## Data
+
+The dataset contains 5,035 observations and records:
+
+-   `age`: age group of the respondent
+-   `correct`: number of statements correctly classified out of ten
+
+The age groups were converted to a factor so that contrasts could be assigned and tested properly.
+
+## Methods
+
+-   Read in and displayed the survey data
+-   Converted `age` into a factor
+-   Defined four planned contrasts:
+    -   18–27 vs 28–38
+    -   50–65 vs 65+
+    -   average of 18–27 and 28–38 vs 39–49
+    -   average of the three youngest groups vs average of the two oldest groups
+-   Verified orthogonality for selected contrasts
+-   Set the contrast matrix in the factor and fit a linear model
+
+## Results
+
+The first three contrasts were not significant, meaning that the youngest two groups did not differ from each other, the oldest two groups did not differ from each other, and the two youngest groups together did not differ from the 39–49 group. The final contrast was significant, showing that the three youngest age groups performed differently from the two oldest groups in distinguishing fact from opinion. This suggests a broad age divide rather than isolated pairwise differences.
+
+## Part 2: Onion Yield and Planting Density
+
+This analysis studies how onion yield per plant depends on planting density and whether the relationship differs by location.
+
+## Data
+
+The onion dataset contains 84 observations and records:
+
+-   `dens`: planting density
+-   `yield`: onion yield in grams per plant
+-   `location`: field location in South Australia
+
+## Methods
+
+-   Read in and displayed the onion data
+-   Drew scatterplots with smooth trends by location
+-   Showed that the relationship between yield and density was non-linear
+-   Used a Box-Cox procedure to support transforming the response as `1 / sqrt(yield)`
+-   Fit a linear model with transformed response and interaction
+-   Tested whether the interaction term should remain
+-   Graphed the transformed response to interpret the interaction
+
+## Results
+
+The original relationship between yield and density was downward and non-linear for both locations. The Box-Cox analysis supported using the inverse square root transformation, which made the trends more linear. After fitting the transformed model, the density-by-location interaction was highly significant and needed to remain in the model. This was not surprising because the transformed regression lines for the two locations were not parallel. On the original scale, Purnong Landing appeared to produce better yield across planting densities, although the size of the difference varied with density.
+
+## Part 3: MANOVA for Wheat Grain and Straw
+
+This analysis examines whether wheat grain and straw production differ across field rows, columns, and their interaction.
+
+## Data
+
+The wheat dataset contains 500 observations and records:
+
+-   `row`: row label of the field
+-   `col`: column label of the field
+-   `grain`: amount of grain in pounds
+-   `straw`: amount of straw in pounds
+
+There were 20 observations for each of the 25 row-column field combinations.
+
+## Methods
+
+-   Read in and displayed the wheat data
+-   Identified `grain` and `straw` as the two quantitative response variables
+-   Fit a multivariate analysis of variance with `row`, `col`, and `row:col`
+-   Interpreted the MANOVA results using Pillai’s trace
+-   Used scatterplots and faceted visualizations to identify which row-column combination differed from the others
+
+## Results
+
+The MANOVA showed significant effects for `row`, `col`, and especially the `row:col` interaction. Because the interaction was significant, the main effects should not be interpreted on their own. The follow-up graphs showed that the unusual combination was field `D-M`, which stood apart from the rest in the joint relationship between grain and straw. This field produced a noticeably different pattern than the other row-column combinations, which explains the significant interaction.
+
+## Visualization
+
+The original assignment included boxplots for age-group comparisons, smoothed and transformed scatterplots for onions, a Box-Cox plot, and several visualizations for the wheat MANOVA, including colour-shape scatterplots and faceted displays.
+
+[View full analysis and code (PDF)](stad29-assignment6.pdf){.btn .btn-primary target="_blank"}
+
+## Key Takeaways
+
+-   Planned contrasts allow specific group comparisons to be tested directly and independently
+-   Box-Cox analysis is useful for identifying response transformations that improve linear modeling
+-   A significant interaction means that the effect of one explanatory variable depends on the level of another
+-   MANOVA is appropriate when there are multiple quantitative response variables that may vary jointly
+-   Graphs are essential for explaining significant interactions and identifying which combinations drive them
+
+## 

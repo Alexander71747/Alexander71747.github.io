@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Alexandros Karagiannis - Αλέξανδρος Καραγιάννης - Projects</title>
+<title>Alexandros Karagiannis - Αλέξανδρος Καραγιάννης - Contrasts, Transformations &amp; MANOVA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -119,13 +119,36 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#part-1-fact-vs-opinion-classification-by-age-group" id="toc-part-1-fact-vs-opinion-classification-by-age-group" class="nav-link" data-scroll-target="#part-1-fact-vs-opinion-classification-by-age-group">Part 1: Fact vs Opinion Classification by Age Group</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#part-2-onion-yield-and-planting-density" id="toc-part-2-onion-yield-and-planting-density" class="nav-link" data-scroll-target="#part-2-onion-yield-and-planting-density">Part 2: Onion Yield and Planting Density</a></li>
+  <li><a href="#data-1" id="toc-data-1" class="nav-link" data-scroll-target="#data-1">Data</a></li>
+  <li><a href="#methods-1" id="toc-methods-1" class="nav-link" data-scroll-target="#methods-1">Methods</a></li>
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
+  <li><a href="#part-3-manova-for-wheat-grain-and-straw" id="toc-part-3-manova-for-wheat-grain-and-straw" class="nav-link" data-scroll-target="#part-3-manova-for-wheat-grain-and-straw">Part 3: MANOVA for Wheat Grain and Straw</a></li>
+  <li><a href="#data-2" id="toc-data-2" class="nav-link" data-scroll-target="#data-2">Data</a></li>
+  <li><a href="#methods-2" id="toc-methods-2" class="nav-link" data-scroll-target="#methods-2">Methods</a></li>
+  <li><a href="#results-2" id="toc-results-2" class="nav-link" data-scroll-target="#results-2">Results</a></li>
+  <li><a href="#visualization" id="toc-visualization" class="nav-link" data-scroll-target="#visualization">Visualization</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
+<h1 class="title">Contrasts, Transformations &amp; MANOVA</h1>
 </div>
 
 
@@ -140,76 +163,118 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="selected-projects" class="level2">
-<h2 class="anchored" data-anchor-id="selected-projects">Selected Projects</h2>
-<div class="grid">
-<div class="g-col-12 g-col-md-6">
-<div class="project-card">
-<p><img src="aml-project.png" class="img-fluid"></p>
-<section id="survival-analysis-of-aml-patients" class="level3">
-<h3 class="anchored" data-anchor-id="survival-analysis-of-aml-patients">Survival Analysis of AML Patients</h3>
-<p>Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.</p>
-<p><strong>Tools:</strong> R, survival analysis, Cox model</p>
-<p><a href="survival_analysis.html">View Project</a></p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This project combines three statistical analyses completed in R. The first uses custom contrasts to compare age groups in their ability to distinguish factual from opinion-based news statements. The second models onion yield as a function of planting density and location, using a response transformation and interaction term. The third uses multivariate analysis of variance to study wheat grain and straw production across rows and columns in a field trial.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card">
-<p><img src="regression-project.png" class="img-fluid"></p>
-<section id="regression-and-logistic-modeling-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="regression-and-logistic-modeling-in-r">Regression and Logistic Modeling in R</h3>
-<p>Applied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.</p>
-<p><strong>Tools:</strong> R, linear regression, logistic regression, prediction intervals, data visualization</p>
-<p><a href="regression-logistic-modeling.html">View Project</a></p>
+<section id="part-1-fact-vs-opinion-classification-by-age-group" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-fact-vs-opinion-classification-by-age-group">Part 1: Fact vs Opinion Classification by Age Group</h2>
+<p>This analysis investigates whether different age groups vary in the number of news statements they correctly classify as fact or opinion.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card">
-<p><img src="piracy-project.png" class="img-fluid"></p>
-<section id="ordinal-logistic-regression-on-sopa-support" class="level3">
-<h3 class="anchored" data-anchor-id="ordinal-logistic-regression-on-sopa-support">Ordinal Logistic Regression on SOPA Support</h3>
-<p>Used ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.</p>
-<p><strong>Tools:</strong> R, ordinal logistic regression, predicted probabilities, model comparison</p>
-<p><a href="ordinal-logistic-piracy.html">View Project</a></p>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The dataset contains 5,035 observations and records:</p>
+<ul>
+<li><code>age</code>: age group of the respondent</li>
+<li><code>correct</code>: number of statements correctly classified out of ten</li>
+</ul>
+<p>The age groups were converted to a factor so that contrasts could be assigned and tested properly.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card">
-<p><img src="election-project.png" class="img-fluid"></p>
-<section id="multinomial-election-and-snowfall-timing-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="multinomial-election-and-snowfall-timing-analysis">Multinomial Election and Snowfall Timing Analysis</h3>
-<p>Used multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax.</p>
-<p><strong>Tools:</strong> R, multinomial logistic regression, grouped summaries, probability modeling</p>
-<p><a href="multinomial-election-analysis.html">View Project</a></p>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<ul>
+<li>Read in and displayed the survey data</li>
+<li>Converted <code>age</code> into a factor</li>
+<li>Defined four planned contrasts:
+<ul>
+<li>18–27 vs 28–38</li>
+<li>50–65 vs 65+</li>
+<li>average of 18–27 and 28–38 vs 39–49</li>
+<li>average of the three youngest groups vs average of the two oldest groups</li>
+</ul></li>
+<li>Verified orthogonality for selected contrasts</li>
+<li>Set the contrast matrix in the factor and fit a linear model</li>
+</ul>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card">
-<p><img src="teak-rhizobium-project.png" class="img-fluid"></p>
-<section id="two-way-anova-in-r-teak-growth-and-rhizobium-nitrogen-fixation" class="level3">
-<h3 class="anchored" data-anchor-id="two-way-anova-in-r-teak-growth-and-rhizobium-nitrogen-fixation">Two-Way ANOVA in R: Teak Growth and Rhizobium Nitrogen Fixation</h3>
-<p>Two R-based ANOVA studies examining teak tree growth under different planting methods and root lengths, and nitrogen fixation in clover under varying rhizobium strain and culture combinations.</p>
-<p><strong>Tools:</strong> R, two-way ANOVA, interaction plots, simple effects, Tukey HSD</p>
-<p><a href="Two Way ANOVA.html">View Project</a></p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>The first three contrasts were not significant, meaning that the youngest two groups did not differ from each other, the oldest two groups did not differ from each other, and the two youngest groups together did not differ from the 39–49 group. The final contrast was significant, showing that the three youngest age groups performed differently from the two oldest groups in distinguishing fact from opinion. This suggests a broad age divide rather than isolated pairwise differences.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card">
-<p><img src="assignment6-project.png" class="img-fluid"></p>
-<section id="contrasts-transformation-and-manova-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="contrasts-transformation-and-manova-in-r">Contrasts, Transformation, and MANOVA in R</h3>
-<p>Three R-based analyses: custom contrasts for age-group comparisons, transformed regression with interaction for onion yield, and MANOVA for wheat grain and straw across field rows and columns.</p>
-<p><strong>Tools:</strong> R, custom contrasts, linear modeling, Box-Cox transformation, interaction analysis, MANOVA, data visualization</p>
-<p><a href="Contrasts, Transformations %26 MANOVA.html">View Project</a></p>
+<section id="part-2-onion-yield-and-planting-density" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-onion-yield-and-planting-density">Part 2: Onion Yield and Planting Density</h2>
+<p>This analysis studies how onion yield per plant depends on planting density and whether the relationship differs by location.</p>
 </section>
-</div>
-</div>
-</div>
+<section id="data-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-1">Data</h2>
+<p>The onion dataset contains 84 observations and records:</p>
+<ul>
+<li><code>dens</code>: planting density</li>
+<li><code>yield</code>: onion yield in grams per plant</li>
+<li><code>location</code>: field location in South Australia</li>
+</ul>
+</section>
+<section id="methods-1" class="level2">
+<h2 class="anchored" data-anchor-id="methods-1">Methods</h2>
+<ul>
+<li>Read in and displayed the onion data</li>
+<li>Drew scatterplots with smooth trends by location</li>
+<li>Showed that the relationship between yield and density was non-linear</li>
+<li>Used a Box-Cox procedure to support transforming the response as <code>1 / sqrt(yield)</code></li>
+<li>Fit a linear model with transformed response and interaction</li>
+<li>Tested whether the interaction term should remain</li>
+<li>Graphed the transformed response to interpret the interaction</li>
+</ul>
+</section>
+<section id="results-1" class="level2">
+<h2 class="anchored" data-anchor-id="results-1">Results</h2>
+<p>The original relationship between yield and density was downward and non-linear for both locations. The Box-Cox analysis supported using the inverse square root transformation, which made the trends more linear. After fitting the transformed model, the density-by-location interaction was highly significant and needed to remain in the model. This was not surprising because the transformed regression lines for the two locations were not parallel. On the original scale, Purnong Landing appeared to produce better yield across planting densities, although the size of the difference varied with density.</p>
+</section>
+<section id="part-3-manova-for-wheat-grain-and-straw" class="level2">
+<h2 class="anchored" data-anchor-id="part-3-manova-for-wheat-grain-and-straw">Part 3: MANOVA for Wheat Grain and Straw</h2>
+<p>This analysis examines whether wheat grain and straw production differ across field rows, columns, and their interaction.</p>
+</section>
+<section id="data-2" class="level2">
+<h2 class="anchored" data-anchor-id="data-2">Data</h2>
+<p>The wheat dataset contains 500 observations and records:</p>
+<ul>
+<li><code>row</code>: row label of the field</li>
+<li><code>col</code>: column label of the field</li>
+<li><code>grain</code>: amount of grain in pounds</li>
+<li><code>straw</code>: amount of straw in pounds</li>
+</ul>
+<p>There were 20 observations for each of the 25 row-column field combinations.</p>
+</section>
+<section id="methods-2" class="level2">
+<h2 class="anchored" data-anchor-id="methods-2">Methods</h2>
+<ul>
+<li>Read in and displayed the wheat data</li>
+<li>Identified <code>grain</code> and <code>straw</code> as the two quantitative response variables</li>
+<li>Fit a multivariate analysis of variance with <code>row</code>, <code>col</code>, and <code>row:col</code></li>
+<li>Interpreted the MANOVA results using Pillai’s trace</li>
+<li>Used scatterplots and faceted visualizations to identify which row-column combination differed from the others</li>
+</ul>
+</section>
+<section id="results-2" class="level2">
+<h2 class="anchored" data-anchor-id="results-2">Results</h2>
+<p>The MANOVA showed significant effects for <code>row</code>, <code>col</code>, and especially the <code>row:col</code> interaction. Because the interaction was significant, the main effects should not be interpreted on their own. The follow-up graphs showed that the unusual combination was field <code>D-M</code>, which stood apart from the rest in the joint relationship between grain and straw. This field produced a noticeably different pattern than the other row-column combinations, which explains the significant interaction.</p>
+</section>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<p>The original assignment included boxplots for age-group comparisons, smoothed and transformed scatterplots for onions, a Box-Cox plot, and several visualizations for the wheat MANOVA, including colour-shape scatterplots and faceted displays.</p>
+<p><a href="stad29-assignment6.pdf" class="btn btn-primary" target="_blank">View full analysis and code (PDF)</a></p>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>Planned contrasts allow specific group comparisons to be tested directly and independently</li>
+<li>Box-Cox analysis is useful for identifying response transformations that improve linear modeling</li>
+<li>A significant interaction means that the effect of one explanatory variable depends on the level of another</li>
+<li>MANOVA is appropriate when there are multiple quantitative response variables that may vary jointly</li>
+<li>Graphs are essential for explaining significant interactions and identifying which combinations drive them</li>
+</ul>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
 
 
 </section>
