@@ -2,16 +2,28 @@
 
 ## Statistical Analysis Portfolio
 
-### Applied Statistics / Data Analysis & Visualization
+## Applied Statistics / Data Analysis & Visualization
 
-::: {.columns valign="middle"}
-::: {.column width="40%"}
-::: profile-frame
-[![](profile.jpg){.profile-pic}](profile.jpg)
+::: columns
+::: {.column width="38%"}
+![](profile.jpg){style="width:100%; max-width:320px; border-radius:20px; display:block; margin:auto;"}
+
+### Alma mater
+
+[![](uoft-logo.png){style="width:60%; max-width:140px; display:block; margin: 0 auto;"}](https://www.utsc.utoronto.ca/)
+
+::: {style="text-align: center; max-width: 260px; margin: 10px auto 0 auto;"}
+University of Toronto Honours Bachelors in Arts studying Applied Statistics, Economics and Politics
+:::
+
+[![](doukas-logo.png){style="width:48%; max-width:110px; display:block; margin: 28px auto 0 auto;"}](https://www.doukas.gr/)
+
+::: {style="text-align: center; max-width: 260px; margin: 10px auto 0 auto;"}
+Doukas School IB (International Baccalaureate) Department Athens, Greece
 :::
 :::
 
-::: {.column width="60%"}
+::: {.column width="62%"}
 I am a 4th year student at the University of Toronto Scarborough studying Applied Statistics, Economics, and Politics, with a strong interest in data science and the application of statistical thinking to real-world questions.
 
 This portfolio brings together selected academic and analytical work in order to show both my technical skills and my broader interest in using quantitative methods to interpret data carefully, identify meaningful patterns, and draw well-grounded conclusions.
@@ -20,28 +32,6 @@ This portfolio brings together selected academic and analytical work in order to
 > *To seek the truth.*\
 > This idea reflects the motivation behind my work: to move beyond surface-level numbers, understand the deeper story data can tell, and apply statistical reasoning thoughtfully in order to reach meaningful judgments.
 
-[View My Projects](projects.html){.btn .btn-primary}
+[View My Projects](projects.qmd){.btn .btn-primary}
 :::
 :::
-
-## **Alma mater**
-
-::: {style="display: flex; gap: 40px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap;"}
-::: {style="flex: 1; min-width: 260px; text-align: center;"}
-<a href="https://www.utoronto.ca/" target="_blank"> <img src="uoft-logo.png" width="160"/> </a>
-
-### <a href="https://www.utoronto.ca/" target="_blank">University of Toronto</a>
-
-Honours Bachelor’s student in Applied Statistics, Economics, and Politics
-:::
-
-::: {style="flex: 1; min-width: 260px; text-align: center;"}
-<a href="https://www.doukas.edu.gr/diethni-programmata/ib-diploma-programme/" target="_blank"> <img src="doukas-logo.png" width="160"/> </a>
-
-### <a href="https://www.doukas.edu.gr/diethni-programmata/ib-diploma-programme/" target="_blank">Doukas School</a>
-
-International Baccalaureate Department, Athens, Greece
-:::
-:::
-
-## 
