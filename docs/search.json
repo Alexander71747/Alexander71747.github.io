@@ -446,5 +446,12 @@
     "title": "Contrasts, Transformations & MANOVA",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nPlanned contrasts allow specific group comparisons to be tested directly and independently\nBox-Cox analysis is useful for identifying response transformations that improve linear modeling\nA significant interaction means that the effect of one explanatory variable depends on the level of another\nMANOVA is appropriate when there are multiple quantitative response variables that may vary jointly\nGraphs are essential for explaining significant interactions and identifying which combinations drive them"
+  },
+  {
+    "objectID": "index.html#alma-mater",
+    "href": "index.html#alma-mater",
+    "title": "Alexandros Karagiannis",
+    "section": "",
+    "text": "Honours Bachelor’s student in Applied Statistics, Economics, and Politics\n\n\n\n  \n\n\nInternational Baccalaureate Department, Athens, Greece"
   }
 ]

@@ -2,7 +2,7 @@
 
 ## Statistical Analysis Portfolio
 
-### Applied Statistics • Data Analysis • Research
+### Applied Statistics / Data Analysis & Visualization
 
 ::: {.columns valign="middle"}
 ::: {.column width="40%"}
@@ -24,7 +24,7 @@ This portfolio brings together selected academic and analytical work in order to
 :::
 :::
 
-## Education
+## **Alma mater**
 
 ::: {style="display: flex; gap: 40px; align-items: flex-start; justify-content: space-between; flex-wrap: wrap;"}
 ::: {style="flex: 1; min-width: 260px; text-align: center;"}
