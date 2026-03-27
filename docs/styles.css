@@ -250,3 +250,137 @@ h3 {
   margin-top: 0.8rem;
   margin-bottom: 0.4rem;
 }
+
+
+
+/* ---------- Homepage entrance animation ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 1.25s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.55s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.95s;
+}
+
+/* ---------- Social icon hover ---------- */
+.social-icons a {
+  display: inline-block;
+  margin-right: 0.7rem;
+  transition: transform 0.22s ease, opacity 0.22s ease, filter 0.22s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.12);
+  opacity: 0.88;
+}
+
+.social-icons svg,
+.social-icons i {
+  transition: transform 0.22s ease;
+}
+
+
+/* ---------- Homepage / page entrance animation ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 1.25s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.35s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.55s;
+}
+
+.fade-delay-4 {
+  animation-delay: 0.75s;
+}
+
+.fade-delay-5 {
+  animation-delay: 0.95s;
+}
+
+.fade-delay-6 {
+  animation-delay: 1.15s;
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 1.25s ease-out forwards;
+  will-change: opacity, transform;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.15s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.35s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.55s;
+}
+
+.fade-delay-4 {
+  animation-delay: 0.75s;
+}
+
+.fade-delay-5 {
+  animation-delay: 0.95s;
+}
+
+.fade-delay-6 {
+  animation-delay: 1.15s;
+}

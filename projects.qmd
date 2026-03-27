@@ -5,11 +5,11 @@ format:
     toc: false
 ---
 
-## Selected Projects
+## Selected Projects {.fade-up .fade-delay-1}
 
 ::: grid
 ::: {.g-col-12 .g-col-md-6}
-::: project-card
+::: {.project-card .fade-up .fade-delay-1}
 ![](aml-project.png)
 
 ### Survival Analysis of AML Patients
@@ -23,7 +23,7 @@ Cox proportional hazards modeling of remission duration in AML patients, with in
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-::: project-card
+::: {.project-card .fade-up .fade-delay-2}
 ![](regression-project.png)
 
 ### Regression and Logistic Modeling in R
@@ -37,7 +37,7 @@ Applied linear regression to model the relationship between roller weight and la
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-::: project-card
+::: {.project-card .fade-up .fade-delay-3}
 ![](piracy-project.png)
 
 ### Ordinal Logistic Regression on SOPA Support
@@ -51,7 +51,7 @@ Used ordinal logistic regression to model legislators’ stance on the Stop Onli
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-::: project-card
+::: {.project-card .fade-up .fade-delay-4}
 ![](election-project.png)
 
 ### Multinomial Election and Snowfall Timing Analysis
@@ -65,7 +65,7 @@ Used multinomial logistic regression to model candidate vote probabilities in Ch
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-::: project-card
+::: {.project-card .fade-up .fade-delay-5}
 ![](teak-rhizobium-project.png)
 
 ### Two-Way ANOVA in R: Teak Growth and Rhizobium Nitrogen Fixation
@@ -79,7 +79,7 @@ Two R-based ANOVA studies examining teak tree growth under different planting me
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-::: project-card
+::: {.project-card .fade-up .fade-delay-6}
 ![](assignment6-project.png)
 
 ### Contrasts, Transformation, and MANOVA in R

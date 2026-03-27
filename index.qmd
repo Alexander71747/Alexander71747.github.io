@@ -7,15 +7,18 @@ Applied Statistics / Data Analysis & Visualization
 :::
 
 ::: {style="margin-top:10px; margin-bottom:18px; font-size:1.13rem;"}
-<strong>Alma mater:</strong> <a href="https://www.utsc.utoronto.ca/" target="_blank" rel="noopener noreferrer">University of Toronto Scarborough</a> · <a href="https://www.doukas.gr/en/" target="_blank" rel="noopener noreferrer">Doukas School IB Department, Athens, Greece</a>
+<strong>Alma mater:</strong> <a href="https://www.utsc.utoronto.ca/" target="_blank" rel="noopener noreferrer">University of Toronto Scarborough</a> · <a href="https://www.doukas.gr/" target="_blank" rel="noopener noreferrer">Doukas School IB Department, Athens, Greece</a>
 :::
 
 ::: columns
 ::: {.column width="38%"}
+::: {.fade-up .fade-delay-1}
 ![](profile.jpg){style="width:100%; max-width:320px; border-radius:20px; display:block; margin:auto;"}
+:::
 :::
 
 ::: {.column width="62%"}
+::: {.fade-up .fade-delay-2}
 I am a 4th year student at the University of Toronto Scarborough studying Applied Statistics, Economics, and Politics, with a strong interest in data science and the application of statistical thinking to real-world questions.
 
 This portfolio brings together selected academic and analytical work in order to show both my technical skills and my broader interest in using quantitative methods to interpret data carefully, identify meaningful patterns, and draw well-grounded conclusions.
@@ -23,7 +26,14 @@ This portfolio brings together selected academic and analytical work in order to
 > **Ζητεῖν τὴν ἀλήθειαν**\
 > *To seek the truth.*\
 > This idea reflects the motivation behind my work: to move beyond surface-level numbers, understand the deeper story data can tell, and apply statistical reasoning thoughtfully in order to reach meaningful judgments.
+:::
 
+::: {.fade-up .fade-delay-3 style="margin-top: 1rem;"}
 [View My Projects](projects.qmd){.btn .btn-primary}
+:::
+
+::: {.social-icons .fade-up .fade-delay-3 style="margin-top:18px;"}
+[{{< iconify fa6-brands github >}}](https://github.com/yourusername){target="_blank"} [{{< iconify fa6-brands linkedin >}}](https://linkedin.com/in/yourlinkedin){target="_blank"}
+:::
 :::
 :::
