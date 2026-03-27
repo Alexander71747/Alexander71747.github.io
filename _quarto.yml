@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Alexandros Karagiannis - Αλέξανδρος Καραγιάννης"
+  title: "Alexandros Karagiannis"
   navbar:
     left:
       - href: index.qmd
