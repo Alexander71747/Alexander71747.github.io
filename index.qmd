@@ -2,11 +2,13 @@
 
 ## Statistical Analysis Portfolio
 
-::: {style="margin-top:10px; margin-bottom:18px; font-size:1.05rem;"}
-<strong>Alma mater:</strong> <a href="https://www.utsc.utoronto.ca/" target="_blank" rel="noopener noreferrer">University of Toronto Scarborough</a>  ·  <a href="https://www.doukas.gr/" target="_blank" rel="noopener noreferrer">Doukas School IB Department, Athens, Greece</a>
+::: {style="margin-top:-6px; margin-bottom:14px; font-size:1.18rem; font-weight:600; color:#6b7280;"}
+Applied Statistics / Data Analysis & Visualization
 :::
 
-## Applied Statistics / Data Analysis & Visualization
+::: {style="margin-top:10px; margin-bottom:18px; font-size:1.13rem;"}
+<strong>Alma mater:</strong> <a href="https://www.utsc.utoronto.ca/" target="_blank" rel="noopener noreferrer">University of Toronto Scarborough</a> · <a href="https://www.doukas.gr/en/" target="_blank" rel="noopener noreferrer">Doukas School IB Department, Athens, Greece</a>
+:::
 
 ::: columns
 ::: {.column width="38%"}
@@ -25,5 +27,3 @@ This portfolio brings together selected academic and analytical work in order to
 [View My Projects](projects.qmd){.btn .btn-primary}
 :::
 :::
-
-## 
