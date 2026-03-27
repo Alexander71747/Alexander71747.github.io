@@ -1,3 +1,12 @@
+# 
+
+---
+title: "Home"
+format:
+  html:
+    toc: false
+---
+
 # Alexandros Karagiannis
 
 ## Statistical Analysis Portfolio
@@ -7,7 +16,7 @@ Applied Statistics / Data Analysis & Visualization
 :::
 
 ::: {style="margin-top:10px; margin-bottom:18px; font-size:1.13rem;"}
-<strong>Alma mater:</strong> <a href="https://www.utsc.utoronto.ca/" target="_blank" rel="noopener noreferrer">University of Toronto Scarborough</a> · <a href="https://www.doukas.gr/" target="_blank" rel="noopener noreferrer">Doukas School IB Department, Athens, Greece</a>
+<strong>Alma mater:</strong> <a href="https://www.utsc.utoronto.ca/" target="_blank" rel="noopener noreferrer">University of Toronto Scarborough</a> · <a href="https://www.doukas.edu.gr/diethni-programmata/ib-diploma-programme/" target="_blank" rel="noopener noreferrer">Doukas School IB Department, Athens, Greece</a>
 :::
 
 ::: columns
@@ -33,7 +42,7 @@ This portfolio brings together selected academic and analytical work in order to
 :::
 
 ::: {.social-icons .fade-up .fade-delay-3 style="margin-top:18px;"}
-[{{< iconify fa6-brands github >}}](https://github.com/yourusername){target="_blank"} [{{< iconify fa6-brands linkedin >}}](https://linkedin.com/in/yourlinkedin){target="_blank"}
+[{{< iconify fa6-brands github >}}](https://github.com/Alexander71747){target="_blank"} [{{< iconify fa6-brands linkedin >}}](https://www.linkedin.com/in/alexandros-karagiannis-340739263/){target="_blank"}
 :::
 :::
 :::
