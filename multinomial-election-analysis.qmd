@@ -36,7 +36,7 @@ A new variable, `pct_latin`, was created to represent the proportion of Latin-Am
 
 ### Results
 
-Model comparison showed that `pct_latin` had a highly significant effect on candidate choice. As the proportion of Latin-American voters increased, the predicted probability of voting for **Garcia** decreased, the probability of voting for **Martinez** increased, and the probability of voting for **Yanez** remained low and changed only slightly. These results suggest that precinct demographic composition was strongly associated with the distribution of votes across candidates. :contentReference[oaicite:1]{index="1"}
+Model comparison showed that `pct_latin` had a highly significant effect on candidate choice. As the proportion of Latin-American voters increased, the predicted probability of voting for **Garcia** decreased, the probability of voting for **Martinez** increased, and the probability of voting for **Yanez** remained low and changed only slightly. These results suggest that precinct demographic composition was strongly associated with the distribution of votes across candidates.
 
 ## Part 2: Halifax Snowfall Timing Analysis
 

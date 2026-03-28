@@ -34,11 +34,8 @@ I am particularly interested in how applied statistics can be used across a wide
 I hope to apply my knowledge and skills in a professional setting where I can continue to grow as an individual while also making a meaningful contribution through my work. I am eager to use my background in a way that helps produce strong results, supports thoughtful decision-making, and contributes positively to society through careful analysis and responsible application of quantitative methods.
 :::
 
-::: {.fade-up .fade-delay-6}
 ::: contact-animation-wrap
-<svg id="contact-points-animation" viewBox="0 0 900 260" preserveAspectRatio="xMidYMid meet">
-
-</svg>
+<svg id="contact-points-animation" viewBox="0 0 900 260" preserveAspectRatio="xMidYMid meet"></svg>
 :::
 
 ```{=html}
@@ -49,60 +46,67 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const width = 900;
   const height = 260;
-  const pointCount = 36;
-  const points = [];
+  const startTime = performance.now();
 
   function randomBetween(min, max) {
     return Math.random() * (max - min) + min;
   }
 
-  function createPoint() {
-    return {
-      x: randomBetween(30, width - 30),
-      y: randomBetween(30, height - 30),
-      vx: randomBetween(-0.35, 0.35),
-      vy: randomBetween(-0.25, 0.25),
-      r: randomBetween(2.2, 4.2)
-    };
+  function createPointSet(pointCount, vxRange, vyRange, rMin, rMax, delayMin, delayMax) {
+    const pts = [];
+    for (let i = 0; i < pointCount; i++) {
+      pts.push({
+        x: randomBetween(30, width - 30),
+        y: randomBetween(30, height - 30),
+        vx: randomBetween(vxRange[0], vxRange[1]),
+        vy: randomBetween(vyRange[0], vyRange[1]),
+        r: randomBetween(rMin, rMax),
+        delay: randomBetween(delayMin, delayMax)
+      });
+    }
+    return pts;
   }
 
-  for (let i = 0; i < pointCount; i++) {
-    points.push(createPoint());
+  const bluePoints = createPointSet(34, [-0.35, 0.35], [-0.25, 0.25], 2.2, 4.2, 0, 900);
+  const purplePoints = createPointSet(34, [-0.28, 0.28], [-0.18, 0.18], 2.0, 4.0, 300, 1300);
+
+  function visiblePoints(points, elapsed) {
+    return points.filter(p => elapsed >= p.delay);
   }
 
-  function draw() {
-    svg.innerHTML = "";
-
+  function drawLines(points, lineClass, maxDist, opacityScale) {
     for (let i = 0; i < points.length; i++) {
       for (let j = i + 1; j < points.length; j++) {
         const dx = points[i].x - points[j].x;
         const dy = points[i].y - points[j].y;
         const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < 120) {
+        if (dist < maxDist) {
           const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
           line.setAttribute("x1", points[i].x);
           line.setAttribute("y1", points[i].y);
           line.setAttribute("x2", points[j].x);
           line.setAttribute("y2", points[j].y);
-          line.setAttribute("class", "contact-line");
-          line.style.opacity = (1 - dist / 120) * 0.45;
+          line.setAttribute("class", lineClass);
+          line.style.opacity = (1 - dist / maxDist) * opacityScale;
           svg.appendChild(line);
         }
       }
     }
+  }
 
+  function drawPoints(points, pointClass) {
     for (const p of points) {
       const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
       circle.setAttribute("cx", p.x);
       circle.setAttribute("cy", p.y);
       circle.setAttribute("r", p.r);
-      circle.setAttribute("class", "contact-point");
+      circle.setAttribute("class", pointClass);
       svg.appendChild(circle);
     }
   }
 
-  function animate() {
+  function updatePoints(points) {
     for (const p of points) {
       p.x += p.vx;
       p.y += p.vy;
@@ -110,15 +114,32 @@ document.addEventListener("DOMContentLoaded", function () {
       if (p.x <= 20 || p.x >= width - 20) p.vx *= -1;
       if (p.y <= 20 || p.y >= height - 20) p.vy *= -1;
     }
+  }
 
-    draw();
+  function draw(elapsed) {
+    svg.innerHTML = "";
+
+    const visibleBlue = visiblePoints(bluePoints, elapsed);
+    const visiblePurple = visiblePoints(purplePoints, elapsed);
+
+    drawLines(visibleBlue, "contact-line-blue", 120, 0.38);
+    drawLines(visiblePurple, "contact-line-purple", 120, 0.30);
+
+    drawPoints(visibleBlue, "contact-point-blue");
+    drawPoints(visiblePurple, "contact-point-purple");
+  }
+
+  function animate(now) {
+    const elapsed = now - startTime;
+
+    updatePoints(bluePoints);
+    updatePoints(purplePoints);
+    draw(elapsed);
+
     requestAnimationFrame(animate);
   }
 
-  draw();
-  animate();
+  requestAnimationFrame(animate);
 });
 </script>
 ```
-</div>
-:::

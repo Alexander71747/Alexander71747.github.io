@@ -442,3 +442,32 @@ html[data-bs-theme="dark"] .contact-line {
 
 
 
+.contact-animation-wrap {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto 0 auto;
+}
+
+#contact-points-animation {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.contact-line-blue {
+  stroke: #60a5fa;
+  stroke-width: 1.1;
+}
+
+.contact-point-blue {
+  fill: #60a5fa;
+}
+
+.contact-line-purple {
+  stroke: #a855f7;
+  stroke-width: 1.1;
+}
+
+.contact-point-purple {
+  fill: #c084fc;
+}
