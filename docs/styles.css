@@ -442,3 +442,46 @@ html[data-bs-theme="dark"] .contact-line {
 
 
 
+.home-collatz-wrap {
+  width: 100%;
+  max-width: 1400px;
+  margin: 2rem auto 0 auto;
+  padding: 0 1rem 2rem 1rem;
+}
+
+#home-collatz-tree {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #a7adb5;
+  border-radius: 10px;
+}
+
+.collatz-edge {
+  stroke: rgba(45, 45, 45, 0.55);
+  stroke-width: 1.7;
+  transition: x2 0.45s ease, y2 0.45s ease, opacity 0.25s ease;
+}
+
+.collatz-node-group {
+  transition: opacity 0.25s ease;
+}
+
+.collatz-node-box {
+  fill: rgba(40, 40, 40, 0.96);
+  stroke: rgba(20, 20, 20, 0.95);
+  stroke-width: 1.2;
+}
+
+.collatz-node-label {
+  fill: #f3f3f3;
+  font-size: 11px;
+  font-weight: 600;
+  text-anchor: middle;
+  font-family: Arial, Helvetica, sans-serif;
+  pointer-events: none;
+}
+
+.collatz-small-dot {
+  fill: rgba(35, 35, 35, 0.75);
+}
