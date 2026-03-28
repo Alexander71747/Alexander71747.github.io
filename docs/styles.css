@@ -384,3 +384,61 @@ h3 {
 .fade-delay-6 {
   animation-delay: 1.15s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-animation-wrap {
+  margin-top: 2.2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#contact-points-animation {
+  width: 100%;
+  max-width: 900px;
+  height: 260px;
+  border-radius: 18px;
+  display: block;
+}
+
+.contact-point {
+  fill: #4f8edc;
+}
+
+.contact-line {
+  stroke: #7aa7e6;
+  stroke-width: 1.2;
+}
+
+html[data-bs-theme="light"] #contact-points-animation {
+  background: linear-gradient(180deg, rgba(240, 245, 252, 0.95) 0%, rgba(248, 250, 253, 0.95) 100%);
+  border: 1px solid #dbe4ef;
+}
+
+html[data-bs-theme="dark"] #contact-points-animation {
+  background: linear-gradient(180deg, rgba(24, 31, 42, 0.96) 0%, rgba(18, 24, 33, 0.96) 100%);
+  border: 1px solid #334155;
+}
+
+html[data-bs-theme="dark"] .contact-point {
+  fill: #93c5fd;
+}
+
+html[data-bs-theme="dark"] .contact-line {
+  stroke: #60a5fa;
+}
+
+
+
+
