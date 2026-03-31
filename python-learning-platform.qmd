@@ -33,7 +33,7 @@ This project was strengthened through shared effort, collaboration, and mutual s
 
 #### Nicholas Mucci
 
-Support and collaboration that helped strengthen the development and refinement of this project.
+**Nicholas** helped with the Python development of the project by organizing the codebase, refining functions and control flow, debugging errors, and implementing bcrypt password hashing for secure user authentication.
 
 <a href="https://www.linkedin.com/in/nicholas-mucci-231535259/" target="_blank" class="team-linkedin-btn">LinkedIn Profile</a>
 :::
@@ -43,7 +43,7 @@ Support and collaboration that helped strengthen the development and refinement 
 
 #### Odna Adiyatumur
 
-Input and teamwork that played an important role in building and improving this project.
+**Odna** helped with the user I/O and front-end design of the project by shaping how information was displayed on screen, improving the visual layout and interactive flow, and helping the Python application produce a more realistic, game-like user experience.
 
 <a href="https://www.linkedin.com/in/odna-adiyatumur/" target="_blank" class="team-linkedin-btn">LinkedIn Profile</a>
 :::
