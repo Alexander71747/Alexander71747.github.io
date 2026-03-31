@@ -690,7 +690,7 @@
     "href": "python-learning-platform.html#key-takeaways",
     "title": "Python Learning Platform",
     "section": "Key Takeaways",
-    "text": "Key Takeaways"
+    "text": "Key Takeaways\nThis project demonstrates how Python can be used to create a multi-part application rather than only isolated scripts. It brings together user authentication, lesson access, quiz logic, and data visualization in one structured workflow. It also shows an awareness of practical issues such as password protection, file existence checks, and adapting program behavior to different operating systems."
   },
   {
     "objectID": "python-learning-platform.html#this-project-demonstrates-how-python-can-be-used-to-create-a-multi-part-application-rather-than-only-isolated-scripts.-it-brings-together-user-authentication-lesson-access-quiz-logic-and-data-visualization-in-one-structured-workflow.-it-also-shows-an-awareness-of-practical-issues-such-as-password-protection-file-existence-checks-and-adapting-program-behavior-to-different-operating-systems.",
