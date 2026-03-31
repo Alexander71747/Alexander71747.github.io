@@ -112,7 +112,3 @@ This project shows how Python can be used to build a small but realistic educati
 [View Full Code](Coding_Project.py){.btn .btn-primary target="_blank"}
 
 [Watch Demo Video](Final%20Product.mp4){.btn .btn-primary target="_blank"}
-
-## Key Takeaways
-
-This project demonstrates how Python can be used to create a multi-part application rather than only isolated scripts. It brings together user authentication, lesson access, quiz logic, and data visualization in one structured workflow. It also shows an awareness of practical issues such as password protection, file existence checks, and adapting program behavior to different operating systems.
