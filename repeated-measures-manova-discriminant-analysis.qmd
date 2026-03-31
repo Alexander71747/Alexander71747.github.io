@@ -42,10 +42,8 @@ The MANOVA showed a significant regional effect, indicating that the leaves diff
 
 The original assignment included interaction plots for the repeated-measures analysis and multivariate visualizations for the leaf-shape classification, helping show how treatment effects changed over time and how regional leaf groups separated across the discriminant dimensions.
 
-[View PDF Solution](Assignment_seven_Solution.pdf){.btn .btn-primary target="_blank"}
+[View Solution](Assignment_seven_Solution.html){target="_blank" .btn .btn-primary}
 
 ## Key Takeaways
 
 This project highlights the importance of choosing methods that match the structure of the data. Repeated-measures techniques are essential when the same individuals are observed over time, while multivariate methods are more appropriate when several related response variables describe a single outcome. Across both analyses, the project demonstrates both technical modeling skills in R and the ability to explain statistical results in a clear, applied, and accessible way.
-
-## 
