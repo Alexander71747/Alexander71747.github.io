@@ -8,7 +8,47 @@ execute:
 
 ## Overview
 
-This project is a Python-based interactive learning platform designed to combine lesson access, quiz testing, and basic user profile management in a single menu-driven program. It allows users to create accounts, log in securely, open lesson PDFs, and complete quizzes connected to specific lecture levels. The project was built to simulate a simple educational application while also demonstrating how Python can be used to manage files, user input, authentication, and data-based program flow.
+This project is a Python-based interactive learning platform designed to combine lesson access, quiz testing, and user profile management in a single menu-driven program. It allows users to create accounts, log in securely, open lesson PDFs, and complete quizzes connected to specific lecture levels. The project was built to simulate a simple educational application while also demonstrating how Python can be used to manage files, user input, authentication, and data-based program flow.
+
+## Acknowledgment
+
+::: team-hero
+### Built Through Collaboration
+
+::: team-hero-quote
+::: team-hero-quote
+<p><strong>Ἡ ἰσχὺς ἐν τῇ ἑνώσει</strong></p>
+
+*Strength lies in unity*
+
+[• Αἴσωπος •]{.team-quote-author}
+:::
+:::
+
+This project was strengthened through shared effort, collaboration, and mutual support. The saying above captures the Aesopic spirit behind this work: meaningful results are often built not in isolation, but through teamwork and united effort.
+
+::: team-grid
+::: team-card
+[Contributor]{.team-role}
+
+#### Nicholas Mucci
+
+Support and collaboration that helped strengthen the development and refinement of this project.
+
+<a href="https://www.linkedin.com/in/nicholas-mucci-231535259/" target="_blank" class="team-linkedin-btn">LinkedIn Profile</a>
+:::
+
+::: team-card
+[Contributor]{.team-role}
+
+#### Odna Adiyatumur
+
+Input and teamwork that played an important role in building and improving this project.
+
+<a href="https://www.linkedin.com/in/odna-adiyatumur/" target="_blank" class="team-linkedin-btn">LinkedIn Profile</a>
+:::
+:::
+:::
 
 ## Objective
 
@@ -67,7 +107,7 @@ The functions `menu_1()` and `menu_2()` manage the user interface flow. The func
 
 ## What the Project Shows
 
-This project shows how Python can be used to build a small but realistic educational system that combines security, file handling, interactive menus, and structured logic. It also demonstrates how separate concepts learned in class, such as loops, conditionals, functions, files, and external libraries, can be integrated into a single working application.
+This project shows how Python can be used to build a small but realistic educational system that combines security, file handling, interactive menus, and structured logic. It also demonstrates how separate concepts such as loops, conditionals, functions, files, and external libraries can be integrated into a single working application.
 
 ## Demo and Full Code
 
@@ -77,6 +117,4 @@ This project shows how Python can be used to build a small but realistic educati
 
 ## Key Takeaways
 
-This project demonstrates how Python can be used to create a multi-part application rather than only isolated scripts. It brings together user authentication, lesson access, quiz logic, and data visualization in one structured workflow. It also shows an awareness of practical issues such as password protection, file existence checks, and adapting program behavior to different operating systems.
-
-## 
+## This project demonstrates how Python can be used to create a multi-part application rather than only isolated scripts. It brings together user authentication, lesson access, quiz logic, and data visualization in one structured workflow. It also shows an awareness of practical issues such as password protection, file existence checks, and adapting program behavior to different operating systems.

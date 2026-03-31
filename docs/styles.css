@@ -471,3 +471,203 @@ html[data-bs-theme="dark"] .contact-line {
 .contact-point-purple {
   fill: #c084fc;
 }
+
+
+
+.team-hero {
+  margin: 2.5rem 0 3rem 0 !important;
+  padding: 2.4rem 2rem !important;
+  border-radius: 28px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14) !important;
+  border: 1px solid #d7e5f7 !important;
+  background: linear-gradient(135deg, #f7fbff 0%, #e9f3ff 55%, #dbeafe 100%) !important;
+  color: #18324d !important;
+}
+
+.team-hero::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -60px !important;
+  right: -60px !important;
+  width: 220px !important;
+  height: 220px !important;
+  border-radius: 50% !important;
+  opacity: 0.18 !important;
+  background: #60a5fa !important;
+}
+
+.team-hero::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -80px !important;
+  left: -80px !important;
+  width: 240px !important;
+  height: 240px !important;
+  border-radius: 50% !important;
+  opacity: 0.10 !important;
+  background: #60a5fa !important;
+}
+
+.team-hero h3 {
+  margin-top: 0 !important;
+  margin-bottom: 1.2rem !important;
+  font-size: 1.8rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+  color: #18324d !important;
+}
+
+.team-hero p {
+  position: relative !important;
+  z-index: 1 !important;
+  color: #18324d !important;
+}
+
+.team-hero-quote {
+  text-align: center !important;
+  margin: 1.4rem 0 1.6rem 0 !important;
+  padding: 1.4rem 1.2rem !important;
+  border-radius: 22px !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.7 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  background: linear-gradient(135deg, #0d2a52 0%, #1e4f8a 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 10px 24px rgba(13, 42, 82, 0.22) !important;
+  color: white !important;
+}
+
+.team-hero-quote p,
+.team-hero-quote strong,
+.team-hero-quote em,
+.team-hero-quote span,
+.team-hero-quote .team-quote-author {
+  color: white !important;
+}
+
+.team-hero-quote em {
+  display: block !important;
+  margin-top: 0.35rem !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  opacity: 0.95 !important;
+}
+
+.team-quote-author {
+  display: block !important;
+  margin-top: 0.65rem !important;
+  font-size: 0.9rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  opacity: 0.95 !important;
+}
+
+.team-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+  gap: 1.2rem !important;
+  margin-top: 1.5rem !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.team-card {
+  padding: 1.35rem !important;
+  border-radius: 22px !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease !important;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  color: #1f2937 !important;
+  border: 1px solid #dbe7f3 !important;
+}
+
+.team-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.16) !important;
+}
+
+.team-role {
+  display: inline-block !important;
+  margin-bottom: 0.7rem !important;
+  padding: 0.3rem 0.7rem !important;
+  border-radius: 999px !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  background: #dbeafe !important;
+  color: #1e3a8a !important;
+}
+
+.team-card h4 {
+  margin-top: 0 !important;
+  margin-bottom: 0.7rem !important;
+  font-size: 1.25rem !important;
+  color: #1f2937 !important;
+}
+
+.team-card p {
+  color: #374151 !important;
+}
+
+.team-linkedin-btn {
+  display: inline-block !important;
+  margin-top: 0.9rem !important;
+  text-decoration: none !important;
+  padding: 0.78rem 1.2rem !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  background: linear-gradient(135deg, #0a66c2 0%, #1d7be0 100%) !important;
+  color: white !important;
+  box-shadow: 0 8px 18px rgba(10, 102, 194, 0.24) !important;
+}
+
+.team-linkedin-btn:hover {
+  transform: translateY(-2px) !important;
+  color: white !important;
+  box-shadow: 0 12px 24px rgba(10, 102, 194, 0.34) !important;
+}
+
+html[data-bs-theme="dark"] .team-hero {
+  background: linear-gradient(135deg, #111827 0%, #1f3b63 100%) !important;
+  color: #f9fafb !important;
+  border: 1px solid #334155 !important;
+}
+
+html[data-bs-theme="dark"] .team-hero h3,
+html[data-bs-theme="dark"] .team-hero p {
+  color: #f9fafb !important;
+}
+
+html[data-bs-theme="dark"] .team-hero::before,
+html[data-bs-theme="dark"] .team-hero::after {
+  background: #93c5fd !important;
+}
+
+html[data-bs-theme="dark"] .team-card {
+  background: rgba(17, 24, 39, 0.96) !important;
+  color: #f3f4f6 !important;
+  border: 1px solid #374151 !important;
+}
+
+html[data-bs-theme="dark"] .team-card h4,
+html[data-bs-theme="dark"] .team-card p {
+  color: #f3f4f6 !important;
+}
+
+html[data-bs-theme="dark"] .team-role {
+  background: #1e3a8a !important;
+  color: #dbeafe !important;
+}
+
+html[data-bs-theme="dark"] .team-linkedin-btn {
+  background: linear-gradient(135deg, #0a66c2 0%, #3b82f6 100%) !important;
+  color: white !important;
+}

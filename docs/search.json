@@ -627,14 +627,14 @@
     "href": "python-learning-platform.html",
     "title": "Python Learning Platform",
     "section": "",
-    "text": "This project is a Python-based interactive learning platform designed to combine lesson access, quiz testing, and basic user profile management in a single menu-driven program. It allows users to create accounts, log in securely, open lesson PDFs, and complete quizzes connected to specific lecture levels. The project was built to simulate a simple educational application while also demonstrating how Python can be used to manage files, user input, authentication, and data-based program flow."
+    "text": "This project is a Python-based interactive learning platform designed to combine lesson access, quiz testing, and user profile management in a single menu-driven program. It allows users to create accounts, log in securely, open lesson PDFs, and complete quizzes connected to specific lecture levels. The project was built to simulate a simple educational application while also demonstrating how Python can be used to manage files, user input, authentication, and data-based program flow."
   },
   {
     "objectID": "python-learning-platform.html#overview",
     "href": "python-learning-platform.html#overview",
     "title": "Python Learning Platform",
     "section": "",
-    "text": "This project is a Python-based interactive learning platform designed to combine lesson access, quiz testing, and basic user profile management in a single menu-driven program. It allows users to create accounts, log in securely, open lesson PDFs, and complete quizzes connected to specific lecture levels. The project was built to simulate a simple educational application while also demonstrating how Python can be used to manage files, user input, authentication, and data-based program flow."
+    "text": "This project is a Python-based interactive learning platform designed to combine lesson access, quiz testing, and user profile management in a single menu-driven program. It allows users to create accounts, log in securely, open lesson PDFs, and complete quizzes connected to specific lecture levels. The project was built to simulate a simple educational application while also demonstrating how Python can be used to manage files, user input, authentication, and data-based program flow."
   },
   {
     "objectID": "python-learning-platform.html#objective",
@@ -676,7 +676,7 @@
     "href": "python-learning-platform.html#what-the-project-shows",
     "title": "Python Learning Platform",
     "section": "What the Project Shows",
-    "text": "What the Project Shows\nThis project shows how Python can be used to build a small but realistic educational system that combines security, file handling, interactive menus, and structured logic. It also demonstrates how separate concepts learned in class, such as loops, conditionals, functions, files, and external libraries, can be integrated into a single working application."
+    "text": "What the Project Shows\nThis project shows how Python can be used to build a small but realistic educational system that combines security, file handling, interactive menus, and structured logic. It also demonstrates how separate concepts such as loops, conditionals, functions, files, and external libraries can be integrated into a single working application."
   },
   {
     "objectID": "python-learning-platform.html#demo-and-full-code",
@@ -690,7 +690,7 @@
     "href": "python-learning-platform.html#key-takeaways",
     "title": "Python Learning Platform",
     "section": "Key Takeaways",
-    "text": "Key Takeaways\nThis project demonstrates how Python can be used to create a multi-part application rather than only isolated scripts. It brings together user authentication, lesson access, quiz logic, and data visualization in one structured workflow. It also shows an awareness of practical issues such as password protection, file existence checks, and adapting program behavior to different operating systems."
+    "text": "Key Takeaways"
   },
   {
     "objectID": "python-learning-platform.html#this-project-demonstrates-how-python-can-be-used-to-create-a-multi-part-application-rather-than-only-isolated-scripts.-it-brings-together-user-authentication-lesson-access-quiz-logic-and-data-visualization-in-one-structured-workflow.-it-also-shows-an-awareness-of-practical-issues-such-as-password-protection-file-existence-checks-and-adapting-program-behavior-to-different-operating-systems.",
@@ -698,5 +698,12 @@
     "title": "Python Learning Platform",
     "section": "This project demonstrates how Python can be used to create a multi-part application rather than only isolated scripts. It brings together user authentication, lesson access, quiz logic, and data visualization in one structured workflow. It also shows an awareness of practical issues such as password protection, file existence checks, and adapting program behavior to different operating systems.",
     "text": "This project demonstrates how Python can be used to create a multi-part application rather than only isolated scripts. It brings together user authentication, lesson access, quiz logic, and data visualization in one structured workflow. It also shows an awareness of practical issues such as password protection, file existence checks, and adapting program behavior to different operating systems."
+  },
+  {
+    "objectID": "python-learning-platform.html#acknowledgment",
+    "href": "python-learning-platform.html#acknowledgment",
+    "title": "Python Learning Platform",
+    "section": "Acknowledgment",
+    "text": "Acknowledgment\n\nBuilt Through Collaboration\n\n\n\nἩ ἰσχὺς ἐν τῇ ἑνώσει\n\nStrength lies in unity\n• Αἴσωπος •\n\n\nThis project was strengthened through shared effort, collaboration, and mutual support. The saying above captures the Aesopic spirit behind this work: meaningful results are often built not in isolation, but through teamwork and united effort.\n\n\nContributor\n\nNicholas Mucci\nSupport and collaboration that helped strengthen the development and refinement of this project.\nLinkedIn Profile\n\n\n\nContributor\n\nOdna Adiyatumur\nInput and teamwork that played an important role in building and improving this project.\nLinkedIn Profile"
   }
 ]
