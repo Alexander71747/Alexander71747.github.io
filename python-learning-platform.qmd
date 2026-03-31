@@ -107,9 +107,7 @@ The functions `menu_1()` and `menu_2()` manage the user interface flow. The func
 
 ## What the Project Shows
 
-This project shows how Python can be used to build a small but realistic educational system that combines security, file handling, interactive menus, and structured logic. It also demonstrates how separate concepts such as loops, conditionals, functions, files, and external libraries can be integrated into a single working application.
-
-## Demo and Full Code
+This project shows how Python can be used to build a small but realistic educational system that combines security, file handling, interactive menus, and structured logic. It also demonstrates how separate concepts such as loops, conditionals, functions, files, and external libraries can be integrated into a single working application. Demo and Full Code
 
 [View Full Code](Coding_Project.py){.btn .btn-primary target="_blank"}
 
@@ -117,4 +115,4 @@ This project shows how Python can be used to build a small but realistic educati
 
 ## Key Takeaways
 
-## This project demonstrates how Python can be used to create a multi-part application rather than only isolated scripts. It brings together user authentication, lesson access, quiz logic, and data visualization in one structured workflow. It also shows an awareness of practical issues such as password protection, file existence checks, and adapting program behavior to different operating systems.
+This project demonstrates how Python can be used to create a multi-part application rather than only isolated scripts. It brings together user authentication, lesson access, quiz logic, and data visualization in one structured workflow. It also shows an awareness of practical issues such as password protection, file existence checks, and adapting program behavior to different operating systems.
