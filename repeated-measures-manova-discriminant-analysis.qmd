@@ -42,7 +42,7 @@ The MANOVA showed a significant regional effect, indicating that the leaves diff
 
 The original assignment included interaction plots for the repeated-measures analysis and multivariate visualizations for the leaf-shape classification, helping show how treatment effects changed over time and how regional leaf groups separated across the discriminant dimensions.
 
-[View Solution](Assignment_seven_Solution.html){target="_blank" .btn .btn-primary}
+[View full analysis and code](Assignment_seven_Solution.html){target="_blank" .btn .btn-primary}
 
 ## Key Takeaways
 

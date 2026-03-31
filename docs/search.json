@@ -592,7 +592,7 @@
     "href": "repeated-measures-manova-discriminant-analysis.html#visualization",
     "title": "Repeated Measures, MANOVA, and Discriminant Analysis in R",
     "section": "Visualization",
-    "text": "Visualization\nThe original assignment included interaction plots for the repeated-measures analysis and multivariate visualizations for the leaf-shape classification, helping show how treatment effects changed over time and how regional leaf groups separated across the discriminant dimensions.\nView Solution"
+    "text": "Visualization\nThe original assignment included interaction plots for the repeated-measures analysis and multivariate visualizations for the leaf-shape classification, helping show how treatment effects changed over time and how regional leaf groups separated across the discriminant dimensions.\nView full analysis and code"
   },
   {
     "objectID": "repeated-measures-manova-discriminant-analysis.html#key-takeaways",
