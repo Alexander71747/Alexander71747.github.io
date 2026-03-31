@@ -1,0 +1,227 @@
+---
+title: "Assignment 7 Solution"
+format: html
+editor: visual
+execute:
+  echo: true
+---
+
+```{r}
+install.packages("car")
+library(tidyverse)
+library(car)
+library(MASS, exclude = "select")
+library(lme4)
+```
+
+```{r}
+my_url <- "http://datafiles.ritsokiguess.site/self-esteem.csv"
+self_esteem <- read_csv(my_url)
+
+self_esteem
+```
+
+Each subject (in a row of the dataframe) produces three measurements, namely the self-esteem scores at the three times. These are the “repeated measures”. Additionally, the repeated measures analysis will be necessary because the three scores on the same subject may well be correlated:
+
+```{r}
+self_esteem %>% select(starts_with("se")) %>% cor()
+```
+
+In particular, the self-esteem score at the first time point is positively correlated with the scores at time points 2 and 3 for the same subject.
+
+Running a suitable repeated measures analysis requires the following steps:
+
+make response matrix\
+set up the time-dependence stuff\
+run your model as an lm first\
+feed that into Manova with the time-dependence stuff display the summary of this.
+
+```{r}
+self_esteem %>% 
+  select(contains("se")) %>%
+  as.matrix() -> response
+
+head(response, n = 10)
+```
+
+```{r}
+times <- colnames(response)
+times.df <- data.frame(times = factor(times))
+```
+
+```{r}
+self_esteem.1 <- lm(response ~ regime, data = self_esteem)
+
+```
+
+```{r}
+self_esteem.2 <- Manova(self_esteem.1, idata = times.df, idesign = ~ times)
+```
+
+Take my fitted multivariate linear model, use `times.df` to describe the repeated time structure, and run a repeated-measures MANOVA with time as the within-subject factor.
+
+`manova` and `Manova` are different functions from different packages, even though their names look almost the same. The lowercase `manova` is the base R function for a standard MANOVA, where we have several response variables and want to test whether groups differ across them. The capitalized `Manova`, from the `car` package, is more flexible and is especially useful for repeated-measures MANOVA because it lets us specify the within-subject structure using arguments like `idata` and `idesign`. In this assignment, that is exactly why `Manova` was used: the self-esteem scores `se1`, `se2`, and `se3`are not just three separate outcomes, but the same outcome measured across time, so R needs extra information telling it that those columns represent repeated time points. The `manova` function does not handle that setup in the same direct way, while `Manova` does.
+
+```{r}
+summary(self_esteem.2)
+```
+
+We look at sphericity first, from the Mauchly tests near the bottom. We are first assessing the regime by time interaction, so we strictly need the P-value from the second test (though they are both the same). The P- value of 0.014 is smaller than 0.05, so sphericity fails and we cannot use the type II analysis for anything time-related.
+
+The Huynh-Feldt tests at the bottom. The P-value for the interaction is 0.0099; this is also less than 0.05, so the interaction is significant: the effect of treatment regime depends on time (that is, it is not consistent over time).
+
+```{r}
+self_esteem %>%
+  pivot_longer(starts_with("se"),
+               names_to = "time",
+               values_to = "self_esteem") -> self_esteem_long
+
+self_esteem_long
+  
+```
+
+```{r}
+self_esteem_long %>%
+  group_by(regime, time) %>%
+  summarize(mse = mean(self_esteem))
+```
+
+For an interaction plot, you need a colour and a group , and they are the same column.
+
+```{r}
+self_esteem_long %>%
+  group_by(regime, time) %>%
+  summarize(mse = mean(self_esteem)) %>%
+  ggplot(aes(x = time, y = mse, colour = regime, group = regime)) +
+  geom_point() + geom_line()
+```
+
+The regimes do not compare consistently over time. For example, the diet plus exercise treatment has highest mean self-esteem at time points 1 and 3, but the lowest at time 2. Furthermore, comparing the patterns over time: the control regime only dips slightly at time 2, but both the real treatments both result in a bigger drop in self-esteem at time 2 and a much bigger increase at time 3. In some way, make the point that it is actually the combination of regime and time that predicts self-esteem.
+
+Below is a mixed model and we show how the conclusions from it are the same as the repeated measures analysis of variance:
+
+```{r}
+install.packages("Matrix")
+install.packages("lme4")
+
+library(Matrix)
+library(lme4)
+```
+
+```{r}
+self_esteem.3 <- lmer(self_esteem ~ time * regime + (1 | subject),
+                      data = self_esteem_long)
+```
+
+This code fits a mixed-effects model and saves it in an object called `self_esteem.3`. The response variable is `self_esteem`, so the model is trying to explain differences in self-esteem scores. On the right side of the formula, `time * regime` means the model includes the effect of `time`, the effect of `regime`, and also the interaction between them. That interaction checks whether the pattern of self-esteem over time is different depending on which treatment regime a subject was in. The part `(1 | subject)` adds a random intercept for each subject, which means the model allows each person to have their own baseline level of self-esteem rather than forcing everyone to start at exactly the same level. This is important because each subject appears multiple times in `self_esteem_long`, once for each time point, so the observations from the same person are not independent. Finally, `data = self_esteem_long` tells R to look for all these variables in the long-format dataset called `self_esteem_long`. So overall, this code fits a mixed model that tests whether self-esteem depends on time, regime, and their combination, while also accounting for repeated measurements on the same subjects.
+
+In words, this says that self esteem score depends on time and regime and their combination, plus a random effect for subject. The correlation between self-esteem scores within a subject is taken care of by allowing each subject to have their own random effect that moves all their scores up (or down) across all times, like a block effect in ANOVA.
+
+The summary of this kind of model is not very illuminating, but drop1 works just fine:
+
+```{r}
+drop1(self_esteem.3, test = "Chisq")
+```
+
+and this says that once again, the interaction is significant: the self-esteem score depends on the regime and on the time point in combination, as we concluded before.
+
+```{r}
+my_url <- "http://datafiles.ritsokiguess.site/leafshape.csv"
+leafshape <- read_csv(my_url)
+
+leafshape
+```
+
+To run a MANOVA we have to consider that we have three response variables (the quantitative ones beginning with log ) and one categorical explanatory variable ( location ). So we first have to create a response matrix
+
+```{r}
+leafshape %>%
+  select(-location) %>%
+  as.matrix() -> response
+head(response)
+
+```
+
+```{r}
+leafshape.1 <- manova(response ~ location, data = leafshape)
+summary(leafshape.1)
+```
+
+The P-value of 2.2 × 10−16 is (much) less than 0.05, so the location does have an effect on one or more of the response variables, or some combination of them.
+
+Conclusions from MANOVA are always vague (even vaguer than from the F -test in an ANOVA), also a discriminant analysis follows in an attempt to find out what is different about the leaves from the different locations.
+
+he categorical variable is treated as the response (even though it is actually explanatory) and the quantitative variables are treated as explanatory (even though they are really responses):
+
+```{r}
+leafshape.2 <- lda(location ~ loglen + logpet + logwid, data = leafshape)
+leafshape.2
+```
+
+Extra: you can get away without typing the names of all the quantitative variables by doing something like this:
+
+```{r}
+leafshape.2a <- lda(location ~ . , data = leafshape)
+leafshape.2a
+```
+
+This works because . means “all the other variables, not including location ”.
+
+Looking at the Coefficients of Linear Discriminants. The three coefficients are of roughly similar sizes, so its important to talk about all of them. The ones for logwid and loglen are negative and the one for logpet is positive, so a leaf will have a large LD1 score if:
+
+the width is small\
+the petiole length is large\
+the length is small
+
+that is to say, a small leaf in overall size with a long stalk. (Note: if the log of something is large or small, the thing itself is also large or small, so we don’t need to talk about logs here. On the other hand, we do need to translate loglen etc. for the reader. Unless they were the ones that recorded the data, they won’t know what loglen etc. mean.)
+
+How many linear discriminants will be important?
+
+Looking at the Proportion of Trace at the bottom of the output. Almost all of it (99.4%) is explained by LD1 and almost none by LD2 (0.6%), so we would not expect LD2 to be important. (What that means is LD2 is expected to do pretty much nothing in distinguishing the groups.)
+
+In order to obtain a dataframe that contains the original data along with discriminant scores, posterior probabilities, and predicted locations:
+
+```{r}
+p <- predict(leafshape.2)
+leafshape_p <- cbind(leafshape, p)
+leafshape_p
+```
+
+```{r}
+with(leafshape_p, table(location, class))
+```
+
+Most of the leaves have been classified correctly, but there are still a lot that are wrong. For example, the Central America and Queensland leaves are sometimes confused with each other, and only just over half of the leaves actually from Tasmania (bottom row) were actually classified as Tasmania.
+
+In order to plot the discriminant scores against each other with the points labelled by where each leaf actually came from we have to do the following:
+
+```{r}
+ggplot(leafshape_p, aes(x = x.LD1, y = x.LD2, colour = location)) +
+  geom_point()
+```
+
+Does your plot (Question 17) tell a similar story to your misclassification table (Question 16)? Explain briefly:\
+\
+Somewhat as its supported by the red points (Central America) being mostly on the left, the green ones (Queensland) being mostly in the middle, and the blue ones (Tasmania) being mostly on the right. But there is a lot of overlap, especially between Central America and Queensland (red and green), and some of the Queensland points (green) are far enough right that they look as if they came from Tasmania.
+
+**How does your plot of Question 17 support your conclusion of Question 13? Explain briefly.**
+
+In Question 13 we said that only LD1 was important, meaning that only LD1 distinguishes the locations in any meaningful way. On the plot of Question 17, the locations are only distinguished left and right (in the
+
+LD1 direction) and not at all up and down (LD2 direction). So it is indeed true that only LD1 is important in distinguishing the locations.
+
+Find the leaf in row 105 (of your dataframe with LD scores and posterior probabilities). Is this leaf classified correctly? Find this leaf on your graph of Question 17, and explain why its posterior probabilities make sense.
+
+```{r}
+leafshape_p %>% slice(105) %>%
+  select(contains("LD"))
+```
+
+This is one of the three leftmost points on the graph, and the only one with positive LD2 score, so it is the point towards the top left, in with the ones from Central America.
+
+```{r}
+leafshape_p %>% slice(105) %>%
+  select(starts_with("posterior"))
+```
+
+96% Central America, 4% Queensland, 0% Tasmania. Since the leaf is in the Central America part of the graph (on the left), it is no surprise that it is overwhelmingly likely to have been from Central America (and actually was).

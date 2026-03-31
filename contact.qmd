@@ -35,7 +35,9 @@ I hope to apply my knowledge and skills in a professional setting where I can co
 :::
 
 ::: contact-animation-wrap
-<svg id="contact-points-animation" viewBox="0 0 900 260" preserveAspectRatio="xMidYMid meet"></svg>
+<svg id="contact-points-animation" viewBox="0 0 900 260" preserveAspectRatio="xMidYMid meet">
+
+</svg>
 :::
 
 ```{=html}

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Alexandros Karagiannis - Projects</title>
+<title>Alexandros Karagiannis - Repeated Measures, MANOVA, and Discriminant Analysis in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
+<h1 class="title">Repeated Measures, MANOVA, and Discriminant Analysis in R</h1>
 </div>
 
 
@@ -140,87 +140,50 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="selected-projects" class="level2">
-<h2 class="anchored" data-anchor-id="selected-projects">Selected Projects</h2>
-<div class="grid">
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-1">
-<p><img src="aml-project.png" class="img-fluid"></p>
-<section id="survival-analysis-of-aml-patients" class="level3">
-<h3 class="anchored" data-anchor-id="survival-analysis-of-aml-patients">Survival Analysis of AML Patients</h3>
-<p>Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.</p>
-<p><strong>Tools:</strong> R, survival analysis, Cox model</p>
-<p><a href="survival_analysis.html">View Project</a></p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This project combines two statistical analyses completed in R. The first explores whether self-esteem changed over time depending on treatment regime, using repeated measurements collected from the same participants across three months. The second investigates whether rainforest leaves from different regions can be distinguished using multiple measurements of leaf shape. Together, these analyses show how statistical methods can be tailored to different kinds of data, from repeated observations on individuals to multivariate biological measurements, while still producing clear and interpretable conclusions.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-2">
-<p><img src="regression-project.png" class="img-fluid"></p>
-<section id="regression-and-logistic-modeling-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="regression-and-logistic-modeling-in-r">Regression and Logistic Modeling in R</h3>
-<p>Applied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.</p>
-<p><strong>Tools:</strong> R, linear regression, logistic regression, prediction intervals, data visualization</p>
-<p><a href="regression-logistic-modeling.html">View Project</a></p>
+<section id="part-1-self-esteem-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-self-esteem-over-time">Part 1: Self-Esteem Over Time</h2>
+<section id="data" class="level3">
+<h3 class="anchored" data-anchor-id="data">Data</h3>
+<p>The dataset includes 34 participants assigned to one of three treatment regimes: Control, Diet, and Diet plus Exercise. Each participant’s self-esteem was measured at three time points, recorded as <code>se1</code>, <code>se2</code>, and <code>se3</code>. Because these scores were collected from the same individuals over time, the observations are related rather than independent.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-3">
-<p><img src="piracy-project.png" class="img-fluid"></p>
-<section id="ordinal-logistic-regression-on-sopa-support" class="level3">
-<h3 class="anchored" data-anchor-id="ordinal-logistic-regression-on-sopa-support">Ordinal Logistic Regression on SOPA Support</h3>
-<p>Used ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.</p>
-<p><strong>Tools:</strong> R, ordinal logistic regression, predicted probabilities, model comparison</p>
-<p><a href="ordinal-logistic-piracy.html">View Project</a></p>
+<section id="methods" class="level3">
+<h3 class="anchored" data-anchor-id="methods">Methods</h3>
+<p>To account for this repeated structure, the analysis used a repeated-measures MANOVA to test whether self-esteem varied by treatment regime, by time, or through a time-by-regime interaction. This approach was more appropriate than a standard ANOVA because it recognizes the correlation between measurements from the same participant. The analysis also checked the sphericity assumption, used corrected results for time-related effects, and included both an interaction plot and a mixed-effects model to support interpretation.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-4">
-<p><img src="election-project.png" class="img-fluid"></p>
-<section id="multinomial-election-and-snowfall-timing-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="multinomial-election-and-snowfall-timing-analysis">Multinomial Election and Snowfall Timing Analysis</h3>
-<p>Used multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax.</p>
-<p><strong>Tools:</strong> R, multinomial logistic regression, grouped summaries, probability modeling</p>
-<p><a href="multinomial-election-analysis.html">View Project</a></p>
+<section id="results" class="level3">
+<h3 class="anchored" data-anchor-id="results">Results</h3>
+<p>The main finding was a significant interaction between treatment regime and time. This indicates that the treatment groups did not follow the same pattern across the three months. Rather than one regime being consistently better throughout, the effect of treatment depended on when self-esteem was measured. The mixed-effects model supported the same conclusion, strengthening the overall interpretation.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-5">
-<p><img src="teak-rhizobium-project.png" class="img-fluid"></p>
-<section id="two-way-anova-in-r-teak-growth-and-rhizobium-nitrogen-fixation" class="level3">
-<h3 class="anchored" data-anchor-id="two-way-anova-in-r-teak-growth-and-rhizobium-nitrogen-fixation">Two-Way ANOVA in R: Teak Growth and Rhizobium Nitrogen Fixation</h3>
-<p>Two R-based ANOVA studies examining teak tree growth under different planting methods and root lengths, and nitrogen fixation in clover under varying rhizobium strain and culture combinations.</p>
-<p><strong>Tools:</strong> R, two-way ANOVA, interaction plots, simple effects, Tukey HSD</p>
-<p><a href="Two Way ANOVA.html">View Project</a></p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-6">
-<p><img src="assignment6-project.png" class="img-fluid"></p>
-<section id="contrasts-transformation-and-manova-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="contrasts-transformation-and-manova-in-r">Contrasts, Transformation, and MANOVA in R</h3>
-<p>Three R-based analyses: custom contrasts for age-group comparisons, transformed regression with interaction for onion yield, and MANOVA for wheat grain and straw across field rows and columns.</p>
-<p><strong>Tools:</strong> R, custom contrasts, linear modeling, Box-Cox transformation, interaction analysis, MANOVA, data visualization</p>
-<p><a href="Contrasts, Transformations %26 MANOVA.html">View Project</a></p>
+<section id="part-2-rainforest-leaf-shape" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-rainforest-leaf-shape">Part 2: Rainforest Leaf Shape</h2>
+<section id="data-1" class="level3">
+<h3 class="anchored" data-anchor-id="data-1">Data</h3>
+<p>The second dataset contains 206 leaves collected from three regions: Central America, Queensland, and Tasmania. For each leaf, the analysis used three quantitative variables: logged leaf width, logged petiole length, and logged leaf length. These measurements were analyzed together because they jointly describe overall leaf shape.</p>
 </section>
-</div>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card">
-<p><img src="Discriminant_Analysis.png" class="img-fluid"></p>
-<section id="repeated-measures-manova-and-discriminant-analysis-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="repeated-measures-manova-and-discriminant-analysis-in-r">Repeated Measures, MANOVA, and Discriminant Analysis in R</h3>
-<p>This project combines repeated-measures and multivariate statistical analysis in R. It examines changes in self-esteem across treatment groups over time and uses MANOVA and discriminant analysis to distinguish rainforest leaves from different regions based on multiple shape measurements.</p>
-<p><strong>Tools:</strong> R, repeated-measures MANOVA, mixed-effects model, MANOVA, discriminant analysis</p>
-<p><a href="repeated-measures-manova-discriminant-analysis.html">View Project</a></p>
+<section id="methods-1" class="level3">
+<h3 class="anchored" data-anchor-id="methods-1">Methods</h3>
+<p>A MANOVA was used to test whether leaf shape differed across regions when all three measurements were considered at once. This was more informative than running separate analyses for each variable, since the measurements are related and may vary together. The project then applied linear discriminant analysis to assess how well the leaf measurements separated the regional groups and to identify the main dimension along which those differences appeared.</p>
 </section>
-</div>
-</div>
+<section id="results-1" class="level3">
+<h3 class="anchored" data-anchor-id="results-1">Results</h3>
+<p>The MANOVA showed a significant regional effect, indicating that the leaves differed in shape across the three geographic groups. The discriminant analysis further showed that most of this separation was explained by one dominant dimension, suggesting a strong overall pattern in how leaf shape varies by location. In practical terms, the measurements contained enough information to meaningfully distinguish leaves from different regions.</p>
+</section>
+</section>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<p>The original assignment included interaction plots for the repeated-measures analysis and multivariate visualizations for the leaf-shape classification, helping show how treatment effects changed over time and how regional leaf groups separated across the discriminant dimensions.</p>
+<p><a href="Assignment-7-Solution.html" target="_blank">View Full Analysis and Code</a></p>
+</section>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+</section>
+<section id="this-project-highlights-the-importance-of-choosing-methods-that-match-the-structure-of-the-data.-repeated-measures-techniques-are-essential-when-the-same-individuals-are-observed-over-time-while-multivariate-methods-are-more-appropriate-when-several-related-response-variables-describe-a-single-outcome.-across-both-analyses-the-project-demonstrates-not-only-technical-modeling-skills-in-r-but-also-the-ability-to-interpret-statistical-results-in-a-way-that-is-clear-applied-and-accessible-to-a-broader-audience." class="level2">
+<h2 class="anchored" data-anchor-id="this-project-highlights-the-importance-of-choosing-methods-that-match-the-structure-of-the-data.-repeated-measures-techniques-are-essential-when-the-same-individuals-are-observed-over-time-while-multivariate-methods-are-more-appropriate-when-several-related-response-variables-describe-a-single-outcome.-across-both-analyses-the-project-demonstrates-not-only-technical-modeling-skills-in-r-but-also-the-ability-to-interpret-statistical-results-in-a-way-that-is-clear-applied-and-accessible-to-a-broader-audience.">This project highlights the importance of choosing methods that match the structure of the data. Repeated-measures techniques are essential when the same individuals are observed over time, while multivariate methods are more appropriate when several related response variables describe a single outcome. Across both analyses, the project demonstrates not only technical modeling skills in R, but also the ability to interpret statistical results in a way that is clear, applied, and accessible to a broader audience.</h2>
 
 
 </section>

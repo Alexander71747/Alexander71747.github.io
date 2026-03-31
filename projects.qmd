@@ -92,3 +92,24 @@ Three R-based analyses: custom contrasts for age-group comparisons, transformed 
 :::
 :::
 :::
+
+
+
+
+::: {.g-col-12 .g-col-md-6}
+::: {.project-card}
+
+![](Discriminant_Analysis.png)
+
+### Repeated Measures, MANOVA, and Discriminant Analysis in R
+
+This project combines repeated-measures and multivariate statistical analysis in R. It examines changes in self-esteem across treatment groups over time and uses MANOVA and discriminant analysis to distinguish rainforest leaves from different regions based on multiple shape measurements.
+
+**Tools:** R, repeated-measures MANOVA, mixed-effects model, MANOVA, discriminant analysis
+
+[View Project](repeated-measures-manova-discriminant-analysis.html)
+
+:::
+:::
+
+

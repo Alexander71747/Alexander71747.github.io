@@ -1,0 +1,51 @@
+---
+title: "Repeated Measures, MANOVA, and Discriminant Analysis in R"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Overview
+
+This project combines two statistical analyses completed in R. The first explores whether self-esteem changed over time depending on treatment regime, using repeated measurements collected from the same participants across three months. The second investigates whether rainforest leaves from different regions can be distinguished using multiple measurements of leaf shape. Together, these analyses show how statistical methods can be tailored to different kinds of data, from repeated observations on individuals to multivariate biological measurements, while still producing clear and interpretable conclusions.
+
+## Part 1: Self-Esteem Over Time
+
+### Data
+
+The dataset includes 34 participants assigned to one of three treatment regimes: Control, Diet, and Diet plus Exercise. Each participant’s self-esteem was measured at three time points, recorded as `se1`, `se2`, and `se3`. Because these scores were collected from the same individuals over time, the observations are related rather than independent.
+
+### Methods
+
+To account for this repeated structure, the analysis used a repeated-measures MANOVA to test whether self-esteem varied by treatment regime, by time, or through a time-by-regime interaction. This approach was more appropriate than a standard ANOVA because it recognizes the correlation between measurements from the same participant. The analysis also checked the sphericity assumption, used corrected results for time-related effects, and included both an interaction plot and a mixed-effects model to support interpretation.
+
+### Results
+
+The main finding was a significant interaction between treatment regime and time. This indicates that the treatment groups did not follow the same pattern across the three months. Rather than one regime being consistently better throughout, the effect of treatment depended on when self-esteem was measured. The mixed-effects model supported the same conclusion, strengthening the overall interpretation.
+
+## Part 2: Rainforest Leaf Shape
+
+### Data
+
+The second dataset contains 206 leaves collected from three regions: Central America, Queensland, and Tasmania. For each leaf, the analysis used three quantitative variables: logged leaf width, logged petiole length, and logged leaf length. These measurements were analyzed together because they jointly describe overall leaf shape.
+
+### Methods
+
+A MANOVA was used to test whether leaf shape differed across regions when all three measurements were considered at once. This was more informative than running separate analyses for each variable, since the measurements are related and may vary together. The project then applied linear discriminant analysis to assess how well the leaf measurements separated the regional groups and to identify the main dimension along which those differences appeared.
+
+### Results
+
+The MANOVA showed a significant regional effect, indicating that the leaves differed in shape across the three geographic groups. The discriminant analysis further showed that most of this separation was explained by one dominant dimension, suggesting a strong overall pattern in how leaf shape varies by location. In practical terms, the measurements contained enough information to meaningfully distinguish leaves from different regions.
+
+## Visualization
+
+The original assignment included interaction plots for the repeated-measures analysis and multivariate visualizations for the leaf-shape classification, helping show how treatment effects changed over time and how regional leaf groups separated across the discriminant dimensions.
+
+[View PDF Solution](Assignment_seven_Solution.pdf){.btn .btn-primary target="_blank"}
+
+## Key Takeaways
+
+This project highlights the importance of choosing methods that match the structure of the data. Repeated-measures techniques are essential when the same individuals are observed over time, while multivariate methods are more appropriate when several related response variables describe a single outcome. Across both analyses, the project demonstrates both technical modeling skills in R and the ability to explain statistical results in a clear, applied, and accessible way.
+
+## 
