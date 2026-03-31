@@ -91,14 +91,9 @@ Three R-based analyses: custom contrasts for age-group comparisons, transformed 
 [View Project](Contrasts,%20Transformations%20%26%20MANOVA.html)
 :::
 :::
-:::
-
-
-
 
 ::: {.g-col-12 .g-col-md-6}
-::: {.project-card}
-
+::: {.project-card .fade-up .fade-delay-7}
 ![](Discriminant_Analysis.png)
 
 ### Repeated Measures, MANOVA, and Discriminant Analysis in R
@@ -108,8 +103,23 @@ This project combines repeated-measures and multivariate statistical analysis in
 **Tools:** R, repeated-measures MANOVA, mixed-effects model, MANOVA, discriminant analysis
 
 [View Project](repeated-measures-manova-discriminant-analysis.html)
+:::
+:::
 
+::: {.g-col-12 .g-col-md-6}
+::: {.project-card .fade-up .fade-delay-8}
+![](python-learning-project.png)
+
+### Python Learning Platform with Profiles, Quizzes, and Progress Tracking
+
+A menu-based Python educational application that allows users to create secure profiles, log in, open lesson PDFs, complete quizzes, and track interactive learning progress.
+
+**Tools:** Python, csv, os, subprocess, platform, bcrypt, matplotlib
+
+[View Project](python-learning-platform.html)
 :::
 :::
+:::
+
 
 

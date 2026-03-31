@@ -1,0 +1,80 @@
+---
+title: "Python Learning Platform"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Overview
+
+This project is a Python-based interactive learning platform designed to combine lesson access, quiz testing, and basic user profile management in a single menu-driven program. It allows users to create accounts, log in securely, open lesson PDFs, and complete quizzes connected to specific lecture levels. The project was built to simulate a simple educational application while also demonstrating how Python can be used to manage files, user input, authentication, and data-based program flow.
+
+## Objective
+
+The goal of the project was to create an educational tool that goes beyond a single script by integrating multiple programming concepts into one complete application. Instead of only performing one task, the program manages user accounts, encrypts sensitive data, opens lesson files based on user choice, and checks quiz answers in a structured way.
+
+## Tools Used
+
+-   `csv` for reading and writing user and quiz data
+-   `os` for checking whether files exist and interacting with file paths
+-   `subprocess` and `platform` for opening lesson PDFs depending on the operating system
+-   `bcrypt` for hashing user passwords and quiz answer keys
+-   `matplotlib` for displaying quiz performance visually
+
+## Program Structure
+
+The program is built around a sequence of functions that handle different parts of the user experience.
+
+### Main Menu and Navigation
+
+The program begins with a main menu that lets the user choose between creating a new profile, logging in, or exiting. After login, a second menu gives access to lectures, quizzes, returning to the main menu, or exiting the program.
+
+### User Profiles and Login
+
+New profiles are created by entering a username and password. The program checks whether a username already exists before allowing it to be added. Passwords are hashed using `bcrypt` before being stored in the CSV file, which improves security by preventing raw passwords from being saved directly.
+
+The login function then checks whether the entered password matches the stored hashed password using `bcrypt.checkpw()`.
+
+### Lecture Access
+
+The lecture feature asks the user for a lesson number and then opens the corresponding PDF file using the system’s default PDF viewer. This part of the program adjusts its behavior depending on whether the user is on macOS, Windows, or Linux.
+
+### Quiz System
+
+The quiz feature reads lesson-specific questions from a CSV file, presents them one by one, and checks the user’s answer against a hashed answer key. This prevents someone from simply opening the CSV file and seeing the answers directly.
+
+### Performance Visualization
+
+The project also includes a graphing function using `matplotlib`, which can display the number of correct and incorrect answers after a quiz. This adds a visual summary of user performance.
+
+## Key Programming Ideas Demonstrated
+
+-   menu-driven program design
+-   modular function-based structure
+-   file input and output with CSV
+-   password hashing and secure verification
+-   platform-dependent file handling
+-   conditional loops for validation
+-   quiz logic and answer checking
+-   basic data visualization
+
+## Code Explanation
+
+The script starts by importing the modules needed for file handling, operating-system checks, security, and visualization. Constants are then defined for the user and quiz CSV files.
+
+The functions `menu_1()` and `menu_2()` manage the user interface flow. The functions `new_profile()` and `login()` handle account creation and authentication. The `open_pdf()` function finds and opens lesson PDFs depending on the user’s operating system. The `take_quiz()` function filters quiz questions by lesson number, checks answers using hashed values, and counts correct responses. The `display_performance_graph()` function creates a simple bar chart for quiz results. Finally, the `main()` function connects everything into one complete program loop.
+
+## What the Project Shows
+
+This project shows how Python can be used to build a small but realistic educational system that combines security, file handling, interactive menus, and structured logic. It also demonstrates how separate concepts learned in class, such as loops, conditionals, functions, files, and external libraries, can be integrated into a single working application.
+
+## Demo and Full Code
+
+[View Full Code](Coding_Project.py){.btn .btn-primary target="_blank"}
+
+[Watch Demo Video](Final%20Product.mp4){.btn .btn-primary target="_blank"}
+
+## Key Takeaways
+
+## This project demonstrates how Python can be used to create a multi-part application rather than only isolated scripts. It brings together user authentication, lesson access, quiz logic, and data visualization in one structured workflow. It also shows an awareness of practical issues such as password protection, file existence checks, and adapting program behavior to different operating systems.
