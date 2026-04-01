@@ -10,7 +10,7 @@ format:
 :::
 
 ::: {.fade-up .fade-delay-2}
-📞 **Phone:** +1 647-625-0780
+📞 **Phone:** (CA) +1 647-625-0780 & (GR) +30 697-439-4788
 :::
 
 ::: {.fade-up .fade-delay-3}
@@ -23,15 +23,15 @@ format:
 :::
 
 ::: {.fade-up .fade-delay-5}
-👉 [Download CV](Alexandros_Karagiannis_CV.pdf)
+👉 [Download my CV](Alexandros_Karagiannis_CV.pdf)
 :::
 
 ::: {.fade-up .fade-delay-5}
-I am particularly interested in how applied statistics can be used across a wide range of fields, especially finance, economics, politics, and the life sciences. More broadly, I am interested in the role statistical methods can play in research generally, and in how statistical tools can be used to make forecasts, draw meaningful inferences, and support deeper understanding across different kinds of fields.
+I am particularly interested in how applied statistics can be used across a wide range of fields, especially finance, economics, politics, and the life sciences. More broadly, I am interested in the role statistical methods can play in research generally, and in how statistical tools can be used to make forecasts and draw meaningful inferences across different kinds of fields.
 :::
 
 ::: {.fade-up .fade-delay-6}
-I hope to apply my knowledge and skills in a professional setting where I can continue to grow as an individual while also making a meaningful contribution through my work. I am eager to use my background in a way that helps produce strong results, supports thoughtful decision-making, and contributes positively to society through careful analysis and responsible application of quantitative methods.
+I believe that my experience and knowledge will serve as an asset in a professional setting where I can continue to grow as an individual while also make a meaningful contribution through my work. I am eager to use my background to support thoughtful decision-making, and contribute positively to society.
 :::
 
 ::: contact-animation-wrap

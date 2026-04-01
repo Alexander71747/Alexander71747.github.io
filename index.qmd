@@ -12,11 +12,11 @@ format:
 ## Statistical Analysis Portfolio
 
 ::: {style="margin-top:-6px; margin-bottom:14px; font-size:1.18rem; font-weight:600; color:#6b7280;"}
-Applied Statistics / Data Analysis & Visualization
+Applied Statistician specializing in Data Analysis & Visualization
 :::
 
 ::: {style="margin-top:10px; margin-bottom:18px; font-size:1.13rem;"}
-<strong>Alma mater:</strong> <a href="https://www.utsc.utoronto.ca/" target="_blank" rel="noopener noreferrer">University of Toronto Scarborough</a> · <a href="https://www.doukas.edu.gr/diethni-programmata/ib-diploma-programme/" target="_blank" rel="noopener noreferrer">Doukas School IB Department, Athens, Greece</a>
+<strong>Alma mater:</strong> <a href="https://www.utoronto.ca" target="_blank" rel="noopener noreferrer">University of Toronto </a> · <a href="https://www.doukas.edu.gr/diethni-programmata/ib-diploma-programme/" target="_blank" rel="noopener noreferrer">Doukas School IB Department, Athens, Greece</a>
 :::
 
 ::: columns
@@ -28,9 +28,11 @@ Applied Statistics / Data Analysis & Visualization
 
 ::: {.column width="62%"}
 ::: {.fade-up .fade-delay-2}
-I am a 4th year student at the University of Toronto Scarborough studying Applied Statistics, Economics, and Politics, with a strong interest in data science and the application of statistical thinking to real-world questions.
+Welcome to my website.
 
-This portfolio brings together selected academic and analytical work in order to show both my technical skills and my broader interest in using quantitative methods to interpret data carefully, identify meaningful patterns, and draw well-grounded conclusions.
+I am a 4th year student at the University of Toronto studying Applied Statistics, Economics, and Politics, with a strong interest in data science and the application of statistical thinking to real-world questions.
+
+This portfolio brings together selected academic and analytical work in order to show both my technical skills and my broader interest in using quantitative methods.
 
 > **Ζητεῖν τὴν ἀλήθειαν**\
 > *To seek the truth.*\

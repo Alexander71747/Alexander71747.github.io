@@ -12,7 +12,7 @@ format:
 ::: {.project-card .fade-up .fade-delay-1}
 ![](aml-project.png)
 
-### Survival Analysis of AML Patients
+### Survival Analysis of AML (Acute Myeloid Leukemia) Patients
 
 Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.
 
