@@ -1,5 +1,3 @@
-# 
-
 ---
 title: "Home"
 format:
@@ -7,6 +5,7 @@ format:
     toc: false
 ---
 
+::: {.home-shell .fade-up .fade-delay-1 style="width:100%; max-width:100%;"}
 # Alexandros Karagiannis - Αλέξανδρος Καραγιάννης
 
 ## Statistical Analysis Portfolio
@@ -16,35 +15,40 @@ Applied Statistician specializing in Data Analysis & Visualization
 :::
 
 ::: {style="margin-top:10px; margin-bottom:18px; font-size:1.13rem;"}
-<strong>Alma mater:</strong> <a href="https://www.utoronto.ca" target="_blank" rel="noopener noreferrer">University of Toronto </a> · <a href="https://www.doukas.edu.gr/diethni-programmata/ib-diploma-programme/" target="_blank" rel="noopener noreferrer">Doukas School IB Department, Athens, Greece</a>
+<strong>Alma mater:</strong> <a href="https://www.utoronto.ca" target="_blank" rel="noopener noreferrer">University of Toronto</a> · <a href="https://www.doukas.edu.gr/diethni-programmata/ib-diploma-programme/" target="_blank" rel="noopener noreferrer">Doukas School IB Department, Athens, Greece</a>
 :::
 
+::: home-blue-panel
 ::: columns
-::: {.column width="38%"}
-::: {.fade-up .fade-delay-1}
-![](profile.jpg){style="width:100%; max-width:320px; border-radius:20px; display:block; margin:auto;"}
+::: {.column width="40%"}
+::: {.fade-up .fade-delay-2}
+![](profile.jpg){style="width:100%; max-width:360px; height:430px; object-fit:cover; border-radius:20px; display:block; margin:auto;"}
 :::
 :::
 
-::: {.column width="62%"}
-::: {.fade-up .fade-delay-2}
+::: {.column width="60%"}
+::: {.fade-up .fade-delay-3}
 Welcome to my website.
 
 I am a 4th year student at the University of Toronto studying Applied Statistics, Economics, and Politics, with a strong interest in data science and the application of statistical thinking to real-world questions.
 
 This portfolio brings together selected academic and analytical work in order to show both my technical skills and my broader interest in using quantitative methods.
+:::
 
+::: {.home-quote-box .fade-up .fade-delay-4}
 > **Ζητεῖν τὴν ἀλήθειαν**\
 > *To seek the truth.*\
 > This idea reflects the motivation behind my work: to move beyond surface-level numbers, understand the deeper story data can tell, and apply statistical reasoning thoughtfully in order to reach meaningful judgments.
 :::
 
-::: {.fade-up .fade-delay-3 style="margin-top: 1rem;"}
-[View My Projects](projects.qmd){.btn .btn-primary}
+::: {.fade-up .fade-delay-5 style="margin-top: 1rem;"}
+[View My Projects](projects.qmd){.btn .btn-primary .home-project-btn}
 :::
 
-::: {.social-icons .fade-up .fade-delay-3 style="margin-top:18px;"}
+::: {.social-icons .fade-up .fade-delay-5 style="margin-top:18px;"}
 [{{< iconify fa6-brands github >}}](https://github.com/Alexander71747){target="_blank"} [{{< iconify fa6-brands linkedin >}}](https://www.linkedin.com/in/alexandros-karagiannis-340739263/){target="_blank"}
+:::
+:::
 :::
 :::
 :::
