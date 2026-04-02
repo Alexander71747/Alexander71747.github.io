@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Alexandros Karagiannis - Projects</title>
+<title>Alexandros Karagiannis - Canadian Mortgage Loan Value Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
+<h1 class="title">Canadian Mortgage Loan Value Analysis</h1>
 </div>
 
 
@@ -140,109 +140,47 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="selected-projects" class="level2">
-<h2 class="anchored" data-anchor-id="selected-projects">Selected Projects</h2>
-<div class="grid">
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-1">
-<p><img src="aml-project.png" class="img-fluid"></p>
-<section id="survival-analysis-of-aml-acute-myeloid-leukemia-patients" class="level3">
-<h3 class="anchored" data-anchor-id="survival-analysis-of-aml-acute-myeloid-leukemia-patients">Survival Analysis of AML (Acute Myeloid Leukemia) Patients</h3>
-<p>Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.</p>
-<p><strong>Tools:</strong> R, survival analysis, Cox model</p>
-<p><a href="survival_analysis.html">View Project</a></p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This project analyzes how average new mortgage loan values changed across Canada, the provinces, and selected census metropolitan areas between 2012 Q3 and 2025 Q4. The analysis combines descriptive statistics, graphical analysis, confidence intervals, hypothesis testing, bootstrapping, and regression modelling to examine whether mortgage values followed a common national trend or whether they varied substantially across place. Mortgage lending is used here as an indicator of housing market pressure, borrowing requirements, and regional inequality, making it possible to study both time and geography together.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-2">
-<p><img src="regression-project.png" class="img-fluid"></p>
-<section id="regression-and-logistic-modeling-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="regression-and-logistic-modeling-in-r">Regression and Logistic Modeling in R</h3>
-<p>Applied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.</p>
-<p><strong>Tools:</strong> R, linear regression, logistic regression, prediction intervals, data visualization</p>
-<p><a href="regression-logistic-modeling.html">View Project</a></p>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The cleaned dataset contains 2,430 observations and 10 variables. It includes 54 Canada-level quarterly observations, 540 province-level observations, and 1,836 CMA-level observations. The final dataset covers ten provinces and six selected census metropolitan areas: Halifax, Montréal, Ottawa, Toronto, Calgary, and Vancouver.</p>
+<p>The main response variable is <code>avg_mortgage_value</code>, which records the average dollar value of new mortgage loans for a given geography and quarter. Time was represented using <code>year</code>, <code>quarter_num</code>, <code>quarter_date</code>, and <code>time_index</code>, while geography was separated into <code>geo_level</code>, <code>geo_province</code>, and <code>geo_cma</code> to support comparison across scales.</p>
+<p>Across the full dataset, mortgage values ranged from $108,877 to $577,403, with an overall mean of about $264,144 and a median of about $246,774. This already suggests substantial variation across both time and place.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-3">
-<p><img src="piracy-project.png" class="img-fluid"></p>
-<section id="ordinal-logistic-regression-on-sopa-support" class="level3">
-<h3 class="anchored" data-anchor-id="ordinal-logistic-regression-on-sopa-support">Ordinal Logistic Regression on SOPA Support</h3>
-<p>Used ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.</p>
-<p><strong>Tools:</strong> R, ordinal logistic regression, predicted probabilities, model comparison</p>
-<p><a href="ordinal-logistic-piracy.html">View Project</a></p>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<p>The project began with data cleaning and restructuring so that each row represented a geography-quarter combination suitable for longitudinal and cross-sectional analysis. Descriptive summary tables were used to compare the full dataset, provinces, and selected CMAs. Line graphs and boxplots were then used to visualize national trends, provincial trajectories, metropolitan differences, and variation within each geography.</p>
+<p>The inferential section included a 95% confidence interval for Ontario’s mean mortgage loan value, a Welch two-sample t-test comparing Ontario and British Columbia, and a bootstrap confidence interval for the difference in average mortgage values between groups. The modelling section estimated a linear regression using time and province, followed by an interaction model that allowed provinces to have different slopes over time.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-4">
-<p><img src="election-project.png" class="img-fluid"></p>
-<section id="multinomial-election-and-snowfall-timing-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="multinomial-election-and-snowfall-timing-analysis">Multinomial Election and Snowfall Timing Analysis</h3>
-<p>Used multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax.</p>
-<p><strong>Tools:</strong> R, multinomial logistic regression, grouped summaries, probability modeling</p>
-<p><a href="multinomial-election-analysis.html">View Project</a></p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>The results show a strong upward national trend in average mortgage loan values over the study period. Mortgage values rose steadily through much of the series, increased sharply around 2020 to 2022, then declined somewhat before rising again near the end of the period. This indicates that time played an important role in explaining mortgage loan values in Canada.</p>
+<p>Provincial patterns were not uniform. British Columbia recorded the highest provincial mean mortgage value at $395,185, followed by Ontario at $346,851, while New Brunswick had the lowest mean at $160,792. At the metropolitan scale, Vancouver and Toronto stood out clearly, with mean mortgage values of $456,449 and $427,126 respectively, well above Calgary, Ottawa, Montréal, and Halifax. These differences show that mortgage borrowing patterns were shaped not only by national market conditions, but also by strong regional and urban differences.</p>
+<p>The inferential analysis supported these descriptive findings. The confidence interval for Ontario estimated a mean mortgage value of $346,850.7, with a 95% interval from $325,740.7 to $367,960.8. The Welch two-sample t-test showed a statistically significant difference between Ontario and British Columbia, with British Columbia having the higher average mortgage loan value. The confidence interval for the difference suggested that British Columbia’s mean was likely between about $21,101 and $75,567 higher than Ontario’s.</p>
+<p>The regression analysis showed that time and geography explained a large share of the variation in mortgage values. In the first model, time and province together explained 91.6% of the variation in average mortgage loan values. In the interaction model, explanatory power increased further to 96.75%, showing that provinces did not all follow the same growth path over time. Ontario and British Columbia in particular showed stronger upward trajectories than several of the lower-valued provinces.</p>
 </section>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<p>The visualizations show that mortgage growth was not simply a uniform national pattern. The Canada-level line graph shows a clear long-run increase in mortgage loan values over time. The province and CMA time-series plots reveal strong geographic gaps in both starting levels and rates of change. British Columbia and Ontario remained at the top of the provincial distribution for much of the period, while Vancouver and Toronto dominated among the selected metropolitan areas.</p>
+<p>The boxplots reinforce these differences by showing that the highest-value provinces and CMAs also tended to have wider distributions over time. Vancouver and Toronto in particular combined high typical mortgage values with substantial variation, reflecting stronger growth and larger fluctuations across the study period. Together, the graphs show that both time and geography were central to explaining mortgage borrowing patterns in Canada.</p>
+<div style="margin-top: 22px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start;">
+<p><a href="project.pdf" target="_blank" style="display: inline-block; background: #2f7de1; color: white; text-decoration: none; font-weight: 600; font-size: 1.05rem; padding: 16px 34px; border-radius: 999px;"> View Project </a></p>
+<p><a href="mortgage_canada.html" target="_blank" style="display: inline-block; background: #2f7de1; color: white; text-decoration: none; font-weight: 600; font-size: 1.05rem; padding: 16px 34px; border-radius: 999px;"> View Full Analysis and Code </a></p>
 </div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-5">
-<p><img src="teak-rhizobium-project.png" class="img-fluid"></p>
-<section id="two-way-anova-in-r-teak-growth-and-rhizobium-nitrogen-fixation" class="level3">
-<h3 class="anchored" data-anchor-id="two-way-anova-in-r-teak-growth-and-rhizobium-nitrogen-fixation">Two-Way ANOVA in R: Teak Growth and Rhizobium Nitrogen Fixation</h3>
-<p>Two R-based ANOVA studies examining teak tree growth under different planting methods and root lengths, and nitrogen fixation in clover under varying rhizobium strain and culture combinations.</p>
-<p><strong>Tools:</strong> R, two-way ANOVA, interaction plots, simple effects, Tukey HSD</p>
-<p><a href="Two Way ANOVA.html">View Project</a></p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-6">
-<p><img src="assignment6-project.png" class="img-fluid"></p>
-<section id="contrasts-transformation-and-manova-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="contrasts-transformation-and-manova-in-r">Contrasts, Transformation, and MANOVA in R</h3>
-<p>Three R-based analyses: custom contrasts for age-group comparisons, transformed regression with interaction for onion yield, and MANOVA for wheat grain and straw across field rows and columns.</p>
-<p><strong>Tools:</strong> R, custom contrasts, linear modeling, Box-Cox transformation, interaction analysis, MANOVA, data visualization</p>
-<p><a href="Contrasts, Transformations %26 MANOVA.html">View Project</a></p>
-</section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-7">
-<p><img src="Discriminant_Analysis.png" class="img-fluid"></p>
-<section id="repeated-measures-manova-and-discriminant-analysis-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="repeated-measures-manova-and-discriminant-analysis-in-r">Repeated Measures, MANOVA, and Discriminant Analysis in R</h3>
-<p>This project combines repeated-measures and multivariate statistical analysis in R. It examines changes in self-esteem across treatment groups over time and uses MANOVA and discriminant analysis to distinguish rainforest leaves from different regions based on multiple shape measurements.</p>
-<p><strong>Tools:</strong> R, repeated-measures MANOVA, mixed-effects model, MANOVA, discriminant analysis</p>
-<p><a href="repeated-measures-manova-discriminant-analysis.html">View Project</a></p>
-</section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-8">
-<p><img src="python-learning-project.png" class="img-fluid"></p>
-<section id="python-learning-platform-with-profiles-quizzes-and-progress-tracking" class="level3">
-<h3 class="anchored" data-anchor-id="python-learning-platform-with-profiles-quizzes-and-progress-tracking">Python Learning Platform with Profiles, Quizzes, and Progress Tracking</h3>
-<p>A menu-based Python educational application that allows users to create secure profiles, log in, open lesson PDFs, complete quizzes, and track interactive learning progress.</p>
-<p><strong>Tools:</strong> Python, csv, os, subprocess, platform, bcrypt, matplotlib</p>
-<p><a href="python-learning-platform.html">View Project</a></p>
-</section>
-</div>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-4">
-<p><img src="mortgage-project.png" class="img-fluid"></p>
-<section id="canadian-mortgage-loan-value-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="canadian-mortgage-loan-value-analysis">Canadian Mortgage Loan Value Analysis</h3>
-<p>Analysis of how average new mortgage loan values changed across Canada, provinces, and selected metropolitan areas from 2012 Q3 to 2025 Q4, using descriptive statistics, hypothesis testing, bootstrapping, and regression modelling to examine the effects of time and geography.</p>
-<p><strong>Tools:</strong> R, readxl, tidyverse, dplyr, tidyr, lubridate, janitor, ggplot2, confidence intervals, Welch two-sample t-test, bootstrap resampling, linear regression, interaction regression, cross-validation</p>
-<p><a href="mortgage_canada_data.html">View Project</a></p>
-</section>
-</div>
-</div>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li><p>Average new mortgage loan values increased substantially across Canada between 2012 Q3 and 2025 Q4</p></li>
+<li><p>Geographic inequality was pronounced, with British Columbia, Ontario, Vancouver, and Toronto consistently occupying the highest positions</p></li>
+<li><p>Descriptive and inferential methods pointed to the same conclusion that place matters significantly in mortgage market outcomes</p></li>
+<li><p>Time explained part of the variation in mortgage values, but province-specific growth patterns explained even more when interaction effects were included</p></li>
+<li><p>This project shows how descriptive analysis, inferential statistics, and regression modelling can be combined to study housing-related financial data across both time and space</p></li>
+</ul>
+<hr>
 
 
 </section>

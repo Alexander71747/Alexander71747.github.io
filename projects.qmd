@@ -123,3 +123,16 @@ A menu-based Python educational application that allows users to create secure p
 
 
 
+::: {.g-col-12 .g-col-md-6}
+::: {.project-card .fade-up .fade-delay-4}
+![](mortgage-project.png)
+
+### Canadian Mortgage Loan Value Analysis
+
+Analysis of how average new mortgage loan values changed across Canada, provinces, and selected metropolitan areas from 2012 Q3 to 2025 Q4, using descriptive statistics, hypothesis testing, bootstrapping, and regression modelling to examine the effects of time and geography.
+
+**Tools:** R, readxl, tidyverse, dplyr, tidyr, lubridate, janitor, ggplot2, confidence intervals, Welch two-sample t-test, bootstrap resampling, linear regression, interaction regression, cross-validation
+
+[View Project](mortgage_canada_data.html)
+:::
+:::

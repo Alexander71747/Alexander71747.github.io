@@ -1,0 +1,66 @@
+---
+title: "Canadian Mortgage Loan Value Analysis"
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Overview
+
+This project analyzes how average new mortgage loan values changed across Canada, the provinces, and selected census metropolitan areas between 2012 Q3 and 2025 Q4. The analysis combines descriptive statistics, graphical analysis, confidence intervals, hypothesis testing, bootstrapping, and regression modelling to examine whether mortgage values followed a common national trend or whether they varied substantially across place. Mortgage lending is used here as an indicator of housing market pressure, borrowing requirements, and regional inequality, making it possible to study both time and geography together.
+
+## Data
+
+The cleaned dataset contains 2,430 observations and 10 variables. It includes 54 Canada-level quarterly observations, 540 province-level observations, and 1,836 CMA-level observations. The final dataset covers ten provinces and six selected census metropolitan areas: Halifax, Montréal, Ottawa, Toronto, Calgary, and Vancouver.
+
+The main response variable is `avg_mortgage_value`, which records the average dollar value of new mortgage loans for a given geography and quarter. Time was represented using `year`, `quarter_num`, `quarter_date`, and `time_index`, while geography was separated into `geo_level`, `geo_province`, and `geo_cma` to support comparison across scales.
+
+Across the full dataset, mortgage values ranged from $108,877 to $577,403, with an overall mean of about $264,144 and a median of about $246,774. This already suggests substantial variation across both time and place.
+
+## Methods
+
+The project began with data cleaning and restructuring so that each row represented a geography-quarter combination suitable for longitudinal and cross-sectional analysis. Descriptive summary tables were used to compare the full dataset, provinces, and selected CMAs. Line graphs and boxplots were then used to visualize national trends, provincial trajectories, metropolitan differences, and variation within each geography.
+
+The inferential section included a 95% confidence interval for Ontario’s mean mortgage loan value, a Welch two-sample t-test comparing Ontario and British Columbia, and a bootstrap confidence interval for the difference in average mortgage values between groups. The modelling section estimated a linear regression using time and province, followed by an interaction model that allowed provinces to have different slopes over time.
+
+## Results
+
+The results show a strong upward national trend in average mortgage loan values over the study period. Mortgage values rose steadily through much of the series, increased sharply around 2020 to 2022, then declined somewhat before rising again near the end of the period. This indicates that time played an important role in explaining mortgage loan values in Canada.
+
+Provincial patterns were not uniform. British Columbia recorded the highest provincial mean mortgage value at $395,185, followed by Ontario at $346,851, while New Brunswick had the lowest mean at $160,792. At the metropolitan scale, Vancouver and Toronto stood out clearly, with mean mortgage values of $456,449 and $427,126 respectively, well above Calgary, Ottawa, Montréal, and Halifax. These differences show that mortgage borrowing patterns were shaped not only by national market conditions, but also by strong regional and urban differences.
+
+The inferential analysis supported these descriptive findings. The confidence interval for Ontario estimated a mean mortgage value of $346,850.7, with a 95% interval from $325,740.7 to $367,960.8. The Welch two-sample t-test showed a statistically significant difference between Ontario and British Columbia, with British Columbia having the higher average mortgage loan value. The confidence interval for the difference suggested that British Columbia’s mean was likely between about $21,101 and $75,567 higher than Ontario’s.
+
+The regression analysis showed that time and geography explained a large share of the variation in mortgage values. In the first model, time and province together explained 91.6% of the variation in average mortgage loan values. In the interaction model, explanatory power increased further to 96.75%, showing that provinces did not all follow the same growth path over time. Ontario and British Columbia in particular showed stronger upward trajectories than several of the lower-valued provinces.
+
+## Visualization
+
+The visualizations show that mortgage growth was not simply a uniform national pattern. The Canada-level line graph shows a clear long-run increase in mortgage loan values over time. The province and CMA time-series plots reveal strong geographic gaps in both starting levels and rates of change. British Columbia and Ontario remained at the top of the provincial distribution for much of the period, while Vancouver and Toronto dominated among the selected metropolitan areas.
+
+The boxplots reinforce these differences by showing that the highest-value provinces and CMAs also tended to have wider distributions over time. Vancouver and Toronto in particular combined high typical mortgage values with substantial variation, reflecting stronger growth and larger fluctuations across the study period. Together, the graphs show that both time and geography were central to explaining mortgage borrowing patterns in Canada.
+
+<div style="margin-top: 22px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start;">
+
+<a href="project.pdf" target="_blank" style="display: inline-block; background: #2f7de1; color: white; text-decoration: none; font-weight: 600; font-size: 1.05rem; padding: 16px 34px; border-radius: 999px;">
+  View Project
+</a>
+
+<a href="mortgage_canada.html" target="_blank" style="display: inline-block; background: #2f7de1; color: white; text-decoration: none; font-weight: 600; font-size: 1.05rem; padding: 16px 34px; border-radius: 999px;">
+  View Full Analysis and Code
+</a>
+
+</div>
+
+## Key Takeaways
+
+-   Average new mortgage loan values increased substantially across Canada between 2012 Q3 and 2025 Q4
+
+-   Geographic inequality was pronounced, with British Columbia, Ontario, Vancouver, and Toronto consistently occupying the highest positions
+
+-   Descriptive and inferential methods pointed to the same conclusion that place matters significantly in mortgage market outcomes
+
+-   Time explained part of the variation in mortgage values, but province-specific growth patterns explained even more when interaction effects were included
+
+-   This project shows how descriptive analysis, inferential statistics, and regression modelling can be combined to study housing-related financial data across both time and space
+---
