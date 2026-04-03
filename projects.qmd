@@ -138,7 +138,7 @@ Analysis of how average new mortgage loan values changed across Canada, province
 ::: {.project-card .fade-up .fade-delay-10}
 ![](clustering-project.png)
 
-### Cluster Analysis of Amino Acid Distances and Exoplanets
+### Cluster Analysis of Amino Acid Sequencing and Exoplanets
 
 Clustering analysis of vertebrate genetic distances and exoplanet characteristics using hierarchical clustering with Ward’s method, dendrogram interpretation, z-score standardization, scree plots, and K-means cluster comparison.
 
