@@ -46,6 +46,4 @@ The project used dendrograms to display the hierarchical clustering of vertebrat
 
 -   Scree plots help identify plausible cluster counts, but the final choice still requires interpretation
 
--   
-
-    ## K-means solutions with different numbers of clusters are not nested, so cluster membership can shift when the number of clusters changes
+-   K-means solutions with different numbers of clusters are not nested, so cluster membership can shift when the number of clusters changes
