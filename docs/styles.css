@@ -952,3 +952,14 @@ html[data-bs-theme="dark"] .home-quote-box {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(47, 125, 225, 0.34);
 }
+
+
+
+
+
+.project-card img.project-img-wide {
+  max-width: 100%;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}

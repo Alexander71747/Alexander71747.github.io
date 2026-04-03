@@ -10,7 +10,7 @@ format:
 ::: grid
 ::: {.g-col-12 .g-col-md-6}
 ::: {.project-card .fade-up .fade-delay-1}
-![](aml-project.png)
+![](aml-project.png){.project-img-wide}
 
 ### Survival Analysis of AML (Acute Myeloid Leukemia) Patients
 
@@ -24,7 +24,7 @@ Cox proportional hazards modeling of remission duration in AML patients, with in
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.project-card .fade-up .fade-delay-2}
-![](regression-project.png)
+![](regression-project.png){.project-img-wide}
 
 ### Regression and Logistic Modeling in R
 
@@ -38,7 +38,7 @@ Applied linear regression to model the relationship between roller weight and la
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.project-card .fade-up .fade-delay-3}
-![](piracy-project.png)
+![](piracy-project.png){.project-img-wide}
 
 ### Ordinal Logistic Regression on SOPA Support
 
@@ -52,7 +52,7 @@ Used ordinal logistic regression to model legislators’ stance on the Stop Onli
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.project-card .fade-up .fade-delay-4}
-![](election-project.png)
+![](election-project.png){.project-img-wide}
 
 ### Multinomial Election and Snowfall Timing Analysis
 
@@ -66,7 +66,7 @@ Used multinomial logistic regression to model candidate vote probabilities in Ch
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.project-card .fade-up .fade-delay-5}
-![](teak-rhizobium-project.png)
+![](teak-rhizobium-project.png){.project-img-wide}
 
 ### Two-Way ANOVA in R: Teak Growth and Rhizobium Nitrogen Fixation
 
@@ -80,7 +80,7 @@ Two R-based ANOVA studies examining teak tree growth under different planting me
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.project-card .fade-up .fade-delay-6}
-![](assignment6-project.png)
+![](assignment6-project.png){.project-img-wide}
 
 ### Contrasts, Transformation, and MANOVA in R
 
@@ -94,7 +94,7 @@ Three R-based analyses: custom contrasts for age-group comparisons, transformed 
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.project-card .fade-up .fade-delay-7}
-![](Discriminant_Analysis.png)
+![](Discriminant_Analysis.png){.project-img-wide}
 
 ### Repeated Measures, MANOVA, and Discriminant Analysis in R
 
@@ -108,7 +108,7 @@ This project combines repeated-measures and multivariate statistical analysis in
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.project-card .fade-up .fade-delay-8}
-![](python-learning-project.png)
+![](python-learning-project.png){.project-img-wide}
 
 ### Python Learning Platform with Profiles, Quizzes, and Progress Tracking
 
@@ -122,7 +122,7 @@ A menu-based Python educational application that allows users to create secure p
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.project-card .fade-up .fade-delay-9}
-![](mortgage-project.png)
+![](mortgage-project.png){.project-img-wide}
 
 ### Canadian Mortgage Loan Value Analysis
 
@@ -136,7 +136,7 @@ Analysis of how average new mortgage loan values changed across Canada, province
 
 ::: {.g-col-12 .g-col-md-6}
 ::: {.project-card .fade-up .fade-delay-10}
-![](clustering-project.png)
+![](clustering-project.png){.project-img-wide}
 
 ### Cluster Analysis of Amino Acid Sequencing and Exoplanets
 
