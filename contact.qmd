@@ -6,15 +6,15 @@ format:
 ---
 
 ::: {.fade-up .fade-delay-1}
-📧 **Email:** [aktheexplorer\@gmail.com](mailto:aktheexplorer@gmail.com)
+**Email:** [aktheexplorer\@gmail.com](mailto:aktheexplorer@gmail.com)
 :::
 
 ::: {.fade-up .fade-delay-2}
-📞 **Phone:** (CA) +1 647-625-0780 / (GR) +30 697-439-4788
+**Phone:** (CA) +1 647-625-0780 / (GR) +30 697-439-4788
 :::
 
 ::: {.fade-up .fade-delay-3}
-🔗 **LinkedIn:** [View Profile](https://www.linkedin.com/in/alexandros-karagiannis-340739263/)
+**LinkedIn:** [View Profile](https://www.linkedin.com/in/alexandros-karagiannis-340739263/)
 :::
 
 ::: {.fade-up .fade-delay-4}
@@ -23,7 +23,7 @@ format:
 :::
 
 ::: {.fade-up .fade-delay-5}
-👉 [Download my CV](Alexandros_Karagiannis_CV.pdf)
+[Download my CV](Alexandros_Karagiannis_CV.pdf)
 :::
 
 ::: {.fade-up .fade-delay-5}
