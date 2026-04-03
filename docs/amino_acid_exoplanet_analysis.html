@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Alexandros Karagiannis - Projects</title>
+<title>Alexandros Karagiannis - Cluster Analysis of Amino Acid Distances and Exoplanets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -88,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./projects.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projects</h1>
+<h1 class="title">Cluster Analysis of Amino Acid Distances and Exoplanets</h1>
 </div>
 
 
@@ -140,120 +140,41 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="selected-projects" class="level2">
-<h2 class="anchored" data-anchor-id="selected-projects">Selected Projects</h2>
-<div class="grid">
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-1">
-<p><img src="aml-project.png" class="img-fluid"></p>
-<section id="survival-analysis-of-aml-acute-myeloid-leukemia-patients" class="level3">
-<h3 class="anchored" data-anchor-id="survival-analysis-of-aml-acute-myeloid-leukemia-patients">Survival Analysis of AML (Acute Myeloid Leukemia) Patients</h3>
-<p>Cox proportional hazards modeling of remission duration in AML patients, with interpretation of hazard ratios and treatment effects.</p>
-<p><strong>Tools:</strong> R, survival analysis, Cox model</p>
-<p><a href="survival_analysis.html">View Project</a></p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This project applies two clustering methods in R to two different datasets. The first part uses hierarchical clustering with Ward’s method to examine genetic distance patterns among vertebrate species based on amino acid differences in the Cytochrome-C protein. The second part uses K-means clustering to group exoplanets according to transformed values of mass, orbital period, and orbital eccentricity. Together, the project shows how clustering can be used to identify structure in both biological and astronomical data, while also showing how different clustering methods lead to different kinds of interpretation.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-2">
-<p><img src="regression-project.png" class="img-fluid"></p>
-<section id="regression-and-logistic-modeling-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="regression-and-logistic-modeling-in-r">Regression and Logistic Modeling in R</h3>
-<p>Applied linear regression to model the relationship between roller weight and lawn depression, and used logistic regression to analyze how dilution affects seed germination probabilities.</p>
-<p><strong>Tools:</strong> R, linear regression, logistic regression, prediction intervals, data visualization</p>
-<p><a href="regression-logistic-modeling.html">View Project</a></p>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>The first dataset records pairwise genetic distances among 17 vertebrate species. These distances were calculated by counting the number of amino acid positions at which two species differed, producing a square dissimilarity matrix suitable for hierarchical clustering. The analysis included species such as humans, monkeys, horses, donkeys, rattlesnakes, tuna, bullfrogs, and dogfish.</p>
+<p>The second dataset contains 101 exoplanets and includes measurements of mass, orbital period, and orbital eccentricity, along with transformed versions of these variables: <code>log_mass</code>, <code>log_period</code>, and <code>sqrt_eccen</code>. Because clustering is sensitive to scale, the transformed variables were standardized to z-scores before running K-means.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-3">
-<p><img src="piracy-project.png" class="img-fluid"></p>
-<section id="ordinal-logistic-regression-on-sopa-support" class="level3">
-<h3 class="anchored" data-anchor-id="ordinal-logistic-regression-on-sopa-support">Ordinal Logistic Regression on SOPA Support</h3>
-<p>Used ordinal logistic regression to model legislators’ stance on the Stop Online Piracy Act as a function of party affiliation and campaign contributions.</p>
-<p><strong>Tools:</strong> R, ordinal logistic regression, predicted probabilities, model comparison</p>
-<p><a href="ordinal-logistic-piracy.html">View Project</a></p>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<p>For the vertebrate analysis, the genetic distance matrix was converted into a <code>dist</code> object and used as input to hierarchical clustering with Ward’s method. The dendrogram was examined to identify the first species merged into a cluster, the last individual species added to a cluster, and the differences between 4-cluster and 7-cluster solutions. Biological interpretation was then used to decide which cluster solution was more meaningful.</p>
+<p>For the exoplanet analysis, the three transformed variables were selected and standardized. K-means clustering was first run with 5 clusters, using a fixed random seed so that the results could be reproduced. A scree plot based on total within-cluster sum of squares for 2 through 20 clusters was then used to identify another reasonable number of clusters. A second K-means model was fit using that chosen number, and cluster membership was compared across the two solutions.</p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-4">
-<p><img src="election-project.png" class="img-fluid"></p>
-<section id="multinomial-election-and-snowfall-timing-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="multinomial-election-and-snowfall-timing-analysis">Multinomial Election and Snowfall Timing Analysis</h3>
-<p>Used multinomial logistic regression to model candidate vote probabilities in Chicago precincts and analyzed the timing of snowfall events in Halifax.</p>
-<p><strong>Tools:</strong> R, multinomial logistic regression, grouped summaries, probability modeling</p>
-<p><a href="multinomial-election-analysis.html">View Project</a></p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>The hierarchical clustering results showed that horse and donkey were the first two species to be combined into a cluster, which is biologically sensible given their close similarity. Dogfish was the last individual species to be added to a cluster, indicating that it was the most distinct late-joining case in the merge structure. Comparing the dendrogram cuts, the 7-cluster solution was more convincing than the 4-cluster solution because it separated species that did not belong naturally together, such as rattlesnakes from humans and monkeys, and it also split apart aquatic species such as dogfish, bullfrogs, and tuna that differ substantially in biological terms.</p>
+<p>In the exoplanet section, K-means with 5 clusters produced groups of different sizes after standardizing the transformed variables. The scree plot suggested that a different number of clusters was also reasonable, and the later solution provided a more detailed grouping of exoplanets. Comparing the two solutions showed that some planets stayed with similar neighbours while others changed groups, illustrating that K-means solutions are not nested in the way hierarchical cluster solutions are.</p>
 </section>
+<section id="visualization" class="level2">
+<h2 class="anchored" data-anchor-id="visualization">Visualization</h2>
+<p>The project used dendrograms to display the hierarchical clustering of vertebrate species and highlighted alternative cuts at 4 and 7 clusters. For the exoplanet analysis, the main visual tool was a scree plot of total within-cluster sum of squares for 2 through 20 clusters, which helped identify a more suitable number of clusters beyond the initial 5-cluster solution. These visualizations were important because they made it easier to compare merge structure, cluster separation, and the tradeoff between simpler and more detailed clustering solutions.</p>
+<div style="margin-top: 22px; display: flex; flex-direction: column; gap: 18px; align-items: flex-start;">
+<p><a href="exoplanet_amino_acid.html" target="_blank" style="display: inline-block; background: #2f7de1; color: white !important; text-decoration: none !important; font-weight: 600; font-size: 1.08rem; padding: 18px 42px; border-radius: 999px; min-width: 340px; text-align: center;"> View Full Analysis and Code </a></p>
 </div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-5">
-<p><img src="teak-rhizobium-project.png" class="img-fluid"></p>
-<section id="two-way-anova-in-r-teak-growth-and-rhizobium-nitrogen-fixation" class="level3">
-<h3 class="anchored" data-anchor-id="two-way-anova-in-r-teak-growth-and-rhizobium-nitrogen-fixation">Two-Way ANOVA in R: Teak Growth and Rhizobium Nitrogen Fixation</h3>
-<p>Two R-based ANOVA studies examining teak tree growth under different planting methods and root lengths, and nitrogen fixation in clover under varying rhizobium strain and culture combinations.</p>
-<p><strong>Tools:</strong> R, two-way ANOVA, interaction plots, simple effects, Tukey HSD</p>
-<p><a href="Two Way ANOVA.html">View Project</a></p>
 </section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-6">
-<p><img src="assignment6-project.png" class="img-fluid"></p>
-<section id="contrasts-transformation-and-manova-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="contrasts-transformation-and-manova-in-r">Contrasts, Transformation, and MANOVA in R</h3>
-<p>Three R-based analyses: custom contrasts for age-group comparisons, transformed regression with interaction for onion yield, and MANOVA for wheat grain and straw across field rows and columns.</p>
-<p><strong>Tools:</strong> R, custom contrasts, linear modeling, Box-Cox transformation, interaction analysis, MANOVA, data visualization</p>
-<p><a href="Contrasts, Transformations %26 MANOVA.html">View Project</a></p>
-</section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-7">
-<p><img src="Discriminant_Analysis.png" class="img-fluid"></p>
-<section id="repeated-measures-manova-and-discriminant-analysis-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="repeated-measures-manova-and-discriminant-analysis-in-r">Repeated Measures, MANOVA, and Discriminant Analysis in R</h3>
-<p>This project combines repeated-measures and multivariate statistical analysis in R. It examines changes in self-esteem across treatment groups over time and uses MANOVA and discriminant analysis to distinguish rainforest leaves from different regions based on multiple shape measurements.</p>
-<p><strong>Tools:</strong> R, repeated-measures MANOVA, mixed-effects model, MANOVA, discriminant analysis</p>
-<p><a href="repeated-measures-manova-discriminant-analysis.html">View Project</a></p>
-</section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-8">
-<p><img src="python-learning-project.png" class="img-fluid"></p>
-<section id="python-learning-platform-with-profiles-quizzes-and-progress-tracking" class="level3">
-<h3 class="anchored" data-anchor-id="python-learning-platform-with-profiles-quizzes-and-progress-tracking">Python Learning Platform with Profiles, Quizzes, and Progress Tracking</h3>
-<p>A menu-based Python educational application that allows users to create secure profiles, log in, open lesson PDFs, complete quizzes, and track interactive learning progress.</p>
-<p><strong>Tools:</strong> Python, csv, os, subprocess, platform, bcrypt, matplotlib</p>
-<p><a href="python-learning-platform.html">View Project</a></p>
-</section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-9">
-<p><img src="mortgage-project.png" class="img-fluid"></p>
-<section id="canadian-mortgage-loan-value-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="canadian-mortgage-loan-value-analysis">Canadian Mortgage Loan Value Analysis</h3>
-<p>Analysis of how average new mortgage loan values changed across Canada, provinces, and selected metropolitan areas from 2012 Q3 to 2025 Q4, using descriptive statistics, hypothesis testing, bootstrapping, and regression modelling to examine the effects of time and geography.</p>
-<p><strong>Tools:</strong> R, readxl, tidyverse, dplyr, tidyr, lubridate, janitor, ggplot2, confidence intervals, Welch two-sample t-test, bootstrap resampling, linear regression, interaction regression, cross-validation</p>
-<p><a href="mortgage_canada_data.html">View Project</a></p>
-</section>
-</div>
-</div>
-<div class="g-col-12 g-col-md-6">
-<div class="project-card fade-up fade-delay-10">
-<p><img src="clustering-project.png" class="img-fluid"></p>
-<section id="cluster-analysis-of-amino-acid-distances-and-exoplanets" class="level3">
-<h3 class="anchored" data-anchor-id="cluster-analysis-of-amino-acid-distances-and-exoplanets">Cluster Analysis of Amino Acid Distances and Exoplanets</h3>
-<p>Clustering analysis of vertebrate genetic distances and exoplanet characteristics using hierarchical clustering with Ward’s method, dendrogram interpretation, z-score standardization, scree plots, and K-means cluster comparison.</p>
-<p><strong>Tools:</strong> R, tidyverse, dplyr, tidyr, readr, hclust, Ward’s method, dendrograms, rect.hclust, dist objects, scale, K-means clustering, set.seed, nstart, scree plot, within-cluster sum of squares</p>
-<p><a href="amino_acid_exoplanet_analysis.html">View Project</a></p>
-</section>
-</div>
-</div>
-</div>
+<section id="key-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li><p>Hierarchical clustering can reveal biologically meaningful relationships when applied to a genetic distance matrix</p></li>
+<li><p>Interpreting dendrogram cuts should depend on subject-matter reasoning, not only on the visual tree structure</p></li>
+<li><p>Standardizing transformed variables is essential before running K-means on continuous measurements with different scales</p></li>
+<li><p>Scree plots help identify plausible cluster counts, but the final choice still requires interpretation</p></li>
+<li><h2 id="k-means-solutions-with-different-numbers-of-clusters-are-not-nested-so-cluster-membership-can-shift-when-the-number-of-clusters-changes" class="anchored">K-means solutions with different numbers of clusters are not nested, so cluster membership can shift when the number of clusters changes</h2></li>
+</ul>
 
 
 </section>

@@ -119,12 +119,9 @@ A menu-based Python educational application that allows users to create secure p
 [View Project](python-learning-platform.html)
 :::
 :::
-:::
-
-
 
 ::: {.g-col-12 .g-col-md-6}
-::: {.project-card .fade-up .fade-delay-4}
+::: {.project-card .fade-up .fade-delay-9}
 ![](mortgage-project.png)
 
 ### Canadian Mortgage Loan Value Analysis
@@ -134,5 +131,20 @@ Analysis of how average new mortgage loan values changed across Canada, province
 **Tools:** R, readxl, tidyverse, dplyr, tidyr, lubridate, janitor, ggplot2, confidence intervals, Welch two-sample t-test, bootstrap resampling, linear regression, interaction regression, cross-validation
 
 [View Project](mortgage_canada_data.html)
+:::
+:::
+
+::: {.g-col-12 .g-col-md-6}
+::: {.project-card .fade-up .fade-delay-10}
+![](clustering-project.png)
+
+### Cluster Analysis of Amino Acid Distances and Exoplanets
+
+Clustering analysis of vertebrate genetic distances and exoplanet characteristics using hierarchical clustering with Ward’s method, dendrogram interpretation, z-score standardization, scree plots, and K-means cluster comparison.
+
+**Tools:** R, tidyverse, dplyr, tidyr, readr, hclust, Ward's method, dendrograms, rect.hclust, dist objects, scale, K-means clustering, set.seed, nstart, scree plot, within-cluster sum of squares
+
+[View Project](amino_acid_exoplanet_analysis.html)
+:::
 :::
 :::

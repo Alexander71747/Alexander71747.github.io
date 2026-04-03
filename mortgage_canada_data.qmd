@@ -56,6 +56,4 @@ The boxplots reinforce these differences by showing that the highest-value provi
 
 -   Time explained part of the variation in mortgage values, but province-specific growth patterns explained even more when interaction effects were included
 
--   
-
-    ## This project shows how descriptive analysis, inferential statistics, and regression modelling can be combined to study housing-related financial data across both time and space
+-   This project shows how descriptive analysis, inferential statistics, and regression modelling can be combined to study housing-related financial data across both time and space
