@@ -772,49 +772,49 @@
   {
     "objectID": "amino_acid_exoplanet_analysis.html",
     "href": "amino_acid_exoplanet_analysis.html",
-    "title": "Cluster Analysis of Amino Acid Distances and Exoplanets",
+    "title": "Cluster Analysis of Amino Acid Sequencing and Exoplanets",
     "section": "",
     "text": "This project applies two clustering methods in R to two different datasets. The first part uses hierarchical clustering with Ward’s method to examine genetic distance patterns among vertebrate species based on amino acid differences in the Cytochrome-C protein. The second part uses K-means clustering to group exoplanets according to transformed values of mass, orbital period, and orbital eccentricity. Together, the project shows how clustering can be used to identify structure in both biological and astronomical data, while also showing how different clustering methods lead to different kinds of interpretation."
   },
   {
     "objectID": "amino_acid_exoplanet_analysis.html#overview",
     "href": "amino_acid_exoplanet_analysis.html#overview",
-    "title": "Cluster Analysis of Amino Acid Distances and Exoplanets",
+    "title": "Cluster Analysis of Amino Acid Sequencing and Exoplanets",
     "section": "",
     "text": "This project applies two clustering methods in R to two different datasets. The first part uses hierarchical clustering with Ward’s method to examine genetic distance patterns among vertebrate species based on amino acid differences in the Cytochrome-C protein. The second part uses K-means clustering to group exoplanets according to transformed values of mass, orbital period, and orbital eccentricity. Together, the project shows how clustering can be used to identify structure in both biological and astronomical data, while also showing how different clustering methods lead to different kinds of interpretation."
   },
   {
     "objectID": "amino_acid_exoplanet_analysis.html#data",
     "href": "amino_acid_exoplanet_analysis.html#data",
-    "title": "Cluster Analysis of Amino Acid Distances and Exoplanets",
+    "title": "Cluster Analysis of Amino Acid Sequencing and Exoplanets",
     "section": "Data",
     "text": "Data\nThe first dataset records pairwise genetic distances among 17 vertebrate species. These distances were calculated by counting the number of amino acid positions at which two species differed, producing a square dissimilarity matrix suitable for hierarchical clustering. The analysis included species such as humans, monkeys, horses, donkeys, rattlesnakes, tuna, bullfrogs, and dogfish.\nThe second dataset contains 101 exoplanets and includes measurements of mass, orbital period, and orbital eccentricity, along with transformed versions of these variables: log_mass, log_period, and sqrt_eccen. Because clustering is sensitive to scale, the transformed variables were standardized to z-scores before running K-means."
   },
   {
     "objectID": "amino_acid_exoplanet_analysis.html#methods",
     "href": "amino_acid_exoplanet_analysis.html#methods",
-    "title": "Cluster Analysis of Amino Acid Distances and Exoplanets",
+    "title": "Cluster Analysis of Amino Acid Sequencing and Exoplanets",
     "section": "Methods",
     "text": "Methods\nFor the vertebrate analysis, the genetic distance matrix was converted into a dist object and used as input to hierarchical clustering with Ward’s method. The dendrogram was examined to identify the first species merged into a cluster, the last individual species added to a cluster, and the differences between 4-cluster and 7-cluster solutions. Biological interpretation was then used to decide which cluster solution was more meaningful.\nFor the exoplanet analysis, the three transformed variables were selected and standardized. K-means clustering was first run with 5 clusters, using a fixed random seed so that the results could be reproduced. A scree plot based on total within-cluster sum of squares for 2 through 20 clusters was then used to identify another reasonable number of clusters. A second K-means model was fit using that chosen number, and cluster membership was compared across the two solutions."
   },
   {
     "objectID": "amino_acid_exoplanet_analysis.html#results",
     "href": "amino_acid_exoplanet_analysis.html#results",
-    "title": "Cluster Analysis of Amino Acid Distances and Exoplanets",
+    "title": "Cluster Analysis of Amino Acid Sequencing and Exoplanets",
     "section": "Results",
     "text": "Results\nThe hierarchical clustering results showed that horse and donkey were the first two species to be combined into a cluster, which is biologically sensible given their close similarity. Dogfish was the last individual species to be added to a cluster, indicating that it was the most distinct late-joining case in the merge structure. Comparing the dendrogram cuts, the 7-cluster solution was more convincing than the 4-cluster solution because it separated species that did not belong naturally together, such as rattlesnakes from humans and monkeys, and it also split apart aquatic species such as dogfish, bullfrogs, and tuna that differ substantially in biological terms.\nIn the exoplanet section, K-means with 5 clusters produced groups of different sizes after standardizing the transformed variables. The scree plot suggested that a different number of clusters was also reasonable, and the later solution provided a more detailed grouping of exoplanets. Comparing the two solutions showed that some planets stayed with similar neighbours while others changed groups, illustrating that K-means solutions are not nested in the way hierarchical cluster solutions are."
   },
   {
     "objectID": "amino_acid_exoplanet_analysis.html#visualization",
     "href": "amino_acid_exoplanet_analysis.html#visualization",
-    "title": "Cluster Analysis of Amino Acid Distances and Exoplanets",
+    "title": "Cluster Analysis of Amino Acid Sequencing and Exoplanets",
     "section": "Visualization",
     "text": "Visualization\nThe project used dendrograms to display the hierarchical clustering of vertebrate species and highlighted alternative cuts at 4 and 7 clusters. For the exoplanet analysis, the main visual tool was a scree plot of total within-cluster sum of squares for 2 through 20 clusters, which helped identify a more suitable number of clusters beyond the initial 5-cluster solution. These visualizations were important because they made it easier to compare merge structure, cluster separation, and the tradeoff between simpler and more detailed clustering solutions.\n\n View Full Analysis and Code"
   },
   {
     "objectID": "amino_acid_exoplanet_analysis.html#key-takeaways",
     "href": "amino_acid_exoplanet_analysis.html#key-takeaways",
-    "title": "Cluster Analysis of Amino Acid Distances and Exoplanets",
+    "title": "Cluster Analysis of Amino Acid Sequencing and Exoplanets",
     "section": "Key Takeaways",
     "text": "Key Takeaways\n\nHierarchical clustering can reveal biologically meaningful relationships when applied to a genetic distance matrix\nInterpreting dendrogram cuts should depend on subject-matter reasoning, not only on the visual tree structure\nStandardizing transformed variables is essential before running K-means on continuous measurements with different scales\nScree plots help identify plausible cluster counts, but the final choice still requires interpretation\nK-means solutions with different numbers of clusters are not nested, so cluster membership can shift when the number of clusters changes"
   }
