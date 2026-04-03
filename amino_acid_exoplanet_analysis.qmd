@@ -1,5 +1,5 @@
 ---
-title: "Cluster Analysis of Amino Acid Distances and Exoplanets"
+title: "Cluster Analysis of Amino Acid Sequencing and Exoplanets"
 execute:
   echo: false
   warning: false
