@@ -21,28 +21,7 @@ Applied Statistician specializing in Data Analysis & Visualization
 ::: columns
 ::: {.column width="40%"}
 ::: {.fade-up .fade-delay-2}
-```{=html}
-<div style="display:flex; flex-direction:column; align-items:center; width:100%; overflow:visible;">
-  <img src="profile.jpg" style="width:100%; max-width:360px; height:430px; object-fit:cover; border-radius:20px; display:block;" />
-
-  <div style="width:170px; margin-top:10px; display:block; overflow:visible; line-height:0;">
-    <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;">
-      <rect x="25" y="18" width="150" height="18" rx="2" fill="#d9d9d9"/>
-      <rect x="38" y="36" width="124" height="16" rx="2" fill="#cfcfcf"/>
-      <rect x="48" y="52" width="104" height="12" rx="2" fill="#d6d6d6"/>
-      <rect x="58" y="64" width="84" height="142" rx="8" fill="#eeeeee"/>
-      <rect x="68" y="72" width="6" height="126" rx="3" fill="#d8d8d8"/>
-      <rect x="82" y="72" width="6" height="126" rx="3" fill="#d8d8d8"/>
-      <rect x="96" y="72" width="6" height="126" rx="3" fill="#d8d8d8"/>
-      <rect x="110" y="72" width="6" height="126" rx="3" fill="#d8d8d8"/>
-      <rect x="124" y="72" width="6" height="126" rx="3" fill="#d8d8d8"/>
-      <rect x="45" y="206" width="110" height="16" rx="2" fill="#cfcfcf"/>
-      <rect x="32" y="222" width="136" height="18" rx="2" fill="#d9d9d9"/>
-      <rect x="20" y="240" width="160" height="14" rx="2" fill="#c3c3c3"/>
-    </svg>
-  </div>
-</div>
-```
+![](profile.jpg){style="width:100%; max-width:360px; height:430px; object-fit:cover; border-radius:20px; display:block; margin:auto;"}
 :::
 :::
 
