@@ -29,7 +29,7 @@ Applied Statistician specializing in Data Analysis & Visualization
 ::: {.fade-up .fade-delay-3}
 Welcome to my website.
 
-I am a 4th year student at the University of Toronto studying Applied Statistics, Economics, and Politics, with a strong interest in data science and the application of statistical thinking to real-world questions.
+I am a University of Toronto graduate with a degree in Applied Statistics, Economics, and Politics. I am interested in data science and the application of statistical methods to real-world scenarios.
 
 This portfolio brings together selected academic and analytical work in order to show both my technical skills and my broader interest in using quantitative methods.
 :::
