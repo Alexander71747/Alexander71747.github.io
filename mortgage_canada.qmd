@@ -39,7 +39,7 @@ library(lubridate)
 # We use col_names = FALSE because the first few rows are title rows,
 # not the actual variable names
 mortgage_raw <- read_excel(
-  "~/Statistical_Reports_Portfolio/average-value-new-mortgage-loans-ca-prov-cmas-2012-q3-2025-q4-en.xlsx",
+  "average-value-new-mortgage-loans-ca-prov-cmas-2012-q3-2025-q4-en.xlsx",
   sheet = "New mortgage loan",
   col_names = FALSE
 )
