@@ -14,6 +14,8 @@ website:
         text: Projects
       - href: contact.qmd
         text: Contact
+      - href: Explore.qmd
+        text: Explore
     right:
       - icon: github
         href: https://github.com/Alexander71747
@@ -33,5 +35,3 @@ format:
     page-layout: full
 
 editor: visual
-
-
