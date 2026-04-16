@@ -25,18 +25,31 @@ button:hover{background:var(--bg2);}
 button:active{transform:scale(0.97);}
 input[type=range]{accent-color:var(--blue);width:100%;}
 select{padding:6px 8px;font-size:12px;border:0.5px solid var(--bdr);border-radius:8px;background:var(--bg);color:var(--txt);width:100%;cursor:pointer;}
-.matrix-intro{background:#030508;border-radius:22px;overflow:hidden;position:relative;user-select:none;border:1px solid rgba(0,255,70,0.12);cursor:pointer;margin-bottom:0;min-height:520px;}
-.matrix-intro canvas{display:block;width:100%;height:520px;}
-.matrix-msg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;z-index:2;width:90%;}
-.matrix-msg h1{font-family:var(--mono);font-size:34px;font-weight:500;color:#00ff46;letter-spacing:.08em;text-shadow:0 0 40px rgba(0,255,70,0.3);margin-bottom:8px;}
-.matrix-msg .sub{font-family:var(--mono);font-size:12px;color:rgba(0,255,70,0.5);margin-top:14px;line-height:2.1;letter-spacing:.04em;}
-.pulse-btn{animation:pulse 1.8s ease-in-out infinite;display:inline-block;margin-top:22px;font-family:var(--mono);font-size:12px;color:rgba(0,255,70,0.82);border:1px solid rgba(0,255,70,0.25);padding:10px 24px;border-radius:3px;letter-spacing:.06em;}
-@keyframes pulse{0%,100%{opacity:.35;border-color:rgba(0,255,70,0.15);}50%{opacity:1;border-color:rgba(0,255,70,0.6);}}
+
+/* ============== LANDING / MATRIX INTRO ============== */
+.landing-wrap{margin-bottom:0;}
+.landing-header{text-align:center;padding:2.4rem 1.4rem 2rem;background:linear-gradient(180deg,#0a0f14 0%,#060a0e 100%);border-radius:22px 22px 0 0;border:1px solid rgba(0,255,70,0.12);border-bottom:none;}
+.landing-header h1{font-family:var(--mono);font-size:clamp(22px,4vw,36px);font-weight:500;letter-spacing:.04em;margin:0 0 1rem 0;color:#e8f5ea;}
+.landing-header h1 .accent{color:#00ff46;text-shadow:0 0 30px rgba(0,255,70,0.4);}
+.landing-header p{font-size:clamp(13px,1.6vw,15px);line-height:1.8;color:rgba(232,245,234,0.75);max-width:760px;margin:0.6rem auto;}
+.landing-header p strong{color:#00ff46;font-weight:600;}
+.landing-header p em{color:rgba(232,245,234,0.9);font-style:italic;}
+.landing-header .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:#00ff46;border:1px solid rgba(0,255,70,0.4);padding:5px 14px;border-radius:99px;margin-bottom:1rem;text-transform:uppercase;background:rgba(0,255,70,0.05);}
+
+.matrix-intro{background:#030508;border-radius:0 0 22px 22px;overflow:hidden;position:relative;user-select:none;border:1px solid rgba(0,255,70,0.12);border-top:none;cursor:pointer;min-height:780px;}
+.matrix-intro canvas{display:block;width:100%;height:780px;}
+.matrix-msg{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none;z-index:2;width:92%;}
+.matrix-msg h1{font-family:var(--mono);font-size:clamp(28px,5vw,46px);font-weight:500;color:#00ff46;letter-spacing:.08em;text-shadow:0 0 40px rgba(0,255,70,0.35);margin-bottom:10px;}
+.matrix-msg .sub{font-family:var(--mono);font-size:clamp(11px,1.3vw,13px);color:rgba(0,255,70,0.55);margin-top:18px;line-height:2.3;letter-spacing:.05em;}
+.matrix-msg .sub .dot{color:rgba(0,255,70,0.3);margin:0 6px;}
+.pulse-btn{animation:pulse 1.8s ease-in-out infinite;display:inline-block;margin-top:28px;font-family:var(--mono);font-size:13px;color:rgba(0,255,70,0.88);border:1px solid rgba(0,255,70,0.3);padding:12px 28px;border-radius:4px;letter-spacing:.08em;}
+@keyframes pulse{0%,100%{opacity:.4;border-color:rgba(0,255,70,0.2);box-shadow:0 0 0 rgba(0,255,70,0);}50%{opacity:1;border-color:rgba(0,255,70,0.65);box-shadow:0 0 30px rgba(0,255,70,0.15);}}
+
 .lab{display:none;padding:.5rem 0 3rem;}
 .lab.show{display:block;animation:slideIn .8s cubic-bezier(.16,1,.3,1);}
 @keyframes slideIn{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:none;}}
 .tab-bar{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:1.5rem;background:var(--bg2);padding:4px;border-radius:14px;position:sticky;top:8px;z-index:20;box-shadow:0 1px 3px rgba(0,0,0,0.08);}
-.tab{flex:1;min-width:95px;padding:8px 6px;font-size:11.5px;font-weight:500;border:none;background:transparent;color:var(--txt2);cursor:pointer;border-radius:10px;transition:all .2s;line-height:1.3;text-align:center;}
+.tab{flex:1;min-width:85px;padding:8px 6px;font-size:11px;font-weight:500;border:none;background:transparent;color:var(--txt2);cursor:pointer;border-radius:10px;transition:all .2s;line-height:1.3;text-align:center;}
 .tab.active{background:var(--bg);color:var(--txt);border:0.5px solid var(--bdr);box-shadow:0 1px 3px rgba(0,0,0,0.06);}
 .panel{display:none;}.panel.active{display:block;animation:fadeIn .3s ease;}
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
@@ -44,7 +57,7 @@ select{padding:6px 8px;font-size:12px;border:0.5px solid var(--bdr);border-radiu
 .ibox{border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:1.1rem;font-size:13px;line-height:1.85;color:var(--txt);border-left:4px solid var(--blue);background:var(--bg2);transition:all .4s;}
 .ibox.green{border-left-color:var(--green);}.ibox.red{border-left-color:var(--red);}.ibox.amber{border-left-color:var(--amber);}.ibox.purple{border-left-color:var(--purple);}
 .ititle{font-weight:600;font-size:14px;margin-bottom:6px;color:var(--txt);}
-.isub{font-size:12px;color:var(--txt2);margin-top:6px;padding-top:6px;border-top:0.5px solid var(--bdr);}
+.isub{font-size:12px;color:var(--txt2);margin-top:8px;padding-top:8px;border-top:0.5px solid var(--bdr);}
 .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:1rem;}
 .cg{display:flex;flex-direction:column;gap:4px;}.cg label{font-size:12px;font-weight:500;color:var(--txt);}
 .cv{color:var(--blue);font-weight:600;}
@@ -57,21 +70,54 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
 .met{background:var(--bg2);border-radius:10px;padding:.7rem 1rem;border:0.5px solid var(--bdr);}
 .ml{font-size:11px;color:var(--txt3);margin-bottom:3px;text-transform:uppercase;letter-spacing:.04em;}
 .mv{font-size:17px;font-weight:600;color:var(--txt);font-family:var(--mono);}
-.mv.g{color:var(--green);} .mv.r{color:var(--red);} .mv.a{color:var(--amber);}
+.mv.g{color:var(--green);} .mv.r{color:var(--red);} .mv.a{color:var(--amber);} .mv.p{color:var(--purple);}
 .tc{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:.9rem;}
 .sh{font-size:11px;font-weight:600;color:var(--txt3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;}
-@media(max-width:580px){.tc{grid-template-columns:1fr;}.tab-bar{position:static;}.matrix-intro{min-height:460px;}.matrix-intro canvas{height:460px;}.matrix-msg h1{font-size:26px;}}
+
+/* ============== COMBINATIONS FORMULA BOX ============== */
+.formula-box{background:var(--bg2);border:0.5px solid var(--bdr);border-radius:14px;padding:1.5rem 1.2rem;margin-bottom:1rem;text-align:center;font-family:var(--mono);}
+.formula-eq{font-size:28px;margin:0.8rem 0;color:var(--blue);line-height:1.6;}
+.formula-eq sub,.formula-eq sup{font-size:15px;}
+.formula-eq .frac{display:inline-block;vertical-align:middle;text-align:center;margin:0 4px;}
+.formula-eq .frac .num{display:block;border-bottom:1.5px solid var(--txt);padding:2px 8px;}
+.formula-eq .frac .den{display:block;padding:2px 8px;}
+.formula-live{font-size:15px;color:var(--txt2);margin-top:0.8rem;line-height:1.8;}
+.formula-live .result{color:var(--green);font-weight:600;font-size:20px;}
+.combo-demo{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:1rem 0;min-height:60px;align-items:center;}
+.combo-chip{padding:6px 12px;border-radius:99px;background:var(--bg3);border:0.5px solid var(--bdr);font-family:var(--mono);font-size:12px;color:var(--txt);transition:all 0.3s;}
+.combo-chip.selected{background:var(--blue);color:white;border-color:var(--blue);transform:scale(1.05);}
+
+/* ============== DECISION TREE / RF VISUAL ============== */
+.tree-legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--txt2);margin-top:0.5rem;}
+.tree-legend .sw{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:middle;margin-right:5px;}
+.forest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:0.8rem 0;}
+.mini-tree{background:var(--bg2);border:0.5px solid var(--bdr);border-radius:8px;padding:8px;text-align:center;font-size:10px;}
+.mini-tree canvas{width:100%;height:90px;display:block;border-radius:4px;}
+.vote-bar{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--bg3);margin-top:6px;}
+.vote-bar .seg{transition:width 0.4s;}
+
+@media(max-width:580px){.tc{grid-template-columns:1fr;}.tab-bar{position:static;}.matrix-intro{min-height:640px;}.matrix-intro canvas{height:640px;}.matrix-msg h1{font-size:26px;}.formula-eq{font-size:22px;}}
 </style>
 
-<div class="matrix-intro" id="matrixIntro">
-  <canvas id="matrixC" height="520"></canvas>
-  <div class="matrix-msg">
-    <h1>Statistical Universe</h1>
-    <div class="sub">
-      Gravity &nbsp;·&nbsp; Central Limit Theorem &nbsp;·&nbsp; Coin Tosses<br>
-      Regression &amp; Correlation &nbsp;·&nbsp; Permutation Test &nbsp;·&nbsp; Simpson's Paradox
+<div class="landing-wrap" id="landingWrap">
+  <div class="landing-header">
+    <div class="tag">An interactive statistics playground</div>
+    <h1>Welcome to the <span class="accent">Statistical Universe</span></h1>
+    <p>A hands-on environment for building intuition about core statistical ideas. Every concept here is something you can <strong>touch, tweak, and re-run</strong> instead of just reading about.</p>
+    <p>Adjust a slider and watch a distribution reshape itself. Toss thousands of coins in a heartbeat. Pit subgroups against their own aggregate and uncover Simpson's paradox in real time. Whether you are meeting these ideas for the first time or revisiting them, the goal is the same: move from <em>symbols on a page</em> to <em>patterns you can see</em>.</p>
+  </div>
+  <div class="matrix-intro" id="matrixIntro">
+    <canvas id="matrixC" height="780"></canvas>
+    <div class="matrix-msg">
+      <h1>Statistical Universe</h1>
+      <div class="sub">
+        Gravity <span class="dot">·</span> Central Limit Theorem <span class="dot">·</span> Coin Tosses<br>
+        Regression &amp; Correlation <span class="dot">·</span> Permutation Test<br>
+        Simpson's Paradox <span class="dot">·</span> Combinations<br>
+        Decision Trees <span class="dot">·</span> Random Forest
+      </div>
+      <div class="pulse-btn">[ click anywhere to enter ]</div>
     </div>
-    <div class="pulse-btn">[ click anywhere to enter ]</div>
   </div>
 </div>
 
@@ -81,15 +127,18 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
   <button class="tab" id="t-clt">CLT</button>
   <button class="tab" id="t-coin">Coin Tosses</button>
   <button class="tab" id="t-reg">Regression</button>
-  <button class="tab" id="t-perm">Permutation Test</button>
-  <button class="tab" id="t-simpson">Simpson's Paradox</button>
+  <button class="tab" id="t-perm">Permutation</button>
+  <button class="tab" id="t-simpson">Simpson's</button>
+  <button class="tab" id="t-combo">Combinations</button>
+  <button class="tab" id="t-tree">Decision Tree</button>
+  <button class="tab" id="t-forest">Random Forest</button>
 </div>
 
 <div id="tab-grav" class="panel active">
   <div class="ibox purple" id="grav-ins">
     <div class="ititle">Gravitational N-body simulation</div>
     Every particle attracts every other according to Newton's inverse-square law: <strong>F = G·m₁·m₂ / r²</strong>. The force grows with mass and shrinks with the square of distance. No behaviour is scripted. Clusters, orbits, slingshots, and collisions emerge from this single rule applied to every pair at once.
-    <div class="isub">Try “Two galaxies colliding” and watch tidal tails form as particles are flung outward during the merger. This is the same logic behind many real large-scale gravitational systems.</div>
+    <div class="isub">Try "Two galaxies colliding" and watch tidal tails form as particles are flung outward during the merger. This is the same logic behind many real large-scale gravitational systems.</div>
   </div>
   <div class="card">
     <div class="cgrid">
@@ -118,14 +167,16 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
 <div id="tab-clt" class="panel">
   <div class="ibox green" id="clt-ins">
     <div class="ititle">The Central Limit Theorem</div>
-    Take almost any population with a finite mean and variance. Draw a sample of size n, compute its average, and repeat that many times. The distribution of sample means moves toward a bell curve even if the original population is skewed or irregular.
-    <div class="isub">This is one reason why confidence intervals, regression inference, and many statistical tests work so well in practice.</div>
+    Take almost any population with a finite mean and variance. Draw a sample of size <strong>n</strong>, compute its average, then repeat that process over and over. The remarkable result is that the distribution of those sample means moves toward a bell curve even when the original population is skewed, jagged, binary, or bimodal. In other words, the raw data does not need to look normal for the <em>averages</em> to become approximately normal.
+    <div style="margin-top:10px;"><strong>Why this matters.</strong> Much of classical statistics is built around the behavior of averages. Confidence intervals, standard errors, regression inference, and many familiar tests work because the sample mean becomes predictable as repetition builds up. The theorem also explains two things at once: the center of the sampling distribution stays near the population mean, and its spread shrinks as sample size grows.</div>
+    <div style="margin-top:10px;"><strong>The shrinking spread.</strong> The standard error follows the famous rule <strong>σ/√n</strong>. That means averaging more observations makes your estimate more stable, but with diminishing returns. To cut the uncertainty in half, you do not need twice as much data. You need about four times as much.</div>
+    <div class="isub"><strong>How to read the display.</strong> The left panel shows the population you are sampling from. The right panel shows the distribution of the sample means you generated. At <strong>n = 1</strong>, the two panels look similar because each "sample mean" is just a single draw. As <strong>n</strong> increases, the right-hand distribution becomes smoother, more symmetric, and narrower. Try the Cauchy option to see the important exception: when the mean and variance are not well behaved, the theorem can fail.</div>
   </div>
   <div class="card">
     <div class="cgrid">
-      <div class="cg"><label>Population distribution</label><select id="clt-dist"><option value="uniform">Uniform [0,10]</option><option value="exp">Exponential</option><option value="bimodal">Bimodal</option><option value="bernoulli">Bernoulli p=0.2</option><option value="pareto">Pareto</option><option value="cauchy">Cauchy</option></select><div class="hint">The left panel shows the population. The right panel shows the distribution of the sample means.</div></div>
-      <div class="cg"><label>Sample size n <span class="cv" id="clt-n-v">5</span></label><input type="range" id="clt-n" min="1" max="100" value="5" step="1"><div class="hint">As n grows, the sampling distribution usually becomes more bell-shaped and narrower.</div></div>
-      <div class="cg" style="justify-content:flex-end;"><div class="brow" style="margin-bottom:0;"><button id="clt-500">+500 samples</button><button id="clt-2000">+2000</button><button id="clt-reset">Reset</button></div><div class="hint">Draw repeated samples and compare the empirical shape with the normal overlay.</div></div>
+      <div class="cg"><label>Population distribution</label><select id="clt-dist"><option value="uniform">Uniform [0,10]</option><option value="exp">Exponential</option><option value="bimodal">Bimodal</option><option value="bernoulli">Bernoulli p=0.2</option><option value="pareto">Pareto</option><option value="cauchy">Cauchy</option></select><div class="hint">The left panel is the raw population. The right panel is the distribution of the averages you get by repeatedly sampling from it. Watching those two panels separate is the core visual idea behind the theorem.</div></div>
+      <div class="cg"><label>Sample size n <span class="cv" id="clt-n-v">5</span></label><input type="range" id="clt-n" min="1" max="100" value="5" step="1"><div class="hint">Larger n means each average is based on more information. The sampling distribution usually becomes smoother, more symmetric, and less spread out because its standard error shrinks like 1/√n.</div></div>
+      <div class="cg" style="justify-content:flex-end;"><div class="brow" style="margin-bottom:0;"><button id="clt-500">+500 samples</button><button id="clt-2000">+2000</button><button id="clt-reset">Reset</button></div><div class="hint">Each click adds more sample means to the histogram. With enough repetitions, you can compare the green empirical shape to the red normal overlay and see the theorem emerge from simulation instead of assumption.</div></div>
     </div>
     <div class="tc">
       <div><div class="sh">Population shape</div><div class="cw"><canvas class="viz" id="popC" height="180"></canvas></div></div>
@@ -144,14 +195,16 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
 <div id="tab-coin" class="panel">
   <div class="ibox amber" id="coin-ins">
     <div class="ititle">Coin tosses and the Law of Large Numbers</div>
-    A fair coin is random in the short run, but the proportion of heads tends to settle near 0.5 as the number of tosses grows. This is the Law of Large Numbers in action. Small samples jump around wildly. Large samples stabilise.
-    <div class="isub">You can also bias the coin. Then the long-run proportion settles near the true probability instead of 0.5.</div>
+    A single coin toss is unpredictable. Ten tosses are still noisy. But once you keep going, something powerful happens: the cumulative proportion of heads begins to settle near the true probability <strong>p</strong>. That is the <strong>Law of Large Numbers</strong>. It does not say randomness disappears. It says randomness becomes more stable when you average over more and more trials.
+    <div style="margin-top:10px;"><strong>What the line means.</strong> After each toss, you recompute the proportion of heads so far. Early on, each new flip can move the line dramatically because every observation carries a lot of weight. Later, each additional toss matters less, so the line wiggles in smaller and smaller steps. The red horizontal line is the true probability used to generate the flips. The green path is your running estimate of that probability.</div>
+    <div style="margin-top:10px;"><strong>Fair versus biased coins.</strong> If <strong>p = 0.50</strong>, the long-run target is one-half. If you bias the coin to 0.70, the line should eventually hover near 0.70 instead. In both cases, short runs can look misleading. You may get long streaks, temporary surges, or stretches where the estimate seems badly wrong. The lesson is statistical rather than magical: small samples are volatile, large samples are steadier.</div>
+    <div class="isub"><strong>Why this matters beyond coins.</strong> This same logic explains why surveys, experiments, and repeated measurements become more trustworthy as the sample size grows. Any estimate based on repeated random trials can wander in the short run but stabilize in the long run. The coin is just the cleanest way to watch that idea happen in real time.</div>
   </div>
   <div class="card">
     <div class="cgrid">
-      <div class="cg"><label>Probability of heads <span class="cv" id="coin-p-v">0.50</span></label><input type="range" id="coin-p" min="0.05" max="0.95" value="0.50" step="0.01"><div class="hint">This is the true probability used to generate each toss.</div></div>
-      <div class="cg"><label>Batch size</label><select id="coin-batch"><option value="10">10 tosses</option><option value="50">50 tosses</option><option value="100">100 tosses</option><option value="500">500 tosses</option></select><div class="hint">Use small batches to see volatility and large batches to see convergence.</div></div>
-      <div class="cg" style="justify-content:flex-end;"><div class="brow" style="margin-bottom:0;"><button id="coin-step">Add tosses</button><button id="coin-auto">Auto-run</button><button id="coin-stop">Stop</button><button id="coin-reset">Reset</button></div><div class="hint">The line tracks the cumulative proportion of heads over time.</div></div>
+      <div class="cg"><label>Probability of heads <span class="cv" id="coin-p-v">0.50</span></label><input type="range" id="coin-p" min="0.05" max="0.95" value="0.50" step="0.01"><div class="hint">This is the true probability built into the data-generating process. The running proportion is trying to estimate this hidden value from repeated random outcomes.</div></div>
+      <div class="cg"><label>Batch size</label><select id="coin-batch"><option value="10">10 tosses</option><option value="50">50 tosses</option><option value="100">100 tosses</option><option value="500">500 tosses</option></select><div class="hint">Small batches let you see how unstable short runs can be. Large batches make it easier to watch the estimate settle toward the true probability as more information accumulates.</div></div>
+      <div class="cg" style="justify-content:flex-end;"><div class="brow" style="margin-bottom:0;"><button id="coin-step">Add tosses</button><button id="coin-auto">Auto-run</button><button id="coin-stop">Stop</button><button id="coin-reset">Reset</button></div><div class="hint">After every toss, the graph updates the cumulative proportion of heads. Early flips move the line sharply; later flips matter less because they are averaged into a much larger history.</div></div>
     </div>
     <div class="cw"><canvas class="viz" id="coinC" height="360"></canvas></div>
     <div class="mets">
@@ -167,15 +220,18 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
 <div id="tab-reg" class="panel">
   <div class="ibox red" id="reg-ins">
     <div class="ititle">Correlation and regression</div>
-    Regression tries to describe the relationship between x and y with a line. Correlation measures how strongly the variables move together. Stronger relationships and less noise make the fitted line more stable and raise R².
-    <div class="isub">This is a simple way to see that slope, correlation, and predictive fit are related but not identical ideas.</div>
+    Regression tries to summarize the relationship between two variables with a line. Correlation measures how tightly the points move together. When the association is strong and the noise is low, the fitted line is stable and the points cluster around it. When the association is weak or noisy, the line becomes less informative and the scatter spreads out.
+    <div style="margin-top:10px;"><strong>What the slope tells you.</strong> The slope describes how much <strong>y</strong> tends to change when <strong>x</strong> increases by one unit. A positive slope means the cloud rises from left to right. A negative slope means it falls. The intercept is where the fitted line would cross the y-axis. Together, slope and intercept define the line of best fit.</div>
+    <div style="margin-top:10px;"><strong>Correlation is not the same as slope.</strong> Correlation <strong>r</strong> measures strength and direction on a standardized scale from -1 to 1. A steep line does not automatically mean strong correlation, because the points may still be widely scattered. Likewise, a modest slope can still come with a very strong correlation if the points hug the line closely.</div>
+    <div style="margin-top:10px;"><strong>R² and model fit.</strong> The value <strong>R²</strong> tells you how much of the variation in <strong>y</strong> is being explained by the fitted line. Higher noise lowers R² because the line captures less of the pattern. The curved and clustered options are especially useful because they show an important warning: a straight-line regression can miss real structure even when the data clearly contains a pattern.</div>
+    <div class="isub"><strong>How to read the graph.</strong> The blue points are the observed data. The red line is the fitted linear relationship. Try changing the slope, noise, number of points, and pattern type. The goal is to see that regression is not just about drawing a line. It is about understanding when a line is meaningful, when it is weak, and when the wrong model can hide the real story.</div>
   </div>
   <div class="card">
     <div class="cgrid">
-      <div class="cg"><label>Points <span class="cv" id="reg-n-v">60</span></label><input type="range" id="reg-n" min="20" max="150" value="60" step="5"><div class="hint">More points usually make the fitted pattern easier to estimate.</div></div>
-      <div class="cg"><label>True slope <span class="cv" id="reg-slope-v">1.2</span></label><input type="range" id="reg-slope" min="-3" max="3" value="1.2" step="0.1"><div class="hint">Positive slopes rise from left to right. Negative slopes fall.</div></div>
-      <div class="cg"><label>Noise level <span class="cv" id="reg-noise-v">1.5</span></label><input type="range" id="reg-noise" min="0.2" max="5" value="1.5" step="0.1"><div class="hint">Higher noise spreads the points farther from the line and lowers R².</div></div>
-      <div class="cg"><label>Pattern</label><select id="reg-shape"><option value="linear">Linear</option><option value="curve">Curved</option><option value="cluster">Two clusters</option></select><div class="hint">This helps show when a straight-line regression fits well and when it misses the real structure.</div></div>
+      <div class="cg"><label>Points <span class="cv" id="reg-n-v">60</span></label><input type="range" id="reg-n" min="20" max="150" value="60" step="5"><div class="hint">With very few points, the fitted line can swing around from sample to sample. More observations usually make the underlying pattern easier to detect and the estimates more stable.</div></div>
+      <div class="cg"><label>True slope <span class="cv" id="reg-slope-v">1.2</span></label><input type="range" id="reg-slope" min="-3" max="3" value="1.2" step="0.1"><div class="hint">The slope controls the overall direction of the linear relationship. Positive values tilt the cloud upward, negative values tilt it downward, and values near zero flatten the trend.</div></div>
+      <div class="cg"><label>Noise level <span class="cv" id="reg-noise-v">1.5</span></label><input type="range" id="reg-noise" min="0.2" max="5" value="1.5" step="0.1"><div class="hint">Noise adds random vertical scatter around the trend. As noise increases, the line explains less of the variation in y, so correlation weakens and R² usually drops.</div></div>
+      <div class="cg"><label>Pattern</label><select id="reg-shape"><option value="linear">Linear</option><option value="curve">Curved</option><option value="cluster">Two clusters</option></select><div class="hint">Linear data is the ideal case for a straight-line fit. The curved and clustered options show that real structure can exist even when a single regression line gives a simplified or misleading summary.</div></div>
     </div>
     <div class="brow"><button id="reg-gen">Generate data</button><button id="reg-reveal">Reveal fit</button></div>
     <div class="cw"><canvas class="viz" id="regC" height="380"></canvas></div>
@@ -191,9 +247,12 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
 
 <div id="tab-perm" class="panel">
   <div class="ibox purple" id="perm-ins">
-    <div class="ititle">Permutation test</div>
-    A permutation test asks whether the observed difference between two groups is unusual under the null hypothesis of no real group effect. It does this by repeatedly shuffling the group labels and rebuilding the null distribution from the shuffled data.
-    <div class="isub">If the observed difference sits far in the tail of the shuffled distribution, the result is unlikely under the null and the p-value becomes small.</div>
+    <div class="ititle">The permutation test — how it actually works</div>
+    Imagine a small clinical trial. Twenty patients get drug A, twenty get drug B, and you measure a recovery score for each. Drug B's group ends up with a higher mean — but the higher mean could be a real drug effect, <em>or</em> it could just be the luck of which patients happened to get assigned to each group. <strong>How do you tell the difference?</strong>
+    <div style="margin-top:10px;">Classical tests (the t-test, z-test, and so on) answer this by assuming your data follows a textbook distribution and then computing a formula. The <strong>permutation test</strong> takes a more honest, data-driven route: it asks the same question using only the data you actually have.</div>
+    <div style="margin-top:10px;"><strong>The logic in one paragraph.</strong> If the two drugs really have no different effect, then the "A vs B" labels are meaningless stickers — any patient could just as easily have been in either group. So we literally <em>strip the labels off</em>, shuffle them randomly, stick them back on, and recompute the mean difference. Then we do it again. And again. Thousands of times. Each shuffle gives us a mean difference that random chance alone could have produced. Collect them all and you have a picture of the <strong>null world</strong> — a world where no real effect exists.</div>
+    <div style="margin-top:10px;"><strong>The verdict.</strong> If your actually-observed difference sits comfortably inside this null cloud, random chance is a perfectly good explanation and you cannot claim the drug works. If your observed difference sits far out in the tails — so far that only 2% of random shuffles ever produced something that extreme — then chance alone is a lousy explanation and you have evidence the drug really does something. That 2% is your <strong>p-value</strong>: the fraction of null-world shuffles at least as extreme as what you saw.</div>
+    <div class="isub"><strong>Why this method is beautiful.</strong> No distributional assumptions. No formulas. You could do it with index cards and a coin. It works for means, medians, ratios — anything you can compute from the data. The permutation test is a small miracle of statistical reasoning: it turns "we don't know the sampling distribution" into "we'll build it ourselves, directly from the data."</div>
   </div>
   <div class="card">
     <div class="cgrid">
@@ -204,12 +263,13 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
     </div>
     <div class="brow">
       <button id="perm-gen">Generate data</button>
+      <button id="perm-animate">Animate one shuffle</button>
       <button id="perm-run">Run permutations</button>
       <button id="perm-reset">Reset</button>
     </div>
     <div class="tc">
-      <div><div class="sh">Observed groups</div><div class="cw"><canvas class="viz" id="permDataC" height="220"></canvas></div></div>
-      <div><div class="sh">Null distribution of shuffled mean differences</div><div class="cw"><canvas class="viz" id="permNullC" height="220"></canvas></div></div>
+      <div><div class="sh">Observed groups (watch labels shuffle)</div><div class="cw"><canvas class="viz" id="permDataC" height="260"></canvas></div></div>
+      <div><div class="sh">Null distribution builds up per shuffle</div><div class="cw"><canvas class="viz" id="permNullC" height="260"></canvas></div></div>
     </div>
     <div class="mets">
       <div class="met"><div class="ml">Observed diff</div><div class="mv" id="perm-obs">—</div></div>
@@ -218,14 +278,21 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
       <div class="met"><div class="ml">Mean null diff</div><div class="mv" id="perm-nullm">—</div></div>
       <div class="met"><div class="ml">Null SD</div><div class="mv" id="perm-nulls">—</div></div>
     </div>
+    <div class="ibox amber" id="perm-explain-box" style="margin-top:1rem;margin-bottom:0;">
+      <div class="ititle">What's happening right now</div>
+      <div id="perm-explain-text" style="font-size:13px;line-height:1.75;">Generate data and run some permutations to see the current interpretation.</div>
+    </div>
   </div>
 </div>
 
 <div id="tab-simpson" class="panel">
   <div class="ibox green" id="simp-ins">
-    <div class="ititle">Simpson's paradox</div>
-    Simpson's paradox happens when the overall relationship in combined data points in one direction, while the relationship inside each subgroup points in another direction. It is a reminder that aggregation can hide important structure.
-    <div class="isub">Use the controls to shift group sizes and group offsets. The subgroup lines can slope upward while the combined line slopes downward, or the reverse.</div>
+    <div class="ititle">Simpson's paradox — when averaging lies to you</div>
+    Here's a famous real-world puzzle. In 1973, UC Berkeley was sued for gender bias in graduate admissions. The overall numbers looked damning: <strong>44% of men were admitted vs. only 35% of women</strong>. Clear discrimination, right?
+    <div style="margin-top:10px;">But when statisticians broke the data down department by department, something strange emerged. In most departments, <em>women were admitted at slightly higher rates than men</em>. The "bias" evaporated — and in several departments it actually flipped direction.</div>
+    <div style="margin-top:10px;">How can both be true? Because women were applying disproportionately to <strong>competitive departments</strong> (English, Education) with low admit rates for everyone, while men were applying to <strong>less competitive departments</strong> (Engineering, Physics) with high admit rates for everyone. Department was a <em>lurking variable</em> correlated with both gender (the predictor) and admission (the outcome). Averaging over departments mixed the two signals and reversed the conclusion.</div>
+    <div style="margin-top:10px;"><strong>The general pattern.</strong> Simpson's paradox happens whenever a relationship inside every subgroup <strong>reverses direction</strong> after the subgroups are aggregated. The fix is always the same: identify the hidden grouping variable, then analyze within groups (or adjust for it statistically). The paradox is not a mathematical trick — it is a warning that aggregated data can mechanically produce the opposite conclusion of the truth.</div>
+    <div class="isub"><strong>Reading the plot below.</strong> The blue and red arrows are the <em>honest</em> within-group slopes — what the data actually says inside each group. The green arrow is the <em>aggregated</em> slope someone would report if they ignored the grouping variable. The gold dashed line is the key: it connects the center of Group A to the center of Group B, showing the <strong>cross-group trend</strong> that hijacks the aggregate fit. When the gold line points opposite to the blue and red lines, the paradox is mechanical and inevitable — not a trick, just geometry.</div>
   </div>
   <div class="card">
     <div class="cgrid">
@@ -236,9 +303,20 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
     </div>
     <div class="brow">
       <button id="simp-gen">Generate paradox</button>
-      <button id="simp-toggle">Hide subgroup lines</button>
+      <button id="simp-view">View: both</button>
+      <button id="simp-reveal">Reveal hidden groups</button>
     </div>
-    <div class="cw"><canvas class="viz" id="simpC" height="420"></canvas></div>
+    <div class="cw"><canvas class="viz" id="simpC" height="440"></canvas></div>
+    <div class="tree-legend">
+      <span><span class="sw" style="background:rgba(37,99,235,0.82);"></span>Group A</span>
+      <span><span class="sw" style="background:rgba(220,38,38,0.82);"></span>Group B</span>
+      <span><span class="sw" style="background:rgba(16,185,129,0.95);"></span>Overall fit (aggregated)</span>
+      <span><span class="sw" style="background:rgba(245,158,11,0.95);"></span>Cross-group trend (A centroid → B centroid)</span>
+    </div>
+    <div class="ibox amber" id="simp-explain" style="margin-top:1rem;margin-bottom:0;">
+      <div class="ititle">What's happening right now</div>
+      <div id="simp-explain-text" style="font-size:13px;line-height:1.75;">Generate data to see the explanation.</div>
+    </div>
     <div class="mets">
       <div class="met"><div class="ml">Overall slope</div><div class="mv" id="simp-all">—</div></div>
       <div class="met"><div class="ml">Group A slope</div><div class="mv" id="simp-a">—</div></div>
@@ -249,9 +327,124 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
   </div>
 </div>
 
+<div id="tab-combo" class="panel">
+  <div class="ibox amber">
+    <div class="ititle">Combinations — counting without caring about order</div>
+    A <strong>combination</strong> is a way of choosing items from a collection where the <em>order does not matter</em>. Choosing Alice, Bob, and Carol for a committee is the same committee as Carol, Alice, and Bob. The combinations formula counts these choices:
+    <div class="formula-box" style="margin:1rem 0 0.5rem 0;">
+      <div class="formula-eq">
+        <span style="font-size:22px;">C(n, r) =</span>
+        <span class="frac"><span class="num">n&thinsp;!</span><span class="den">r&thinsp;!&thinsp;(n − r)&thinsp;!</span></span>
+      </div>
+      <div style="font-size:12px;color:var(--txt2);font-family:var(--font);">read as <em>"n choose r"</em>  — the number of ways to pick r items from n, ignoring order</div>
+    </div>
+    <div class="isub">Combinations show up everywhere in statistics and probability — binomial distributions, card games, lottery odds, the permutation test you just saw, and building random subsets of features in random forests. The factorial (<code>n!</code> = n × (n−1) × ... × 1) counts every possible ordering, and dividing by <code>r!(n−r)!</code> cancels out the orderings we do not want to double-count.</div>
+  </div>
+  <div class="card">
+    <div class="cgrid">
+      <div class="cg"><label>n (total items) <span class="cv" id="cmb-n-v">10</span></label><input type="range" id="cmb-n" min="1" max="20" value="10" step="1"><div class="hint">The size of the full set you are choosing from.</div></div>
+      <div class="cg"><label>r (items to choose) <span class="cv" id="cmb-r-v">3</span></label><input type="range" id="cmb-r" min="0" max="20" value="3" step="1"><div class="hint">How many you pick. r must not exceed n.</div></div>
+      <div class="cg"><label>Display mode</label><select id="cmb-mode"><option value="formula">Formula &amp; result</option><option value="enumerate">Enumerate examples</option><option value="pascal">Pascal's triangle</option></select><div class="hint">See the formula compute, or spell out the actual combinations.</div></div>
+    </div>
+    <div class="formula-box" id="cmb-live-box">
+      <div style="font-size:13px;color:var(--txt2);font-family:var(--font);margin-bottom:8px;">Live calculation</div>
+      <div class="formula-eq" id="cmb-eq">
+        <span style="font-size:22px;">C(<span id="cmb-n-eq">10</span>, <span id="cmb-r-eq">3</span>) =</span>
+        <span class="frac"><span class="num"><span id="cmb-nfact">10!</span></span><span class="den"><span id="cmb-rfact">3!</span>&thinsp;·&thinsp;<span id="cmb-nrfact">7!</span></span></span>
+        <span style="font-size:22px;">=</span>
+        <span class="result" id="cmb-result" style="font-size:28px;">120</span>
+      </div>
+      <div class="formula-live" id="cmb-explain">There are <strong>120</strong> different ways to choose 3 items from 10.</div>
+    </div>
+    <div class="combo-demo" id="cmb-demo"></div>
+    <div class="cw"><canvas class="viz" id="cmbC" height="280"></canvas></div>
+    <div class="mets">
+      <div class="met"><div class="ml">C(n,r)</div><div class="mv p" id="cmb-m-result">120</div></div>
+      <div class="met"><div class="ml">Permutations P(n,r)</div><div class="mv" id="cmb-m-perm">720</div></div>
+      <div class="met"><div class="ml">n!</div><div class="mv" id="cmb-m-nfact">3,628,800</div></div>
+      <div class="met"><div class="ml">Row of Pascal</div><div class="mv" id="cmb-m-pascal">Row 10</div></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-tree" class="panel">
+  <div class="ibox red">
+    <div class="ititle">Decision trees — learning by asking yes/no questions</div>
+    A <strong>decision tree</strong> is one of the most intuitive prediction methods out there: it classifies cases by asking a sequence of yes/no questions. "Is this passenger male? If yes, are they younger than 6.5 years old?" At each step, the tree picks the question that best separates survivors from non-survivors, then recursively does the same inside each branch.
+    <div style="margin-top:10px;"> <strong>Titanic survival data</strong>  Passengers are split by features like sex, class, and age, and each leaf of the tree predicts a class ("Survived" or "Died") based on the majority of training passengers that ended up in that leaf.</div>
+    <div class="isub">Increase <strong>Max depth</strong> to let the tree ask more questions. Trees that are too shallow miss real patterns; trees that are too deep memorize noise (overfitting). Watch the training accuracy rise while the tree's shape gets more complex.</div>
+  </div>
+  <div class="card">
+    <div class="cgrid">
+      <div class="cg"><label>Max depth <span class="cv" id="tree-d-v">3</span></label><input type="range" id="tree-d" min="1" max="5" value="3" step="1"><div class="hint">Controls how many questions the tree can ask in a row. Deeper trees fit the training data more closely.</div></div>
+      <div class="cg"><label>Min leaf size <span class="cv" id="tree-m-v">10</span></label><input type="range" id="tree-m" min="2" max="60" value="10" step="1"><div class="hint">The tree stops splitting a branch once it has fewer than this many passengers.</div></div>
+      <div class="cg"><label>Features used</label><select id="tree-feat"><option value="sex">Sex only</option><option value="sex_class">Sex + Class</option><option value="all" selected>Sex + Class + Age</option></select><div class="hint">Matches the progression in the STAA57 course notes.</div></div>
+    </div>
+    <div class="brow">
+      <button id="tree-build">Grow the tree</button>
+      <button id="tree-trace">Trace a passenger</button>
+    </div>
+    <div class="cw"><canvas class="viz" id="treeC" height="460"></canvas></div>
+    <div class="tree-legend">
+      <span><span class="sw" style="background:#86efac;"></span>Predicts "Died" (0)</span>
+      <span><span class="sw" style="background:#93c5fd;"></span>Predicts "Survived" (1)</span>
+      <span>Leaves are colored by majority class, saturation = confidence</span>
+    </div>
+    <div class="mets">
+      <div class="met"><div class="ml">Tree depth</div><div class="mv" id="tree-depth">—</div></div>
+      <div class="met"><div class="ml">Leaf nodes</div><div class="mv" id="tree-leaves">—</div></div>
+      <div class="met"><div class="ml">Training accuracy</div><div class="mv g" id="tree-acc">—</div></div>
+      <div class="met"><div class="ml">Passengers</div><div class="mv" id="tree-total">891</div></div>
+      <div class="met"><div class="ml">Most important feature</div><div class="mv" id="tree-feat-out">Sex</div></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-forest" class="panel">
+  <div class="ibox purple">
+    <div class="ititle">Random Forest — a whole committee of trees</div>
+    A single decision tree is wonderfully interpretable — you can follow every prediction back through a handful of yes/no questions. But it has a weakness: <strong>trees are unstable</strong>. Shuffle your data slightly, retrain, and the tree may look completely different. Different splits, different thresholds, sometimes different predictions for the same passenger. That instability translates into wobbly predictions on new data.
+    <div style="margin-top:10px;"><strong>The wisdom-of-crowds insight.</strong> In 1906, Francis Galton visited a country fair where 800 people guessed the weight of an ox. Individual guesses were all over the place — wildly too high or too low. But when Galton averaged every guess, the crowd's consensus (1,197 lb) was within one pound of the true weight (1,198 lb). Individual error is chaotic; <em>averaged</em> error cancels out. This is the same logic behind Random Forests.</div>
+    <div style="margin-top:10px;"><strong>Building the committee.</strong> Leo Breiman's 2001 algorithm uses two clever tricks to make sure the trees in the committee actually <em>disagree</em> — because averaging identical opinions gives you nothing:</div>
+    <ul style="margin:8px 0 0 18px;padding:0;font-size:13px;line-height:1.85;color:var(--txt2);">
+      <li><strong>Bagging</strong> (<em>b</em>ootstrap <em>agg</em>regat<em>ing</em>): every tree is trained on a different random resample of the data, drawn with replacement. If you have 891 passengers, each bootstrap sample is 891 passengers drawn randomly with repeats — so roughly 63% of the original passengers appear at least once, and 37% are left out entirely. Every tree sees a slightly distorted version of the world.</li>
+      <li><strong>Random feature subsets</strong>: at each split, the tree is only allowed to look at a random subset of features (classically <code>√p</code> of them). This prevents a single dominant feature like "Sex" from winning the top split in every single tree. Forcing diversity in feature choice creates trees that specialize in different parts of the problem.</li>
+    </ul>
+    <div style="margin-top:10px;"><strong>Voting.</strong> For classification, every tree votes and the majority wins. For regression, predictions are averaged. The magic is that each tree's errors tend to be <em>uncorrelated</em> with the others' — so they cancel out when combined, leaving the real signal intact.</div>
+    <div class="isub"><strong>Why this works so well.</strong> A single decision tree is a <em>low-bias, high-variance</em> learner: it can fit complex patterns but is easily thrown off by noise. Averaging many such trees keeps the low bias (the average can still capture complex patterns) while dramatically reducing the variance (individual noise cancels out). Random Forests win modeling competitions, power medical diagnosis systems, and are often the first algorithm data scientists try on tabular data — precisely because the committee is smarter than any of its members.</div>
+  </div>
+  <div class="card">
+    <div class="cgrid">
+      <div class="cg"><label>Number of trees <span class="cv" id="rf-n-v">25</span></label><input type="range" id="rf-n" min="1" max="100" value="25" step="1"><div class="hint">More trees = smoother, more reliable predictions. Real forests often use hundreds.</div></div>
+      <div class="cg"><label>Max depth per tree <span class="cv" id="rf-d-v">4</span></label><input type="range" id="rf-d" min="1" max="6" value="4" step="1"><div class="hint">Individual trees can afford to be deep because bagging compensates for overfitting.</div></div>
+      <div class="cg"><label>Features tried per split</label><select id="rf-mtry"><option value="1">1 (high randomness)</option><option value="2" selected>2 (≈√p)</option><option value="3">3 (all features)</option></select><div class="hint">Smaller values make the trees more diverse — which is usually what you want.</div></div>
+    </div>
+    <div class="brow">
+      <button id="rf-build">Grow the forest</button>
+      <button id="rf-add">Add 10 more trees</button>
+      <button id="rf-reset">Reset</button>
+    </div>
+    <div class="cw"><canvas class="viz" id="rfC" height="320"></canvas></div>
+    <div class="sh" style="margin-top:1rem;">Individual trees in the forest (each votes on every passenger)</div>
+    <div class="forest-grid" id="rf-trees"></div>
+    <div class="mets">
+      <div class="met"><div class="ml">Trees in forest</div><div class="mv p" id="rf-count">0</div></div>
+      <div class="met"><div class="ml">Single tree acc.</div><div class="mv" id="rf-single">—</div></div>
+      <div class="met"><div class="ml">Forest accuracy</div><div class="mv g" id="rf-acc">—</div></div>
+      <div class="met"><div class="ml">Improvement</div><div class="mv" id="rf-imp">—</div></div>
+      <div class="met"><div class="ml">Most important feature</div><div class="mv" id="rf-feat">—</div></div>
+    </div>
+    <div class="ibox amber" id="rf-explain-box" style="margin-top:1rem;margin-bottom:0;">
+      <div class="ititle">What's happening right now</div>
+      <div id="rf-explain-text" style="font-size:13px;line-height:1.75;">Grow the forest to see how the trees are disagreeing and converging.</div>
+    </div>
+  </div>
+</div>
+
 </div>
 
 <script>
+/* ========= shared utilities ========= */
 function randn(){let u=0,v=0;while(!u)u=Math.random();while(!v)v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
 function mean(a){return a.length?a.reduce((s,v)=>s+v,0)/a.length:0;}
 function sdv(a){if(a.length<2)return 0;const m=mean(a);return Math.sqrt(a.reduce((s,v)=>s+(v-m)**2,0)/(a.length-1));}
@@ -260,15 +453,978 @@ function val(id){return +document.getElementById(id).value;}
 function set(id,v){const el=document.getElementById(id);if(el)el.textContent=v;}
 function sl(id,dispId,fmt){const el=document.getElementById(id);if(el)el.addEventListener('input',function(){set(dispId,fmt?fmt(+this.value):+this.value);});}
 function clr(id,h){const c=document.getElementById(id);const ctx=c.getContext('2d');const W=c.offsetWidth||c.parentElement.offsetWidth||800;c.width=W;c.height=h;return{c,ctx,W,H:h};}
-(function(){const c=document.getElementById('matrixC'),ctx=c.getContext('2d');let W=c.offsetWidth||1000,H=520;c.width=W;c.height=H;const chars='βσμR²OLSΣΩαγπφψ∂∇∫01ρχ²CLTgxn∞'.split('');const cols=Math.floor(W/15);const drops=Array.from({length:cols},()=>Math.random()*40);let running=true;function draw(){if(!running)return;ctx.fillStyle='rgba(3,5,8,0.05)';ctx.fillRect(0,0,W,H);drops.forEach((y,i)=>{const g=145+Math.floor(Math.random()*110);ctx.fillStyle=Math.random()>0.965?'rgba(210,255,220,0.96)':`rgba(0,${g},38,${0.55+Math.random()*0.35})`;ctx.font=`${12+Math.floor(Math.random()*4)}px monospace`;ctx.fillText(chars[Math.floor(Math.random()*chars.length)],i*15,y*14);if(y*14>H&&Math.random()>0.985)drops[i]=0;else drops[i]+=0.38+Math.random()*0.35;});requestAnimationFrame(draw);}draw();function reveal(){running=false;const intro=document.getElementById('matrixIntro');intro.style.transition='opacity .95s ease, transform .95s ease';intro.style.opacity='0';intro.style.transform='scale(0.97)';setTimeout(()=>{intro.style.display='none';document.getElementById('lab').classList.add('show');initGalaxy();},950);}document.getElementById('matrixIntro').addEventListener('click',reveal,{once:true});document.getElementById('matrixIntro').addEventListener('touchend',reveal,{once:true,passive:true});window.addEventListener('resize',()=>{W=c.offsetWidth||1000;c.width=W;c.height=H;});})();
-const TABS=['grav','clt','coin','reg','perm','simpson'];TABS.forEach(id=>{const tab=document.getElementById('t-'+id);if(tab){tab.addEventListener('click',()=>{TABS.forEach(t=>{document.getElementById('t-'+t).classList.toggle('active',t===id);document.getElementById('tab-'+t).classList.toggle('active',t===id);});if(id==='clt'){drawPop();drawCLT();}if(id==='coin'){drawCoin();}if(id==='reg'){generateRegression();}if(id==='perm'){drawPermData();drawPermNull();}if(id==='simpson'){generateSimpson();}if(id==='grav'&&!galRunning){galRunning=true;requestAnimationFrame(galLoop);}});}});
-let galPts=[],galRunning=false,galFrame=0,galCtx,galW,galH;sl('gn','gn-v');sl('gg','gg-v',v=>v.toFixed(2));sl('gv','gv-v',v=>v.toFixed(1));sl('gtrail','gt-v',v=>['','None','Short','Medium','Long','Full'][v]);function initGalaxy(){const r=clr('galC',430);galW=r.W;galH=430;galCtx=r.ctx;galPts=[];galFrame=0;galRunning=true;const n=val('gn'),v0=val('gv'),mode=document.getElementById('gmode').value;const cx=galW/2,cy=galH/2;const hues=[210,260,30,150,320,60,180,0,45,280];if(mode==='random'){for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,r2=Math.random()*Math.min(galW,galH)*0.37;galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:(Math.random()-.5)*v0,vy:(Math.random()-.5)*v0,m:0.5+Math.random()*2,c:`hsl(${hues[i%hues.length]},75%,65%)`});}}else if(mode==='disk'){for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,r2=15+Math.pow(Math.random(),0.5)*Math.min(galW,galH)*0.33;const sp=v0*Math.sqrt(0.8/(r2*0.008+0.1));galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:-Math.sin(a)*sp+(Math.random()-.5)*0.3,vy:Math.cos(a)*sp+(Math.random()-.5)*0.3,m:0.5+Math.random(),c:`hsl(${190+Math.random()*70},80%,60%)`});}}else if(mode==='collision'){const off=Math.min(galW,galH)*0.22;for(let i=0;i<n;i++){const s=i<n/2;const cx2=s?cx-off:cx+off;const a=Math.random()*Math.PI*2,r2=Math.random()*off*0.5;galPts.push({x:cx2+Math.cos(a)*r2,y:cy+Math.sin(a)*r2*0.65,vx:(s?v0*0.5:-v0*0.5)+(Math.random()-.5)*0.4,vy:(Math.random()-.5)*0.35,m:0.5+Math.random(),c:`hsl(${s?210:25},80%,65%)`});}}else if(mode==='ring'){for(let i=0;i<n;i++){const a=(i/n)*Math.PI*2,r2=Math.min(galW,galH)*0.29;galPts.push({x:cx+Math.cos(a)*r2+(Math.random()-.5)*16,y:cy+Math.sin(a)*r2+(Math.random()-.5)*16,vx:-Math.sin(a)*v0*1.3,vy:Math.cos(a)*v0*1.3,m:0.5+Math.random(),c:`hsl(${270+i/n*90},70%,65%)`});}}else{galPts.push({x:cx-90,y:cy,vx:0,vy:v0*0.5,m:10,c:'#ff9955'},{x:cx+90,y:cy,vx:0,vy:-v0*0.5,m:10,c:'#55aaff'});for(let i=2;i<n;i++){const a=Math.random()*Math.PI*2,r2=20+Math.random()*Math.min(galW,galH)*0.36;galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:(Math.random()-.5)*v0*0.8,vy:(Math.random()-.5)*v0*0.8,m:0.3+Math.random(),c:`hsl(${Math.random()*360},70%,65%)`});}}galCtx.fillStyle='#030508';galCtx.fillRect(0,0,galW,galH);requestAnimationFrame(galLoop);}function galLoop(){if(!galRunning)return;const G=val('gg'),tr=val('gtrail');const alpha=[0,0.4,0.2,0.11,0.05,0][tr]||0.11;galCtx.fillStyle=`rgba(3,5,8,${alpha})`;galCtx.fillRect(0,0,galW,galH);const pts=galPts,n=pts.length;for(let i=0;i<n;i++){const a=pts[i];for(let j=i+1;j<n;j++){const b=pts[j];const dx=b.x-a.x,dy=b.y-a.y;const d2=dx*dx+dy*dy,d=Math.sqrt(d2)+6;const f=G*a.m*b.m/(d2+40);const fx=f*dx/d,fy=f*dy/d;a.vx+=fx/a.m;a.vy+=fy/a.m;b.vx-=fx/b.m;b.vy-=fy/b.m;}}let ke=0,ms=0;pts.forEach(p=>{const sp=Math.sqrt(p.vx**2+p.vy**2);if(sp>ms)ms=sp;const cap=10;if(sp>cap){p.vx=p.vx/sp*cap;p.vy=p.vy/sp*cap;}p.x+=p.vx;p.y+=p.vy;if(p.x<2){p.x=2;p.vx*=-0.6;}if(p.x>galW-2){p.x=galW-2;p.vx*=-0.6;}if(p.y<2){p.y=2;p.vy*=-0.6;}if(p.y>galH-2){p.y=galH-2;p.vy*=-0.6;}ke+=0.5*p.m*sp**2;if(sp>1.5){galCtx.beginPath();galCtx.moveTo(p.x,p.y);galCtx.lineTo(p.x-p.vx*2.5,p.y-p.vy*2.5);const col=p.c.includes('hsl')?p.c.replace('hsl(','hsla(').replace(')',',0.18)'):p.c+'2e';galCtx.strokeStyle=col;galCtx.lineWidth=0.8;galCtx.stroke();}const rr=Math.min(5,1.2+p.m*0.7);galCtx.beginPath();galCtx.arc(p.x,p.y,rr,0,Math.PI*2);galCtx.fillStyle=p.c;galCtx.fill();});galFrame++;set('gal-fr',galFrame);set('gal-ke',ke.toFixed(0));set('gal-n',n);set('gal-ms',ms.toFixed(2));if(galFrame%50===0){let cl=0;const vis=new Set();pts.forEach((a,i)=>{if(vis.has(i))return;let inCl=false;pts.forEach((b,j)=>{if(i!==j&&Math.hypot(a.x-b.x,a.y-b.y)<55){inCl=true;vis.add(j);}});if(inCl)cl++;});set('gal-cl',cl);}requestAnimationFrame(galLoop);}btn('gal-launch',initGalaxy);btn('gal-pause',function(){galRunning=!galRunning;this.textContent=galRunning?'Pause':'Resume';if(galRunning)requestAnimationFrame(galLoop);});btn('gal-clear',()=>{if(galCtx){galCtx.fillStyle='#030508';galCtx.fillRect(0,0,galW,galH);}});
-let cltMeans=[];sl('clt-n','clt-n-v');function popSample(dist){if(dist==='uniform')return Math.random()*10;if(dist==='exp')return -Math.log(Math.random())*3;if(dist==='bimodal')return Math.random()<0.5?randn()*0.9+2:randn()*0.9+8;if(dist==='bernoulli')return Math.random()<0.2?1:0;if(dist==='pareto')return Math.min(50,Math.pow(Math.random()+0.001,-1/1.5));if(dist==='cauchy')return Math.tan(Math.PI*(Math.random()-0.5));return randn()*3+5;}function popTheory(dist){return{uniform:{mu:5,sig:Math.sqrt(100/12)},exp:{mu:3,sig:3},bimodal:{mu:5,sig:3.1},bernoulli:{mu:0.2,sig:0.4},pareto:{mu:null,sig:null},cauchy:{mu:null,sig:null}}[dist]||{mu:null,sig:null};}function drawPop(){const r=clr('popC',180);const{ctx,W,H}=r;const dist=document.getElementById('clt-dist').value;const pts=Array.from({length:3000},()=>popSample(dist)).filter(v=>isFinite(v)&&Math.abs(v)<60);const mn=Math.min(...pts),mx=Math.max(...pts);const bins=30,bw=(mx-mn)/bins||0.001;const counts=new Array(bins).fill(0);pts.forEach(v=>{const i=Math.min(bins-1,Math.floor((v-mn)/bw));counts[i]++;});const maxC=Math.max(...counts)||1;const pad=8,iW=W-2*pad,iH=H-24;counts.forEach((c,i)=>{const bh=c/maxC*iH;ctx.fillStyle='rgba(37,99,235,0.5)';ctx.fillRect(pad+i*iW/bins,H-16-bh,iW/bins-1,bh);});ctx.fillStyle='rgba(100,100,100,0.6)';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText(mn.toFixed(1),pad,H-2);ctx.fillText(mx.toFixed(1),W-pad,H-2);}function drawCLT(){const r=clr('cltC',180);const{ctx,W,H}=r;if(!cltMeans.length){ctx.fillStyle='rgba(120,120,120,0.4)';ctx.font='13px sans-serif';ctx.textAlign='center';ctx.fillText('Click "+500 samples" to start',W/2,90);return;}const valid=cltMeans.filter(v=>isFinite(v)&&Math.abs(v)<200);if(!valid.length)return;const mn=Math.min(...valid),mx=Math.max(...valid);const bins=30,bw=(mx-mn)/bins||0.001;const counts=new Array(bins).fill(0);valid.forEach(v=>{const i=Math.min(bins-1,Math.floor((v-mn)/bw));counts[i]++;});const maxC=Math.max(...counts)||1;const pad=8,iW=W-2*pad,iH=H-24;counts.forEach((c,i)=>{const bh=c/maxC*iH;ctx.fillStyle='rgba(5,150,105,0.55)';ctx.fillRect(pad+i*iW/bins,H-16-bh,iW/bins-1,bh);});if(valid.length>100){const m=mean(valid),s=sdv(valid);ctx.strokeStyle='rgba(220,38,38,0.9)';ctx.lineWidth=2;ctx.beginPath();for(let px=0;px<iW;px++){const xv=mn+px/iW*(mx-mn);const norm=Math.exp(-0.5*((xv-m)/s)**2)/(s*Math.sqrt(2*Math.PI));const bh=norm*bw*valid.length/maxC*iH;const py=H-16-bh;px===0?ctx.moveTo(pad+px,py):ctx.lineTo(pad+px,py);}ctx.stroke();}}function cltStep(k){const n=val('clt-n'),dist=document.getElementById('clt-dist').value;for(let i=0;i<k;i++){const pts=Array.from({length:n},()=>popSample(dist)).filter(v=>isFinite(v)&&Math.abs(v)<500);if(pts.length>0)cltMeans.push(mean(pts));}const valid=cltMeans.filter(v=>isFinite(v));const m=mean(valid),s=sdv(valid);const th=popTheory(dist);set('clt-s',valid.length);set('clt-m',isFinite(m)?m.toFixed(3):'undefined');set('clt-se',isFinite(s)?s.toFixed(3):'undefined');set('clt-tse',th.sig?((th.sig/Math.sqrt(n)).toFixed(3)):'N/A');const normEl=document.getElementById('clt-norm');if(dist==='cauchy'){normEl.textContent='FAILS';normEl.className='mv r';}else if(n>=30&&valid.length>=500){normEl.textContent='Normal';normEl.className='mv g';}else if(n>=5){normEl.textContent='Emerging';normEl.className='mv a';}else{normEl.textContent='Not yet';normEl.className='mv';}drawCLT();}function resetCLT(){cltMeans=[];set('clt-s',0);['clt-m','clt-se','clt-tse','clt-norm'].forEach(id=>set(id,'—'));drawPop();drawCLT();}btn('clt-500',()=>cltStep(500));btn('clt-2000',()=>cltStep(2000));btn('clt-reset',resetCLT);document.getElementById('clt-dist').addEventListener('change',resetCLT);document.getElementById('clt-n').addEventListener('input',resetCLT);
-let coinHistory=[],coinHeads=0,coinTotal=0,coinAuto=null;sl('coin-p','coin-p-v',v=>v.toFixed(2));function resetCoin(){coinHistory=[];coinHeads=0;coinTotal=0;set('coin-n',0);set('coin-h',0);set('coin-ph','—');set('coin-true',val('coin-p').toFixed(2));set('coin-diff','—');drawCoin();}function coinStep(){const p=val('coin-p');const batch=+document.getElementById('coin-batch').value;for(let i=0;i<batch;i++){coinTotal++;if(Math.random()<p)coinHeads++;coinHistory.push(coinHeads/coinTotal);}set('coin-n',coinTotal.toLocaleString());set('coin-h',coinHeads.toLocaleString());set('coin-ph',(coinHeads/coinTotal).toFixed(4));set('coin-true',p.toFixed(2));set('coin-diff',((coinHeads/coinTotal)-p).toFixed(4));drawCoin();}function drawCoin(){const r=clr('coinC',360);const{ctx,W,H}=r;ctx.fillStyle='rgba(37,99,235,0.06)';ctx.fillRect(0,0,W,H);const pad=34;const iW=W-2*pad,iH=H-2*pad;ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);const p=val('coin-p');const yTrue=pad+(1-p)*iH;ctx.beginPath();ctx.moveTo(pad,yTrue);ctx.lineTo(W-pad,yTrue);ctx.strokeStyle='rgba(220,38,38,0.9)';ctx.lineWidth=1.7;ctx.stroke();if(coinHistory.length){ctx.beginPath();coinHistory.forEach((v,i)=>{const x=pad+(i/(Math.max(coinHistory.length-1,1)))*iW;const y=pad+(1-v)*iH;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.strokeStyle='rgba(5,150,105,0.95)';ctx.lineWidth=2.2;ctx.stroke();}ctx.fillStyle='rgba(100,100,100,0.75)';ctx.font='11px sans-serif';ctx.textAlign='right';ctx.fillText('1.0',pad-6,pad+4);ctx.fillText('0.5',pad-6,pad+iH/2+4);ctx.fillText('0.0',pad-6,pad+iH+4);ctx.textAlign='left';ctx.fillText('true p',pad+8,yTrue-8);ctx.fillText('cumulative proportion of heads',pad,H-10);}btn('coin-step',coinStep);btn('coin-reset',()=>{if(coinAuto){clearInterval(coinAuto);coinAuto=null;}resetCoin();});btn('coin-auto',()=>{if(coinAuto)clearInterval(coinAuto);coinAuto=setInterval(coinStep,180);});btn('coin-stop',()=>{if(coinAuto){clearInterval(coinAuto);coinAuto=null;}});document.getElementById('coin-p').addEventListener('input',()=>{set('coin-true',val('coin-p').toFixed(2));drawCoin();});
-let regData=[],regShowFit=true;sl('reg-n','reg-n-v');sl('reg-slope','reg-slope-v',v=>v.toFixed(1));sl('reg-noise','reg-noise-v',v=>v.toFixed(1));function regressionStats(data){const xs=data.map(d=>d.x),ys=data.map(d=>d.y),mx=mean(xs),my=mean(ys);let sxx=0,sxy=0,syy=0;for(let i=0;i<data.length;i++){const dx=xs[i]-mx,dy=ys[i]-my;sxx+=dx*dx;sxy+=dx*dy;syy+=dy*dy;}const b1=sxy/(sxx||1e-9),b0=my-b1*mx,r=sxy/Math.sqrt((sxx||1e-9)*(syy||1e-9));return{b0,b1,r,r2:r*r};}function generateRegression(){const n=val('reg-n'),slope=val('reg-slope'),noise=val('reg-noise'),shape=document.getElementById('reg-shape').value;regData=[];for(let i=0;i<n;i++){let x=-5+10*Math.random(),y=0;if(shape==='linear')y=1+slope*x+randn()*noise;else if(shape==='curve')y=0.5*slope*x+0.25*x*x+randn()*noise;else{const g=Math.random()<0.5?-1:1;x=g*(1.5+Math.random()*3)+randn()*0.5;y=g*(2+slope)+randn()*noise;}regData.push({x,y});}regShowFit=true;drawRegression();}function drawRegression(){const r=clr('regC',380),ctx=r.ctx,W=r.W,H=r.H,pad=34,iW=W-2*pad,iH=H-2*pad;ctx.fillStyle='rgba(37,99,235,0.05)';ctx.fillRect(0,0,W,H);if(!regData.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='14px sans-serif';ctx.textAlign='center';ctx.fillText('Click "Generate data"',W/2,H/2);return;}const xs=regData.map(d=>d.x),ys=regData.map(d=>d.y);const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);const xpad=(xmax-xmin)*0.1+0.2,ypad=(ymax-ymin)*0.1+0.2;const x0=xmin-xpad,x1=xmax+xpad,y0=ymin-ypad,y1=ymax+ypad;const xp=x=>pad+(x-x0)/(x1-x0)*iW,yp=y=>H-pad-(y-y0)/(y1-y0)*iH;ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);regData.forEach(d=>{ctx.beginPath();ctx.arc(xp(d.x),yp(d.y),4,0,Math.PI*2);ctx.fillStyle='rgba(37,99,235,0.8)';ctx.fill();});const st=regressionStats(regData);set('reg-b1',st.b1.toFixed(3));set('reg-b0',st.b0.toFixed(3));set('reg-r',st.r.toFixed(3));set('reg-r2',st.r2.toFixed(3));set('reg-type',document.getElementById('reg-shape').value);if(regShowFit){const xa=x0,xb=x1,ya=st.b0+st.b1*xa,yb=st.b0+st.b1*xb;ctx.beginPath();ctx.moveTo(xp(xa),yp(ya));ctx.lineTo(xp(xb),yp(yb));ctx.strokeStyle='rgba(220,38,38,0.95)';ctx.lineWidth=2.2;ctx.stroke();}}btn('reg-gen',generateRegression);btn('reg-reveal',()=>{regShowFit=!regShowFit;drawRegression();});document.getElementById('reg-n').addEventListener('input',generateRegression);document.getElementById('reg-slope').addEventListener('input',generateRegression);document.getElementById('reg-noise').addEventListener('input',generateRegression);document.getElementById('reg-shape').addEventListener('change',generateRegression);
-let permA=[],permB=[],permNull=[],permObs=0;sl('perm-n','perm-n-v');sl('perm-eff','perm-eff-v',v=>v.toFixed(1));sl('perm-noise','perm-noise-v',v=>v.toFixed(1));function generatePermData(){const n=val('perm-n'),eff=val('perm-eff'),noise=val('perm-noise');permA=Array.from({length:n},()=>randn()*noise);permB=Array.from({length:n},()=>eff+randn()*noise);permObs=mean(permB)-mean(permA);permNull=[];set('perm-obs',permObs.toFixed(3));set('perm-count',0);set('perm-p','—');set('perm-nullm','—');set('perm-nulls','—');drawPermData();drawPermNull();}function onePerm(){const all=permA.concat(permB).slice();for(let i=all.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[all[i],all[j]]=[all[j],all[i]];}const n=permA.length;const a=all.slice(0,n),b=all.slice(n);return mean(b)-mean(a);}function runPermutations(){if(!permA.length)generatePermData();const batch=+document.getElementById('perm-batch').value;for(let i=0;i<batch;i++)permNull.push(onePerm());const extreme=permNull.filter(v=>Math.abs(v)>=Math.abs(permObs)).length;const p=extreme/permNull.length;set('perm-count',permNull.length.toLocaleString());set('perm-p',p.toFixed(4));set('perm-nullm',mean(permNull).toFixed(3));set('perm-nulls',sdv(permNull).toFixed(3));drawPermNull();}function drawPermData(){const r=clr('permDataC',220),ctx=r.ctx,W=r.W,H=r.H,pad=28;ctx.clearRect(0,0,W,H);ctx.fillStyle='rgba(37,99,235,0.05)';ctx.fillRect(0,0,W,H);ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,W-2*pad,H-2*pad);if(!permA.length)return;const ys=permA.concat(permB),ymin=Math.min(...ys),ymax=Math.max(...ys),yr=(ymax-ymin)||1;const yp=v=>H-pad-((v-ymin)/yr)*(H-2*pad);permA.forEach((v,i)=>{const x=pad+((i+1)/(permA.length+1))*((W-2*pad)/2-10);ctx.beginPath();ctx.arc(x,yp(v),4,0,Math.PI*2);ctx.fillStyle='rgba(37,99,235,0.85)';ctx.fill();});permB.forEach((v,i)=>{const x=W/2+10+((i+1)/(permB.length+1))*((W-2*pad)/2-10);ctx.beginPath();ctx.arc(x,yp(v),4,0,Math.PI*2);ctx.fillStyle='rgba(220,38,38,0.85)';ctx.fill();});ctx.fillStyle='rgba(100,100,100,0.8)';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText('Group A',W/4,H-8);ctx.fillText('Group B',3*W/4,H-8);}function drawPermNull(){const r=clr('permNullC',220),ctx=r.ctx,W=r.W,H=r.H,pad=28;ctx.clearRect(0,0,W,H);ctx.fillStyle='rgba(37,99,235,0.05)';ctx.fillRect(0,0,W,H);ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,W-2*pad,H-2*pad);if(!permNull.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='13px sans-serif';ctx.textAlign='center';ctx.fillText('Run permutations to build the null distribution',W/2,H/2);return;}const vals=permNull.slice(),mn=Math.min(...vals,permObs),mx=Math.max(...vals,permObs),bins=30,bw=(mx-mn)/bins||0.001;const counts=new Array(bins).fill(0);vals.forEach(v=>{counts[Math.min(bins-1,Math.floor((v-mn)/bw))]++;});const maxC=Math.max(...counts)||1,iW=W-2*pad,iH=H-2*pad;counts.forEach((c,i)=>{const bh=(c/maxC)*iH;ctx.fillStyle='rgba(124,58,237,0.55)';ctx.fillRect(pad+i*iW/bins,H-pad-bh,iW/bins-1,bh);});const xObs=pad+((permObs-mn)/(mx-mn||1))*iW;ctx.beginPath();ctx.moveTo(xObs,pad);ctx.lineTo(xObs,H-pad);ctx.strokeStyle='rgba(220,38,38,0.95)';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='rgba(100,100,100,0.75)';ctx.font='11px sans-serif';ctx.textAlign='left';ctx.fillText('observed diff',Math.min(W-80,xObs+6),pad+14);}btn('perm-gen',generatePermData);btn('perm-run',runPermutations);btn('perm-reset',()=>{permA=[];permB=[];permNull=[];permObs=0;set('perm-obs','—');set('perm-count',0);set('perm-p','—');set('perm-nullm','—');set('perm-nulls','—');drawPermData();drawPermNull();});
-let simpData=[],simpShowGroups=true;sl('simp-n','simp-n-v');sl('simp-slope','simp-slope-v',v=>v.toFixed(1));sl('simp-off','simp-off-v',v=>v.toFixed(1));sl('simp-noise','simp-noise-v',v=>v.toFixed(1));function fitLine(data){const xs=data.map(d=>d.x),ys=data.map(d=>d.y),mx=mean(xs),my=mean(ys);let sxx=0,sxy=0,syy=0;for(let i=0;i<data.length;i++){const dx=xs[i]-mx,dy=ys[i]-my;sxx+=dx*dx;sxy+=dx*dy;syy+=dy*dy;}const b1=sxy/(sxx||1e-9),b0=my-b1*mx,r=sxy/Math.sqrt((sxx||1e-9)*(syy||1e-9));return{b0,b1,r};}function generateSimpson(){const n=val('simp-n'),slope=val('simp-slope'),off=val('simp-off'),noise=val('simp-noise');simpData=[];for(let i=0;i<n;i++){const xA=Math.random()*4;const yA=off+slope*xA+randn()*noise;simpData.push({x:xA,y:yA,g:'A'});}for(let i=0;i<n;i++){const xB=6+Math.random()*4;const yB=-off+slope*xB+randn()*noise;simpData.push({x:xB,y:yB,g:'B'});}drawSimpson();}function drawLine(ctx,fit,x0,x1,xp,yp,color){const y0=fit.b0+fit.b1*x0,y1=fit.b0+fit.b1*x1;ctx.beginPath();ctx.moveTo(xp(x0),yp(y0));ctx.lineTo(xp(x1),yp(y1));ctx.strokeStyle=color;ctx.lineWidth=2.4;ctx.stroke();}function drawSimpson(){const r=clr('simpC',420),ctx=r.ctx,W=r.W,H=r.H,pad=34,iW=W-2*pad,iH=H-2*pad;ctx.fillStyle='rgba(37,99,235,0.05)';ctx.fillRect(0,0,W,H);if(!simpData.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='14px sans-serif';ctx.textAlign='center';ctx.fillText('Click "Generate paradox"',W/2,H/2);return;}const xs=simpData.map(d=>d.x),ys=simpData.map(d=>d.y);const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);const xpad=(xmax-xmin)*0.1+0.2,ypad=(ymax-ymin)*0.1+0.2;const x0=xmin-xpad,x1=xmax+xpad,y0=ymin-ypad,y1=ymax+ypad;const xp=x=>pad+(x-x0)/(x1-x0)*iW,yp=y=>H-pad-(y-y0)/(y1-y0)*iH;ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);simpData.forEach(d=>{ctx.beginPath();ctx.arc(xp(d.x),yp(d.y),4,0,Math.PI*2);ctx.fillStyle=d.g==='A'?'rgba(37,99,235,0.82)':'rgba(220,38,38,0.82)';ctx.fill();});const allFit=fitLine(simpData),aFit=fitLine(simpData.filter(d=>d.g==='A')),bFit=fitLine(simpData.filter(d=>d.g==='B'));drawLine(ctx,allFit,x0,x1,xp,yp,'rgba(16,185,129,0.95)');if(simpShowGroups){drawLine(ctx,aFit,x0,x1,xp,yp,'rgba(37,99,235,0.95)');drawLine(ctx,bFit,x0,x1,xp,yp,'rgba(220,38,38,0.95)');}set('simp-all',allFit.b1.toFixed(3));set('simp-a',aFit.b1.toFixed(3));set('simp-b',bFit.b1.toFixed(3));set('simp-r',allFit.r.toFixed(3));const paradox=(Math.sign(allFit.b1)!==Math.sign(aFit.b1)&&Math.sign(aFit.b1)===Math.sign(bFit.b1));set('simp-pattern',paradox?'Paradox visible':'Same direction');}btn('simp-gen',generateSimpson);btn('simp-toggle',function(){simpShowGroups=!simpShowGroups;this.textContent=simpShowGroups?'Hide subgroup lines':'Show subgroup lines';drawSimpson();});document.getElementById('simp-n').addEventListener('input',generateSimpson);document.getElementById('simp-slope').addEventListener('input',generateSimpson);document.getElementById('simp-off').addEventListener('input',generateSimpson);document.getElementById('simp-noise').addEventListener('input',generateSimpson);
-resetCLT();resetCoin();generateRegression();generatePermData();generateSimpson();
+
+/* ========= MATRIX INTRO — longer, richer, more cinematic ========= */
+(function(){
+  const c=document.getElementById('matrixC'),ctx=c.getContext('2d');
+  let W=c.offsetWidth||1000,H=780;c.width=W;c.height=H;
+  // richer character pool — statistical notation mixed with katakana-style chars for that authentic matrix feel
+  const chars='βσμR²OLSΣΩαγπφψ∂∇∫01ρχ²CLT∞xyzH₀p̂x̄ᵢⱼ∑∏√±≤≥≠∈∉⊂ƒθλμνξ01Ⲃ⊙⊕⊗∅'.split('');
+  const fontSize=15;
+  const cols=Math.floor(W/fontSize);
+  // each column has: position, speed, length, and an occasional "highlight" character
+  const drops=Array.from({length:cols},()=>({
+    y:Math.random()*H/fontSize*-1,
+    speed:0.3+Math.random()*0.55,
+    len:6+Math.floor(Math.random()*18),
+    resetAt:Math.random()*200+100
+  }));
+  let running=true,frame=0;
+  function draw(){
+    if(!running)return;
+    // darker fade so trails are longer and more dramatic
+    ctx.fillStyle='rgba(3,5,8,0.045)';
+    ctx.fillRect(0,0,W,H);
+    drops.forEach((d,i)=>{
+      // the "head" of the trail is bright
+      const headY=d.y*fontSize;
+      if(headY>0&&headY<H){
+        ctx.fillStyle='rgba(210,255,220,0.95)';
+        ctx.font=`${fontSize}px monospace`;
+        ctx.fillText(chars[Math.floor(Math.random()*chars.length)],i*fontSize,headY);
+      }
+      // trail behind the head — fades out
+      for(let k=1;k<d.len;k++){
+        const y=(d.y-k)*fontSize;
+        if(y<0||y>H)continue;
+        const fade=1-k/d.len;
+        const g=140+Math.floor(Math.random()*115);
+        ctx.fillStyle=`rgba(0,${g},40,${fade*0.75})`;
+        ctx.font=`${fontSize}px monospace`;
+        ctx.fillText(chars[Math.floor(Math.random()*chars.length)],i*fontSize,y);
+      }
+      d.y+=d.speed;
+      if(d.y*fontSize-d.len*fontSize>H){
+        if(Math.random()>0.3){
+          d.y=-Math.random()*20;
+          d.speed=0.3+Math.random()*0.55;
+          d.len=6+Math.floor(Math.random()*18);
+        }
+      }
+    });
+    // occasional flashes / glitches — very subtle
+    if(Math.random()>0.992){
+      const gx=Math.floor(Math.random()*cols);
+      const gy=Math.floor(Math.random()*H);
+      ctx.fillStyle='rgba(255,255,255,0.6)';
+      ctx.font=`${fontSize}px monospace`;
+      ctx.fillText(chars[Math.floor(Math.random()*chars.length)],gx*fontSize,gy);
+    }
+    frame++;
+    requestAnimationFrame(draw);
+  }
+  draw();
+  function reveal(){
+    running=false;
+    const intro=document.getElementById('landingWrap');
+    intro.style.transition='opacity .95s ease, transform .95s ease';
+    intro.style.opacity='0';
+    intro.style.transform='scale(0.97)';
+    setTimeout(()=>{
+      intro.style.display='none';
+      document.getElementById('lab').classList.add('show');
+      initGalaxy();
+    },950);
+  }
+  const introEl=document.getElementById('matrixIntro');
+  introEl.addEventListener('click',reveal,{once:true});
+  introEl.addEventListener('touchend',reveal,{once:true,passive:true});
+  window.addEventListener('resize',()=>{W=c.offsetWidth||1000;c.width=W;c.height=H;});
+})();
+
+/* ========= TAB ROUTING ========= */
+const TABS=['grav','clt','coin','reg','perm','simpson','combo','tree','forest'];
+TABS.forEach(id=>{
+  const tab=document.getElementById('t-'+id);
+  if(tab){
+    tab.addEventListener('click',()=>{
+      TABS.forEach(t=>{
+        document.getElementById('t-'+t).classList.toggle('active',t===id);
+        document.getElementById('tab-'+t).classList.toggle('active',t===id);
+      });
+      if(id==='clt'){drawPop();drawCLT();}
+      if(id==='coin'){drawCoin();}
+      if(id==='reg'){generateRegression();}
+      if(id==='perm'){drawPermData();drawPermNull();}
+      if(id==='simpson'){generateSimpson();}
+      if(id==='combo'){updateCombo();}
+      if(id==='tree'){buildTree();}
+      if(id==='forest'){buildForest();}
+      if(id==='grav'&&!galRunning){galRunning=true;requestAnimationFrame(galLoop);}
+    });
+  }
+});
+
+/* ========= GRAVITY ========= */
+let galPts=[],galRunning=false,galFrame=0,galCtx,galW,galH;
+sl('gn','gn-v');sl('gg','gg-v',v=>v.toFixed(2));sl('gv','gv-v',v=>v.toFixed(1));sl('gtrail','gt-v',v=>['','None','Short','Medium','Long','Full'][v]);
+function initGalaxy(){
+  const r=clr('galC',430);galW=r.W;galH=430;galCtx=r.ctx;
+  galPts=[];galFrame=0;galRunning=true;
+  const n=val('gn'),v0=val('gv'),mode=document.getElementById('gmode').value;
+  const cx=galW/2,cy=galH/2;
+  const hues=[210,260,30,150,320,60,180,0,45,280];
+  if(mode==='random'){for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,r2=Math.random()*Math.min(galW,galH)*0.37;galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:(Math.random()-.5)*v0,vy:(Math.random()-.5)*v0,m:0.5+Math.random()*2,c:`hsl(${hues[i%hues.length]},75%,65%)`});}}
+  else if(mode==='disk'){for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,r2=15+Math.pow(Math.random(),0.5)*Math.min(galW,galH)*0.33;const sp=v0*Math.sqrt(0.8/(r2*0.008+0.1));galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:-Math.sin(a)*sp+(Math.random()-.5)*0.3,vy:Math.cos(a)*sp+(Math.random()-.5)*0.3,m:0.5+Math.random(),c:`hsl(${190+Math.random()*70},80%,60%)`});}}
+  else if(mode==='collision'){const off=Math.min(galW,galH)*0.22;for(let i=0;i<n;i++){const s=i<n/2;const cx2=s?cx-off:cx+off;const a=Math.random()*Math.PI*2,r2=Math.random()*off*0.5;galPts.push({x:cx2+Math.cos(a)*r2,y:cy+Math.sin(a)*r2*0.65,vx:(s?v0*0.5:-v0*0.5)+(Math.random()-.5)*0.4,vy:(Math.random()-.5)*0.35,m:0.5+Math.random(),c:`hsl(${s?210:25},80%,65%)`});}}
+  else if(mode==='ring'){for(let i=0;i<n;i++){const a=(i/n)*Math.PI*2,r2=Math.min(galW,galH)*0.29;galPts.push({x:cx+Math.cos(a)*r2+(Math.random()-.5)*16,y:cy+Math.sin(a)*r2+(Math.random()-.5)*16,vx:-Math.sin(a)*v0*1.3,vy:Math.cos(a)*v0*1.3,m:0.5+Math.random(),c:`hsl(${270+i/n*90},70%,65%)`});}}
+  else{galPts.push({x:cx-90,y:cy,vx:0,vy:v0*0.5,m:10,c:'#ff9955'},{x:cx+90,y:cy,vx:0,vy:-v0*0.5,m:10,c:'#55aaff'});for(let i=2;i<n;i++){const a=Math.random()*Math.PI*2,r2=20+Math.random()*Math.min(galW,galH)*0.36;galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:(Math.random()-.5)*v0*0.8,vy:(Math.random()-.5)*v0*0.8,m:0.3+Math.random(),c:`hsl(${Math.random()*360},70%,65%)`});}}
+  galCtx.fillStyle='#030508';galCtx.fillRect(0,0,galW,galH);
+  requestAnimationFrame(galLoop);
+}
+function galLoop(){
+  if(!galRunning)return;
+  const G=val('gg'),tr=val('gtrail');
+  const alpha=[0,0.4,0.2,0.11,0.05,0][tr]||0.11;
+  galCtx.fillStyle=`rgba(3,5,8,${alpha})`;galCtx.fillRect(0,0,galW,galH);
+  const pts=galPts,n=pts.length;
+  for(let i=0;i<n;i++){const a=pts[i];for(let j=i+1;j<n;j++){const b=pts[j];const dx=b.x-a.x,dy=b.y-a.y;const d2=dx*dx+dy*dy,d=Math.sqrt(d2)+6;const f=G*a.m*b.m/(d2+40);const fx=f*dx/d,fy=f*dy/d;a.vx+=fx/a.m;a.vy+=fy/a.m;b.vx-=fx/b.m;b.vy-=fy/b.m;}}
+  let ke=0,ms=0;
+  pts.forEach(p=>{const sp=Math.sqrt(p.vx**2+p.vy**2);if(sp>ms)ms=sp;const cap=10;if(sp>cap){p.vx=p.vx/sp*cap;p.vy=p.vy/sp*cap;}p.x+=p.vx;p.y+=p.vy;if(p.x<2){p.x=2;p.vx*=-0.6;}if(p.x>galW-2){p.x=galW-2;p.vx*=-0.6;}if(p.y<2){p.y=2;p.vy*=-0.6;}if(p.y>galH-2){p.y=galH-2;p.vy*=-0.6;}ke+=0.5*p.m*sp**2;if(sp>1.5){galCtx.beginPath();galCtx.moveTo(p.x,p.y);galCtx.lineTo(p.x-p.vx*2.5,p.y-p.vy*2.5);const col=p.c.includes('hsl')?p.c.replace('hsl(','hsla(').replace(')',',0.18)'):p.c+'2e';galCtx.strokeStyle=col;galCtx.lineWidth=0.8;galCtx.stroke();}const rr=Math.min(5,1.2+p.m*0.7);galCtx.beginPath();galCtx.arc(p.x,p.y,rr,0,Math.PI*2);galCtx.fillStyle=p.c;galCtx.fill();});
+  galFrame++;set('gal-fr',galFrame);set('gal-ke',ke.toFixed(0));set('gal-n',n);set('gal-ms',ms.toFixed(2));
+  if(galFrame%50===0){let cl=0;const vis=new Set();pts.forEach((a,i)=>{if(vis.has(i))return;let inCl=false;pts.forEach((b,j)=>{if(i!==j&&Math.hypot(a.x-b.x,a.y-b.y)<55){inCl=true;vis.add(j);}});if(inCl)cl++;});set('gal-cl',cl);}
+  requestAnimationFrame(galLoop);
+}
+btn('gal-launch',initGalaxy);
+btn('gal-pause',function(){galRunning=!galRunning;this.textContent=galRunning?'Pause':'Resume';if(galRunning)requestAnimationFrame(galLoop);});
+btn('gal-clear',()=>{if(galCtx){galCtx.fillStyle='#030508';galCtx.fillRect(0,0,galW,galH);}});
+
+/* ========= CLT ========= */
+let cltMeans=[];sl('clt-n','clt-n-v');
+function popSample(dist){if(dist==='uniform')return Math.random()*10;if(dist==='exp')return -Math.log(Math.random())*3;if(dist==='bimodal')return Math.random()<0.5?randn()*0.9+2:randn()*0.9+8;if(dist==='bernoulli')return Math.random()<0.2?1:0;if(dist==='pareto')return Math.min(50,Math.pow(Math.random()+0.001,-1/1.5));if(dist==='cauchy')return Math.tan(Math.PI*(Math.random()-0.5));return randn()*3+5;}
+function popTheory(dist){return{uniform:{mu:5,sig:Math.sqrt(100/12)},exp:{mu:3,sig:3},bimodal:{mu:5,sig:3.1},bernoulli:{mu:0.2,sig:0.4},pareto:{mu:null,sig:null},cauchy:{mu:null,sig:null}}[dist]||{mu:null,sig:null};}
+function drawPop(){const r=clr('popC',180);const{ctx,W,H}=r;const dist=document.getElementById('clt-dist').value;const pts=Array.from({length:3000},()=>popSample(dist)).filter(v=>isFinite(v)&&Math.abs(v)<60);const mn=Math.min(...pts),mx=Math.max(...pts);const bins=30,bw=(mx-mn)/bins||0.001;const counts=new Array(bins).fill(0);pts.forEach(v=>{const i=Math.min(bins-1,Math.floor((v-mn)/bw));counts[i]++;});const maxC=Math.max(...counts)||1;const pad=8,iW=W-2*pad,iH=H-24;counts.forEach((c,i)=>{const bh=c/maxC*iH;ctx.fillStyle='rgba(37,99,235,0.5)';ctx.fillRect(pad+i*iW/bins,H-16-bh,iW/bins-1,bh);});ctx.fillStyle='rgba(100,100,100,0.6)';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText(mn.toFixed(1),pad,H-2);ctx.fillText(mx.toFixed(1),W-pad,H-2);}
+function drawCLT(){const r=clr('cltC',180);const{ctx,W,H}=r;if(!cltMeans.length){ctx.fillStyle='rgba(120,120,120,0.4)';ctx.font='13px sans-serif';ctx.textAlign='center';ctx.fillText('Click "+500 samples" to start',W/2,90);return;}const valid=cltMeans.filter(v=>isFinite(v)&&Math.abs(v)<200);if(!valid.length)return;const mn=Math.min(...valid),mx=Math.max(...valid);const bins=30,bw=(mx-mn)/bins||0.001;const counts=new Array(bins).fill(0);valid.forEach(v=>{const i=Math.min(bins-1,Math.floor((v-mn)/bw));counts[i]++;});const maxC=Math.max(...counts)||1;const pad=8,iW=W-2*pad,iH=H-24;counts.forEach((c,i)=>{const bh=c/maxC*iH;ctx.fillStyle='rgba(5,150,105,0.55)';ctx.fillRect(pad+i*iW/bins,H-16-bh,iW/bins-1,bh);});if(valid.length>100){const m=mean(valid),s=sdv(valid);ctx.strokeStyle='rgba(220,38,38,0.9)';ctx.lineWidth=2;ctx.beginPath();for(let px=0;px<iW;px++){const xv=mn+px/iW*(mx-mn);const norm=Math.exp(-0.5*((xv-m)/s)**2)/(s*Math.sqrt(2*Math.PI));const bh=norm*bw*valid.length/maxC*iH;const py=H-16-bh;px===0?ctx.moveTo(pad+px,py):ctx.lineTo(pad+px,py);}ctx.stroke();}}
+function cltStep(k){const n=val('clt-n'),dist=document.getElementById('clt-dist').value;for(let i=0;i<k;i++){const pts=Array.from({length:n},()=>popSample(dist)).filter(v=>isFinite(v)&&Math.abs(v)<500);if(pts.length>0)cltMeans.push(mean(pts));}const valid=cltMeans.filter(v=>isFinite(v));const m=mean(valid),s=sdv(valid);const th=popTheory(dist);set('clt-s',valid.length);set('clt-m',isFinite(m)?m.toFixed(3):'undefined');set('clt-se',isFinite(s)?s.toFixed(3):'undefined');set('clt-tse',th.sig?((th.sig/Math.sqrt(n)).toFixed(3)):'N/A');const normEl=document.getElementById('clt-norm');if(dist==='cauchy'){normEl.textContent='FAILS';normEl.className='mv r';}else if(n>=30&&valid.length>=500){normEl.textContent='Normal';normEl.className='mv g';}else if(n>=5){normEl.textContent='Emerging';normEl.className='mv a';}else{normEl.textContent='Not yet';normEl.className='mv';}drawCLT();}
+function resetCLT(){cltMeans=[];set('clt-s',0);['clt-m','clt-se','clt-tse','clt-norm'].forEach(id=>set(id,'—'));drawPop();drawCLT();}
+btn('clt-500',()=>cltStep(500));btn('clt-2000',()=>cltStep(2000));btn('clt-reset',resetCLT);
+document.getElementById('clt-dist').addEventListener('change',resetCLT);
+document.getElementById('clt-n').addEventListener('input',resetCLT);
+
+/* ========= COIN TOSSES ========= */
+let coinHistory=[],coinHeads=0,coinTotal=0,coinAuto=null;
+sl('coin-p','coin-p-v',v=>v.toFixed(2));
+function resetCoin(){coinHistory=[];coinHeads=0;coinTotal=0;set('coin-n',0);set('coin-h',0);set('coin-ph','—');set('coin-true',val('coin-p').toFixed(2));set('coin-diff','—');drawCoin();}
+function coinStep(){const p=val('coin-p');const batch=+document.getElementById('coin-batch').value;for(let i=0;i<batch;i++){coinTotal++;if(Math.random()<p)coinHeads++;coinHistory.push(coinHeads/coinTotal);}set('coin-n',coinTotal.toLocaleString());set('coin-h',coinHeads.toLocaleString());set('coin-ph',(coinHeads/coinTotal).toFixed(4));set('coin-true',p.toFixed(2));set('coin-diff',((coinHeads/coinTotal)-p).toFixed(4));drawCoin();}
+function drawCoin(){const r=clr('coinC',360);const{ctx,W,H}=r;ctx.fillStyle='rgba(37,99,235,0.06)';ctx.fillRect(0,0,W,H);const pad=34;const iW=W-2*pad,iH=H-2*pad;ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);const p=val('coin-p');const yTrue=pad+(1-p)*iH;ctx.beginPath();ctx.moveTo(pad,yTrue);ctx.lineTo(W-pad,yTrue);ctx.strokeStyle='rgba(220,38,38,0.9)';ctx.lineWidth=1.7;ctx.stroke();if(coinHistory.length){ctx.beginPath();coinHistory.forEach((v,i)=>{const x=pad+(i/(Math.max(coinHistory.length-1,1)))*iW;const y=pad+(1-v)*iH;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.strokeStyle='rgba(5,150,105,0.95)';ctx.lineWidth=2.2;ctx.stroke();}ctx.fillStyle='rgba(100,100,100,0.75)';ctx.font='11px sans-serif';ctx.textAlign='right';ctx.fillText('1.0',pad-6,pad+4);ctx.fillText('0.5',pad-6,pad+iH/2+4);ctx.fillText('0.0',pad-6,pad+iH+4);ctx.textAlign='left';ctx.fillText('true p',pad+8,yTrue-8);ctx.fillText('cumulative proportion of heads',pad,H-10);}
+btn('coin-step',coinStep);
+btn('coin-reset',()=>{if(coinAuto){clearInterval(coinAuto);coinAuto=null;}resetCoin();});
+btn('coin-auto',()=>{if(coinAuto)clearInterval(coinAuto);coinAuto=setInterval(coinStep,180);});
+btn('coin-stop',()=>{if(coinAuto){clearInterval(coinAuto);coinAuto=null;}});
+document.getElementById('coin-p').addEventListener('input',()=>{set('coin-true',val('coin-p').toFixed(2));drawCoin();});
+
+/* ========= REGRESSION ========= */
+let regData=[],regShowFit=true;
+sl('reg-n','reg-n-v');sl('reg-slope','reg-slope-v',v=>v.toFixed(1));sl('reg-noise','reg-noise-v',v=>v.toFixed(1));
+function regressionStats(data){const xs=data.map(d=>d.x),ys=data.map(d=>d.y),mx=mean(xs),my=mean(ys);let sxx=0,sxy=0,syy=0;for(let i=0;i<data.length;i++){const dx=xs[i]-mx,dy=ys[i]-my;sxx+=dx*dx;sxy+=dx*dy;syy+=dy*dy;}const b1=sxy/(sxx||1e-9),b0=my-b1*mx,r=sxy/Math.sqrt((sxx||1e-9)*(syy||1e-9));return{b0,b1,r,r2:r*r};}
+function generateRegression(){const n=val('reg-n'),slope=val('reg-slope'),noise=val('reg-noise'),shape=document.getElementById('reg-shape').value;regData=[];for(let i=0;i<n;i++){let x=-5+10*Math.random(),y=0;if(shape==='linear')y=1+slope*x+randn()*noise;else if(shape==='curve')y=0.5*slope*x+0.25*x*x+randn()*noise;else{const g=Math.random()<0.5?-1:1;x=g*(1.5+Math.random()*3)+randn()*0.5;y=g*(2+slope)+randn()*noise;}regData.push({x,y});}regShowFit=true;drawRegression();}
+function drawRegression(){const r=clr('regC',380),ctx=r.ctx,W=r.W,H=r.H,pad=34,iW=W-2*pad,iH=H-2*pad;ctx.fillStyle='rgba(37,99,235,0.05)';ctx.fillRect(0,0,W,H);if(!regData.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='14px sans-serif';ctx.textAlign='center';ctx.fillText('Click "Generate data"',W/2,H/2);return;}const xs=regData.map(d=>d.x),ys=regData.map(d=>d.y);const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);const xpad=(xmax-xmin)*0.1+0.2,ypad=(ymax-ymin)*0.1+0.2;const x0=xmin-xpad,x1=xmax+xpad,y0=ymin-ypad,y1=ymax+ypad;const xp=x=>pad+(x-x0)/(x1-x0)*iW,yp=y=>H-pad-(y-y0)/(y1-y0)*iH;ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);regData.forEach(d=>{ctx.beginPath();ctx.arc(xp(d.x),yp(d.y),4,0,Math.PI*2);ctx.fillStyle='rgba(37,99,235,0.8)';ctx.fill();});const st=regressionStats(regData);set('reg-b1',st.b1.toFixed(3));set('reg-b0',st.b0.toFixed(3));set('reg-r',st.r.toFixed(3));set('reg-r2',st.r2.toFixed(3));set('reg-type',document.getElementById('reg-shape').value);if(regShowFit){const xa=x0,xb=x1,ya=st.b0+st.b1*xa,yb=st.b0+st.b1*xb;ctx.beginPath();ctx.moveTo(xp(xa),yp(ya));ctx.lineTo(xp(xb),yp(yb));ctx.strokeStyle='rgba(220,38,38,0.95)';ctx.lineWidth=2.2;ctx.stroke();}}
+btn('reg-gen',generateRegression);btn('reg-reveal',()=>{regShowFit=!regShowFit;drawRegression();});
+document.getElementById('reg-n').addEventListener('input',generateRegression);
+document.getElementById('reg-slope').addEventListener('input',generateRegression);
+document.getElementById('reg-noise').addEventListener('input',generateRegression);
+document.getElementById('reg-shape').addEventListener('change',generateRegression);
+
+/* ========= PERMUTATION TEST — now with animation ========= */
+let permA=[],permB=[],permNull=[],permObs=0,permAnimating=false;
+sl('perm-n','perm-n-v');sl('perm-eff','perm-eff-v',v=>v.toFixed(1));sl('perm-noise','perm-noise-v',v=>v.toFixed(1));
+function updatePermExplanation(){
+  const el=document.getElementById('perm-explain-text');
+  if(!el)return;
+  if(!permA.length){el.innerHTML='Generate data and run some permutations to see the current interpretation.';return;}
+  const n=permNull.length;
+  const extreme=permNull.filter(v=>Math.abs(v)>=Math.abs(permObs)).length;
+  const p=n?extreme/n:null;
+  const nullSD=n>1?sdv(permNull):0;
+  const effMag=Math.abs(permObs);
+  // where does the observed sit, in null SDs?
+  const z=nullSD>0?(permObs/nullSD).toFixed(2):'—';
+  let txt=`<strong>The setup.</strong> You generated two groups of ${permA.length} observations each. Group B's mean came out <strong>${effMag.toFixed(3)}</strong> units ${permObs>=0?'higher':'lower'} than Group A's mean. That is your <em>observed difference</em>. The question: how unusual is that under the null hypothesis that the groups are really the same?`;
+  if(!n){
+    txt+=`<br><br><strong>Next step.</strong> Click <em>"Animate one shuffle"</em> to watch a single permutation in slow motion — you'll see labels get scrambled across both groups, then a new mean difference gets computed and dropped into the histogram on the right. Click <em>"Run permutations"</em> to batch-shuffle hundreds or thousands of times and build the null distribution quickly.`;
+  }else{
+    const strength=p<0.01?'very strong':(p<0.05?'moderate':(p<0.1?'weak':'essentially no'));
+    const reject=p<0.05;
+    txt+=`<br><br><strong>After ${n.toLocaleString()} shuffles.</strong> The null distribution is centered near <strong>${mean(permNull).toFixed(3)}</strong> (as expected — the true null mean is 0) with standard deviation <strong>${nullSD.toFixed(3)}</strong>. Your observed difference sits about <strong>${z} null-SDs</strong> from the center.`;
+    txt+=`<br><br><strong>Reading the histogram.</strong> The purple bars are shuffle outcomes that sit inside the null. The <span style="color:#dc2626;font-weight:600;">red bars</span> are the extreme shuffles — those where the absolute mean difference was at least as big as the one you actually observed. Of your ${n.toLocaleString()} shuffles, <strong>${extreme.toLocaleString()}</strong> (${(p*100).toFixed(1)}%) landed that far out. That fraction is your <strong>p-value ≈ ${p.toFixed(4)}</strong>.`;
+    txt+=`<br><br><strong>Interpretation.</strong> There is <strong>${strength}</strong> evidence against the null hypothesis. `;
+    if(reject){
+      txt+=`Only ${(p*100).toFixed(1)}% of random shuffles produced a difference this large, so chance alone is an unlikely explanation — we would <strong>reject H₀</strong> at the 0.05 level and say the groups really do differ.`;
+    }else{
+      txt+=`Roughly ${(p*100).toFixed(0)}% of random shuffles produced a difference at least this large, which is not unusual under the null. We would <strong>fail to reject H₀</strong> at the 0.05 level — the data is consistent with the two groups having the same underlying distribution. (Note: this is <em>not</em> proof of no effect, just insufficient evidence.)`;
+    }
+    if(n<500){
+      txt+=`<br><br><em>Tip: only ${n} shuffles so far. The p-value estimate will stabilize as you run more — try the "5,000" setting.</em>`;
+    }
+  }
+  el.innerHTML=txt;
+}
+function generatePermData(){
+  const n=val('perm-n'),eff=val('perm-eff'),noise=val('perm-noise');
+  permA=Array.from({length:n},()=>({v:randn()*noise,label:'A',origLabel:'A'}));
+  permB=Array.from({length:n},()=>({v:eff+randn()*noise,label:'B',origLabel:'B'}));
+  permObs=mean(permB.map(d=>d.v))-mean(permA.map(d=>d.v));
+  permNull=[];
+  set('perm-obs',permObs.toFixed(3));set('perm-count',0);set('perm-p','—');set('perm-nullm','—');set('perm-nulls','—');
+  drawPermData();drawPermNull();updatePermExplanation();
+}
+function onePerm(){
+  const all=permA.concat(permB).slice();
+  for(let i=all.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[all[i],all[j]]=[all[j],all[i]];}
+  const n=permA.length;
+  const a=all.slice(0,n).map(d=>d.v),b=all.slice(n).map(d=>d.v);
+  return mean(b)-mean(a);
+}
+// Animated single-permutation: visibly shuffle labels
+async function animatePerm(){
+  if(permAnimating||!permA.length)return;
+  permAnimating=true;
+  const all=permA.concat(permB);
+  // assign random labels
+  const newLabels=all.map((_,i)=>i<permA.length?'A':'B');
+  for(let i=newLabels.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[newLabels[i],newLabels[j]]=[newLabels[j],newLabels[i]];}
+  // animate by gradually changing labels one at a time
+  for(let k=0;k<all.length;k++){
+    all[k].label=newLabels[k];
+    drawPermData(true);
+    await new Promise(r=>setTimeout(r,28));
+  }
+  // compute diff for this shuffle
+  const aVals=all.filter(d=>d.label==='A').map(d=>d.v);
+  const bVals=all.filter(d=>d.label==='B').map(d=>d.v);
+  const diff=mean(bVals)-mean(aVals);
+  permNull.push(diff);
+  // update null
+  const extreme=permNull.filter(v=>Math.abs(v)>=Math.abs(permObs)).length;
+  set('perm-count',permNull.length.toLocaleString());
+  set('perm-p',(extreme/permNull.length).toFixed(4));
+  set('perm-nullm',mean(permNull).toFixed(3));
+  set('perm-nulls',sdv(permNull).toFixed(3));
+  drawPermNull(diff);
+  updatePermExplanation();
+  // restore original labels
+  await new Promise(r=>setTimeout(r,600));
+  all.forEach(d=>d.label=d.origLabel);
+  drawPermData();
+  permAnimating=false;
+}
+function runPermutations(){
+  if(!permA.length)generatePermData();
+  const batch=+document.getElementById('perm-batch').value;
+  for(let i=0;i<batch;i++)permNull.push(onePerm());
+  const extreme=permNull.filter(v=>Math.abs(v)>=Math.abs(permObs)).length;
+  const p=extreme/permNull.length;
+  set('perm-count',permNull.length.toLocaleString());set('perm-p',p.toFixed(4));set('perm-nullm',mean(permNull).toFixed(3));set('perm-nulls',sdv(permNull).toFixed(3));
+  drawPermNull();
+  updatePermExplanation();
+}
+function drawPermData(animMode){
+  const r=clr('permDataC',260),ctx=r.ctx,W=r.W,H=r.H,pad=30;
+  ctx.clearRect(0,0,W,H);
+  // gradient bg
+  const grd=ctx.createLinearGradient(0,0,W,0);
+  grd.addColorStop(0,'rgba(37,99,235,0.07)');grd.addColorStop(0.5,'rgba(100,100,100,0.04)');grd.addColorStop(1,'rgba(220,38,38,0.07)');
+  ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,W-2*pad,H-2*pad);
+  if(!permA.length)return;
+  const all=permA.concat(permB);
+  const ys=all.map(d=>d.v),ymin=Math.min(...ys),ymax=Math.max(...ys),yr=(ymax-ymin)||1;
+  const yp=v=>H-pad-((v-ymin)/yr)*(H-2*pad);
+  // horizontal line down the middle separating A (left) from B (right) visually
+  const midX=W/2;
+  ctx.setLineDash([4,4]);ctx.strokeStyle='rgba(0,0,0,0.2)';ctx.beginPath();ctx.moveTo(midX,pad);ctx.lineTo(midX,H-pad);ctx.stroke();ctx.setLineDash([]);
+  // draw points at original X position but colored by current label
+  all.forEach((d,i)=>{
+    const isA_orig=i<permA.length;
+    const xPos=isA_orig
+      ? pad+((i+1)/(permA.length+1))*((W-2*pad)/2-10)
+      : W/2+10+((i-permA.length+1)/(permB.length+1))*((W-2*pad)/2-10);
+    const y=yp(d.v);
+    const col=d.label==='A'?'rgba(37,99,235,':'rgba(220,38,38,';
+    // glow when label differs from orig position (shuffled)
+    const shuffled=d.label!==d.origLabel;
+    if(shuffled&&animMode){
+      ctx.beginPath();ctx.arc(xPos,y,8,0,Math.PI*2);ctx.fillStyle=col+'0.18)';ctx.fill();
+    }
+    ctx.beginPath();ctx.arc(xPos,y,4.5,0,Math.PI*2);ctx.fillStyle=col+'0.9)';ctx.fill();
+    if(shuffled&&animMode){ctx.strokeStyle='rgba(255,200,0,0.9)';ctx.lineWidth=1.5;ctx.stroke();}
+  });
+  // means indicators
+  const aMean=mean(all.filter(d=>d.label==='A').map(d=>d.v));
+  const bMean=mean(all.filter(d=>d.label==='B').map(d=>d.v));
+  ctx.strokeStyle='rgba(37,99,235,0.7)';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(pad,yp(aMean));ctx.lineTo(W/2-5,yp(aMean));ctx.stroke();
+  ctx.strokeStyle='rgba(220,38,38,0.7)';ctx.beginPath();ctx.moveTo(W/2+5,yp(bMean));ctx.lineTo(W-pad,yp(bMean));ctx.stroke();
+  ctx.fillStyle='rgba(100,100,100,0.85)';ctx.font='11px sans-serif';ctx.textAlign='center';
+  ctx.fillText('Group A (left)',W/4,H-8);
+  ctx.fillText('Group B (right)',3*W/4,H-8);
+  // diff annotation
+  ctx.textAlign='center';ctx.fillStyle='rgba(50,50,50,0.85)';ctx.font='bold 11px sans-serif';
+  ctx.fillText(`diff = ${(bMean-aMean).toFixed(3)}`,W/2,pad+14);
+}
+function drawPermNull(highlightVal){
+  const r=clr('permNullC',260),ctx=r.ctx,W=r.W,H=r.H,pad=30;
+  ctx.clearRect(0,0,W,H);
+  const grd=ctx.createLinearGradient(0,pad,0,H-pad);
+  grd.addColorStop(0,'rgba(124,58,237,0.04)');grd.addColorStop(1,'rgba(124,58,237,0.12)');
+  ctx.fillStyle=grd;ctx.fillRect(pad,pad,W-2*pad,H-2*pad);
+  ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,W-2*pad,H-2*pad);
+  if(!permNull.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='13px sans-serif';ctx.textAlign='center';ctx.fillText('Run or animate a permutation to build this up',W/2,H/2);return;}
+  const vals=permNull.slice();
+  const mn=Math.min(...vals,permObs,-Math.abs(permObs)),mx=Math.max(...vals,permObs,Math.abs(permObs));
+  const bins=32,bw=(mx-mn)/bins||0.001;
+  const counts=new Array(bins).fill(0);
+  vals.forEach(v=>{counts[Math.min(bins-1,Math.floor((v-mn)/bw))]++;});
+  const maxC=Math.max(...counts)||1,iW=W-2*pad,iH=H-2*pad;
+  // shade extreme bins (|v| >= |obs|) a different color
+  counts.forEach((c,i)=>{
+    const bh=(c/maxC)*(iH-20);
+    const binCenter=mn+(i+0.5)*bw;
+    const isExtreme=Math.abs(binCenter)>=Math.abs(permObs);
+    ctx.fillStyle=isExtreme?'rgba(220,38,38,0.65)':'rgba(124,58,237,0.6)';
+    ctx.fillRect(pad+i*iW/bins+0.5,H-pad-bh,iW/bins-1,bh);
+  });
+  // observed diff vertical line
+  const xObs=pad+((permObs-mn)/(mx-mn||1))*iW;
+  ctx.beginPath();ctx.moveTo(xObs,pad);ctx.lineTo(xObs,H-pad);ctx.strokeStyle='rgba(220,38,38,0.95)';ctx.lineWidth=2.5;ctx.stroke();
+  // mirror line (−obs)
+  const xMirror=pad+((-permObs-mn)/(mx-mn||1))*iW;
+  ctx.beginPath();ctx.setLineDash([3,3]);ctx.moveTo(xMirror,pad);ctx.lineTo(xMirror,H-pad);ctx.strokeStyle='rgba(220,38,38,0.5)';ctx.lineWidth=1.5;ctx.stroke();ctx.setLineDash([]);
+  // label observed
+  ctx.fillStyle='rgba(220,38,38,0.9)';ctx.font='bold 11px sans-serif';ctx.textAlign='left';
+  ctx.fillText('observed',Math.min(W-70,xObs+6),pad+14);
+  // highlight just-added value with a quick flash
+  if(highlightVal!==undefined){
+    const xh=pad+((highlightVal-mn)/(mx-mn||1))*iW;
+    ctx.beginPath();ctx.arc(xh,H-pad-8,6,0,Math.PI*2);ctx.fillStyle='rgba(255,200,0,0.9)';ctx.fill();
+  }
+  // axis label
+  ctx.fillStyle='rgba(100,100,100,0.75)';ctx.font='11px sans-serif';ctx.textAlign='center';
+  ctx.fillText('shuffled mean differences',W/2,H-8);
+  // tail shaded annotation
+  ctx.textAlign='right';ctx.fillStyle='rgba(100,100,100,0.65)';
+  ctx.fillText(`red bars = as extreme as observed (${permNull.filter(v=>Math.abs(v)>=Math.abs(permObs)).length}/${permNull.length})`,W-pad-2,pad+14);
+}
+btn('perm-gen',generatePermData);
+btn('perm-animate',animatePerm);
+btn('perm-run',runPermutations);
+btn('perm-reset',()=>{permA=[];permB=[];permNull=[];permObs=0;set('perm-obs','—');set('perm-count',0);set('perm-p','—');set('perm-nullm','—');set('perm-nulls','—');drawPermData();drawPermNull();updatePermExplanation();});
+
+/* ========= SIMPSON'S PARADOX ========= */
+let simpData=[],simpView=0; // 0 = both, 1 = aggregate only, 2 = subgroups only
+sl('simp-n','simp-n-v');sl('simp-slope','simp-slope-v',v=>v.toFixed(1));sl('simp-off','simp-off-v',v=>v.toFixed(1));sl('simp-noise','simp-noise-v',v=>v.toFixed(1));
+function fitLine(data){const xs=data.map(d=>d.x),ys=data.map(d=>d.y),mx=mean(xs),my=mean(ys);let sxx=0,sxy=0,syy=0;for(let i=0;i<data.length;i++){const dx=xs[i]-mx,dy=ys[i]-my;sxx+=dx*dx;sxy+=dx*dy;syy+=dy*dy;}const b1=sxy/(sxx||1e-9),b0=my-b1*mx,r=sxy/Math.sqrt((sxx||1e-9)*(syy||1e-9));return{b0,b1,r};}
+function generateSimpson(){
+  const n=val('simp-n'),slope=val('simp-slope'),off=val('simp-off'),noise=val('simp-noise');
+  simpData=[];
+  for(let i=0;i<n;i++){const xA=Math.random()*4;const yA=off+slope*xA+randn()*noise;simpData.push({x:xA,y:yA,g:'A'});}
+  for(let i=0;i<n;i++){const xB=6+Math.random()*4;const yB=-off+slope*xB+randn()*noise;simpData.push({x:xB,y:yB,g:'B'});}
+  drawSimpson();
+}
+function drawSimpson(){
+  const r=clr('simpC',440),ctx=r.ctx,W=r.W,H=r.H,pad=34,iW=W-2*pad,iH=H-2*pad;
+  // subtle gradient bg
+  const grd=ctx.createLinearGradient(0,0,0,H);
+  grd.addColorStop(0,'rgba(16,185,129,0.04)');grd.addColorStop(1,'rgba(37,99,235,0.04)');
+  ctx.fillStyle=grd;ctx.fillRect(0,0,W,H);
+  if(!simpData.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='14px sans-serif';ctx.textAlign='center';ctx.fillText('Click "Generate paradox"',W/2,H/2);return;}
+  const xs=simpData.map(d=>d.x),ys=simpData.map(d=>d.y);
+  const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
+  const xpad=(xmax-xmin)*0.1+0.2,ypad=(ymax-ymin)*0.1+0.2;
+  const x0=xmin-xpad,x1=xmax+xpad,y0=ymin-ypad,y1=ymax+ypad;
+  const xp=x=>pad+(x-x0)/(x1-x0)*iW,yp=y=>H-pad-(y-y0)/(y1-y0)*iH;
+  ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);
+  // gridlines
+  ctx.strokeStyle='rgba(0,0,0,0.05)';ctx.lineWidth=1;
+  for(let i=1;i<6;i++){const y=pad+i/6*iH;ctx.beginPath();ctx.moveTo(pad,y);ctx.lineTo(W-pad,y);ctx.stroke();const x=pad+i/6*iW;ctx.beginPath();ctx.moveTo(x,pad);ctx.lineTo(x,H-pad);ctx.stroke();}
+  // compute centroids per group (needed for shaded regions and the cross-group line)
+  const dataA=simpData.filter(d=>d.g==='A'),dataB=simpData.filter(d=>d.g==='B');
+  const cenA={x:mean(dataA.map(d=>d.x)),y:mean(dataA.map(d=>d.y))};
+  const cenB={x:mean(dataB.map(d=>d.x)),y:mean(dataB.map(d=>d.y))};
+  // shaded convex-ish ellipses around each group cloud — helps viewer see "the groups live in different regions"
+  function drawCloud(data,color){
+    if(!data.length)return;
+    const mx=mean(data.map(d=>d.x)),my=mean(data.map(d=>d.y));
+    const sx=Math.max(sdv(data.map(d=>d.x)),0.3),sy=Math.max(sdv(data.map(d=>d.y)),0.3);
+    ctx.save();
+    ctx.translate(xp(mx),yp(my));
+    // scale to data space
+    const rx=(sx*2.4)/(x1-x0)*iW/2,ry=(sy*2.4)/(y1-y0)*iH/2;
+    ctx.beginPath();ctx.ellipse(0,0,rx,ry,0,0,Math.PI*2);
+    ctx.fillStyle=color;ctx.fill();
+    ctx.restore();
+  }
+  if(simpView===0||simpView===2){
+    drawCloud(dataA,'rgba(37,99,235,0.07)');
+    drawCloud(dataB,'rgba(220,38,38,0.07)');
+  }
+  // draw points
+  simpData.forEach(d=>{
+    ctx.beginPath();ctx.arc(xp(d.x),yp(d.y),5,0,Math.PI*2);
+    if(simpView===1){
+      ctx.fillStyle='rgba(100,100,100,0.55)';
+    }else{
+      ctx.fillStyle=d.g==='A'?'rgba(37,99,235,0.82)':'rgba(220,38,38,0.82)';
+    }
+    ctx.fill();
+    ctx.strokeStyle='rgba(255,255,255,0.5)';ctx.lineWidth=1;ctx.stroke();
+  });
+  const allFit=fitLine(simpData),aFit=fitLine(dataA),bFit=fitLine(dataB);
+  function drawArrowLine(fit,color,width){
+    const y0f=fit.b0+fit.b1*x0,y1f=fit.b0+fit.b1*x1;
+    const x0pp=xp(x0),y0pp=yp(y0f),x1pp=xp(x1),y1pp=yp(y1f);
+    ctx.beginPath();ctx.moveTo(x0pp,y0pp);ctx.lineTo(x1pp,y1pp);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.stroke();
+    const ang=Math.atan2(y1pp-y0pp,x1pp-x0pp);const ah=10;
+    ctx.beginPath();ctx.moveTo(x1pp,y1pp);ctx.lineTo(x1pp-ah*Math.cos(ang-Math.PI/7),y1pp-ah*Math.sin(ang-Math.PI/7));ctx.lineTo(x1pp-ah*Math.cos(ang+Math.PI/7),y1pp-ah*Math.sin(ang+Math.PI/7));ctx.closePath();ctx.fillStyle=color;ctx.fill();
+  }
+  if(simpView===0||simpView===1){drawArrowLine(allFit,'rgba(16,185,129,0.95)',3.2);}
+  if(simpView===0||simpView===2){drawArrowLine(aFit,'rgba(37,99,235,0.95)',2.6);drawArrowLine(bFit,'rgba(220,38,38,0.95)',2.6);}
+  // KEY EXPLANATORY LAYER: draw centroids + dashed line between them
+  // this is the "cross-group trend" — it shows WHY the aggregate line points the way it does
+  if(simpView===0||simpView===1){
+    // dashed gold line from centroid of A to centroid of B
+    ctx.setLineDash([6,5]);
+    ctx.beginPath();
+    ctx.moveTo(xp(cenA.x),yp(cenA.y));
+    ctx.lineTo(xp(cenB.x),yp(cenB.y));
+    ctx.strokeStyle='rgba(245,158,11,0.9)';ctx.lineWidth=2.5;ctx.stroke();
+    ctx.setLineDash([]);
+    // centroid markers
+    [[cenA,'rgba(37,99,235,1)','A'],[cenB,'rgba(220,38,38,1)','B']].forEach(([c,col,lbl])=>{
+      ctx.beginPath();ctx.arc(xp(c.x),yp(c.y),9,0,Math.PI*2);
+      ctx.fillStyle='white';ctx.fill();
+      ctx.strokeStyle=col;ctx.lineWidth=3;ctx.stroke();
+      ctx.fillStyle=col;ctx.font='bold 10px sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+      ctx.fillText(lbl,xp(c.x),yp(c.y));
+    });
+    // label midpoint of the cross-group line
+    const midX=(xp(cenA.x)+xp(cenB.x))/2,midY=(yp(cenA.y)+yp(cenB.y))/2;
+    ctx.fillStyle='rgba(245,158,11,1)';ctx.font='bold 10px sans-serif';ctx.textAlign='center';ctx.textBaseline='bottom';
+    ctx.save();
+    ctx.translate(midX,midY-8);
+    ctx.fillText('cross-group trend',0,0);
+    ctx.restore();
+  }
+  // annotations in top-left
+  ctx.font='bold 12px sans-serif';ctx.textAlign='left';ctx.textBaseline='alphabetic';
+  if(simpView!==2){
+    ctx.fillStyle='rgba(16,185,129,0.95)';
+    ctx.fillText('overall: '+(allFit.b1>0?'↑':'↓')+' slope = '+allFit.b1.toFixed(2),pad+8,pad+18);
+  }
+  if(simpView!==1){
+    ctx.fillStyle='rgba(37,99,235,0.95)';ctx.fillText('group A: '+(aFit.b1>0?'↑':'↓')+' slope = '+aFit.b1.toFixed(2),pad+8,pad+36);
+    ctx.fillStyle='rgba(220,38,38,0.95)';ctx.fillText('group B: '+(bFit.b1>0?'↑':'↓')+' slope = '+bFit.b1.toFixed(2),pad+8,pad+52);
+  }
+  // paradox badge
+  const paradox=(Math.sign(allFit.b1)!==Math.sign(aFit.b1)&&Math.sign(aFit.b1)===Math.sign(bFit.b1));
+  if(paradox&&simpView===0){
+    ctx.fillStyle='rgba(245,158,11,0.95)';ctx.fillRect(W-pad-130,pad+8,120,26);
+    ctx.fillStyle='white';ctx.font='bold 12px sans-serif';ctx.textAlign='center';
+    ctx.fillText('⚠ paradox detected',W-pad-70,pad+25);
+  }
+  set('simp-all',allFit.b1.toFixed(3));set('simp-a',aFit.b1.toFixed(3));set('simp-b',bFit.b1.toFixed(3));set('simp-r',allFit.r.toFixed(3));
+  set('simp-pattern',paradox?'Paradox visible':'Same direction');
+  // update the live explanation text
+  updateSimpsonExplanation(allFit,aFit,bFit,cenA,cenB,paradox);
+}
+function updateSimpsonExplanation(allFit,aFit,bFit,cenA,cenB,paradox){
+  const el=document.getElementById('simp-explain-text');
+  if(!el)return;
+  const ag=allFit.b1,a=aFit.b1,b=bFit.b1;
+  const dirAll=ag>0?'upward':'downward';
+  const dirSub=(a+b)/2>0?'upward':'downward';
+  const cenDx=cenB.x-cenA.x,cenDy=cenB.y-cenA.y;
+  const cenSlope=cenDx!==0?cenDy/cenDx:0;
+  const cenDir=cenSlope>0?'upward':'downward';
+  let txt='';
+  if(paradox){
+    txt=`<strong style="color:#d97706;">Paradox is active.</strong> Look at three different slopes living on the same plot and notice they disagree:`;
+    txt+=`<div style="margin:8px 0 8px 18px;font-size:13px;line-height:1.9;">
+      • <strong style="color:#2563eb;">Group A slope: ${a.toFixed(2)}</strong> — inside the blue cloud, y rises ${a>0?'with':'against'} x<br>
+      • <strong style="color:#dc2626;">Group B slope: ${b.toFixed(2)}</strong> — inside the red cloud, y also ${b>0?'rises':'falls'} with x<br>
+      • <strong style="color:#059669;">Overall slope: ${ag.toFixed(2)}</strong> — fitting one line through all ${simpData.length} points, y <em>${ag>0?'rises':'falls'}</em> with x — <strong>the opposite direction!</strong>
+    </div>`;
+    txt+=`<strong>The mechanical explanation.</strong> Group A's center of mass sits at (x̄ = ${cenA.x.toFixed(2)}, ȳ = ${cenA.y.toFixed(2)}). Group B's sits at (x̄ = ${cenB.x.toFixed(2)}, ȳ = ${cenB.y.toFixed(2)}). The gold dashed line connecting those two centers has slope <strong>${cenSlope.toFixed(2)}</strong> — pointing <strong>${cenDir}</strong>. When you fit an aggregate regression line, it is <em>forced</em> to pass close to both cloud centers, so its slope is dragged toward that ${cenSlope.toFixed(2)} cross-group slope. The within-group pattern is completely overruled by the between-group pattern.`;
+    txt+=`<br><br><strong>The statistical insight.</strong> Any single fitted slope is a <em>weighted average</em> of two things: the within-group relationship (what happens as x changes <em>inside</em> each group) and the between-group relationship (what happens as you <em>switch</em> from one group to another). When these two point different directions, you get Simpson's paradox. The aggregate line simply reports the stronger signal, which in this case is the cross-group signal.`;
+    txt+=`<br><br><strong>Real-world takeaway.</strong> If you ever see a "surprising" correlation in aggregated data, stop and ask: is there a grouping variable I have not controlled for? Examples beyond Berkeley: a hospital with a <em>higher</em> overall death rate than a rival may have <em>lower</em> death rates in every patient risk category (because it treats sicker patients); a baseball player with a <em>higher</em> yearly batting average than a rival may have <em>lower</em> batting averages across every individual season (because season-to-season mix varies); a drug that looks <em>worse</em> on average may be <em>better</em> for every subgroup of patients. Every one of these is Simpson's paradox.`;
+    txt+=`<br><br><strong>The fix.</strong> Never report a trend from aggregated data without checking whether it holds inside natural subgroups. If it reverses — and for policy decisions, medical trials, or fairness audits that reversal matters enormously — report the subgroup analysis, or use stratified/adjusted models. "On average" is often the most dangerous phrase in statistics.`;
+  }else{
+    const sameDir=Math.sign(ag)===Math.sign(a)&&Math.sign(a)===Math.sign(b);
+    txt=`No paradox right now — the three slopes broadly agree on direction.`;
+    txt+=`<div style="margin:8px 0 8px 18px;font-size:13px;line-height:1.9;">
+      • <strong style="color:#2563eb;">Group A slope: ${a.toFixed(2)}</strong><br>
+      • <strong style="color:#dc2626;">Group B slope: ${b.toFixed(2)}</strong><br>
+      • <strong style="color:#059669;">Overall slope: ${ag.toFixed(2)}</strong> (${dirAll})<br>
+      • Cross-group trend (gold line): ${cenSlope.toFixed(2)} (${cenDir})
+    </div>`;
+    txt+=`Notice that the cross-group slope (${cenSlope.toFixed(2)}) points the <em>same</em> way as the within-group slopes, so there's nothing for the aggregate fit to fight against — everything pulls the same direction.`;
+    txt+=`<br><br><strong>To create the paradox:</strong> you need the cross-group slope (gold dashed line) to point <em>opposite</em> to the within-group slopes. The easiest recipe:`;
+    txt+=`<div style="margin:8px 0 8px 18px;font-size:13px;line-height:1.9;">
+      1. Set "Within-group slope" positive (say, <strong>+0.7</strong> or higher).<br>
+      2. Crank "Group offset" up to <strong>4 or 5</strong> — this pushes Group B down on the y-axis while keeping it right-shifted on the x-axis.<br>
+      3. The gold dashed line will now tilt <em>down</em> from A's center to B's center, while the blue and red lines still tilt up.<br>
+      4. The aggregate fit will follow the gold line and flip direction. ⚠ Paradox.
+    </div>`;
+    txt+=`You can also flip the sign of the within-group slope (make it negative) and keep everything else positive — the paradox will appear in the opposite direction.`;
+  }
+  el.innerHTML=txt;
+}
+btn('simp-gen',generateSimpson);
+btn('simp-view',function(){
+  simpView=(simpView+1)%3;
+  const labels=['both','overall only','subgroups only'];
+  this.textContent='View: '+labels[simpView];
+  drawSimpson();
+});
+btn('simp-reveal',()=>{simpView=0;document.getElementById('simp-view').textContent='View: both';drawSimpson();});
+document.getElementById('simp-n').addEventListener('input',generateSimpson);
+document.getElementById('simp-slope').addEventListener('input',generateSimpson);
+document.getElementById('simp-off').addEventListener('input',generateSimpson);
+document.getElementById('simp-noise').addEventListener('input',generateSimpson);
+
+/* ========= COMBINATIONS ========= */
+sl('cmb-n','cmb-n-v');sl('cmb-r','cmb-r-v');
+function factorial(n){if(n<0)return NaN;if(n>170)return Infinity;let f=1;for(let i=2;i<=n;i++)f*=i;return f;}
+function choose(n,r){if(r<0||r>n)return 0;if(r===0||r===n)return 1;r=Math.min(r,n-r);let c=1;for(let i=0;i<r;i++){c=c*(n-i)/(i+1);}return Math.round(c);}
+function fmtNum(n){if(!isFinite(n))return '∞';if(n>1e15)return n.toExponential(2);return n.toLocaleString();}
+function updateCombo(){
+  let n=val('cmb-n'),r=val('cmb-r');
+  if(r>n){r=n;document.getElementById('cmb-r').value=n;set('cmb-r-v',n);}
+  const c=choose(n,r);
+  const nf=factorial(n),rf=factorial(r),nrf=factorial(n-r);
+  const perm=rf>0?(nf/nrf):0;
+  set('cmb-n-eq',n);set('cmb-r-eq',r);
+  set('cmb-nfact',n+'!');set('cmb-rfact',r+'!');set('cmb-nrfact',(n-r)+'!');
+  set('cmb-result',fmtNum(c));
+  set('cmb-m-result',fmtNum(c));
+  set('cmb-m-perm',fmtNum(perm));
+  set('cmb-m-nfact',fmtNum(nf));
+  set('cmb-m-pascal','Row '+n);
+  // explanation text
+  const ex=document.getElementById('cmb-explain');
+  const examples={'team':'team members from a pool','cards':'cards from a deck','committee':'committee members','books':'books from a shelf','pizza toppings':'pizza toppings'};
+  const keys=Object.keys(examples);
+  const ctx=examples[keys[n%keys.length]];
+  ex.innerHTML=`There are <strong>${fmtNum(c)}</strong> different ways to choose <strong>${r}</strong> ${ctx} from <strong>${n}</strong>.`;
+  // build chips
+  const demo=document.getElementById('cmb-demo');
+  demo.innerHTML='';
+  const mode=document.getElementById('cmb-mode').value;
+  if(mode==='enumerate'&&n<=8&&c<=60){
+    // show the actual combinations
+    const items=Array.from({length:n},(_,i)=>String.fromCharCode(65+i));
+    const combos=[];
+    function combHelper(start,curr){
+      if(curr.length===r){combos.push([...curr]);return;}
+      for(let i=start;i<items.length;i++){curr.push(items[i]);combHelper(i+1,curr);curr.pop();}
+    }
+    combHelper(0,[]);
+    combos.slice(0,30).forEach(co=>{
+      const chip=document.createElement('div');chip.className='combo-chip';chip.textContent='{'+co.join(',')+'}';demo.appendChild(chip);
+    });
+    if(combos.length>30){const more=document.createElement('div');more.className='combo-chip';more.style.opacity='0.6';more.textContent=`+ ${combos.length-30} more`;demo.appendChild(more);}
+  }else if(mode==='formula'){
+    // show the items being chosen interactively
+    for(let i=0;i<n;i++){
+      const chip=document.createElement('div');chip.className='combo-chip'+(i<r?' selected':'');chip.textContent=String.fromCharCode(65+i);demo.appendChild(chip);
+    }
+  }
+  drawComboViz();
+}
+function drawComboViz(){
+  const n=val('cmb-n'),r=val('cmb-r'),mode=document.getElementById('cmb-mode').value;
+  const info=clr('cmbC',280),ctx=info.ctx,W=info.W,H=info.H;
+  ctx.fillStyle='rgba(217,119,6,0.04)';ctx.fillRect(0,0,W,H);
+  if(mode==='pascal'){
+    // Pascal's triangle highlighting C(n,r)
+    const rows=Math.min(n,15);
+    const cellSize=Math.min(W/(rows+2),H/(rows+3));
+    const startY=20;
+    for(let i=0;i<=rows;i++){
+      for(let j=0;j<=i;j++){
+        const x=W/2+(j-i/2)*cellSize;
+        const y=startY+i*cellSize*0.9;
+        const v=choose(i,j);
+        const isTarget=(i===n&&j===r);
+        const onPath=(i<=n&&(j===0||j===i));
+        ctx.beginPath();ctx.arc(x,y,cellSize*0.35,0,Math.PI*2);
+        ctx.fillStyle=isTarget?'rgba(217,119,6,0.95)':(onPath?'rgba(217,119,6,0.2)':'rgba(124,58,237,0.15)');
+        ctx.fill();
+        ctx.strokeStyle=isTarget?'rgba(217,119,6,1)':'rgba(124,58,237,0.4)';
+        ctx.lineWidth=isTarget?2:0.5;ctx.stroke();
+        ctx.fillStyle=isTarget?'white':'rgba(50,50,50,0.9)';
+        ctx.font=`${isTarget?'bold ':''}${Math.max(8,Math.min(12,cellSize*0.35))}px monospace`;
+        ctx.textAlign='center';ctx.textBaseline='middle';
+        ctx.fillText(fmtNum(v).length>6?'...':fmtNum(v),x,y);
+      }
+    }
+    ctx.fillStyle='rgba(100,100,100,0.7)';ctx.font='12px sans-serif';ctx.textAlign='center';ctx.textBaseline='alphabetic';
+    ctx.fillText(`Pascal's Triangle — C(${n},${r}) is highlighted in gold`,W/2,H-10);
+  }else{
+    // bar chart of C(n,k) for k=0..n
+    const vals=[];for(let k=0;k<=n;k++)vals.push(choose(n,k));
+    const maxV=Math.max(...vals);
+    const pad=30,iW=W-2*pad,iH=H-55;
+    const bw=iW/(n+1);
+    vals.forEach((v,k)=>{
+      const bh=(v/maxV)*iH;const x=pad+k*bw,y=H-30-bh;
+      ctx.fillStyle=k===r?'rgba(217,119,6,0.9)':'rgba(124,58,237,0.45)';
+      ctx.fillRect(x+2,y,bw-4,bh);
+      if(k===r){ctx.fillStyle='rgba(50,50,50,0.95)';ctx.font='bold 11px monospace';ctx.textAlign='center';ctx.fillText(fmtNum(v),x+bw/2,y-4);}
+      if(n<=15){ctx.fillStyle='rgba(100,100,100,0.7)';ctx.font='10px monospace';ctx.textAlign='center';ctx.fillText(k,x+bw/2,H-14);}
+    });
+    ctx.fillStyle='rgba(100,100,100,0.8)';ctx.font='12px sans-serif';ctx.textAlign='center';
+    ctx.fillText(`All combinations C(${n}, k) for k = 0 to ${n}`,W/2,20);
+  }
+}
+document.getElementById('cmb-n').addEventListener('input',updateCombo);
+document.getElementById('cmb-r').addEventListener('input',updateCombo);
+document.getElementById('cmb-mode').addEventListener('change',updateCombo);
+
+/* ========= DECISION TREE ========= */
+// Synthesize a Titanic-like dataset (891 passengers with realistic survival patterns)
+function makeTitanicData(){
+  const d=[];
+  // based on the real titanic survival patterns from the course notes:
+  // - 62% died overall, 38% survived
+  // - females: 74% survived; males: 19% survived
+  // - by class: 1st class higher survival, 3rd class lower
+  // - children under ~6.5 had higher survival
+  for(let i=0;i<891;i++){
+    const sex=Math.random()<0.647?'male':'female';
+    const pclass=Math.random()<0.24?1:(Math.random()<0.45?2:3);
+    const age=Math.random()<0.08?(1+Math.random()*6):(10+Math.random()*60);
+    // probability of survival given features (rough fit to the course data)
+    let p;
+    if(sex==='female'){
+      p=pclass===1?0.97:(pclass===2?0.92:0.50);
+    }else{
+      if(age<6.5){p=pclass===3?0.45:0.85;}
+      else{p=pclass===1?0.37:(pclass===2?0.16:0.14);}
+    }
+    d.push({sex,pclass,age,survived:Math.random()<p?1:0});
+  }
+  return d;
+}
+const titanicData=makeTitanicData();
+
+function giniImpurity(rows){if(!rows.length)return 0;const n=rows.length;const s=rows.filter(r=>r.survived===1).length/n;return 1-s*s-(1-s)*(1-s);}
+function bestSplit(rows,features){
+  let best=null,bestGain=0;
+  const parentG=giniImpurity(rows);
+  features.forEach(f=>{
+    let candidates;
+    if(f==='sex')candidates=['male'];
+    else if(f==='pclass')candidates=[2,3];
+    else if(f==='age')candidates=[6.5,16,32];
+    candidates.forEach(thr=>{
+      const left=rows.filter(r=>f==='sex'?r[f]===thr:r[f]<thr);
+      const right=rows.filter(r=>f==='sex'?r[f]!==thr:r[f]>=thr);
+      if(!left.length||!right.length)return;
+      const w=(left.length*giniImpurity(left)+right.length*giniImpurity(right))/rows.length;
+      const gain=parentG-w;
+      if(gain>bestGain){bestGain=gain;best={feature:f,threshold:thr,left,right,gain};}
+    });
+  });
+  return best;
+}
+function buildTreeRec(rows,depth,maxDepth,minLeaf,features){
+  const n=rows.length;
+  const survived=rows.filter(r=>r.survived===1).length;
+  const prob=n?survived/n:0;
+  const node={n,prob,predict:prob>=0.5?1:0};
+  if(depth>=maxDepth||n<minLeaf||prob===0||prob===1)return node;
+  const split=bestSplit(rows,features);
+  if(!split||split.gain<0.001)return node;
+  node.split=split;
+  node.left=buildTreeRec(split.left,depth+1,maxDepth,minLeaf,features);
+  node.right=buildTreeRec(split.right,depth+1,maxDepth,minLeaf,features);
+  return node;
+}
+function treeDepth(t){if(!t.split)return 0;return 1+Math.max(treeDepth(t.left),treeDepth(t.right));}
+function countLeaves(t){if(!t.split)return 1;return countLeaves(t.left)+countLeaves(t.right);}
+function predictTree(t,row){if(!t.split)return t.predict;const f=t.split.feature,thr=t.split.threshold;const goLeft=f==='sex'?row[f]===thr:row[f]<thr;return goLeft?predictTree(t.left,row):predictTree(t.right,row);}
+
+let currentTree=null;
+sl('tree-d','tree-d-v');sl('tree-m','tree-m-v');
+function buildTree(){
+  const d=val('tree-d'),m=val('tree-m');
+  const featMode=document.getElementById('tree-feat').value;
+  let features;
+  if(featMode==='sex')features=['sex'];
+  else if(featMode==='sex_class')features=['sex','pclass'];
+  else features=['sex','pclass','age'];
+  currentTree=buildTreeRec(titanicData,0,d,m,features);
+  // accuracy
+  let correct=0;titanicData.forEach(r=>{if(predictTree(currentTree,r)===r.survived)correct++;});
+  const acc=correct/titanicData.length;
+  set('tree-depth',treeDepth(currentTree));
+  set('tree-leaves',countLeaves(currentTree));
+  set('tree-acc',(acc*100).toFixed(1)+'%');
+  // determine the root feature (always the "most important" because it's the first split)
+  set('tree-feat-out',currentTree.split?currentTree.split.feature:'(none)');
+  drawTree();
+}
+function drawTree(){
+  const r=clr('treeC',460),ctx=r.ctx,W=r.W,H=r.H;
+  ctx.fillStyle='rgba(220,38,38,0.04)';ctx.fillRect(0,0,W,H);
+  if(!currentTree)return;
+  // assign x coordinates (in-order layout) and y by depth
+  const leaves=[];
+  function collectLeaves(t){if(!t.split){leaves.push(t);return;}collectLeaves(t.left);collectLeaves(t.right);}
+  collectLeaves(currentTree);
+  // assign leaf x positions evenly
+  const leafW=(W-60)/Math.max(leaves.length,1);
+  leaves.forEach((l,i)=>{l.x=30+leafW*(i+0.5);});
+  // compute internal node x as midpoint of children
+  function layout(t,depth){
+    if(!t.split){t.depth=depth;return t.x;}
+    const xl=layout(t.left,depth+1),xr=layout(t.right,depth+1);
+    t.depth=depth;t.x=(xl+xr)/2;return t.x;
+  }
+  layout(currentTree,0);
+  const td=treeDepth(currentTree)||1;
+  const levelH=(H-60)/(td+1);
+  function setY(t){t.y=30+t.depth*levelH;if(t.split){setY(t.left);setY(t.right);}}
+  setY(currentTree);
+  // draw edges first
+  function drawEdges(t){if(!t.split)return;
+    ctx.strokeStyle='rgba(0,0,0,0.25)';ctx.lineWidth=1.2;
+    ctx.beginPath();ctx.moveTo(t.x,t.y+12);ctx.lineTo(t.left.x,t.left.y-12);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(t.x,t.y+12);ctx.lineTo(t.right.x,t.right.y-12);ctx.stroke();
+    // yes/no labels
+    ctx.fillStyle='rgba(50,50,50,0.65)';ctx.font='9px sans-serif';ctx.textAlign='center';
+    ctx.fillText('yes',(t.x+t.left.x)/2-8,(t.y+t.left.y)/2);
+    ctx.fillText('no',(t.x+t.right.x)/2+8,(t.y+t.right.y)/2);
+    drawEdges(t.left);drawEdges(t.right);
+  }
+  drawEdges(currentTree);
+  // draw nodes
+  function drawNode(t){
+    const pred=t.predict,conf=pred===1?t.prob:1-t.prob;
+    // color by predicted class, saturation by confidence
+    const baseH=pred===1?210:145;const sat=30+conf*50,light=80-conf*15;
+    const col=`hsl(${baseH},${sat}%,${light}%)`;
+    const rad=Math.max(18,Math.min(28,Math.sqrt(t.n)*1.0));
+    ctx.beginPath();ctx.arc(t.x,t.y,rad,0,Math.PI*2);ctx.fillStyle=col;ctx.fill();
+    ctx.strokeStyle='rgba(0,0,0,0.3)';ctx.lineWidth=1;ctx.stroke();
+    // text: prediction probability
+    ctx.fillStyle='rgba(20,20,20,0.85)';ctx.font=`bold ${Math.min(11,rad*0.48)}px monospace`;ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillText(pred,t.x,t.y-2);
+    ctx.font=`${Math.min(9,rad*0.38)}px monospace`;
+    ctx.fillText((t.n+'').length>4?(t.n/1000).toFixed(1)+'k':t.n,t.x,t.y+rad*0.45);
+    // split label
+    if(t.split){
+      ctx.fillStyle='rgba(30,30,30,0.9)';ctx.font='bold 10px monospace';ctx.textAlign='center';
+      const lbl=t.split.feature==='sex'?`sex = ${t.split.threshold}`:`${t.split.feature} < ${t.split.threshold}`;
+      ctx.fillText(lbl,t.x,t.y-rad-4);
+      drawNode(t.left);drawNode(t.right);
+    }
+  }
+  drawNode(currentTree);
+  // title
+  ctx.fillStyle='rgba(50,50,50,0.75)';ctx.font='11px sans-serif';ctx.textAlign='left';ctx.textBaseline='alphabetic';
+  ctx.fillText('Titanic survival tree — each node shows majority class & passenger count',20,20);
+}
+btn('tree-build',buildTree);
+btn('tree-trace',()=>{
+  // highlight a random passenger's path
+  if(!currentTree)buildTree();
+  const p=titanicData[Math.floor(Math.random()*titanicData.length)];
+  // redraw tree fresh, then overlay the passenger's path on top
+  drawTree();
+  const c=document.getElementById('treeC'),ctx=c.getContext('2d');
+  // walk
+  let t=currentTree;const path=[t];
+  while(t.split){const f=t.split.feature,thr=t.split.threshold;const goLeft=f==='sex'?p[f]===thr:p[f]<thr;t=goLeft?t.left:t.right;path.push(t);}
+  // draw path highlight
+  ctx.strokeStyle='rgba(245,158,11,0.9)';ctx.lineWidth=3;
+  for(let i=0;i<path.length-1;i++){ctx.beginPath();ctx.moveTo(path[i].x,path[i].y);ctx.lineTo(path[i+1].x,path[i+1].y);ctx.stroke();}
+  // annotate passenger
+  ctx.fillStyle='rgba(245,158,11,0.95)';ctx.fillRect(c.offsetWidth-230,30,210,64);
+  ctx.fillStyle='white';ctx.font='bold 11px monospace';ctx.textAlign='left';ctx.textBaseline='alphabetic';
+  ctx.fillText(`Passenger: ${p.sex}, class ${p.pclass}, age ${p.age.toFixed(0)}`,c.offsetWidth-222,48);
+  ctx.fillText(`Actual: ${p.survived===1?'Survived':'Died'}`,c.offsetWidth-222,64);
+  ctx.fillText(`Predicted: ${t.predict===1?'Survived':'Died'}`,c.offsetWidth-222,80);
+});
+document.getElementById('tree-d').addEventListener('input',buildTree);
+document.getElementById('tree-m').addEventListener('input',buildTree);
+document.getElementById('tree-feat').addEventListener('change',buildTree);
+
+/* ========= RANDOM FOREST ========= */
+sl('rf-n','rf-n-v');sl('rf-d','rf-d-v');
+let forest=[];
+function bootstrap(rows){const out=[];for(let i=0;i<rows.length;i++)out.push(rows[Math.floor(Math.random()*rows.length)]);return out;}
+function randomSubset(arr,k){const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.slice(0,k);}
+function bestSplitRF(rows,features,mtry){const chosen=randomSubset(features,Math.min(mtry,features.length));return bestSplit(rows,chosen);}
+function buildTreeRF(rows,depth,maxDepth,features,mtry){
+  const n=rows.length;
+  const survived=rows.filter(r=>r.survived===1).length;
+  const prob=n?survived/n:0;
+  const node={n,prob,predict:prob>=0.5?1:0};
+  if(depth>=maxDepth||n<5||prob===0||prob===1)return node;
+  const split=bestSplitRF(rows,features,mtry);
+  if(!split||split.gain<0.001)return node;
+  node.split=split;
+  node.left=buildTreeRF(split.left,depth+1,maxDepth,features,mtry);
+  node.right=buildTreeRF(split.right,depth+1,maxDepth,features,mtry);
+  return node;
+}
+function buildForest(addOnly){
+  const n=val('rf-n'),d=val('rf-d'),mtry=+document.getElementById('rf-mtry').value;
+  const features=['sex','pclass','age'];
+  if(!addOnly)forest=[];
+  const target=addOnly?forest.length+10:n;
+  while(forest.length<target){
+    const boot=bootstrap(titanicData);
+    forest.push(buildTreeRF(boot,0,d,features,mtry));
+  }
+  // predict using forest (majority vote) and tabulate per-passenger vote disagreement to measure diversity
+  let correctForest=0,correctSingle=0;
+  let disagreementSum=0;
+  titanicData.forEach(r=>{
+    let votes=0;forest.forEach(t=>{if(predictTree(t,r)===1)votes++;});
+    const forestPred=votes>forest.length/2?1:0;
+    if(forestPred===r.survived)correctForest++;
+    if(predictTree(forest[0],r)===r.survived)correctSingle++;
+    // disagreement = how close to a 50/50 split were the votes? Higher = more diversity
+    const fracYes=votes/forest.length;
+    disagreementSum+=4*fracYes*(1-fracYes);// peaks at 1 when votes are 50/50
+  });
+  const accForest=correctForest/titanicData.length;
+  const accSingle=correctSingle/titanicData.length;
+  const avgDisagreement=disagreementSum/titanicData.length;
+  set('rf-count',forest.length);
+  set('rf-single',(accSingle*100).toFixed(1)+'%');
+  set('rf-acc',(accForest*100).toFixed(1)+'%');
+  set('rf-imp','+'+((accForest-accSingle)*100).toFixed(1)+'%');
+  // feature importance — count how often each feature is used at the root
+  const featCount={sex:0,pclass:0,age:0};
+  forest.forEach(t=>{if(t.split)featCount[t.split.feature]=(featCount[t.split.feature]||0)+1;});
+  const topFeat=Object.entries(featCount).sort((a,b)=>b[1]-a[1])[0];
+  set('rf-feat',topFeat[0]+' ('+topFeat[1]+'/'+forest.length+' trees)');
+  drawForestMain(accForest,accSingle);
+  drawMiniTrees();
+  updateForestExplanation(accForest,accSingle,avgDisagreement,featCount,mtry,d);
+}
+function updateForestExplanation(accForest,accSingle,avgDisagreement,featCount,mtry,depth){
+  const el=document.getElementById('rf-explain-text');
+  if(!el)return;
+  if(!forest.length){el.innerHTML='Grow the forest to see how the trees are disagreeing and converging.';return;}
+  const imp=(accForest-accSingle)*100;
+  const gain=imp>=0?`<strong style="color:#059669;">+${imp.toFixed(1)} percentage points</strong>`:`<strong style="color:#dc2626;">${imp.toFixed(1)} percentage points</strong>`;
+  const diversityLabel=avgDisagreement>0.35?'high':(avgDisagreement>0.15?'moderate':'low');
+  const diversityColor=avgDisagreement>0.35?'#059669':(avgDisagreement>0.15?'#d97706':'#6b7280');
+  // describe the split of root features
+  const total=forest.length;
+  const rootDesc=Object.entries(featCount).sort((a,b)=>b[1]-a[1])
+    .map(([f,c])=>`<strong>${f}</strong> (${c}/${total})`).join(', ');
+  let txt=`<strong>The committee has ${forest.length} tree${forest.length===1?'':'s'}.</strong> Each one was grown on a different bootstrap resample of the 891 passengers, and at each split was only allowed to consider ${mtry} feature${mtry===1?'':'s'} out of the 3 available. Maximum depth was ${depth} per tree.`;
+  txt+=`<br><br><strong>How the trees compare.</strong> A single tree (Tree 1) predicts the training set with <strong>${(accSingle*100).toFixed(1)}%</strong> accuracy. The committee vote reaches <strong>${(accForest*100).toFixed(1)}%</strong> — that's ${gain} from averaging. `;
+  if(imp>2){
+    txt+='The forest is doing real work: individual trees are making different mistakes, and the vote cancels them out.';
+  }else if(imp>=0){
+    txt+='The lift is small — that often happens on easy datasets where a single tree already captures most of the signal.';
+  }else{
+    txt+='Counterintuitively, the forest is doing slightly worse on the training set. This is fine — training-set accuracy is not the right scorecard for a forest; its real strength is <em>generalization</em>, which shows up on held-out data.';
+  }
+  txt+=`<br><br><strong>Are the trees actually disagreeing?</strong> Average disagreement score: <strong style="color:${diversityColor};">${avgDisagreement.toFixed(2)}</strong> (${diversityLabel}). `;
+  if(avgDisagreement>0.35){
+    txt+='Trees are splitting votes on many passengers — exactly what you want. A diverse forest of disagreeing trees averages out to a smarter final answer.';
+  }else if(avgDisagreement>0.15){
+    txt+='The trees agree on the easy cases and argue over the hard ones. Typical healthy forest.';
+  }else{
+    txt+='Trees are voting almost in unison. This usually means bagging + random-feature subsetting is not injecting enough diversity — try reducing "Features tried per split" to 1.';
+  }
+  txt+=`<br><br><strong>Root-split distribution.</strong> Across all ${forest.length} trees, the feature chosen for the first split was: ${rootDesc}. `;
+  if(mtry<3){
+    txt+=`Because only ${mtry} feature${mtry===1?' was':'s were'} available at each split, the trees are forced to root-split on different features — which is exactly how Random Forests manufacture diversity.`;
+  }else{
+    txt+='With all features available at every split, the greedy best choice wins every time and every tree ends up looking similar. That is why mtry &lt; p is usually better.';
+  }
+  txt+=`<br><br><strong>Try this.</strong> Click "Add 10 more trees" a few times and watch the forest accuracy curve on the plot above. It rises quickly at first, then flattens — diminishing returns. That flattening is the point where the committee has collected enough independent opinions to average out most of the noise.`;
+  el.innerHTML=txt;
+}
+function drawForestMain(accForest,accSingle){
+  const r=clr('rfC',320),ctx=r.ctx,W=r.W,H=r.H;
+  ctx.fillStyle='rgba(124,58,237,0.04)';ctx.fillRect(0,0,W,H);
+  if(!forest.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='14px sans-serif';ctx.textAlign='center';ctx.fillText('Grow the forest to see accuracy over tree count',W/2,H/2);return;}
+  // simulate accuracy vs number of trees to make a curve (cumulative voting)
+  const pts=[];
+  const votes=new Array(titanicData.length).fill(0);
+  for(let k=0;k<forest.length;k++){
+    titanicData.forEach((r,i)=>{if(predictTree(forest[k],r)===1)votes[i]++;});
+    let correct=0;
+    titanicData.forEach((r,i)=>{
+      const pred=votes[i]>(k+1)/2?1:0;
+      if(pred===r.survived)correct++;
+    });
+    pts.push(correct/titanicData.length);
+  }
+  const pad=40,iW=W-2*pad,iH=H-2*pad-10;
+  const yMin=Math.min(...pts,accSingle)-0.02,yMax=Math.max(...pts,accSingle)+0.02;
+  const xp=i=>pad+(i/(Math.max(pts.length-1,1)))*iW;
+  const yp=v=>pad+(1-(v-yMin)/(yMax-yMin))*iH;
+  // axes
+  ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);
+  // single-tree reference line
+  ctx.setLineDash([4,4]);ctx.beginPath();ctx.moveTo(pad,yp(accSingle));ctx.lineTo(pad+iW,yp(accSingle));ctx.strokeStyle='rgba(150,150,150,0.8)';ctx.lineWidth=1.5;ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='rgba(120,120,120,0.85)';ctx.font='10px sans-serif';ctx.textAlign='left';ctx.fillText(`single tree (${(accSingle*100).toFixed(1)}%)`,pad+8,yp(accSingle)-4);
+  // forest curve with gradient
+  const grd=ctx.createLinearGradient(0,pad,0,H-pad);
+  grd.addColorStop(0,'rgba(124,58,237,0.35)');grd.addColorStop(1,'rgba(124,58,237,0.02)');
+  ctx.beginPath();ctx.moveTo(pad,H-pad);pts.forEach((v,i)=>ctx.lineTo(xp(i),yp(v)));ctx.lineTo(xp(pts.length-1),H-pad);ctx.closePath();ctx.fillStyle=grd;ctx.fill();
+  ctx.beginPath();pts.forEach((v,i)=>{if(i===0)ctx.moveTo(xp(i),yp(v));else ctx.lineTo(xp(i),yp(v));});ctx.strokeStyle='rgba(124,58,237,0.95)';ctx.lineWidth=2.5;ctx.stroke();
+  // axis labels
+  ctx.fillStyle='rgba(100,100,100,0.75)';ctx.font='11px sans-serif';ctx.textAlign='center';
+  ctx.fillText('number of trees voting',W/2,H-10);
+  ctx.save();ctx.translate(12,H/2);ctx.rotate(-Math.PI/2);ctx.fillText('forest accuracy',0,0);ctx.restore();
+  ctx.textAlign='right';ctx.fillStyle='rgba(100,100,100,0.65)';ctx.font='10px monospace';
+  ctx.fillText((yMax*100).toFixed(1)+'%',pad-4,pad+5);
+  ctx.fillText((yMin*100).toFixed(1)+'%',pad-4,H-pad+3);
+  ctx.textAlign='left';ctx.fillText('1',pad,H-pad+14);ctx.textAlign='right';ctx.fillText(forest.length+'',pad+iW,H-pad+14);
+}
+function drawMiniTrees(){
+  const container=document.getElementById('rf-trees');
+  container.innerHTML='';
+  forest.slice(0,Math.min(forest.length,24)).forEach((tree,idx)=>{
+    const box=document.createElement('div');box.className='mini-tree';
+    const title=document.createElement('div');title.style.marginBottom='4px';title.style.fontWeight='600';title.style.color='var(--txt2)';title.textContent='Tree '+(idx+1);box.appendChild(title);
+    const canvas=document.createElement('canvas');canvas.width=120;canvas.height=80;box.appendChild(canvas);
+    // vote bar
+    const bar=document.createElement('div');bar.className='vote-bar';
+    const yes=document.createElement('div');yes.className='seg';yes.style.background='rgba(37,99,235,0.7)';
+    const no=document.createElement('div');no.className='seg';no.style.background='rgba(220,38,38,0.7)';
+    // simulate: how often does this tree predict "1"
+    let ones=0;titanicData.forEach(r=>{if(predictTree(tree,r)===1)ones++;});
+    const frac=ones/titanicData.length;
+    yes.style.width=(frac*100)+'%';no.style.width=((1-frac)*100)+'%';
+    bar.appendChild(yes);bar.appendChild(no);box.appendChild(bar);
+    container.appendChild(box);
+    // draw mini tree
+    const ctx=canvas.getContext('2d');
+    ctx.fillStyle='#f7f7f6';ctx.fillRect(0,0,120,80);
+    // layout tree compactly
+    const leaves=[];function cl(t){if(!t.split){leaves.push(t);return;}cl(t.left);cl(t.right);}cl(tree);
+    const lw=110/Math.max(leaves.length,1);
+    leaves.forEach((l,i)=>{l._x=5+lw*(i+0.5);});
+    const td=treeDepth(tree)||1;
+    function lay(t,dep){if(!t.split){t._y=10+dep*((60)/(td+1));return t._x;}const xl=lay(t.left,dep+1),xr=lay(t.right,dep+1);t._y=10+dep*((60)/(td+1));t._x=(xl+xr)/2;return t._x;}
+    lay(tree,0);
+    function de(t){if(!t.split)return;ctx.strokeStyle='rgba(0,0,0,0.3)';ctx.lineWidth=0.7;ctx.beginPath();ctx.moveTo(t._x,t._y);ctx.lineTo(t.left._x,t.left._y);ctx.moveTo(t._x,t._y);ctx.lineTo(t.right._x,t.right._y);ctx.stroke();de(t.left);de(t.right);}
+    de(tree);
+    function dn(t){ctx.beginPath();ctx.arc(t._x,t._y,3,0,Math.PI*2);ctx.fillStyle=t.predict===1?'rgba(37,99,235,0.8)':'rgba(220,38,38,0.8)';ctx.fill();if(t.split){dn(t.left);dn(t.right);}}
+    dn(tree);
+  });
+  if(forest.length>24){const more=document.createElement('div');more.className='mini-tree';more.style.display='flex';more.style.alignItems='center';more.style.justifyContent='center';more.style.color='var(--txt2)';more.textContent='+ '+(forest.length-24)+' more trees';container.appendChild(more);}
+}
+btn('rf-build',()=>buildForest(false));
+btn('rf-add',()=>{if(!forest.length){buildForest(false);}else{buildForest(true);}});
+btn('rf-reset',()=>{forest=[];set('rf-count',0);set('rf-single','—');set('rf-acc','—');set('rf-imp','—');set('rf-feat','—');document.getElementById('rf-trees').innerHTML='';const rr=document.getElementById('rf-explain-text');if(rr)rr.innerHTML='Grow the forest to see how the trees are disagreeing and converging.';const r=clr('rfC',320);r.ctx.fillStyle='rgba(124,58,237,0.04)';r.ctx.fillRect(0,0,r.W,r.H);r.ctx.fillStyle='rgba(120,120,120,0.6)';r.ctx.font='14px sans-serif';r.ctx.textAlign='center';r.ctx.fillText('Grow the forest to see accuracy over tree count',r.W/2,r.H/2);});
+document.getElementById('rf-n').addEventListener('change',()=>buildForest(false));
+document.getElementById('rf-d').addEventListener('change',()=>buildForest(false));
+document.getElementById('rf-mtry').addEventListener('change',()=>buildForest(false));
+
+/* ========= INITIAL RENDER ========= */
+resetCLT();resetCoin();generateRegression();generatePermData();generateSimpson();updateCombo();
 </script>
 ```
-
