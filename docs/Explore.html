@@ -227,7 +227,7 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
     <div class="tag">An interactive statistics playground</div>
     <h1>Welcome to the <span class="accent">Statistical Universe</span></h1>
     <p>A hands-on environment for building intuition about core statistical ideas. Every concept here is something you can <strong>touch, tweak, and re-run</strong> instead of just reading about.</p>
-    <p>Adjust a slider and watch a distribution reshape itself. Toss thousands of coins in a heartbeat. Pit subgroups against their own aggregate and uncover Simpson’s paradox in real time. Whether you are meeting these ideas for the first time or revisiting them, the goal is the same: to move, as the Greeks put it, <strong><em>ἐκ τῶν φαινομένων εἰς τὰ ἄδηλα</em></strong>, from what is seen to what is unseen.</p>
+    <p>Adjust a slider and watch a distribution reshape itself. Toss thousands of coins in a heartbeat. Pit subgroups against their own aggregate and uncover Simpson's paradox in real time. Whether you are meeting these ideas for the first time or revisiting them, the goal is the same: move from <em>symbols on a page</em> to <em>patterns you can see</em>.</p>
   </div>
   <div class="matrix-intro" id="matrixIntro">
     <canvas id="matrixC" height="780"></canvas>
@@ -290,16 +290,14 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
 <div id="tab-clt" class="panel">
   <div class="ibox green" id="clt-ins">
     <div class="ititle">The Central Limit Theorem</div>
-    Take almost any population with a finite mean and variance. Draw a sample of size <strong>n</strong>, compute its average, then repeat that process over and over. The remarkable result is that the distribution of those sample means moves toward a bell curve even when the original population is skewed, jagged, binary, or bimodal. In other words, the raw data does not need to look normal for the <em>averages</em> to become approximately normal.
-    <div style="margin-top:10px;"><strong>Why this matters.</strong> Much of classical statistics is built around the behavior of averages. Confidence intervals, standard errors, regression inference, and many familiar tests work because the sample mean becomes predictable as repetition builds up. The theorem also explains two things at once: the center of the sampling distribution stays near the population mean, and its spread shrinks as sample size grows.</div>
-    <div style="margin-top:10px;"><strong>The shrinking spread.</strong> The standard error follows the famous rule <strong>σ/√n</strong>. That means averaging more observations makes your estimate more stable, but with diminishing returns. To cut the uncertainty in half, you do not need twice as much data. You need about four times as much. This happens because the standard error depends on the square root of sample size rather than sample size itself, so cutting uncertainty in half requires about four times as many observations.</div>
-    <div class="isub"><strong>How to read the display.</strong> The left panel shows the population you are sampling from. The right panel shows the distribution of the sample means you generated. At <strong>n = 1</strong>, the two panels look similar because each "sample mean" is just a single draw. As <strong>n</strong> increases, the right-hand distribution becomes smoother, more symmetric, and narrower. Try the Cauchy option to see the important exception: when the mean and variance are not well behaved, the theorem can fail.</div>
+    Take almost any population with a finite mean and variance. Draw a sample of size n, compute its average, and repeat that many times. The distribution of sample means moves toward a bell curve even if the original population is skewed or irregular.
+    <div class="isub">This is one reason why confidence intervals, regression inference, and many statistical tests work so well in practice.</div>
   </div>
   <div class="card">
     <div class="cgrid">
-      <div class="cg"><label>Population distribution</label><select id="clt-dist"><option value="uniform">Uniform [0,10]</option><option value="exp">Exponential</option><option value="bimodal">Bimodal</option><option value="bernoulli">Bernoulli p=0.2</option><option value="pareto">Pareto</option><option value="cauchy">Cauchy</option></select><div class="hint">The left panel is the raw population. The right panel is the distribution of the averages you get by repeatedly sampling from it. Watching those two panels separate is the core visual idea behind the theorem.</div></div>
-      <div class="cg"><label>Sample size n <span class="cv" id="clt-n-v">5</span></label><input type="range" id="clt-n" min="1" max="100" value="5" step="1"><div class="hint">Larger n means each average is based on more information. The sampling distribution usually becomes smoother, more symmetric, and less spread out because its standard error shrinks like 1/√n.</div></div>
-      <div class="cg" style="justify-content:flex-end;"><div class="brow" style="margin-bottom:0;"><button id="clt-500">+500 samples</button><button id="clt-2000">+2000</button><button id="clt-reset">Reset</button></div><div class="hint">Each click adds more sample means to the histogram. With enough repetitions, you can compare the green empirical shape to the red normal overlay and see the theorem emerge from simulation instead of assumption.</div></div>
+      <div class="cg"><label>Population distribution</label><select id="clt-dist"><option value="uniform">Uniform [0,10]</option><option value="exp">Exponential</option><option value="bimodal">Bimodal</option><option value="bernoulli">Bernoulli p=0.2</option><option value="pareto">Pareto</option><option value="cauchy">Cauchy</option></select><div class="hint">The left panel shows the population. The right panel shows the distribution of the sample means.</div></div>
+      <div class="cg"><label>Sample size n <span class="cv" id="clt-n-v">5</span></label><input type="range" id="clt-n" min="1" max="100" value="5" step="1"><div class="hint">As n grows, the sampling distribution usually becomes more bell-shaped and narrower.</div></div>
+      <div class="cg" style="justify-content:flex-end;"><div class="brow" style="margin-bottom:0;"><button id="clt-500">+500 samples</button><button id="clt-2000">+2000</button><button id="clt-reset">Reset</button></div><div class="hint">Draw repeated samples and compare the empirical shape with the normal overlay.</div></div>
     </div>
     <div class="tc">
       <div><div class="sh">Population shape</div><div class="cw"><canvas class="viz" id="popC" height="180"></canvas></div></div>
@@ -312,22 +310,35 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
       <div class="met"><div class="ml">Theoretical SE</div><div class="mv" id="clt-tse">—</div></div>
       <div class="met"><div class="ml">Normality</div><div class="mv" id="clt-norm">—</div></div>
     </div>
+    <div class="ibox amber" style="margin-top:1rem;margin-bottom:0;">
+      <div class="ititle">Guide to the distribution options</div>
+      <div style="font-size:13px;line-height:1.75;">
+      Each option in the dropdown gives you a population with a very different <em>shape</em>. The point of the CLT is that the sampling distribution of the mean becomes bell-shaped <strong>no matter which shape you start with</strong> — as long as a finite mean and variance exist. Here is what each one looks like and why it was chosen:
+      <div style="margin:10px 0 8px 18px;line-height:1.95;">
+        <strong style="color:#2563eb;">Uniform [0, 10]</strong> — Every value between 0 and 10 is equally likely. A flat, rectangular population with mean μ = 5 and standard deviation σ ≈ 2.89. The flat shape transforms into a bell in just a few samples.<br><br>
+        <strong style="color:#2563eb;">Exponential</strong> — A heavily right-skewed population describing waiting times (bus arrivals, radioactive decays). Most values are small, with a long tail of rare large ones. The shape looks nothing like a bell, which makes it a dramatic CLT demo.<br><br>
+        <strong style="color:#2563eb;">Bimodal</strong> — Two separate peaks (mixture of two bells). Despite having <em>no</em> central hump, averages of samples drawn from it still pile up around the overall mean — a striking demonstration that the CLT does not care what the population looks like.<br><br>
+        <strong style="color:#2563eb;">Bernoulli p = 0.2</strong> — The simplest possible random variable: a coin-like draw that is 1 with probability 0.2 and 0 otherwise. The population is just two spikes. Sample means (= sample proportions) nonetheless become normal — this is why proportion-based confidence intervals work.<br><br>
+        <strong style="color:#d97706;">Pareto</strong> — Extreme right-skew with a "fat tail" (the 80/20 rule of income, city sizes, and book sales). The mean exists but the variance is enormous. The CLT still technically applies, but convergence is painfully slow — you may need n in the hundreds before the sampling distribution looks bell-shaped. This option illustrates that "finite variance" is not the same as "well-behaved in practice."<br><br>
+        <strong style="color:#dc2626;">Cauchy — the famous counter-example</strong> — This one looks bell-shaped at a glance, but its tails are <em>so</em> heavy that <strong>neither the mean nor the variance is defined</strong>. The integral ∫ x · f(x) dx diverges. Because the CLT requires a finite mean and variance, its conclusion <em>does not hold</em> here. In fact, the average of <em>n</em> Cauchy draws has exactly the same Cauchy distribution as a single draw — averaging does nothing. No matter how large you make <em>n</em>, the sampling distribution never narrows and never becomes normal. This is the textbook reminder that the CLT is a theorem with real conditions, not a universal law.
+      </div>
+      <strong>Why showing this matters.</strong> The CLT is often taught as if it always applies. The Pareto and Cauchy options are included precisely so you can see what happens at and beyond the theorem's limits — and why statisticians care about the existence of moments, not just the shape of a histogram.
+      </div>
+    </div>
   </div>
 </div>
 
 <div id="tab-coin" class="panel">
   <div class="ibox amber" id="coin-ins">
     <div class="ititle">Coin tosses and the Law of Large Numbers</div>
-    A single coin toss is unpredictable. Ten tosses are still noisy. But once you keep going, something powerful happens: the cumulative proportion of heads begins to settle near the true probability <strong>p</strong>. That is the <strong>Law of Large Numbers</strong>. It does not say randomness disappears. It says randomness becomes more stable when you average over more and more trials.
-    <div style="margin-top:10px;"><strong>What the line means.</strong> After each toss, you recompute the proportion of heads so far. Early on, each new flip can move the line dramatically because every observation carries a lot of weight. Later, each additional toss matters less, so the line wiggles in smaller and smaller steps. The red horizontal line is the true probability used to generate the flips. The green path is your running estimate of that probability.</div>
-    <div style="margin-top:10px;"><strong>Fair versus biased coins.</strong> If <strong>p = 0.50</strong>, the long-run target is one-half. If you bias the coin to 0.70, the line should eventually hover near 0.70 instead. In both cases, short runs can look misleading. You may get long streaks, temporary surges, or stretches where the estimate seems badly wrong. The lesson is statistical rather than magical: small samples are volatile, large samples are steadier.</div>
-    <div class="isub"><strong>Why this matters beyond coins.</strong> This same logic explains why surveys, experiments, and repeated measurements become more trustworthy as the sample size grows. Any estimate based on repeated random trials can wander in the short run but stabilize in the long run. The coin is just the cleanest way to watch that idea happen in real time.</div>
+    A fair coin is random in the short run, but the proportion of heads tends to settle near 0.5 as the number of tosses grows. This is the Law of Large Numbers in action. Small samples jump around wildly. Large samples stabilise.
+    <div class="isub">You can also bias the coin. Then the long-run proportion settles near the true probability instead of 0.5.</div>
   </div>
   <div class="card">
     <div class="cgrid">
-      <div class="cg"><label>Probability of heads <span class="cv" id="coin-p-v">0.50</span></label><input type="range" id="coin-p" min="0.05" max="0.95" value="0.50" step="0.01"><div class="hint">This is the true probability built into the data-generating process. The running proportion is trying to estimate this hidden value from repeated random outcomes.</div></div>
-      <div class="cg"><label>Batch size</label><select id="coin-batch"><option value="10">10 tosses</option><option value="50">50 tosses</option><option value="100">100 tosses</option><option value="500">500 tosses</option></select><div class="hint">Small batches let you see how unstable short runs can be. Large batches make it easier to watch the estimate settle toward the true probability as more information accumulates.</div></div>
-      <div class="cg" style="justify-content:flex-end;"><div class="brow" style="margin-bottom:0;"><button id="coin-step">Add tosses</button><button id="coin-auto">Auto-run</button><button id="coin-stop">Stop</button><button id="coin-reset">Reset</button></div><div class="hint">After every toss, the graph updates the cumulative proportion of heads. Early flips move the line sharply; later flips matter less because they are averaged into a much larger history.</div></div>
+      <div class="cg"><label>Probability of heads <span class="cv" id="coin-p-v">0.50</span></label><input type="range" id="coin-p" min="0.05" max="0.95" value="0.50" step="0.01"><div class="hint">This is the true probability used to generate each toss.</div></div>
+      <div class="cg"><label>Batch size</label><select id="coin-batch"><option value="10">10 tosses</option><option value="50">50 tosses</option><option value="100">100 tosses</option><option value="500">500 tosses</option></select><div class="hint">Use small batches to see volatility and large batches to see convergence.</div></div>
+      <div class="cg" style="justify-content:flex-end;"><div class="brow" style="margin-bottom:0;"><button id="coin-step">Add tosses</button><button id="coin-auto">Auto-run</button><button id="coin-stop">Stop</button><button id="coin-reset">Reset</button></div><div class="hint">The line tracks the cumulative proportion of heads over time.</div></div>
     </div>
     <div class="cw"><canvas class="viz" id="coinC" height="360"></canvas></div>
     <div class="mets">
@@ -343,18 +354,15 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
 <div id="tab-reg" class="panel">
   <div class="ibox red" id="reg-ins">
     <div class="ititle">Correlation and regression</div>
-    Regression tries to summarize the relationship between two variables with a line. Correlation measures how tightly the points move together. When the association is strong and the noise is low, the fitted line is stable and the points cluster around it. When the association is weak or noisy, the line becomes less informative and the scatter spreads out.
-    <div style="margin-top:10px;"><strong>What the slope tells you.</strong> The slope describes how much <strong>y</strong> tends to change when <strong>x</strong> increases by one unit. A positive slope means the cloud rises from left to right. A negative slope means it falls. The intercept is where the fitted line would cross the y-axis. Together, slope and intercept define the line of best fit.</div>
-    <div style="margin-top:10px;"><strong>Correlation is not the same as slope.</strong> Correlation <strong>r</strong> measures strength and direction on a standardized scale from -1 to 1. A steep line does not automatically mean strong correlation, because the points may still be widely scattered. Likewise, a modest slope can still come with a very strong correlation if the points hug the line closely.</div>
-    <div style="margin-top:10px;"><strong>R² and model fit.</strong> The value <strong>R²</strong> tells you how much of the variation in <strong>y</strong> is being explained by the fitted line. Higher noise lowers R² because the line captures less of the pattern. The curved and clustered options are especially useful because they show an important warning: a straight-line regression can miss real structure even when the data clearly contains a pattern.</div>
-    <div class="isub"><strong>How to read the graph.</strong> The blue points are the observed data. The red line is the fitted linear relationship. Try changing the slope, noise, number of points, and pattern type. The goal is to see that regression is not just about drawing a line. It is about understanding when a line is meaningful, when it is weak, and when the wrong model can hide the real story.</div>
+    Regression tries to describe the relationship between x and y with a line. Correlation measures how strongly the variables move together. Stronger relationships and less noise make the fitted line more stable and raise R².
+    <div class="isub">This is a simple way to see that slope, correlation, and predictive fit are related but not identical ideas.</div>
   </div>
   <div class="card">
     <div class="cgrid">
-      <div class="cg"><label>Points <span class="cv" id="reg-n-v">60</span></label><input type="range" id="reg-n" min="20" max="150" value="60" step="5"><div class="hint">With very few points, the fitted line can swing around from sample to sample. More observations usually make the underlying pattern easier to detect and the estimates more stable.</div></div>
-      <div class="cg"><label>True slope <span class="cv" id="reg-slope-v">1.2</span></label><input type="range" id="reg-slope" min="-3" max="3" value="1.2" step="0.1"><div class="hint">The slope controls the overall direction of the linear relationship. Positive values tilt the cloud upward, negative values tilt it downward, and values near zero flatten the trend.</div></div>
-      <div class="cg"><label>Noise level <span class="cv" id="reg-noise-v">1.5</span></label><input type="range" id="reg-noise" min="0.2" max="5" value="1.5" step="0.1"><div class="hint">Noise adds random vertical scatter around the trend. As noise increases, the line explains less of the variation in y, so correlation weakens and R² usually drops.</div></div>
-      <div class="cg"><label>Pattern</label><select id="reg-shape"><option value="linear">Linear</option><option value="curve">Curved</option><option value="cluster">Two clusters</option></select><div class="hint">Linear data is the ideal case for a straight-line fit. The curved and clustered options show that real structure can exist even when a single regression line gives a simplified or misleading summary.</div></div>
+      <div class="cg"><label>Points <span class="cv" id="reg-n-v">60</span></label><input type="range" id="reg-n" min="20" max="150" value="60" step="5"><div class="hint">More points usually make the fitted pattern easier to estimate.</div></div>
+      <div class="cg"><label>True slope <span class="cv" id="reg-slope-v">1.2</span></label><input type="range" id="reg-slope" min="-3" max="3" value="1.2" step="0.1"><div class="hint">Positive slopes rise from left to right. Negative slopes fall.</div></div>
+      <div class="cg"><label>Noise level <span class="cv" id="reg-noise-v">1.5</span></label><input type="range" id="reg-noise" min="0.2" max="5" value="1.5" step="0.1"><div class="hint">Higher noise spreads the points farther from the line and lowers R².</div></div>
+      <div class="cg"><label>Pattern</label><select id="reg-shape"><option value="linear">Linear</option><option value="curve">Curved</option><option value="cluster">Two clusters</option></select><div class="hint">This helps show when a straight-line regression fits well and when it misses the real structure.</div></div>
     </div>
     <div class="brow"><button id="reg-gen">Generate data</button><button id="reg-reveal">Reveal fit</button></div>
     <div class="cw"><canvas class="viz" id="regC" height="380"></canvas></div>
@@ -481,6 +489,10 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
     </div>
     <div class="combo-demo" id="cmb-demo"></div>
     <div class="cw"><canvas class="viz" id="cmbC" height="280"></canvas></div>
+    <div class="ibox amber" id="cmb-guide-box" style="margin-top:1rem;margin-bottom:1rem;">
+      <div class="ititle" id="cmb-guide-title">Guide to the current view</div>
+      <div id="cmb-guide-text" style="font-size:13px;line-height:1.75;">Move the sliders or switch display mode to see the explanation update.</div>
+    </div>
     <div class="mets">
       <div class="met"><div class="ml">C(n,r)</div><div class="mv p" id="cmb-m-result">120</div></div>
       <div class="met"><div class="ml">Permutations P(n,r)</div><div class="mv" id="cmb-m-perm">720</div></div>
@@ -494,7 +506,7 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
   <div class="ibox red">
     <div class="ititle">Decision trees — learning by asking yes/no questions</div>
     A <strong>decision tree</strong> is one of the most intuitive prediction methods out there: it classifies cases by asking a sequence of yes/no questions. "Is this passenger male? If yes, are they younger than 6.5 years old?" At each step, the tree picks the question that best separates survivors from non-survivors, then recursively does the same inside each branch.
-    <div style="margin-top:10px;"> <strong>Titanic survival data</strong>  Passengers are split by features like sex, class, and age, and each leaf of the tree predicts a class ("Survived" or "Died") based on the majority of training passengers that ended up in that leaf.</div>
+    <div style="margin-top:10px;">Below, you can grow a tree on the <strong>Titanic survival data</strong> (the same example used in your course notes). Passengers are split by features like sex, class, and age, and each leaf of the tree predicts a class ("Survived" or "Died") based on the majority of training passengers that ended up in that leaf.</div>
     <div class="isub">Increase <strong>Max depth</strong> to let the tree ask more questions. Trees that are too shallow miss real patterns; trees that are too deep memorize noise (overfitting). Watch the training accuracy rise while the tree's shape gets more complex.</div>
   </div>
   <div class="card">
@@ -530,11 +542,15 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
     <div style="margin-top:10px;"><strong>The wisdom-of-crowds insight.</strong> In 1906, Francis Galton visited a country fair where 800 people guessed the weight of an ox. Individual guesses were all over the place — wildly too high or too low. But when Galton averaged every guess, the crowd's consensus (1,197 lb) was within one pound of the true weight (1,198 lb). Individual error is chaotic; <em>averaged</em> error cancels out. This is the same logic behind Random Forests.</div>
     <div style="margin-top:10px;"><strong>Building the committee.</strong> Leo Breiman's 2001 algorithm uses two clever tricks to make sure the trees in the committee actually <em>disagree</em> — because averaging identical opinions gives you nothing:</div>
     <ul style="margin:8px 0 0 18px;padding:0;font-size:13px;line-height:1.85;color:var(--txt2);">
-      <li><strong>Bagging</strong> (<em>b</em>ootstrap <em>agg</em>regat<em>ing</em>): every tree is trained on a different random resample of the data, drawn with replacement. If you have 891 passengers, each bootstrap sample is 891 passengers drawn randomly with repeats — so roughly 63% of the original passengers appear at least once, and 37% are left out entirely. Every tree sees a slightly distorted version of the world.</li>
-      <li><strong>Random feature subsets</strong>: at each split, the tree is only allowed to look at a random subset of features (classically <code>√p</code> of them). This prevents a single dominant feature like "Sex" from winning the top split in every single tree. Forcing diversity in feature choice creates trees that specialize in different parts of the problem.</li>
+      <li><strong>Bagging</strong> (<em>b</em>ootstrap <em>agg</em>regat<em>ing</em>): every tree is trained on a different random resample of the data, drawn with replacement. If you have 891 passengers, each bootstrap sample is 891 passengers drawn randomly with repeats — so roughly 63% of the original passengers appear at least once, and 37% are left out entirely. Every tree sees a slightly distorted version of the world.<br><br>
+        <span style="display:block;background:var(--bg3);border:0.5px solid var(--bdr);border-radius:8px;padding:10px 14px;margin-top:6px;font-family:var(--mono);font-size:12px;color:var(--txt);line-height:1.9;">
+          <strong>Where 63% / 37% come from.</strong> In a bootstrap sample, each observation has probability <span style="white-space:nowrap;">(1 − 1/n)<sup>n</sup></span> of <em>never</em> being selected across the n draws. For large n, this approaches <span style="white-space:nowrap;">e<sup>−1</sup> ≈ 0.368</span>. So about <strong>37%</strong> of observations are left out. Conversely, each observation appears at least once with probability <span style="white-space:nowrap;">1 − (1 − 1/n)<sup>n</sup> ≈ 1 − e<sup>−1</sup> ≈ 0.632</span>, so about <strong>63%</strong> appear at least once.
+        </span>
+      </li>
+      <li style="margin-top:12px;"><strong>Random feature subsets</strong>: at each split, the tree is only allowed to look at a random subset of features (classically <code>√p</code> of them). This prevents a single dominant feature like "Sex" from winning the top split in every single tree. Forcing diversity in feature choice creates trees that specialize in different parts of the problem.</li>
     </ul>
     <div style="margin-top:10px;"><strong>Voting.</strong> For classification, every tree votes and the majority wins. For regression, predictions are averaged. The magic is that each tree's errors tend to be <em>uncorrelated</em> with the others' — so they cancel out when combined, leaving the real signal intact.</div>
-    <div class="isub"><strong>Why this works so well.</strong> A single decision tree is a <em>low-bias, high-variance</em> learner: it can fit complex patterns but is easily thrown off by noise. Averaging many such trees keeps the low bias (the average can still capture complex patterns) while dramatically reducing the variance (individual noise cancels out). Random Forests win modeling competitions, power medical diagnosis systems, and are often the first algorithm data scientists try on tabular data — precisely because the committee is smarter than any of its members.</div>
+    <div class="isub"><strong>Why this works so well.</strong> A single decision tree is a <em>low-bias, high-variance</em> learner: it can fit complex patterns but is easily thrown off by noise. Averaging many such trees keeps the low bias (the average can still capture complex patterns) while dramatically reducing the variance (individual noise cancels out). The committee is "smarter" because averaging many different trees reduces random mistakes, so the forest usually predicts better than any one tree on its own.</div>
   </div>
   <div class="card">
     <div class="cgrid">
@@ -1152,6 +1168,46 @@ function updateCombo(){
     }
   }
   drawComboViz();
+  updateComboGuide(n,r,c,mode);
+}
+function updateComboGuide(n,r,c,mode){
+  const title=document.getElementById('cmb-guide-title');
+  const el=document.getElementById('cmb-guide-text');
+  if(!el||!title)return;
+  const fm=fmtNum;
+  if(mode==='pascal'){
+    title.textContent=`Pascal's triangle — how to read it with C(${n}, ${r}) = ${fm(c)}`;
+    let txt=`<strong>What it is.</strong> Pascal's triangle is a stack of numbers where every entry is the sum of the two entries directly above it. The outer edges are all 1s, and everything in between is built up by that simple addition rule. It was known to Indian, Persian, Chinese, and Greek mathematicians centuries before Blaise Pascal studied it in 1653, but his name stuck in Europe.`;
+    txt+=`<br><br><strong>Why it matters here.</strong> Every number in the triangle is a combination count. The entry in <em>row n, position r</em> (counting from 0) is exactly <strong>C(n, r)</strong> — the number of ways to choose r items from n. So the triangle is a complete lookup table for the combinations formula, built entirely by addition.`;
+    txt+=`<br><br><strong>Reading the current highlight.</strong> The gold-filled circle sits at row <strong>${n}</strong>, position <strong>${r}</strong>. That position holds the value <strong>${fm(c)}</strong>, which is C(${n}, ${r}) — the number of distinct ways you can choose ${r} things from ${n}. The faintly-shaded 1s running down both diagonal edges are the boundary cases: C(k, 0) = 1 (only one way to choose nothing) and C(k, k) = 1 (only one way to choose everything).`;
+    txt+=`<br><br><strong>Symmetry you can see.</strong> The triangle is mirror-symmetric: C(n, r) always equals C(n, n − r). Picking r items <em>in</em> is logically the same as picking (n − r) items <em>out</em>, so those two counts must match. For your current value, C(${n}, ${r}) = ${fm(c)} = C(${n}, ${n-r}). That's why the gold circle has a twin on the opposite side of the row.`;
+    txt+=`<br><br><strong>The additive rule in action.</strong> If you pick any non-edge entry, it equals the sum of the two entries directly above it: C(n, r) = C(n−1, r−1) + C(n−1, r). This isn't just a numerical trick — it reflects a real choice: to form a committee of r people from n candidates, you either <em>include</em> the first candidate (then choose r−1 from the remaining n−1) or <em>exclude</em> them (then choose r from the remaining n−1). The two cases don't overlap and cover everything, so their counts add.`;
+    txt+=`<br><br><strong>Row sums.</strong> Each row sums to a power of 2: row n adds up to 2ⁿ. That is the total number of subsets of an n-element set (every element is either in or out — 2 choices, n times). Row ${n} sums to 2<sup>${n}</sup> = ${fm(Math.pow(2,n))}, and the C(${n}, k) values you see are the breakdown of that total by subset size.`;
+    el.innerHTML=txt;
+  }else if(mode==='enumerate'){
+    title.textContent=`Enumerating every combination of ${r} from ${n}`;
+    let txt=`<strong>What you are looking at.</strong> Each chip above is one of the <strong>${fm(c)}</strong> distinct ways to pick ${r} item${r===1?'':'s'} from the set {A, B, C, …} of size ${n}. `;
+    if(n>8||c>60){
+      txt+=`This view is only drawn when n ≤ 8 and the count fits on screen — try smaller values to see every combination spelled out.`;
+    }else{
+      txt+=`The set braces { } signal that order does not matter: {A, B, C} and {C, A, B} are the same committee and are listed only once.`;
+    }
+    txt+=`<br><br><strong>Why the count comes out to ${fm(c)}.</strong> If order <em>did</em> matter, you'd have P(${n}, ${r}) = ${fm(factorial(n)/factorial(n-r))} arrangements — each subset of size ${r} can be written in ${r}! = ${fm(factorial(r))} different orders. Dividing those arrangements by ${r}! collapses each subset to one entry and gives you C(${n}, ${r}) = ${fm(c)}.`;
+    txt+=`<br><br>The bar chart below shows the count for every possible choice size — notice that C(${n}, ${r}) = ${fm(c)} is just one bar in the full landscape of possibilities.`;
+    el.innerHTML=txt;
+  }else{
+    title.textContent=`How the formula produces C(${n}, ${r}) = ${fm(c)}`;
+    let txt=`<strong>Step by step.</strong> The formula C(n, r) = n! / [r! · (n−r)!] counts the ways to pick r items from n when order is irrelevant. For your current values:`;
+    txt+=`<div style="margin:8px 0 8px 18px;font-family:var(--mono);line-height:1.9;">
+      • <strong>${n}!</strong> = ${fm(factorial(n))} — the number of ways to arrange all ${n} items in order<br>
+      • <strong>${r}!</strong> = ${fm(factorial(r))} — redundant orderings <em>inside</em> the chosen group<br>
+      • <strong>(${n} − ${r})! = ${n-r}!</strong> = ${fm(factorial(n-r))} — redundant orderings inside the <em>unchosen</em> group<br>
+      • <strong>C(${n}, ${r}) = ${fm(factorial(n))} / (${fm(factorial(r))} · ${fm(factorial(n-r))}) = ${fm(c)}</strong>
+    </div>`;
+    txt+=`<strong>Intuition.</strong> Start with ${n}! = ${fm(factorial(n))} total arrangements of all ${n} items. Every valid "committee of ${r}" is being counted ${fm(factorial(r))} × ${fm(factorial(n-r))} = ${fm(factorial(r)*factorial(n-r))} times (once for each internal reordering of the in-group times each reordering of the out-group). Dividing cancels that double-counting, leaving ${fm(c)} genuinely distinct choices.`;
+    txt+=`<br><br><strong>The highlighted bar.</strong> In the chart below, the gold bar sits at k = ${r}. Its neighbors (k = 0, 1, 2, …, ${n}) show how the count rises and then falls as you pick more items. The peak sits in the middle — choosing half gives the most combinations — which is why C(n, n/2) grows so large compared to C(n, 0) or C(n, n).`;
+    el.innerHTML=txt;
+  }
 }
 function drawComboViz(){
   const n=val('cmb-n'),r=val('cmb-r'),mode=document.getElementById('cmb-mode').value;
@@ -1450,7 +1506,10 @@ function updateForestExplanation(accForest,accSingle,avgDisagreement,featCount,m
   }else{
     txt+='Counterintuitively, the forest is doing slightly worse on the training set. This is fine — training-set accuracy is not the right scorecard for a forest; its real strength is <em>generalization</em>, which shows up on held-out data.';
   }
-  txt+=`<br><br><strong>Are the trees actually disagreeing?</strong> Average disagreement score: <strong style="color:${diversityColor};">${avgDisagreement.toFixed(2)}</strong> (${diversityLabel}). `;
+  txt+=`<br><br><strong>Are the trees actually disagreeing?</strong> Average disagreement score: <strong style="color:${diversityColor};">${avgDisagreement.toFixed(2)}</strong> (${diversityLabel}).`;
+  txt+=`<br><span style="display:inline-block;background:var(--bg3);border:0.5px solid var(--bdr);border-radius:8px;padding:8px 12px;margin-top:6px;font-family:var(--mono);font-size:11.5px;line-height:1.75;color:var(--txt);">
+    <strong>How this number is computed.</strong> For every passenger, we count what fraction <em>p</em> of the ${forest.length} trees voted "Survived". We then compute <strong>4 · p · (1 − p)</strong>, which equals 0 when all trees agree (p = 0 or 1) and peaks at 1 when the vote is perfectly split (p = 0.5). Averaging that quantity across all 891 passengers gives the score shown above. In short: <strong>0 means unanimous, 1 means total chaos</strong>.
+  </span> `;
   if(avgDisagreement>0.35){
     txt+='Trees are splitting votes on many passengers — exactly what you want. A diverse forest of disagreeing trees averages out to a smarter final answer.';
   }else if(avgDisagreement>0.15){
