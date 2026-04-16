@@ -42,15 +42,11 @@ select{padding:6px 8px;font-size:12px;border:0.5px solid var(--bdr);border-radiu
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
 .card{background:var(--bg);border:0.5px solid var(--bdr);border-radius:14px;padding:1.4rem;margin-bottom:1rem;}
 .ibox{border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:1.1rem;font-size:13px;line-height:1.85;color:var(--txt);border-left:4px solid var(--blue);background:var(--bg2);transition:all .4s;}
-.ibox.green{border-left-color:var(--green);}
-.ibox.red{border-left-color:var(--red);}
-.ibox.amber{border-left-color:var(--amber);}
-.ibox.purple{border-left-color:var(--purple);}
+.ibox.green{border-left-color:var(--green);}.ibox.red{border-left-color:var(--red);}.ibox.amber{border-left-color:var(--amber);}.ibox.purple{border-left-color:var(--purple);}
 .ititle{font-weight:600;font-size:14px;margin-bottom:6px;color:var(--txt);}
 .isub{font-size:12px;color:var(--txt2);margin-top:6px;padding-top:6px;border-top:0.5px solid var(--bdr);}
 .cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:1rem;}
-.cg{display:flex;flex-direction:column;gap:4px;}
-.cg label{font-size:12px;font-weight:500;color:var(--txt);}
+.cg{display:flex;flex-direction:column;gap:4px;}.cg label{font-size:12px;font-weight:500;color:var(--txt);}
 .cv{color:var(--blue);font-weight:600;}
 .hint{font-size:11.5px;color:var(--txt2);line-height:1.55;margin-top:4px;padding:7px 9px;background:var(--bg3);border-radius:7px;border-left:2px solid var(--bdr2);}
 .brow{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem;}
@@ -73,7 +69,7 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
     <h1>Statistical Universe</h1>
     <div class="sub">
       Gravity &nbsp;·&nbsp; Central Limit Theorem &nbsp;·&nbsp; Coin Tosses<br>
-      Regression &amp; Correlation &nbsp;·&nbsp; Exploration &nbsp;·&nbsp; Discovery
+      Regression &amp; Correlation &nbsp;·&nbsp; Permutation Test &nbsp;·&nbsp; Simpson's Paradox
     </div>
     <div class="pulse-btn">[ click anywhere to enter ]</div>
   </div>
@@ -85,6 +81,8 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
   <button class="tab" id="t-clt">CLT</button>
   <button class="tab" id="t-coin">Coin Tosses</button>
   <button class="tab" id="t-reg">Regression</button>
+  <button class="tab" id="t-perm">Permutation Test</button>
+  <button class="tab" id="t-simpson">Simpson's Paradox</button>
 </div>
 
 <div id="tab-grav" class="panel active">
@@ -190,6 +188,67 @@ canvas.viz:hover{outline:1.5px solid rgba(37,99,235,0.18);}
     </div>
   </div>
 </div>
+
+<div id="tab-perm" class="panel">
+  <div class="ibox purple" id="perm-ins">
+    <div class="ititle">Permutation test</div>
+    A permutation test asks whether the observed difference between two groups is unusual under the null hypothesis of no real group effect. It does this by repeatedly shuffling the group labels and rebuilding the null distribution from the shuffled data.
+    <div class="isub">If the observed difference sits far in the tail of the shuffled distribution, the result is unlikely under the null and the p-value becomes small.</div>
+  </div>
+  <div class="card">
+    <div class="cgrid">
+      <div class="cg"><label>Group size <span class="cv" id="perm-n-v">20</span></label><input type="range" id="perm-n" min="8" max="60" value="20" step="1"><div class="hint">Each group gets the same number of observations. Larger samples produce a tighter null distribution.</div></div>
+      <div class="cg"><label>True effect <span class="cv" id="perm-eff-v">1.0</span></label><input type="range" id="perm-eff" min="0" max="3" value="1.0" step="0.1"><div class="hint">This shifts group B relative to group A. With effect 0, the groups come from the same distribution.</div></div>
+      <div class="cg"><label>Noise <span class="cv" id="perm-noise-v">1.5</span></label><input type="range" id="perm-noise" min="0.2" max="4" value="1.5" step="0.1"><div class="hint">Higher noise creates more overlap and makes the observed difference less distinct.</div></div>
+      <div class="cg"><label>Permutations per run</label><select id="perm-batch"><option value="100">100</option><option value="500">500</option><option value="1000">1,000</option><option value="5000">5,000</option></select><div class="hint">More permutations make the null distribution smoother and the p-value estimate more stable.</div></div>
+    </div>
+    <div class="brow">
+      <button id="perm-gen">Generate data</button>
+      <button id="perm-run">Run permutations</button>
+      <button id="perm-reset">Reset</button>
+    </div>
+    <div class="tc">
+      <div><div class="sh">Observed groups</div><div class="cw"><canvas class="viz" id="permDataC" height="220"></canvas></div></div>
+      <div><div class="sh">Null distribution of shuffled mean differences</div><div class="cw"><canvas class="viz" id="permNullC" height="220"></canvas></div></div>
+    </div>
+    <div class="mets">
+      <div class="met"><div class="ml">Observed diff</div><div class="mv" id="perm-obs">—</div></div>
+      <div class="met"><div class="ml">Permutations</div><div class="mv" id="perm-count">0</div></div>
+      <div class="met"><div class="ml">Estimated p-value</div><div class="mv" id="perm-p">—</div></div>
+      <div class="met"><div class="ml">Mean null diff</div><div class="mv" id="perm-nullm">—</div></div>
+      <div class="met"><div class="ml">Null SD</div><div class="mv" id="perm-nulls">—</div></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-simpson" class="panel">
+  <div class="ibox green" id="simp-ins">
+    <div class="ititle">Simpson's paradox</div>
+    Simpson's paradox happens when the overall relationship in combined data points in one direction, while the relationship inside each subgroup points in another direction. It is a reminder that aggregation can hide important structure.
+    <div class="isub">Use the controls to shift group sizes and group offsets. The subgroup lines can slope upward while the combined line slopes downward, or the reverse.</div>
+  </div>
+  <div class="card">
+    <div class="cgrid">
+      <div class="cg"><label>Points per group <span class="cv" id="simp-n-v">40</span></label><input type="range" id="simp-n" min="15" max="80" value="40" step="1"><div class="hint">More points make the subgroup patterns easier to see.</div></div>
+      <div class="cg"><label>Within-group slope <span class="cv" id="simp-slope-v">0.7</span></label><input type="range" id="simp-slope" min="-1.5" max="1.5" value="0.7" step="0.1"><div class="hint">This controls the direction inside each subgroup.</div></div>
+      <div class="cg"><label>Group offset <span class="cv" id="simp-off-v">3.5</span></label><input type="range" id="simp-off" min="0.5" max="6" value="3.5" step="0.1"><div class="hint">Larger offsets separate the groups more strongly and make the paradox easier to create.</div></div>
+      <div class="cg"><label>Noise <span class="cv" id="simp-noise-v">0.9</span></label><input type="range" id="simp-noise" min="0.1" max="3" value="0.9" step="0.1"><div class="hint">Higher noise makes all fitted relationships less sharp.</div></div>
+    </div>
+    <div class="brow">
+      <button id="simp-gen">Generate paradox</button>
+      <button id="simp-toggle">Hide subgroup lines</button>
+    </div>
+    <div class="cw"><canvas class="viz" id="simpC" height="420"></canvas></div>
+    <div class="mets">
+      <div class="met"><div class="ml">Overall slope</div><div class="mv" id="simp-all">—</div></div>
+      <div class="met"><div class="ml">Group A slope</div><div class="mv" id="simp-a">—</div></div>
+      <div class="met"><div class="ml">Group B slope</div><div class="mv" id="simp-b">—</div></div>
+      <div class="met"><div class="ml">Overall r</div><div class="mv" id="simp-r">—</div></div>
+      <div class="met"><div class="ml">Pattern</div><div class="mv" id="simp-pattern">—</div></div>
+    </div>
+  </div>
+</div>
+
 </div>
 
 <script>
@@ -201,178 +260,15 @@ function val(id){return +document.getElementById(id).value;}
 function set(id,v){const el=document.getElementById(id);if(el)el.textContent=v;}
 function sl(id,dispId,fmt){const el=document.getElementById(id);if(el)el.addEventListener('input',function(){set(dispId,fmt?fmt(+this.value):+this.value);});}
 function clr(id,h){const c=document.getElementById(id);const ctx=c.getContext('2d');const W=c.offsetWidth||c.parentElement.offsetWidth||800;c.width=W;c.height=h;return{c,ctx,W,H:h};}
-
-(function(){
-  const c=document.getElementById('matrixC'),ctx=c.getContext('2d');
-  let W=c.offsetWidth||1000,H=520;c.width=W;c.height=H;
-  const chars='βσμR²OLSΣΩαγπφψ∂∇∫01ρχ²CLTgxn∞'.split('');
-  const cols=Math.floor(W/15);
-  const drops=Array.from({length:cols},()=>Math.random()*40);
-  let running=true;
-  function draw(){
-    if(!running)return;
-    ctx.fillStyle='rgba(3,5,8,0.05)';
-    ctx.fillRect(0,0,W,H);
-    drops.forEach((y,i)=>{
-      const g=145+Math.floor(Math.random()*110);
-      ctx.fillStyle=Math.random()>0.965?'rgba(210,255,220,0.96)':`rgba(0,${g},38,${0.55+Math.random()*0.35})`;
-      ctx.font=`${12+Math.floor(Math.random()*4)}px monospace`;
-      ctx.fillText(chars[Math.floor(Math.random()*chars.length)],i*15,y*14);
-      if(y*14>H && Math.random()>0.985)drops[i]=0;
-      else drops[i]+=0.38+Math.random()*0.35;
-    });
-    requestAnimationFrame(draw);
-  }
-  draw();
-  function reveal(){
-    running=false;
-    const intro=document.getElementById('matrixIntro');
-    intro.style.transition='opacity .95s ease, transform .95s ease';
-    intro.style.opacity='0';
-    intro.style.transform='scale(0.97)';
-    setTimeout(()=>{intro.style.display='none';document.getElementById('lab').classList.add('show');initGalaxy();},950);
-  }
-  document.getElementById('matrixIntro').addEventListener('click',reveal,{once:true});
-  document.getElementById('matrixIntro').addEventListener('touchend',reveal,{once:true,passive:true});
-  window.addEventListener('resize',()=>{W=c.offsetWidth||1000;c.width=W;c.height=H;});
-})();
-
-const TABS=['grav','clt','coin','reg'];
-TABS.forEach(id=>{
-  const tab=document.getElementById('t-'+id);
-  if(tab){
-    tab.addEventListener('click',()=>{
-      TABS.forEach(t=>{
-        document.getElementById('t-'+t).classList.toggle('active',t===id);
-        document.getElementById('tab-'+t).classList.toggle('active',t===id);
-      });
-      if(id==='clt'){drawPop();drawCLT();}
-      if(id==='coin'){drawCoin();}
-      if(id==='reg'){generateRegression();}
-      if(id==='grav'&&!galRunning){galRunning=true;requestAnimationFrame(galLoop);}
-    });
-  }
-});
-
-let galPts=[],galRunning=false,galFrame=0,galCtx,galW,galH;
-sl('gn','gn-v'); sl('gg','gg-v',v=>v.toFixed(2)); sl('gv','gv-v',v=>v.toFixed(1));
-sl('gtrail','gt-v',v=>['','None','Short','Medium','Long','Full'][v]);
-function initGalaxy(){
-  const r=clr('galC',430);galW=r.W;galH=430;galCtx=r.ctx;galPts=[];galFrame=0;galRunning=true;
-  const n=val('gn'),v0=val('gv'),mode=document.getElementById('gmode').value;
-  const cx=galW/2,cy=galH/2;const hues=[210,260,30,150,320,60,180,0,45,280];
-  if(mode==='random'){
-    for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,r2=Math.random()*Math.min(galW,galH)*0.37;galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:(Math.random()-.5)*v0,vy:(Math.random()-.5)*v0,m:0.5+Math.random()*2,c:`hsl(${hues[i%hues.length]},75%,65%)`});}
-  } else if(mode==='disk'){
-    for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,r2=15+Math.pow(Math.random(),0.5)*Math.min(galW,galH)*0.33;const sp=v0*Math.sqrt(0.8/(r2*0.008+0.1));galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:-Math.sin(a)*sp+(Math.random()-.5)*0.3,vy:Math.cos(a)*sp+(Math.random()-.5)*0.3,m:0.5+Math.random(),c:`hsl(${190+Math.random()*70},80%,60%)`});}
-  } else if(mode==='collision'){
-    const off=Math.min(galW,galH)*0.22;
-    for(let i=0;i<n;i++){const s=i<n/2;const cx2=s?cx-off:cx+off;const a=Math.random()*Math.PI*2,r2=Math.random()*off*0.5;galPts.push({x:cx2+Math.cos(a)*r2,y:cy+Math.sin(a)*r2*0.65,vx:(s?v0*0.5:-v0*0.5)+(Math.random()-.5)*0.4,vy:(Math.random()-.5)*0.35,m:0.5+Math.random(),c:`hsl(${s?210:25},80%,65%)`});}
-  } else if(mode==='ring'){
-    for(let i=0;i<n;i++){const a=(i/n)*Math.PI*2,r2=Math.min(galW,galH)*0.29;galPts.push({x:cx+Math.cos(a)*r2+(Math.random()-.5)*16,y:cy+Math.sin(a)*r2+(Math.random()-.5)*16,vx:-Math.sin(a)*v0*1.3,vy:Math.cos(a)*v0*1.3,m:0.5+Math.random(),c:`hsl(${270+i/n*90},70%,65%)`});}
-  } else {
-    galPts.push({x:cx-90,y:cy,vx:0,vy:v0*0.5,m:10,c:'#ff9955'},{x:cx+90,y:cy,vx:0,vy:-v0*0.5,m:10,c:'#55aaff'});
-    for(let i=2;i<n;i++){const a=Math.random()*Math.PI*2,r2=20+Math.random()*Math.min(galW,galH)*0.36;galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:(Math.random()-.5)*v0*0.8,vy:(Math.random()-.5)*v0*0.8,m:0.3+Math.random(),c:`hsl(${Math.random()*360},70%,65%)`});}
-  }
-  galCtx.fillStyle='#030508';galCtx.fillRect(0,0,galW,galH);requestAnimationFrame(galLoop);
-}
-function galLoop(){
-  if(!galRunning)return;
-  const G=val('gg'),tr=val('gtrail');
-  const alpha=[0,0.4,0.2,0.11,0.05,0][tr]||0.11;
-  galCtx.fillStyle=`rgba(3,5,8,${alpha})`;galCtx.fillRect(0,0,galW,galH);
-  const pts=galPts,n=pts.length;
-  for(let i=0;i<n;i++){
-    const a=pts[i];
-    for(let j=i+1;j<n;j++){
-      const b=pts[j];
-      const dx=b.x-a.x,dy=b.y-a.y;const d2=dx*dx+dy*dy,d=Math.sqrt(d2)+6;
-      const f=G*a.m*b.m/(d2+40);const fx=f*dx/d,fy=f*dy/d;
-      a.vx+=fx/a.m;a.vy+=fy/a.m;b.vx-=fx/b.m;b.vy-=fy/b.m;
-    }
-  }
-  let ke=0,ms=0;
-  pts.forEach(p=>{
-    const sp=Math.sqrt(p.vx**2+p.vy**2);if(sp>ms)ms=sp;const cap=10;if(sp>cap){p.vx=p.vx/sp*cap;p.vy=p.vy/sp*cap;}
-    p.x+=p.vx;p.y+=p.vy;
-    if(p.x<2){p.x=2;p.vx*=-0.6;} if(p.x>galW-2){p.x=galW-2;p.vx*=-0.6;}
-    if(p.y<2){p.y=2;p.vy*=-0.6;} if(p.y>galH-2){p.y=galH-2;p.vy*=-0.6;}
-    ke+=0.5*p.m*sp**2;
-    if(sp>1.5){galCtx.beginPath();galCtx.moveTo(p.x,p.y);galCtx.lineTo(p.x-p.vx*2.5,p.y-p.vy*2.5);const col=p.c.includes('hsl')?p.c.replace('hsl(','hsla(').replace(')',',0.18)'):p.c+'2e';galCtx.strokeStyle=col;galCtx.lineWidth=0.8;galCtx.stroke();}
-    const rr=Math.min(5,1.2+p.m*0.7);galCtx.beginPath();galCtx.arc(p.x,p.y,rr,0,Math.PI*2);galCtx.fillStyle=p.c;galCtx.fill();
-  });
-  galFrame++;set('gal-fr',galFrame);set('gal-ke',ke.toFixed(0));set('gal-n',n);set('gal-ms',ms.toFixed(2));
-  if(galFrame%50===0){let cl=0;const vis=new Set();pts.forEach((a,i)=>{if(vis.has(i))return;let inCl=false;pts.forEach((b,j)=>{if(i!==j&&Math.hypot(a.x-b.x,a.y-b.y)<55){inCl=true;vis.add(j);}});if(inCl)cl++;});set('gal-cl',cl);}
-  requestAnimationFrame(galLoop);
-}
-btn('gal-launch',initGalaxy);
-btn('gal-pause',function(){galRunning=!galRunning;this.textContent=galRunning?'Pause':'Resume';if(galRunning)requestAnimationFrame(galLoop);});
-btn('gal-clear',()=>{if(galCtx){galCtx.fillStyle='#030508';galCtx.fillRect(0,0,galW,galH);}});
-
-let cltMeans=[];
-sl('clt-n','clt-n-v');
-function popSample(dist){if(dist==='uniform')return Math.random()*10;if(dist==='exp')return -Math.log(Math.random())*3;if(dist==='bimodal')return Math.random()<0.5?randn()*0.9+2:randn()*0.9+8;if(dist==='bernoulli')return Math.random()<0.2?1:0;if(dist==='pareto')return Math.min(50,Math.pow(Math.random()+0.001,-1/1.5));if(dist==='cauchy')return Math.tan(Math.PI*(Math.random()-0.5));return randn()*3+5;}
-function popTheory(dist){return{uniform:{mu:5,sig:Math.sqrt(100/12)},exp:{mu:3,sig:3},bimodal:{mu:5,sig:3.1},bernoulli:{mu:0.2,sig:0.4},pareto:{mu:null,sig:null},cauchy:{mu:null,sig:null}}[dist]||{mu:null,sig:null};}
-function drawPop(){const r=clr('popC',180);const{ctx,W,H}=r;const dist=document.getElementById('clt-dist').value;const pts=Array.from({length:3000},()=>popSample(dist)).filter(v=>isFinite(v)&&Math.abs(v)<60);const mn=Math.min(...pts),mx=Math.max(...pts);const bins=30,bw=(mx-mn)/bins||0.001;const counts=new Array(bins).fill(0);pts.forEach(v=>{const i=Math.min(bins-1,Math.floor((v-mn)/bw));counts[i]++;});const maxC=Math.max(...counts)||1;const pad=8,iW=W-2*pad,iH=H-24;counts.forEach((c,i)=>{const bh=c/maxC*iH;ctx.fillStyle='rgba(37,99,235,0.5)';ctx.fillRect(pad+i*iW/bins,H-16-bh,iW/bins-1,bh);});ctx.fillStyle='rgba(100,100,100,0.6)';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText(mn.toFixed(1),pad,H-2);ctx.fillText(mx.toFixed(1),W-pad,H-2);}
-function drawCLT(){const r=clr('cltC',180);const{ctx,W,H}=r;if(!cltMeans.length){ctx.fillStyle='rgba(120,120,120,0.4)';ctx.font='13px sans-serif';ctx.textAlign='center';ctx.fillText('Click "+500 samples" to start',W/2,90);return;}const valid=cltMeans.filter(v=>isFinite(v)&&Math.abs(v)<200);if(!valid.length)return;const mn=Math.min(...valid),mx=Math.max(...valid);const bins=30,bw=(mx-mn)/bins||0.001;const counts=new Array(bins).fill(0);valid.forEach(v=>{const i=Math.min(bins-1,Math.floor((v-mn)/bw));counts[i]++;});const maxC=Math.max(...counts)||1;const pad=8,iW=W-2*pad,iH=H-24;counts.forEach((c,i)=>{const bh=c/maxC*iH;ctx.fillStyle='rgba(5,150,105,0.55)';ctx.fillRect(pad+i*iW/bins,H-16-bh,iW/bins-1,bh);});if(valid.length>100){const m=mean(valid),s=sdv(valid);ctx.strokeStyle='rgba(220,38,38,0.9)';ctx.lineWidth=2;ctx.beginPath();for(let px=0;px<iW;px++){const xv=mn+px/iW*(mx-mn);const norm=Math.exp(-0.5*((xv-m)/s)**2)/(s*Math.sqrt(2*Math.PI));const bh=norm*bw*valid.length/maxC*iH;const py=H-16-bh;px===0?ctx.moveTo(pad+px,py):ctx.lineTo(pad+px,py);}ctx.stroke();}}
-function cltStep(k){const n=val('clt-n'),dist=document.getElementById('clt-dist').value;for(let i=0;i<k;i++){const pts=Array.from({length:n},()=>popSample(dist)).filter(v=>isFinite(v)&&Math.abs(v)<500);if(pts.length>0)cltMeans.push(mean(pts));}const valid=cltMeans.filter(v=>isFinite(v));const m=mean(valid),s=sdv(valid);const th=popTheory(dist);set('clt-s',valid.length);set('clt-m',isFinite(m)?m.toFixed(3):'undefined');set('clt-se',isFinite(s)?s.toFixed(3):'undefined');set('clt-tse',th.sig?((th.sig/Math.sqrt(n)).toFixed(3)):'N/A');const normEl=document.getElementById('clt-norm');if(dist==='cauchy'){normEl.textContent='FAILS';normEl.className='mv r';}else if(n>=30&&valid.length>=500){normEl.textContent='Normal';normEl.className='mv g';}else if(n>=5){normEl.textContent='Emerging';normEl.className='mv a';}else{normEl.textContent='Not yet';normEl.className='mv';}drawCLT();}
-function resetCLT(){cltMeans=[];set('clt-s',0);['clt-m','clt-se','clt-tse','clt-norm'].forEach(id=>set(id,'—'));drawPop();drawCLT();}
-btn('clt-500',()=>cltStep(500));btn('clt-2000',()=>cltStep(2000));btn('clt-reset',resetCLT);
-document.getElementById('clt-dist').addEventListener('change',resetCLT);
-document.getElementById('clt-n').addEventListener('input',resetCLT);
-
-let coinHistory=[],coinHeads=0,coinTotal=0,coinAuto=null;
-sl('coin-p','coin-p-v',v=>v.toFixed(2));
-function resetCoin(){coinHistory=[];coinHeads=0;coinTotal=0;set('coin-n',0);set('coin-h',0);set('coin-ph','—');set('coin-true',val('coin-p').toFixed(2));set('coin-diff','—');drawCoin();}
-function coinStep(){const p=val('coin-p');const batch=+document.getElementById('coin-batch').value;for(let i=0;i<batch;i++){coinTotal++;if(Math.random()<p)coinHeads++;coinHistory.push(coinHeads/coinTotal);}set('coin-n',coinTotal.toLocaleString());set('coin-h',coinHeads.toLocaleString());set('coin-ph',(coinHeads/coinTotal).toFixed(4));set('coin-true',p.toFixed(2));set('coin-diff',((coinHeads/coinTotal)-p).toFixed(4));drawCoin();}
-function drawCoin(){const r=clr('coinC',360);const{ctx,W,H}=r;ctx.fillStyle='rgba(37,99,235,0.06)';ctx.fillRect(0,0,W,H);const pad=34;const iW=W-2*pad,iH=H-2*pad;ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);const p=val('coin-p');const yTrue=pad+(1-p)*iH;ctx.beginPath();ctx.moveTo(pad,yTrue);ctx.lineTo(W-pad,yTrue);ctx.strokeStyle='rgba(220,38,38,0.9)';ctx.lineWidth=1.7;ctx.stroke();if(coinHistory.length){ctx.beginPath();coinHistory.forEach((v,i)=>{const x=pad+(i/(Math.max(coinHistory.length-1,1)))*iW;const y=pad+(1-v)*iH;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.strokeStyle='rgba(5,150,105,0.95)';ctx.lineWidth=2.2;ctx.stroke();}
-ctx.fillStyle='rgba(100,100,100,0.75)';ctx.font='11px sans-serif';ctx.textAlign='right';ctx.fillText('1.0',pad-6,pad+4);ctx.fillText('0.5',pad-6,pad+iH/2+4);ctx.fillText('0.0',pad-6,pad+iH+4);ctx.textAlign='left';ctx.fillText('true p',pad+8,yTrue-8);ctx.fillText('cumulative proportion of heads',pad,H-10);}
-btn('coin-step',coinStep); btn('coin-reset',()=>{if(coinAuto){clearInterval(coinAuto);coinAuto=null;} resetCoin();});
-btn('coin-auto',()=>{if(coinAuto)clearInterval(coinAuto);coinAuto=setInterval(coinStep,180);}); btn('coin-stop',()=>{if(coinAuto){clearInterval(coinAuto);coinAuto=null;}});
-document.getElementById('coin-p').addEventListener('input',()=>{set('coin-true',val('coin-p').toFixed(2));drawCoin();});
-
-let regData=[],regShowFit=true;
-sl('reg-n','reg-n-v'); sl('reg-slope','reg-slope-v',v=>v.toFixed(1)); sl('reg-noise','reg-noise-v',v=>v.toFixed(1));
-function regressionStats(data){const xs=data.map(d=>d.x), ys=data.map(d=>d.y), mx=mean(xs), my=mean(ys);let sxx=0,sxy=0,syy=0;for(let i=0;i<data.length;i++){const dx=xs[i]-mx,dy=ys[i]-my;sxx+=dx*dx;sxy+=dx*dy;syy+=dy*dy;}const b1=sxy/(sxx||1e-9),b0=my-b1*mx,r=sxy/Math.sqrt((sxx||1e-9)*(syy||1e-9));return{b0,b1,r,r2:r*r};}
-function generateRegression(){
-  const n=val('reg-n'), slope=val('reg-slope'), noise=val('reg-noise'), shape=document.getElementById('reg-shape').value;
-  regData=[];
-  for(let i=0;i<n;i++){
-    let x=-5+10*Math.random(), y=0;
-    if(shape==='linear') y=1+slope*x+randn()*noise;
-    else if(shape==='curve') y=0.5*slope*x+0.25*x*x+randn()*noise;
-    else {const g=Math.random()<0.5?-1:1; x=g*(1.5+Math.random()*3)+randn()*0.5; y=g*(2+slope)+randn()*noise;}
-    regData.push({x,y});
-  }
-  regShowFit=true;
-  drawRegression();
-}
-function drawRegression(){
-  const r=clr('regC',380),ctx=r.ctx,W=r.W,H=r.H,pad=34,iW=W-2*pad,iH=H-2*pad;
-  ctx.fillStyle='rgba(37,99,235,0.05)';ctx.fillRect(0,0,W,H);
-  if(!regData.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='14px sans-serif';ctx.textAlign='center';ctx.fillText('Click "Generate data"',W/2,H/2);return;}
-  const xs=regData.map(d=>d.x), ys=regData.map(d=>d.y);
-  const xmin=Math.min(...xs), xmax=Math.max(...xs), ymin=Math.min(...ys), ymax=Math.max(...ys);
-  const xpad=(xmax-xmin)*0.1+0.2, ypad=(ymax-ymin)*0.1+0.2;
-  const x0=xmin-xpad,x1=xmax+xpad,y0=ymin-ypad,y1=ymax+ypad;
-  const xp=x=>pad+(x-x0)/(x1-x0)*iW, yp=y=>H-pad-(y-y0)/(y1-y0)*iH;
-  ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);
-  regData.forEach(d=>{ctx.beginPath();ctx.arc(xp(d.x),yp(d.y),4,0,Math.PI*2);ctx.fillStyle='rgba(37,99,235,0.8)';ctx.fill();});
-  const st=regressionStats(regData);
-  set('reg-b1',st.b1.toFixed(3)); set('reg-b0',st.b0.toFixed(3)); set('reg-r',st.r.toFixed(3)); set('reg-r2',st.r2.toFixed(3)); set('reg-type',document.getElementById('reg-shape').value);
-  if(regShowFit){
-    const xa=x0, xb=x1, ya=st.b0+st.b1*xa, yb=st.b0+st.b1*xb;
-    ctx.beginPath(); ctx.moveTo(xp(xa),yp(ya)); ctx.lineTo(xp(xb),yp(yb)); ctx.strokeStyle='rgba(220,38,38,0.95)'; ctx.lineWidth=2.2; ctx.stroke();
-  }
-}
-btn('reg-gen',generateRegression); btn('reg-reveal',()=>{regShowFit=!regShowFit;drawRegression();});
-document.getElementById('reg-n').addEventListener('input',generateRegression);
-document.getElementById('reg-slope').addEventListener('input',generateRegression);
-document.getElementById('reg-noise').addEventListener('input',generateRegression);
-document.getElementById('reg-shape').addEventListener('change',generateRegression);
-
-resetCLT();
-resetCoin();
-generateRegression();
+(function(){const c=document.getElementById('matrixC'),ctx=c.getContext('2d');let W=c.offsetWidth||1000,H=520;c.width=W;c.height=H;const chars='βσμR²OLSΣΩαγπφψ∂∇∫01ρχ²CLTgxn∞'.split('');const cols=Math.floor(W/15);const drops=Array.from({length:cols},()=>Math.random()*40);let running=true;function draw(){if(!running)return;ctx.fillStyle='rgba(3,5,8,0.05)';ctx.fillRect(0,0,W,H);drops.forEach((y,i)=>{const g=145+Math.floor(Math.random()*110);ctx.fillStyle=Math.random()>0.965?'rgba(210,255,220,0.96)':`rgba(0,${g},38,${0.55+Math.random()*0.35})`;ctx.font=`${12+Math.floor(Math.random()*4)}px monospace`;ctx.fillText(chars[Math.floor(Math.random()*chars.length)],i*15,y*14);if(y*14>H&&Math.random()>0.985)drops[i]=0;else drops[i]+=0.38+Math.random()*0.35;});requestAnimationFrame(draw);}draw();function reveal(){running=false;const intro=document.getElementById('matrixIntro');intro.style.transition='opacity .95s ease, transform .95s ease';intro.style.opacity='0';intro.style.transform='scale(0.97)';setTimeout(()=>{intro.style.display='none';document.getElementById('lab').classList.add('show');initGalaxy();},950);}document.getElementById('matrixIntro').addEventListener('click',reveal,{once:true});document.getElementById('matrixIntro').addEventListener('touchend',reveal,{once:true,passive:true});window.addEventListener('resize',()=>{W=c.offsetWidth||1000;c.width=W;c.height=H;});})();
+const TABS=['grav','clt','coin','reg','perm','simpson'];TABS.forEach(id=>{const tab=document.getElementById('t-'+id);if(tab){tab.addEventListener('click',()=>{TABS.forEach(t=>{document.getElementById('t-'+t).classList.toggle('active',t===id);document.getElementById('tab-'+t).classList.toggle('active',t===id);});if(id==='clt'){drawPop();drawCLT();}if(id==='coin'){drawCoin();}if(id==='reg'){generateRegression();}if(id==='perm'){drawPermData();drawPermNull();}if(id==='simpson'){generateSimpson();}if(id==='grav'&&!galRunning){galRunning=true;requestAnimationFrame(galLoop);}});}});
+let galPts=[],galRunning=false,galFrame=0,galCtx,galW,galH;sl('gn','gn-v');sl('gg','gg-v',v=>v.toFixed(2));sl('gv','gv-v',v=>v.toFixed(1));sl('gtrail','gt-v',v=>['','None','Short','Medium','Long','Full'][v]);function initGalaxy(){const r=clr('galC',430);galW=r.W;galH=430;galCtx=r.ctx;galPts=[];galFrame=0;galRunning=true;const n=val('gn'),v0=val('gv'),mode=document.getElementById('gmode').value;const cx=galW/2,cy=galH/2;const hues=[210,260,30,150,320,60,180,0,45,280];if(mode==='random'){for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,r2=Math.random()*Math.min(galW,galH)*0.37;galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:(Math.random()-.5)*v0,vy:(Math.random()-.5)*v0,m:0.5+Math.random()*2,c:`hsl(${hues[i%hues.length]},75%,65%)`});}}else if(mode==='disk'){for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,r2=15+Math.pow(Math.random(),0.5)*Math.min(galW,galH)*0.33;const sp=v0*Math.sqrt(0.8/(r2*0.008+0.1));galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:-Math.sin(a)*sp+(Math.random()-.5)*0.3,vy:Math.cos(a)*sp+(Math.random()-.5)*0.3,m:0.5+Math.random(),c:`hsl(${190+Math.random()*70},80%,60%)`});}}else if(mode==='collision'){const off=Math.min(galW,galH)*0.22;for(let i=0;i<n;i++){const s=i<n/2;const cx2=s?cx-off:cx+off;const a=Math.random()*Math.PI*2,r2=Math.random()*off*0.5;galPts.push({x:cx2+Math.cos(a)*r2,y:cy+Math.sin(a)*r2*0.65,vx:(s?v0*0.5:-v0*0.5)+(Math.random()-.5)*0.4,vy:(Math.random()-.5)*0.35,m:0.5+Math.random(),c:`hsl(${s?210:25},80%,65%)`});}}else if(mode==='ring'){for(let i=0;i<n;i++){const a=(i/n)*Math.PI*2,r2=Math.min(galW,galH)*0.29;galPts.push({x:cx+Math.cos(a)*r2+(Math.random()-.5)*16,y:cy+Math.sin(a)*r2+(Math.random()-.5)*16,vx:-Math.sin(a)*v0*1.3,vy:Math.cos(a)*v0*1.3,m:0.5+Math.random(),c:`hsl(${270+i/n*90},70%,65%)`});}}else{galPts.push({x:cx-90,y:cy,vx:0,vy:v0*0.5,m:10,c:'#ff9955'},{x:cx+90,y:cy,vx:0,vy:-v0*0.5,m:10,c:'#55aaff'});for(let i=2;i<n;i++){const a=Math.random()*Math.PI*2,r2=20+Math.random()*Math.min(galW,galH)*0.36;galPts.push({x:cx+Math.cos(a)*r2,y:cy+Math.sin(a)*r2,vx:(Math.random()-.5)*v0*0.8,vy:(Math.random()-.5)*v0*0.8,m:0.3+Math.random(),c:`hsl(${Math.random()*360},70%,65%)`});}}galCtx.fillStyle='#030508';galCtx.fillRect(0,0,galW,galH);requestAnimationFrame(galLoop);}function galLoop(){if(!galRunning)return;const G=val('gg'),tr=val('gtrail');const alpha=[0,0.4,0.2,0.11,0.05,0][tr]||0.11;galCtx.fillStyle=`rgba(3,5,8,${alpha})`;galCtx.fillRect(0,0,galW,galH);const pts=galPts,n=pts.length;for(let i=0;i<n;i++){const a=pts[i];for(let j=i+1;j<n;j++){const b=pts[j];const dx=b.x-a.x,dy=b.y-a.y;const d2=dx*dx+dy*dy,d=Math.sqrt(d2)+6;const f=G*a.m*b.m/(d2+40);const fx=f*dx/d,fy=f*dy/d;a.vx+=fx/a.m;a.vy+=fy/a.m;b.vx-=fx/b.m;b.vy-=fy/b.m;}}let ke=0,ms=0;pts.forEach(p=>{const sp=Math.sqrt(p.vx**2+p.vy**2);if(sp>ms)ms=sp;const cap=10;if(sp>cap){p.vx=p.vx/sp*cap;p.vy=p.vy/sp*cap;}p.x+=p.vx;p.y+=p.vy;if(p.x<2){p.x=2;p.vx*=-0.6;}if(p.x>galW-2){p.x=galW-2;p.vx*=-0.6;}if(p.y<2){p.y=2;p.vy*=-0.6;}if(p.y>galH-2){p.y=galH-2;p.vy*=-0.6;}ke+=0.5*p.m*sp**2;if(sp>1.5){galCtx.beginPath();galCtx.moveTo(p.x,p.y);galCtx.lineTo(p.x-p.vx*2.5,p.y-p.vy*2.5);const col=p.c.includes('hsl')?p.c.replace('hsl(','hsla(').replace(')',',0.18)'):p.c+'2e';galCtx.strokeStyle=col;galCtx.lineWidth=0.8;galCtx.stroke();}const rr=Math.min(5,1.2+p.m*0.7);galCtx.beginPath();galCtx.arc(p.x,p.y,rr,0,Math.PI*2);galCtx.fillStyle=p.c;galCtx.fill();});galFrame++;set('gal-fr',galFrame);set('gal-ke',ke.toFixed(0));set('gal-n',n);set('gal-ms',ms.toFixed(2));if(galFrame%50===0){let cl=0;const vis=new Set();pts.forEach((a,i)=>{if(vis.has(i))return;let inCl=false;pts.forEach((b,j)=>{if(i!==j&&Math.hypot(a.x-b.x,a.y-b.y)<55){inCl=true;vis.add(j);}});if(inCl)cl++;});set('gal-cl',cl);}requestAnimationFrame(galLoop);}btn('gal-launch',initGalaxy);btn('gal-pause',function(){galRunning=!galRunning;this.textContent=galRunning?'Pause':'Resume';if(galRunning)requestAnimationFrame(galLoop);});btn('gal-clear',()=>{if(galCtx){galCtx.fillStyle='#030508';galCtx.fillRect(0,0,galW,galH);}});
+let cltMeans=[];sl('clt-n','clt-n-v');function popSample(dist){if(dist==='uniform')return Math.random()*10;if(dist==='exp')return -Math.log(Math.random())*3;if(dist==='bimodal')return Math.random()<0.5?randn()*0.9+2:randn()*0.9+8;if(dist==='bernoulli')return Math.random()<0.2?1:0;if(dist==='pareto')return Math.min(50,Math.pow(Math.random()+0.001,-1/1.5));if(dist==='cauchy')return Math.tan(Math.PI*(Math.random()-0.5));return randn()*3+5;}function popTheory(dist){return{uniform:{mu:5,sig:Math.sqrt(100/12)},exp:{mu:3,sig:3},bimodal:{mu:5,sig:3.1},bernoulli:{mu:0.2,sig:0.4},pareto:{mu:null,sig:null},cauchy:{mu:null,sig:null}}[dist]||{mu:null,sig:null};}function drawPop(){const r=clr('popC',180);const{ctx,W,H}=r;const dist=document.getElementById('clt-dist').value;const pts=Array.from({length:3000},()=>popSample(dist)).filter(v=>isFinite(v)&&Math.abs(v)<60);const mn=Math.min(...pts),mx=Math.max(...pts);const bins=30,bw=(mx-mn)/bins||0.001;const counts=new Array(bins).fill(0);pts.forEach(v=>{const i=Math.min(bins-1,Math.floor((v-mn)/bw));counts[i]++;});const maxC=Math.max(...counts)||1;const pad=8,iW=W-2*pad,iH=H-24;counts.forEach((c,i)=>{const bh=c/maxC*iH;ctx.fillStyle='rgba(37,99,235,0.5)';ctx.fillRect(pad+i*iW/bins,H-16-bh,iW/bins-1,bh);});ctx.fillStyle='rgba(100,100,100,0.6)';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText(mn.toFixed(1),pad,H-2);ctx.fillText(mx.toFixed(1),W-pad,H-2);}function drawCLT(){const r=clr('cltC',180);const{ctx,W,H}=r;if(!cltMeans.length){ctx.fillStyle='rgba(120,120,120,0.4)';ctx.font='13px sans-serif';ctx.textAlign='center';ctx.fillText('Click "+500 samples" to start',W/2,90);return;}const valid=cltMeans.filter(v=>isFinite(v)&&Math.abs(v)<200);if(!valid.length)return;const mn=Math.min(...valid),mx=Math.max(...valid);const bins=30,bw=(mx-mn)/bins||0.001;const counts=new Array(bins).fill(0);valid.forEach(v=>{const i=Math.min(bins-1,Math.floor((v-mn)/bw));counts[i]++;});const maxC=Math.max(...counts)||1;const pad=8,iW=W-2*pad,iH=H-24;counts.forEach((c,i)=>{const bh=c/maxC*iH;ctx.fillStyle='rgba(5,150,105,0.55)';ctx.fillRect(pad+i*iW/bins,H-16-bh,iW/bins-1,bh);});if(valid.length>100){const m=mean(valid),s=sdv(valid);ctx.strokeStyle='rgba(220,38,38,0.9)';ctx.lineWidth=2;ctx.beginPath();for(let px=0;px<iW;px++){const xv=mn+px/iW*(mx-mn);const norm=Math.exp(-0.5*((xv-m)/s)**2)/(s*Math.sqrt(2*Math.PI));const bh=norm*bw*valid.length/maxC*iH;const py=H-16-bh;px===0?ctx.moveTo(pad+px,py):ctx.lineTo(pad+px,py);}ctx.stroke();}}function cltStep(k){const n=val('clt-n'),dist=document.getElementById('clt-dist').value;for(let i=0;i<k;i++){const pts=Array.from({length:n},()=>popSample(dist)).filter(v=>isFinite(v)&&Math.abs(v)<500);if(pts.length>0)cltMeans.push(mean(pts));}const valid=cltMeans.filter(v=>isFinite(v));const m=mean(valid),s=sdv(valid);const th=popTheory(dist);set('clt-s',valid.length);set('clt-m',isFinite(m)?m.toFixed(3):'undefined');set('clt-se',isFinite(s)?s.toFixed(3):'undefined');set('clt-tse',th.sig?((th.sig/Math.sqrt(n)).toFixed(3)):'N/A');const normEl=document.getElementById('clt-norm');if(dist==='cauchy'){normEl.textContent='FAILS';normEl.className='mv r';}else if(n>=30&&valid.length>=500){normEl.textContent='Normal';normEl.className='mv g';}else if(n>=5){normEl.textContent='Emerging';normEl.className='mv a';}else{normEl.textContent='Not yet';normEl.className='mv';}drawCLT();}function resetCLT(){cltMeans=[];set('clt-s',0);['clt-m','clt-se','clt-tse','clt-norm'].forEach(id=>set(id,'—'));drawPop();drawCLT();}btn('clt-500',()=>cltStep(500));btn('clt-2000',()=>cltStep(2000));btn('clt-reset',resetCLT);document.getElementById('clt-dist').addEventListener('change',resetCLT);document.getElementById('clt-n').addEventListener('input',resetCLT);
+let coinHistory=[],coinHeads=0,coinTotal=0,coinAuto=null;sl('coin-p','coin-p-v',v=>v.toFixed(2));function resetCoin(){coinHistory=[];coinHeads=0;coinTotal=0;set('coin-n',0);set('coin-h',0);set('coin-ph','—');set('coin-true',val('coin-p').toFixed(2));set('coin-diff','—');drawCoin();}function coinStep(){const p=val('coin-p');const batch=+document.getElementById('coin-batch').value;for(let i=0;i<batch;i++){coinTotal++;if(Math.random()<p)coinHeads++;coinHistory.push(coinHeads/coinTotal);}set('coin-n',coinTotal.toLocaleString());set('coin-h',coinHeads.toLocaleString());set('coin-ph',(coinHeads/coinTotal).toFixed(4));set('coin-true',p.toFixed(2));set('coin-diff',((coinHeads/coinTotal)-p).toFixed(4));drawCoin();}function drawCoin(){const r=clr('coinC',360);const{ctx,W,H}=r;ctx.fillStyle='rgba(37,99,235,0.06)';ctx.fillRect(0,0,W,H);const pad=34;const iW=W-2*pad,iH=H-2*pad;ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);const p=val('coin-p');const yTrue=pad+(1-p)*iH;ctx.beginPath();ctx.moveTo(pad,yTrue);ctx.lineTo(W-pad,yTrue);ctx.strokeStyle='rgba(220,38,38,0.9)';ctx.lineWidth=1.7;ctx.stroke();if(coinHistory.length){ctx.beginPath();coinHistory.forEach((v,i)=>{const x=pad+(i/(Math.max(coinHistory.length-1,1)))*iW;const y=pad+(1-v)*iH;i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.strokeStyle='rgba(5,150,105,0.95)';ctx.lineWidth=2.2;ctx.stroke();}ctx.fillStyle='rgba(100,100,100,0.75)';ctx.font='11px sans-serif';ctx.textAlign='right';ctx.fillText('1.0',pad-6,pad+4);ctx.fillText('0.5',pad-6,pad+iH/2+4);ctx.fillText('0.0',pad-6,pad+iH+4);ctx.textAlign='left';ctx.fillText('true p',pad+8,yTrue-8);ctx.fillText('cumulative proportion of heads',pad,H-10);}btn('coin-step',coinStep);btn('coin-reset',()=>{if(coinAuto){clearInterval(coinAuto);coinAuto=null;}resetCoin();});btn('coin-auto',()=>{if(coinAuto)clearInterval(coinAuto);coinAuto=setInterval(coinStep,180);});btn('coin-stop',()=>{if(coinAuto){clearInterval(coinAuto);coinAuto=null;}});document.getElementById('coin-p').addEventListener('input',()=>{set('coin-true',val('coin-p').toFixed(2));drawCoin();});
+let regData=[],regShowFit=true;sl('reg-n','reg-n-v');sl('reg-slope','reg-slope-v',v=>v.toFixed(1));sl('reg-noise','reg-noise-v',v=>v.toFixed(1));function regressionStats(data){const xs=data.map(d=>d.x),ys=data.map(d=>d.y),mx=mean(xs),my=mean(ys);let sxx=0,sxy=0,syy=0;for(let i=0;i<data.length;i++){const dx=xs[i]-mx,dy=ys[i]-my;sxx+=dx*dx;sxy+=dx*dy;syy+=dy*dy;}const b1=sxy/(sxx||1e-9),b0=my-b1*mx,r=sxy/Math.sqrt((sxx||1e-9)*(syy||1e-9));return{b0,b1,r,r2:r*r};}function generateRegression(){const n=val('reg-n'),slope=val('reg-slope'),noise=val('reg-noise'),shape=document.getElementById('reg-shape').value;regData=[];for(let i=0;i<n;i++){let x=-5+10*Math.random(),y=0;if(shape==='linear')y=1+slope*x+randn()*noise;else if(shape==='curve')y=0.5*slope*x+0.25*x*x+randn()*noise;else{const g=Math.random()<0.5?-1:1;x=g*(1.5+Math.random()*3)+randn()*0.5;y=g*(2+slope)+randn()*noise;}regData.push({x,y});}regShowFit=true;drawRegression();}function drawRegression(){const r=clr('regC',380),ctx=r.ctx,W=r.W,H=r.H,pad=34,iW=W-2*pad,iH=H-2*pad;ctx.fillStyle='rgba(37,99,235,0.05)';ctx.fillRect(0,0,W,H);if(!regData.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='14px sans-serif';ctx.textAlign='center';ctx.fillText('Click "Generate data"',W/2,H/2);return;}const xs=regData.map(d=>d.x),ys=regData.map(d=>d.y);const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);const xpad=(xmax-xmin)*0.1+0.2,ypad=(ymax-ymin)*0.1+0.2;const x0=xmin-xpad,x1=xmax+xpad,y0=ymin-ypad,y1=ymax+ypad;const xp=x=>pad+(x-x0)/(x1-x0)*iW,yp=y=>H-pad-(y-y0)/(y1-y0)*iH;ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);regData.forEach(d=>{ctx.beginPath();ctx.arc(xp(d.x),yp(d.y),4,0,Math.PI*2);ctx.fillStyle='rgba(37,99,235,0.8)';ctx.fill();});const st=regressionStats(regData);set('reg-b1',st.b1.toFixed(3));set('reg-b0',st.b0.toFixed(3));set('reg-r',st.r.toFixed(3));set('reg-r2',st.r2.toFixed(3));set('reg-type',document.getElementById('reg-shape').value);if(regShowFit){const xa=x0,xb=x1,ya=st.b0+st.b1*xa,yb=st.b0+st.b1*xb;ctx.beginPath();ctx.moveTo(xp(xa),yp(ya));ctx.lineTo(xp(xb),yp(yb));ctx.strokeStyle='rgba(220,38,38,0.95)';ctx.lineWidth=2.2;ctx.stroke();}}btn('reg-gen',generateRegression);btn('reg-reveal',()=>{regShowFit=!regShowFit;drawRegression();});document.getElementById('reg-n').addEventListener('input',generateRegression);document.getElementById('reg-slope').addEventListener('input',generateRegression);document.getElementById('reg-noise').addEventListener('input',generateRegression);document.getElementById('reg-shape').addEventListener('change',generateRegression);
+let permA=[],permB=[],permNull=[],permObs=0;sl('perm-n','perm-n-v');sl('perm-eff','perm-eff-v',v=>v.toFixed(1));sl('perm-noise','perm-noise-v',v=>v.toFixed(1));function generatePermData(){const n=val('perm-n'),eff=val('perm-eff'),noise=val('perm-noise');permA=Array.from({length:n},()=>randn()*noise);permB=Array.from({length:n},()=>eff+randn()*noise);permObs=mean(permB)-mean(permA);permNull=[];set('perm-obs',permObs.toFixed(3));set('perm-count',0);set('perm-p','—');set('perm-nullm','—');set('perm-nulls','—');drawPermData();drawPermNull();}function onePerm(){const all=permA.concat(permB).slice();for(let i=all.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[all[i],all[j]]=[all[j],all[i]];}const n=permA.length;const a=all.slice(0,n),b=all.slice(n);return mean(b)-mean(a);}function runPermutations(){if(!permA.length)generatePermData();const batch=+document.getElementById('perm-batch').value;for(let i=0;i<batch;i++)permNull.push(onePerm());const extreme=permNull.filter(v=>Math.abs(v)>=Math.abs(permObs)).length;const p=extreme/permNull.length;set('perm-count',permNull.length.toLocaleString());set('perm-p',p.toFixed(4));set('perm-nullm',mean(permNull).toFixed(3));set('perm-nulls',sdv(permNull).toFixed(3));drawPermNull();}function drawPermData(){const r=clr('permDataC',220),ctx=r.ctx,W=r.W,H=r.H,pad=28;ctx.clearRect(0,0,W,H);ctx.fillStyle='rgba(37,99,235,0.05)';ctx.fillRect(0,0,W,H);ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,W-2*pad,H-2*pad);if(!permA.length)return;const ys=permA.concat(permB),ymin=Math.min(...ys),ymax=Math.max(...ys),yr=(ymax-ymin)||1;const yp=v=>H-pad-((v-ymin)/yr)*(H-2*pad);permA.forEach((v,i)=>{const x=pad+((i+1)/(permA.length+1))*((W-2*pad)/2-10);ctx.beginPath();ctx.arc(x,yp(v),4,0,Math.PI*2);ctx.fillStyle='rgba(37,99,235,0.85)';ctx.fill();});permB.forEach((v,i)=>{const x=W/2+10+((i+1)/(permB.length+1))*((W-2*pad)/2-10);ctx.beginPath();ctx.arc(x,yp(v),4,0,Math.PI*2);ctx.fillStyle='rgba(220,38,38,0.85)';ctx.fill();});ctx.fillStyle='rgba(100,100,100,0.8)';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText('Group A',W/4,H-8);ctx.fillText('Group B',3*W/4,H-8);}function drawPermNull(){const r=clr('permNullC',220),ctx=r.ctx,W=r.W,H=r.H,pad=28;ctx.clearRect(0,0,W,H);ctx.fillStyle='rgba(37,99,235,0.05)';ctx.fillRect(0,0,W,H);ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,W-2*pad,H-2*pad);if(!permNull.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='13px sans-serif';ctx.textAlign='center';ctx.fillText('Run permutations to build the null distribution',W/2,H/2);return;}const vals=permNull.slice(),mn=Math.min(...vals,permObs),mx=Math.max(...vals,permObs),bins=30,bw=(mx-mn)/bins||0.001;const counts=new Array(bins).fill(0);vals.forEach(v=>{counts[Math.min(bins-1,Math.floor((v-mn)/bw))]++;});const maxC=Math.max(...counts)||1,iW=W-2*pad,iH=H-2*pad;counts.forEach((c,i)=>{const bh=(c/maxC)*iH;ctx.fillStyle='rgba(124,58,237,0.55)';ctx.fillRect(pad+i*iW/bins,H-pad-bh,iW/bins-1,bh);});const xObs=pad+((permObs-mn)/(mx-mn||1))*iW;ctx.beginPath();ctx.moveTo(xObs,pad);ctx.lineTo(xObs,H-pad);ctx.strokeStyle='rgba(220,38,38,0.95)';ctx.lineWidth=2;ctx.stroke();ctx.fillStyle='rgba(100,100,100,0.75)';ctx.font='11px sans-serif';ctx.textAlign='left';ctx.fillText('observed diff',Math.min(W-80,xObs+6),pad+14);}btn('perm-gen',generatePermData);btn('perm-run',runPermutations);btn('perm-reset',()=>{permA=[];permB=[];permNull=[];permObs=0;set('perm-obs','—');set('perm-count',0);set('perm-p','—');set('perm-nullm','—');set('perm-nulls','—');drawPermData();drawPermNull();});
+let simpData=[],simpShowGroups=true;sl('simp-n','simp-n-v');sl('simp-slope','simp-slope-v',v=>v.toFixed(1));sl('simp-off','simp-off-v',v=>v.toFixed(1));sl('simp-noise','simp-noise-v',v=>v.toFixed(1));function fitLine(data){const xs=data.map(d=>d.x),ys=data.map(d=>d.y),mx=mean(xs),my=mean(ys);let sxx=0,sxy=0,syy=0;for(let i=0;i<data.length;i++){const dx=xs[i]-mx,dy=ys[i]-my;sxx+=dx*dx;sxy+=dx*dy;syy+=dy*dy;}const b1=sxy/(sxx||1e-9),b0=my-b1*mx,r=sxy/Math.sqrt((sxx||1e-9)*(syy||1e-9));return{b0,b1,r};}function generateSimpson(){const n=val('simp-n'),slope=val('simp-slope'),off=val('simp-off'),noise=val('simp-noise');simpData=[];for(let i=0;i<n;i++){const xA=Math.random()*4;const yA=off+slope*xA+randn()*noise;simpData.push({x:xA,y:yA,g:'A'});}for(let i=0;i<n;i++){const xB=6+Math.random()*4;const yB=-off+slope*xB+randn()*noise;simpData.push({x:xB,y:yB,g:'B'});}drawSimpson();}function drawLine(ctx,fit,x0,x1,xp,yp,color){const y0=fit.b0+fit.b1*x0,y1=fit.b0+fit.b1*x1;ctx.beginPath();ctx.moveTo(xp(x0),yp(y0));ctx.lineTo(xp(x1),yp(y1));ctx.strokeStyle=color;ctx.lineWidth=2.4;ctx.stroke();}function drawSimpson(){const r=clr('simpC',420),ctx=r.ctx,W=r.W,H=r.H,pad=34,iW=W-2*pad,iH=H-2*pad;ctx.fillStyle='rgba(37,99,235,0.05)';ctx.fillRect(0,0,W,H);if(!simpData.length){ctx.fillStyle='rgba(120,120,120,0.6)';ctx.font='14px sans-serif';ctx.textAlign='center';ctx.fillText('Click "Generate paradox"',W/2,H/2);return;}const xs=simpData.map(d=>d.x),ys=simpData.map(d=>d.y);const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);const xpad=(xmax-xmin)*0.1+0.2,ypad=(ymax-ymin)*0.1+0.2;const x0=xmin-xpad,x1=xmax+xpad,y0=ymin-ypad,y1=ymax+ypad;const xp=x=>pad+(x-x0)/(x1-x0)*iW,yp=y=>H-pad-(y-y0)/(y1-y0)*iH;ctx.strokeStyle='rgba(0,0,0,0.12)';ctx.strokeRect(pad,pad,iW,iH);simpData.forEach(d=>{ctx.beginPath();ctx.arc(xp(d.x),yp(d.y),4,0,Math.PI*2);ctx.fillStyle=d.g==='A'?'rgba(37,99,235,0.82)':'rgba(220,38,38,0.82)';ctx.fill();});const allFit=fitLine(simpData),aFit=fitLine(simpData.filter(d=>d.g==='A')),bFit=fitLine(simpData.filter(d=>d.g==='B'));drawLine(ctx,allFit,x0,x1,xp,yp,'rgba(16,185,129,0.95)');if(simpShowGroups){drawLine(ctx,aFit,x0,x1,xp,yp,'rgba(37,99,235,0.95)');drawLine(ctx,bFit,x0,x1,xp,yp,'rgba(220,38,38,0.95)');}set('simp-all',allFit.b1.toFixed(3));set('simp-a',aFit.b1.toFixed(3));set('simp-b',bFit.b1.toFixed(3));set('simp-r',allFit.r.toFixed(3));const paradox=(Math.sign(allFit.b1)!==Math.sign(aFit.b1)&&Math.sign(aFit.b1)===Math.sign(bFit.b1));set('simp-pattern',paradox?'Paradox visible':'Same direction');}btn('simp-gen',generateSimpson);btn('simp-toggle',function(){simpShowGroups=!simpShowGroups;this.textContent=simpShowGroups?'Hide subgroup lines':'Show subgroup lines';drawSimpson();});document.getElementById('simp-n').addEventListener('input',generateSimpson);document.getElementById('simp-slope').addEventListener('input',generateSimpson);document.getElementById('simp-off').addEventListener('input',generateSimpson);document.getElementById('simp-noise').addEventListener('input',generateSimpson);
+resetCLT();resetCoin();generateRegression();generatePermData();generateSimpson();
 </script>
 ```
+
